@@ -443,10 +443,10 @@ pages = {
 """,
         "js": """
   const playgroundItems = [
-    { title:"Elora waveform viz", image:"./assets/pg_waveform.png" },
-    { title:"Onboarding micro-flows", image:"./assets/pg_onboarding.png" },
-    { title:"Dark mode pass", image:"./assets/proj_kyc.png" },
-    { title:"Design tokens playground", image:"./assets/proj_learn.png" },
+    { title:"Elora waveform viz", image:"./assets/pg_001.jpg" },
+    { title:"Onboarding micro-flows", image:"./assets/pg_002.jpg" },
+    { title:"Dark mode pass", image:"./assets/pg_003.jpg" },
+    { title:"Design tokens playground", image:"./assets/pg_004.jpg" },
   ];
   const caseIconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-11 11"/></svg>`;
 
