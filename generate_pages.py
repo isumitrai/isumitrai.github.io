@@ -553,61 +553,7 @@ global_js = """
 
 for page_name, data in pages.items():
     file_path = f"{page_name}.html"
-    home_whatido = """
-      <section class="home-whatido" aria-labelledby="homeWhatIDoTitle">
-        <div class="whatido-header">
-          <span class="eyebrow" id="homeWhatIDoTitle">What I Do</span>
-          <h2>I Help Businesses Turn Ideas Into Memorable Brands, Websites, And Digital Experiences.</h2>
-          <div class="whatido-filter-pills">
-            <span class="filter-pill active">Brand Identity</span>
-            <span class="filter-pill">UI/UX</span>
-            <span class="filter-pill">Website Design</span>
-            <span class="filter-pill">Framer &amp; AI</span>
-            <span class="filter-pill">Motion Design</span>
-          </div>
-        </div>
-
-        <div class="whatido-cards-grid">
-          <div class="whatido-card clay-sm">
-            <div class="whatido-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><circle cx="12" cy="12" r="4"/></svg>
-            </div>
-            <h3>Motion Design</h3>
-            <p>Creating engaging animations and visual storytelling that enhance communication, strengthen brand presence, and improve user engagement.</p>
-            <div class="whatido-card-media">
-              <img src="./assets/proj_musafir.png" alt="Motion Design preview" loading="lazy" />
-            </div>
-          </div>
-
-          <div class="whatido-card clay-sm">
-            <div class="whatido-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><line x1="2" y1="2" x2="13" y2="13"/></svg>
-            </div>
-            <h3>Brand Identity</h3>
-            <p>Creating memorable visual identities through logos, typography, color systems, and brand guidelines that help businesses build recognition.</p>
-            <div class="whatido-card-media">
-              <img src="./assets/proj_quayo.png" alt="Brand Identity preview" loading="lazy" />
-            </div>
-          </div>
-
-          <div class="whatido-card clay-sm">
-            <div class="whatido-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-            </div>
-            <h3>UI/UX</h3>
-            <p>Designing intuitive digital experiences that improve usability, simplify interactions, and create meaningful experiences across platforms.</p>
-            <div class="whatido-card-media">
-              <img src="./assets/proj_edumanage.png" alt="UI/UX preview" loading="lazy" />
-            </div>
-          </div>
-        </div>
-
-        <div class="whatido-bottom-cta">
-          <p>Creating brands, websites, and digital experiences that are clear, purposeful, and built to make a lasting impact.</p>
-          <a href="mailto:sumitraiworks@gmail.com" class="clay-btn primary">Let's Talk</a>
-        </div>
-      </section>
-""" if page_name == "index" else ""
+    home_whatido = ""
     page_content = data["content"].replace("      <!-- HOME_WHATIDO -->", home_whatido)
     
     content = head_start + get_header(page_name) + page_content + footer + "\n<script>\n" + data['js'] + global_js + "\n</script>\n</body>\n</html>\n"
