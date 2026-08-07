@@ -288,10 +288,26 @@ pages = {
     </div>
 
     <div class="stat-row">
-      <div class="stat-item"><div class="stat-num">12+</div><div class="stat-label">Years experience</div></div>
-      <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Industries</div></div>
-      <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Disciplines</div></div>
-      <div class="stat-item"><div class="stat-num">Delhi</div><div class="stat-label">India</div></div>
+      <div class="stat-item">
+        <div class="stat-num">12+</div>
+        <div class="stat-label">Years Experience</div>
+        <div class="stat-sub">Product &amp; Systems Leadership</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Projects Shipped</div>
+        <div class="stat-sub">Web, Mobile &amp; AI Products</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Industries</div>
+        <div class="stat-sub">FinTech, EdTech, SaaS &amp; Health</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Core Disciplines</div>
+        <div class="stat-sub">Brand, UI/UX &amp; Motion</div>
+      </div>
     </div>
 
     <div class="worklogos" style="margin-top:52px;">
