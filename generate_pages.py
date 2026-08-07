@@ -419,7 +419,7 @@ pages = {
     <div class="hero" style="padding-top:40px;">
       <p class="eyebrow">Playground</p>
       <h1 style="font-size:2.2rem;">Experiments &amp; UI shots</h1>
-      <p>Things built when nobody's briefing me — replace these thumbnails with real shots.</p>
+      <p>Visual explorations, UI experiments, and creative side concepts built outside production briefs.</p>
     </div>
     <div class="pg-grid" id="playgroundGrid"></div>
   </div>
@@ -427,10 +427,10 @@ pages = {
 """,
         "js": """
   const playgroundItems = [
-    { title:"Elora waveform viz", tag:"AI / Swift", image:"./assets/pg_waveform.png", live:"#" },
-    { title:"Onboarding micro-flows", tag:"Motion study", image:"./assets/pg_onboarding.png", live:null },
-    { title:"Dark mode pass", tag:"Systems", image:"", live:null },
-    { title:"Design tokens playground", tag:"Systems", image:"", live:"#" },
+    { title:"Elora waveform viz", image:"./assets/pg_waveform.png" },
+    { title:"Onboarding micro-flows", image:"./assets/pg_onboarding.png" },
+    { title:"Dark mode pass", image:"./assets/proj_kyc.png" },
+    { title:"Design tokens playground", image:"./assets/proj_learn.png" },
   ];
   const caseIconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-11 11"/></svg>`;
 
@@ -438,13 +438,13 @@ pages = {
   if (pgGrid) {
     playgroundItems.forEach((item) => {
       const card = document.createElement('div');
-      card.className = 'clay-sm pg-card';
+      card.className = 'proj-card pg-card';
       card.innerHTML = `
-        <div class="pg-thumb">${item.image ? `<img src="${item.image}" alt="" />` : caseIconSvg}</div>
-        <div class="pg-body">
-          <h4>${item.title}</h4>
-          <p>${item.tag}</p>
-          ${item.live ? `<a href="${item.live}" class="pg-live" target="_blank" rel="noopener">View live ↗</a>` : ''}
+        <div class="proj-image">
+          ${item.image ? `<img src="${item.image}" alt="${item.title}" loading="lazy" />` : `<div class="img-fallback">${caseIconSvg}</div>`}
+        </div>
+        <div class="proj-body">
+          <h3>${item.title}</h3>
         </div>
       `;
       pgGrid.appendChild(card);
