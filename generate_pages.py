@@ -291,22 +291,18 @@ pages = {
       <div class="stat-item">
         <div class="stat-num">12+</div>
         <div class="stat-label">Years Experience</div>
-        <div class="stat-sub">Product &amp; Systems Leadership</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">200+</div>
-        <div class="stat-label">Projects Shipped</div>
-        <div class="stat-sub">Web, Mobile &amp; AI Products</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">7</div>
         <div class="stat-label">Industries</div>
-        <div class="stat-sub">FinTech, EdTech, SaaS &amp; Health</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Core Disciplines</div>
-        <div class="stat-sub">Brand, UI/UX &amp; Motion</div>
+        <div class="stat-num">5</div>
+        <div class="stat-label">Design Disciplines</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Projects Delivered</div>
       </div>
     </div>
 
