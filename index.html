@@ -4,270 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sumit Rai — Senior Product Designer | AI Builder</title>
-  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 7+ years crafting digital products across SaaS, AI, EdTech, and consumer platforms." />
+  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 8+ years of product design and 12+ years of overall design craft across SaaS, AI, EdTech, FinTech, and consumer platforms." />
   <meta name="author" content="Sumit Rai" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Ultra-clean shahimim-inspired page refinements */
-    .nav-key, .btn-key {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      color: var(--ink-faint);
-      margin-left: 4px;
-      letter-spacing: 0.02em;
-      transition: color 0.15s ease;
-    }
-    .nav-tabs a:hover .nav-key {
-      color: var(--accent);
-    }
-    .btn .btn-key {
-      opacity: 0.75;
-      font-size: 0.82em;
-    }
-
-    /* Hero section refinements */
-    .hero {
-      padding: 84px 0 60px;
-      text-align: center;
-    }
-    .hero h1.hero-greeting {
-      font-size: clamp(3.2rem, 7.5vw, 5.2rem);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      color: var(--ink);
-      margin: 0 auto 16px;
-      max-width: 900px;
-    }
-    .hero p.hero-statement {
-      font-family: var(--font-heading);
-      font-size: clamp(1.3rem, 2.5vw, 1.85rem);
-      font-weight: 500;
-      line-height: 1.35;
-      color: var(--ink-soft);
-      max-width: 760px;
-      margin: 0 auto 18px;
-      letter-spacing: -0.015em;
-    }
-    .hero p.hero-description {
-      font-size: clamp(1.02rem, 1.35vw, 1.15rem);
-      line-height: 1.7;
-      color: var(--ink-soft);
-      max-width: 660px;
-      margin: 0 auto 34px;
-    }
-    .hero .cta-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    /* Section header simplicity */
-    .home-work-section .section-header-row,
-    .experience-section .section-header-row {
-      margin-bottom: 28px;
-    }
-    .home-work-section h2,
-    .experience-section h2 {
-      font-size: clamp(1.85rem, 3.2vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    /* Approach quote simplicity */
-    .approach-quote-box {
-      max-width: 780px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 12px 0;
-    }
-    .approach-quote-box h2 {
-      font-size: clamp(1.75rem, 3vw, 2.4rem);
-      font-weight: 800;
-      line-height: 1.3;
-      letter-spacing: -0.025em;
-      margin-bottom: 14px;
-    }
-    .approach-quote-box p.approach-lead {
-      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
-      line-height: 1.68;
-      color: var(--ink-soft);
-      max-width: 660px;
-      margin: 0 auto;
-    }
-
-    /* Flat experience list with dividers */
-    .experience-flat-list {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 48px;
-    }
-    .exp-flat-item {
-      padding: 22px 0;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      transition: background-color 0.15s ease;
-    }
-    .exp-flat-item:first-child {
-      border-top: 1px solid var(--line);
-    }
-    .exp-flat-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .exp-flat-main {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .exp-company {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.015em;
-    }
-    .exp-sep {
-      color: var(--ink-faint);
-      font-size: 13px;
-    }
-    .exp-role {
-      font-size: 13.5px;
-      font-weight: 500;
-      color: var(--accent);
-    }
-    .exp-period {
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      color: var(--ink-faint);
-      letter-spacing: 0.04em;
-    }
-    .exp-desc {
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--ink-soft);
-      margin: 0;
-      max-width: 760px;
-    }
-
-    /* Minimal contact section */
-    .contact-cta-section {
-      padding: 56px 28px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-sm);
-      text-align: center;
-      margin-bottom: 64px;
-    }
-    .contact-cta-section h2 {
-      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-    .contact-cta-section p {
-      font-size: 15px;
-      line-height: 1.6;
-      color: var(--ink-soft);
-      max-width: 580px;
-      margin: 0 auto 28px;
-    }
-    .contact-cta-section .cta-btns {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    /* Ultra minimal footer */
-    .minimal-footer {
-      background: var(--surface);
-      border-top: 1px solid var(--line);
-      padding: 56px 0 44px;
-      width: 100%;
-    }
-    .minimal-footer .footer-inner {
-      max-width: var(--wrap-max);
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-      text-align: center;
-    }
-    .footer-email-line .plain-email-link {
-      font-family: var(--font-heading);
-      font-size: clamp(1.2rem, 2.2vw, 1.55rem);
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.015em;
-      text-decoration: none;
-      transition: color 0.18s ease;
-    }
-    .footer-email-line .plain-email-link:hover {
-      color: var(--accent);
-    }
-    .footer-social-line {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    .footer-social-line a {
-      color: var(--ink-soft);
-      transition: color 0.18s ease;
-    }
-    .footer-social-line a:hover {
-      color: var(--accent);
-    }
-    .footer-social-line .sep {
-      color: var(--ink-faint);
-    }
-    .footer-location-line {
-      margin-top: 4px;
-    }
-
-    /* Floating Theme Toggle (minimal circle) */
-    .theme-toggle-floating {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-    }
-
-    @media (max-width: 640px) {
-      .hero {
-        padding: 52px 0 40px;
-      }
-      .nav-key {
-        display: none;
-      }
-      .exp-flat-header {
-        flex-direction: column;
-        gap: 4px;
-      }
-      .exp-period {
-        order: 3;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -280,17 +22,45 @@
       </a>
     </div>
 
-    <nav class="nav-tabs" aria-label="Main Navigation">
-      <a href="projects.html">Work <span class="nav-key">[W]</span></a>
-      <a href="about.html">About <span class="nav-key">[A]</span></a>
-      <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
-      <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
-      <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
+    <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
+      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+    </nav>
+
+    <div class="nav-right-actions">
+      <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
+        <span id="soundIcon">🔊</span>
+        <span id="soundLabel" class="sound-label-text">Sound</span>
+      </button>
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)" title="Quick Command Palette (Cmd+K)">
+        <kbd>⌘K</kbd>
+      </button>
+      <button class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="active">Home <span class="nav-key">[Esc]</span></a>
+      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
     </nav>
   </div>
 </header>
 
-<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
   <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
   <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 </button>
@@ -298,26 +68,40 @@
 <main class="page-body">
   <div class="wrap-wide">
     
-    <!-- SECTION 01 — HERO / INTRODUCTION -->
+    <!-- SECTION 01 — HERO -->
     <section class="hero">
-      <h1 class="hero-greeting">Sumit Rai</h1>
+      <div class="status-pill">
+        <span class="dot"></span>
+        <span>Senior Product Designer &middot; AI Builder</span>
+      </div>
+
+      <h1 class="hero-greeting">
+        Sumit Rai
+      </h1>
+
       <p class="hero-statement">Product Designer &amp; AI Builder</p>
+      
       <p class="hero-description">
-        I design products, build experiences and explore what's next. Senior Product Designer with 7+ years crafting digital products across SaaS, AI, EdTech, and consumer platforms.
+        I design products, build experiences and explore what's next. Senior Product Designer with 8+ years crafting digital products across SaaS, AI, EdTech, and consumer platforms.
       </p>
 
       <div class="cta-row">
         <a href="#work" class="btn btn-primary">Selected Work <span class="btn-key">[W]</span></a>
         <a href="about.html" class="btn btn-secondary">About Me <span class="btn-key">[A]</span></a>
+        <a href="resources.html" class="btn btn-secondary">Curated Resources <span class="btn-key">[B]</span></a>
+        <a href="contact.html" class="btn btn-secondary">Get in Touch <span class="btn-key">[C]</span></a>
       </div>
     </section>
 
-    <!-- SECTION 02 — WORK SECTION -->
+    <!-- SECTION 02 — WORK I'M PROUD OF -->
     <section class="home-work-section" id="work">
       <div class="section-header-row">
         <div class="section-title-wrap">
-          <h2>Selected Work</h2>
+          <span class="eyebrow"><span class="dot"></span> Selected Projects</span>
+          <h2>Work I'm Proud Of</h2>
+          <p>Selected digital products shaped across SaaS, EdTech, mobile apps, and marketplace platforms.</p>
         </div>
+        <a href="projects.html" class="section-header-link">All Work <span class="shahi-arrow">&nearr;</span></a>
       </div>
 
       <div class="proj-grid">
@@ -334,7 +118,11 @@
           <h3 class="proj-title">EduManage</h3>
           <p class="proj-desc">A modern institution dashboard shaped around academic operations, content management, and day-to-day school workflows.</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">View Case Study <span class="shahi-arrow">&nearr;</span></span>
+            <div class="proj-tech-tags">
+              <span class="proj-tag">SaaS</span>
+              <span class="proj-tag">Dashboard</span>
+            </div>
           </div>
         </div>
       </article>
@@ -351,7 +139,11 @@
           <h3 class="proj-title">Quayo Basket</h3>
           <p class="proj-desc">A grocery mobile app paired with a fresh retail brand identity system for a clearer, friendlier shopping experience.</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">View Case Study <span class="shahi-arrow">&nearr;</span></span>
+            <div class="proj-tech-tags">
+              <span class="proj-tag">Mobile App</span>
+              <span class="proj-tag">UI/UX</span>
+            </div>
           </div>
         </div>
       </article>
@@ -368,7 +160,11 @@
           <h3 class="proj-title">Musafir</h3>
           <p class="proj-desc">A travel marketplace landing page redesigned for stronger conversion paths, clear destination framing, and confident decision-making.</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">View Case Study <span class="shahi-arrow">&nearr;</span></span>
+            <div class="proj-tech-tags">
+              <span class="proj-tag">Web Design</span>
+              <span class="proj-tag">Travel</span>
+            </div>
           </div>
         </div>
       </article>
@@ -385,7 +181,11 @@
           <h3 class="proj-title">Community</h3>
           <p class="proj-desc">A student learning hub designed to support academic growth through shared peer discussions, study resources, and platform-led engagement.</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">View Case Study <span class="shahi-arrow">&nearr;</span></span>
+            <div class="proj-tech-tags">
+              <span class="proj-tag">EdTech</span>
+              <span class="proj-tag">Platform</span>
+            </div>
           </div>
         </div>
       </article>
@@ -393,54 +193,185 @@
       </div>
 
       <div class="see-all-wrap">
-        <a href="projects.html" class="btn btn-secondary">See All Work &rarr;</a>
+        <a href="projects.html" class="btn btn-secondary">See All Work <span class="btn-key">[W]</span> &rarr;</a>
       </div>
     </section>
 
-    <!-- SECTION 03 — APPROACH -->
+    <!-- SECTION 03 — MY APPROACH -->
     <section class="approach-section">
       <div class="approach-quote-box">
+        <span class="eyebrow"><span class="dot"></span> Design Philosophy</span>
         <h2>&ldquo;Good design starts with understanding.&rdquo;</h2>
         <p class="approach-lead">
           I explore the problem, question assumptions, connect ideas and turn them into experiences that make sense for people and businesses.
         </p>
       </div>
+
+      <div class="approach-grid">
+        <div class="approach-card">
+          <span class="approach-num">01 / DISCOVER</span>
+          <h3>Explore &amp; Understand</h3>
+          <p>Dig into the core problem, understand business goals, and listen closely to user workflows before pushing pixels.</p>
+        </div>
+        <div class="approach-card">
+          <span class="approach-num">02 / CONNECT</span>
+          <h3>Question Assumptions</h3>
+          <p>Connect complex system architecture with human interaction, validating hypotheses with rapid prototypes.</p>
+        </div>
+        <div class="approach-card">
+          <span class="approach-num">03 / SHIP</span>
+          <h3>Ship with Purpose</h3>
+          <p>Build scalable design systems, partner tightly with engineering, and iterate toward measurable business clarity.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- SECTION 04 — ABOUT PREVIEW -->
-    <section class="about-preview-section">
-      <div class="about-preview-grid">
-        <div class="about-preview-content">
-          <h2>Designing thoughtful digital experiences since 2015.</h2>
-          <p>
-            I'm a designer and product thinker with 7+ years dedicated to digital product design and 10+ years across branding, systems, and visual craft.
-          </p>
-          <p>
-            My work spans SaaS, AI, EdTech, FinTech, and consumer platforms. Lately exploring how AI and emerging technologies reshape human-computer interfaces.
-          </p>
-          <div style="margin-top:24px;">
-            <a href="about.html" class="btn btn-secondary">More About Me &rarr;</a>
-          </div>
+    <!-- SECTION 04 — BENTO BOX SHOWCASE (Inspired by shahimim.com) -->
+    <section class="bento-section" id="bento">
+      <div class="section-header-row">
+        <div class="section-title-wrap">
+          <span class="eyebrow"><span class="dot"></span> Craft &amp; Systems</span>
+          <h2>At a Glance &mdash; Craft, Stack &amp; Explorations</h2>
+          <p>A multi-disciplinary blend of 8+ years product design leadership, 12+ years total design craft, code prototypes, and curated knowledge.</p>
         </div>
+        <a href="about.html" class="section-header-link">About My Journey <span class="shahi-arrow">&nearr;</span></a>
+      </div>
 
-        <div class="about-stats-grid">
-          <div class="stat-box">
-            <span class="stat-number">7+</span>
-            <span class="stat-label">Years in Product</span>
+      <div class="bento-grid">
+        <!-- Bento 1: Primary Spotlight (Span 2) -->
+        <a href="about.html" class="bento-card span-2" aria-label="Learn more about Sumit Rai's background and experience">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-badge accent-badge"><span class="live-dot"></span> Senior Product Designer</span>
+              <span class="bento-arrow-btn"><span class="shahi-arrow">&nearr;</span></span>
+            </div>
+            <div class="bento-body">
+              <h3 class="bento-title">Designing Intuitive Systems &amp; High-Impact Products Since 2014</h3>
+              <p class="bento-desc">
+                8+ years leading end-to-end UX/UI product strategy and 12+ years of design craft across visual systems, interactive prototypes, and scalable token architectures. Balancing business revenue with human delight.
+              </p>
+            </div>
+            <div class="bento-stats-row">
+              <div>
+                <span class="bento-stat-num">8+</span>
+                <span class="bento-stat-label">Years in Product</span>
+              </div>
+              <div style="border-left:1px solid var(--line); padding-left:18px;">
+                <span class="bento-stat-num">12+</span>
+                <span class="bento-stat-label">Years Total Craft</span>
+              </div>
+              <div style="border-left:1px solid var(--line); padding-left:18px;">
+                <span class="bento-stat-num">6+</span>
+                <span class="bento-stat-label">Industries Shipped</span>
+              </div>
+            </div>
           </div>
-          <div class="stat-box">
-            <span class="stat-number">10+</span>
-            <span class="stat-label">Years Total Craft</span>
+          <div class="bento-footer">
+            <span class="bento-link-text">Read background &amp; design journey <span class="shahi-arrow">&rarr;</span></span>
+            <span class="bento-tag pop">[A] About</span>
           </div>
-          <div class="stat-box">
-            <span class="stat-number">6+</span>
-            <span class="stat-label">Industries Shipped</span>
+        </a>
+
+        <!-- Bento 2: Raimage Studio Lab (Span 1) -->
+        <a href="playground.html" class="bento-card" aria-label="Explore Raimage Studio Lab experiments">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-badge">Raimage Lab</span>
+              <span class="bento-arrow-btn"><span class="shahi-arrow">&nearr;</span></span>
+            </div>
+            <div class="bento-body">
+              <h3 class="bento-title">AI-Native &amp; Code Prototypes</h3>
+              <p class="bento-desc">
+                Bridging Figma and production with Claude, Gemini APIs, HTML5 Canvas, Web Audio, and generative UI micro-tools.
+              </p>
+            </div>
+            <div class="bento-tags">
+              <span class="bento-tag pop">GenAI</span>
+              <span class="bento-tag">Canvas</span>
+              <span class="bento-tag">Web Audio</span>
+              <span class="bento-tag">Micro-tools</span>
+            </div>
           </div>
-          <div class="stat-box">
-            <span class="stat-number">AI</span>
-            <span class="stat-label">Emerging Tech</span>
+          <div class="bento-footer">
+            <span class="bento-link-text">Explore interactive lab <span class="shahi-arrow">&rarr;</span></span>
+            <span class="bento-tag">[P] Lab</span>
           </div>
-        </div>
+        </a>
+
+        <!-- Bento 3: Curated Resources / Books (Span 1) -->
+        <a href="resources.html" class="bento-card" aria-label="View curated books and resources">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-badge">Reading Shelf</span>
+              <span class="bento-arrow-btn"><span class="shahi-arrow">&nearr;</span></span>
+            </div>
+            <div class="bento-body">
+              <h3 class="bento-title">12+ Curated Books</h3>
+              <p class="bento-desc">
+                Handpicked texts on systems design, typography, cognitive psychology, and software architecture with personal takeaways.
+              </p>
+            </div>
+            <div class="bento-tags">
+              <span class="bento-tag pop">12 Books</span>
+              <span class="bento-tag">Takeaways</span>
+              <span class="bento-tag">Amazon Links</span>
+            </div>
+          </div>
+          <div class="bento-footer">
+            <span class="bento-link-text">Browse recommended reads <span class="shahi-arrow">&rarr;</span></span>
+            <span class="bento-tag">[B] Books</span>
+          </div>
+        </a>
+
+        <!-- Bento 4: Philosophy & Architecture (Span 1) -->
+        <a href="projects.html" class="bento-card" aria-label="View projects and architecture">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-badge">Philosophy</span>
+              <span class="bento-arrow-btn"><span class="shahi-arrow">&nearr;</span></span>
+            </div>
+            <div class="bento-body">
+              <h3 class="bento-title">Understand &middot; Connect &middot; Ship</h3>
+              <p class="bento-desc">
+                Deep understanding of business goals and user workflows. Scalable design token architectures that engineers love shipping.
+              </p>
+            </div>
+            <div class="bento-tags">
+              <span class="bento-tag pop">Tokens</span>
+              <span class="bento-tag">Figma</span>
+              <span class="bento-tag">WCAG AAA</span>
+            </div>
+          </div>
+          <div class="bento-footer">
+            <span class="bento-link-text">View project case studies <span class="shahi-arrow">&rarr;</span></span>
+            <span class="bento-tag">[W] Work</span>
+          </div>
+        </a>
+
+        <!-- Bento 5: Location & Availability (Span 1) -->
+        <a href="contact.html" class="bento-card" aria-label="Contact Sumit Rai">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-badge accent-badge"><span class="live-dot"></span> Available</span>
+              <span class="bento-arrow-btn"><span class="shahi-arrow">&nearr;</span></span>
+            </div>
+            <div class="bento-body">
+              <h3 class="bento-title">New Delhi, India</h3>
+              <p class="bento-desc">
+                Available for select senior product design consulting, design systems advisory, and high-impact full-time roles worldwide.
+              </p>
+            </div>
+            <div class="bento-tags">
+              <span class="bento-tag pop">IST (UTC +5:30)</span>
+              <span class="bento-tag">Remote</span>
+              <span class="bento-tag">Hybrid</span>
+            </div>
+          </div>
+          <div class="bento-footer">
+            <span class="bento-link-text">Start a conversation <span class="shahi-arrow">&rarr;</span></span>
+            <span class="bento-tag">[C] Contact</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -448,239 +379,343 @@
     <section class="experience-section">
       <div class="section-header-row">
         <div class="section-title-wrap">
+          <span class="eyebrow"><span class="dot"></span> Professional Journey</span>
           <h2>Selected Experience</h2>
+          <p>Roles and founding product work across high-impact design studios and tech teams.</p>
         </div>
-        <a href="resume.html" class="section-header-link">View Full Resume &rarr;</a>
+        <a href="resume.html" class="section-header-link">View Full Resume <span class="btn-key">[R]</span> <span class="shahi-arrow">&nearr;</span></a>
       </div>
 
-      <div class="experience-flat-list">
-        <div class="exp-flat-item">
-          <div class="exp-flat-header">
-            <div class="exp-flat-main">
-              <span class="exp-company">Raimage Design</span>
-              <span class="exp-sep">&middot;</span>
-              <span class="exp-role">Founding Designer</span>
-            </div>
-            <span class="exp-period">2025 &mdash; Present</span>
+      <div class="timeline-list">
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Raimage Design</span>
+            <span class="comp-role">Founding Designer</span>
           </div>
-          <p class="exp-desc">Independent Design Studio. Leading end-to-end product design, brand systems, and AI-native interface explorations for high-growth ventures.</p>
+          <div class="timeline-details">
+            <p>Independent Design Studio. Leading end-to-end product design, brand systems, and AI-native interface explorations for high-growth ventures.</p>
+          </div>
+          <div class="timeline-period">2025 &mdash; Present</div>
         </div>
 
-        <div class="exp-flat-item">
-          <div class="exp-flat-header">
-            <div class="exp-flat-main">
-              <span class="exp-company">Edfora Infotech</span>
-              <span class="exp-sep">&middot;</span>
-              <span class="exp-role">Senior Product Designer</span>
-            </div>
-            <span class="exp-period">2023 &mdash; 2025</span>
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Edfora Infotech</span>
+            <span class="comp-role">Senior Product Designer</span>
           </div>
-          <p class="exp-desc">EdTech / FIITJEE ecosystem. Directed product design for student learning hubs, institutional dashboards, and unified component design systems.</p>
+          <div class="timeline-details">
+            <p>EdTech / FIITJEE ecosystem. Directed product design for student learning hubs, institutional dashboards, and unified component design systems.</p>
+          </div>
+          <div class="timeline-period">2023 &mdash; 2025</div>
         </div>
 
-        <div class="exp-flat-item">
-          <div class="exp-flat-header">
-            <div class="exp-flat-main">
-              <span class="exp-company">Design Matra</span>
-              <span class="exp-sep">&middot;</span>
-              <span class="exp-role">Product Designer</span>
-            </div>
-            <span class="exp-period">2021 &mdash; 2023</span>
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Design Matra</span>
+            <span class="comp-role">Product Designer</span>
           </div>
-          <p class="exp-desc">Owned UX/UI design across SaaS, FinTech, HealthTech, and E-Commerce products. Iterated core onboarding and checkout funnels.</p>
+          <div class="timeline-details">
+            <p>Owned UX/UI design across SaaS, FinTech, HealthTech, and E-Commerce products. Iterated core onboarding and checkout funnels.</p>
+          </div>
+          <div class="timeline-period">2021 &mdash; 2023</div>
         </div>
 
-        <div class="exp-flat-item">
-          <div class="exp-flat-header">
-            <div class="exp-flat-main">
-              <span class="exp-company">Kitaro Trading</span>
-              <span class="exp-sep">&middot;</span>
-              <span class="exp-role">Graphic &amp; UI Designer</span>
-            </div>
-            <span class="exp-period">2015 &mdash; 2021</span>
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Kitaro Trading</span>
+            <span class="comp-role">Graphic &amp; UI Designer</span>
           </div>
-          <p class="exp-desc">Designed brand identities, consumer interfaces, and established foundational design standards across multi-channel digital touchpoints.</p>
-        </div>
-      </div>
-
-      <!-- BRANDS SECTION -->
-      <div class="brands-wrap">
-        <div class="brands-grid-clean">
-          <div class="brand-item-clean" title="MakeMyTrip">
-            <img src="./assets/src/brands01.jpg" alt="MakeMyTrip" loading="lazy" />
+          <div class="timeline-details">
+            <p>Designed brand identities, consumer interfaces, and established foundational design standards across multi-channel digital touchpoints.</p>
           </div>
-          <div class="brand-item-clean" title="FIITJEE">
-            <img src="./assets/src/brands02.jpg" alt="FIITJEE" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="JADE">
-            <img src="./assets/src/brands03.jpg" alt="JADE" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Holy Basti">
-            <img src="./assets/src/brands04.jpg" alt="Holy Basti" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Modicare">
-            <img src="./assets/src/brands05.jpg" alt="Modicare" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="ToHelp">
-            <img src="./assets/src/brands06.jpg" alt="ToHelp" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Allied Digital">
-            <img src="./assets/src/brands07.jpg" alt="Allied Digital" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Mamily">
-            <img src="./assets/src/brands08.jpg" alt="Mamily" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Quant Legaltech">
-            <img src="./assets/src/brands09.jpg" alt="Quant Legaltech" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Navtech">
-            <img src="./assets/src/brands10.jpg" alt="Navtech" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="BJP">
-            <img src="./assets/src/brands11.jpg" alt="BJP" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Fantasy World">
-            <img src="./assets/src/brands12.jpg" alt="Fantasy World" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Young">
-            <img src="./assets/src/brands13.jpg" alt="Young" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Quayo Basket">
-            <img src="./assets/src/brands14.jpg" alt="Quayo Basket" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Fluid">
-            <img src="./assets/src/brands15.jpg" alt="Fluid" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Maxima">
-            <img src="./assets/src/brands16.jpg" alt="Maxima" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Prans">
-            <img src="./assets/src/brands17.jpg" alt="Prans" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Sonata">
-            <img src="./assets/src/brands18.jpg" alt="Sonata" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="Gecko Bold">
-            <img src="./assets/src/brands19.jpg" alt="Gecko Bold" loading="lazy" />
-          </div>
-          <div class="brand-item-clean" title="KidKidz">
-            <img src="./assets/src/brands20.jpg" alt="KidKidz" loading="lazy" />
-          </div>
-        </div>
-      </div>
-
-      <!-- TOOLS SECTION -->
-      <div class="tools-wrap">
-        <div class="tools-grid-img">
-          <div class="tool-tile" title="Figma">
-            <img src="./assets/src/tools01.jpg" alt="Figma" loading="lazy" />
-            <span class="tool-name">Figma</span>
-          </div>
-          <div class="tool-tile" title="Framer">
-            <img src="./assets/src/tools02.jpg" alt="Framer" loading="lazy" />
-            <span class="tool-name">Framer</span>
-          </div>
-          <div class="tool-tile" title="Webflow">
-            <img src="./assets/src/tools03.jpg" alt="Webflow" loading="lazy" />
-            <span class="tool-name">Webflow</span>
-          </div>
-          <div class="tool-tile" title="Arc">
-            <img src="./assets/src/tools04.jpg" alt="Arc" loading="lazy" />
-            <span class="tool-name">Arc</span>
-          </div>
-          <div class="tool-tile" title="VS Code">
-            <img src="./assets/src/tools05.jpg" alt="VS Code" loading="lazy" />
-            <span class="tool-name">VS Code</span>
-          </div>
-          <div class="tool-tile" title="Cursor">
-            <img src="./assets/src/tools06.jpg" alt="Cursor" loading="lazy" />
-            <span class="tool-name">Cursor</span>
-          </div>
-          <div class="tool-tile" title="Spline 3D">
-            <img src="./assets/src/tools07.jpg" alt="Spline 3D" loading="lazy" />
-            <span class="tool-name">Spline 3D</span>
-          </div>
-          <div class="tool-tile" title="Midjourney">
-            <img src="./assets/src/tools08.jpg" alt="Midjourney" loading="lazy" />
-            <span class="tool-name">Midjourney</span>
-          </div>
-          <div class="tool-tile" title="Notion">
-            <img src="./assets/src/tools09.jpg" alt="Notion" loading="lazy" />
-            <span class="tool-name">Notion</span>
-          </div>
-          <div class="tool-tile" title="ChatGPT">
-            <img src="./assets/src/tools10.jpg" alt="ChatGPT" loading="lazy" />
-            <span class="tool-name">ChatGPT</span>
-          </div>
-          <div class="tool-tile" title="Bolt.new">
-            <img src="./assets/src/tools11.jpg" alt="Bolt.new" loading="lazy" />
-            <span class="tool-name">Bolt.new</span>
-          </div>
-          <div class="tool-tile" title="GitHub">
-            <img src="./assets/src/tools12.jpg" alt="GitHub" loading="lazy" />
-            <span class="tool-name">GitHub</span>
-          </div>
-          <div class="tool-tile" title="Illustrator">
-            <img src="./assets/src/tools13.jpg" alt="Illustrator" loading="lazy" />
-            <span class="tool-name">Illustrator</span>
-          </div>
-          <div class="tool-tile" title="Photoshop">
-            <img src="./assets/src/tools14.jpg" alt="Photoshop" loading="lazy" />
-            <span class="tool-name">Photoshop</span>
-          </div>
-          <div class="tool-tile" title="InDesign">
-            <img src="./assets/src/tools15.jpg" alt="InDesign" loading="lazy" />
-            <span class="tool-name">InDesign</span>
-          </div>
-          <div class="tool-tile" title="Slack">
-            <img src="./assets/src/tools16.jpg" alt="Slack" loading="lazy" />
-            <span class="tool-name">Slack</span>
-          </div>
-          <div class="tool-tile" title="Jira">
-            <img src="./assets/src/tools17.jpg" alt="Jira" loading="lazy" />
-            <span class="tool-name">Jira</span>
-          </div>
-          <div class="tool-tile" title="Linear">
-            <img src="./assets/src/tools18.jpg" alt="Linear" loading="lazy" />
-            <span class="tool-name">Linear</span>
-          </div>
+          <div class="timeline-period">2015 &mdash; 2021</div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 06 — CONTACT CTA -->
+    <!-- SECTION 06 — BRANDS SECTION (CLEAN INDEPENDENT CONTAINER, ZERO DUPLICATE BORDERS) -->
+    <section class="brands-section">
+      <div class="section-header-row">
+        <div class="section-title-wrap">
+          <span class="eyebrow"><span class="dot"></span> Client &amp; Brand Partners</span>
+          <h2>Brands I've Helped Shape</h2>
+          <p>Selected ventures, institutions, and brand ecosystems shaped across product and visual design.</p>
+        </div>
+      </div>
+      <div class="brands-wrap">
+        <div class="brands-grid-clean">
+          
+        <div class="brand-item-clean" title="MakeMyTrip">
+          <img src="./assets/src/brands01.jpg" alt="MakeMyTrip" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="FIITJEE">
+          <img src="./assets/src/brands02.jpg" alt="FIITJEE" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="JADE">
+          <img src="./assets/src/brands03.jpg" alt="JADE" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Holy Basti">
+          <img src="./assets/src/brands04.jpg" alt="Holy Basti" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Modicare">
+          <img src="./assets/src/brands05.jpg" alt="Modicare" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="ToHelp">
+          <img src="./assets/src/brands06.jpg" alt="ToHelp" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Allied Digital">
+          <img src="./assets/src/brands07.jpg" alt="Allied Digital" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Mamily">
+          <img src="./assets/src/brands08.jpg" alt="Mamily" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Quant Legaltech">
+          <img src="./assets/src/brands09.jpg" alt="Quant Legaltech" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Navtech">
+          <img src="./assets/src/brands10.jpg" alt="Navtech" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="BJP">
+          <img src="./assets/src/brands11.jpg" alt="BJP" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Fantasy World">
+          <img src="./assets/src/brands12.jpg" alt="Fantasy World" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Young">
+          <img src="./assets/src/brands13.jpg" alt="Young" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Quayo Basket">
+          <img src="./assets/src/brands14.jpg" alt="Quayo Basket" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Fluid">
+          <img src="./assets/src/brands15.jpg" alt="Fluid" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Maxima">
+          <img src="./assets/src/brands16.jpg" alt="Maxima" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Prans">
+          <img src="./assets/src/brands17.jpg" alt="Prans" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Sonata">
+          <img src="./assets/src/brands18.jpg" alt="Sonata" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="Gecko Bold">
+          <img src="./assets/src/brands19.jpg" alt="Gecko Bold" loading="lazy" />
+        </div>
+
+        <div class="brand-item-clean" title="KidKidz">
+          <img src="./assets/src/brands20.jpg" alt="KidKidz" loading="lazy" />
+        </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 07 — TOOLKIT & ENVIRONMENT -->
+    <section class="tools-section">
+      <div class="section-header-row">
+        <div class="section-title-wrap">
+          <span class="eyebrow"><span class="dot"></span> Toolkit &amp; Environment</span>
+          <h2>Tools I Use to Think, Design &amp; Build</h2>
+          <p>Everyday software, platforms, and AI workflows powering high-velocity product delivery.</p>
+        </div>
+      </div>
+      <div class="tools-wrap">
+        <div class="tools-grid-img">
+          
+        <div class="tool-tile" title="Figma">
+          <img src="./assets/src/tools01.jpg" alt="Figma" loading="lazy" />
+          <span class="tool-name">Figma</span>
+        </div>
+
+        <div class="tool-tile" title="Framer">
+          <img src="./assets/src/tools02.jpg" alt="Framer" loading="lazy" />
+          <span class="tool-name">Framer</span>
+        </div>
+
+        <div class="tool-tile" title="Webflow">
+          <img src="./assets/src/tools03.jpg" alt="Webflow" loading="lazy" />
+          <span class="tool-name">Webflow</span>
+        </div>
+
+        <div class="tool-tile" title="Arc">
+          <img src="./assets/src/tools04.jpg" alt="Arc" loading="lazy" />
+          <span class="tool-name">Arc</span>
+        </div>
+
+        <div class="tool-tile" title="VS Code">
+          <img src="./assets/src/tools05.jpg" alt="VS Code" loading="lazy" />
+          <span class="tool-name">VS Code</span>
+        </div>
+
+        <div class="tool-tile" title="Cursor">
+          <img src="./assets/src/tools06.jpg" alt="Cursor" loading="lazy" />
+          <span class="tool-name">Cursor</span>
+        </div>
+
+        <div class="tool-tile" title="Spline 3D">
+          <img src="./assets/src/tools07.jpg" alt="Spline 3D" loading="lazy" />
+          <span class="tool-name">Spline 3D</span>
+        </div>
+
+        <div class="tool-tile" title="Midjourney">
+          <img src="./assets/src/tools08.jpg" alt="Midjourney" loading="lazy" />
+          <span class="tool-name">Midjourney</span>
+        </div>
+
+        <div class="tool-tile" title="Notion">
+          <img src="./assets/src/tools09.jpg" alt="Notion" loading="lazy" />
+          <span class="tool-name">Notion</span>
+        </div>
+
+        <div class="tool-tile" title="ChatGPT">
+          <img src="./assets/src/tools10.jpg" alt="ChatGPT" loading="lazy" />
+          <span class="tool-name">ChatGPT</span>
+        </div>
+
+        <div class="tool-tile" title="Bolt.new">
+          <img src="./assets/src/tools11.jpg" alt="Bolt.new" loading="lazy" />
+          <span class="tool-name">Bolt.new</span>
+        </div>
+
+        <div class="tool-tile" title="GitHub">
+          <img src="./assets/src/tools12.jpg" alt="GitHub" loading="lazy" />
+          <span class="tool-name">GitHub</span>
+        </div>
+
+        <div class="tool-tile" title="Illustrator">
+          <img src="./assets/src/tools13.jpg" alt="Illustrator" loading="lazy" />
+          <span class="tool-name">Illustrator</span>
+        </div>
+
+        <div class="tool-tile" title="Photoshop">
+          <img src="./assets/src/tools14.jpg" alt="Photoshop" loading="lazy" />
+          <span class="tool-name">Photoshop</span>
+        </div>
+
+        <div class="tool-tile" title="InDesign">
+          <img src="./assets/src/tools15.jpg" alt="InDesign" loading="lazy" />
+          <span class="tool-name">InDesign</span>
+        </div>
+
+        <div class="tool-tile" title="Slack">
+          <img src="./assets/src/tools16.jpg" alt="Slack" loading="lazy" />
+          <span class="tool-name">Slack</span>
+        </div>
+
+        <div class="tool-tile" title="Jira">
+          <img src="./assets/src/tools17.jpg" alt="Jira" loading="lazy" />
+          <span class="tool-name">Jira</span>
+        </div>
+
+        <div class="tool-tile" title="Linear">
+          <img src="./assets/src/tools18.jpg" alt="Linear" loading="lazy" />
+          <span class="tool-name">Linear</span>
+        </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 08 — CONTACT CTA -->
     <section class="contact-cta-section">
+      <span class="eyebrow"><span class="dot"></span> Let's Connect</span>
       <h2>Have something interesting in mind?</h2>
       <p>I'm always open to meaningful conversations, interesting ideas and opportunities to build something thoughtful.</p>
       <div class="cta-btns">
-        <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">sumitraiworks@gmail.com</a>
-        <a href="contact.html" class="btn btn-primary">Get in Touch &rarr;</a>
+        <a href="contact.html" class="btn btn-primary">Get in Touch <span class="btn-key">[C]</span> &rarr;</a>
+        <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Sumit</a>
       </div>
     </section>
 
   </div>
 </main>
 
-<footer class="minimal-footer">
+<footer class="site-footer" id="siteFooter">
   <div class="footer-inner">
-    <div class="footer-email-line">
-      <a href="mailto:sumitraiworks@gmail.com" class="plain-email-link">sumitraiworks@gmail.com</a>
-    </div>
-
-    <div class="footer-social-line">
-      <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn</a>
-      <span class="sep">&middot;</span>
-      <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
-      <span class="sep">&middot;</span>
-      <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram</a>
-    </div>
-
-    <div class="footer-location-line">
+    
+    <!-- Top status bar -->
+    <div class="footer-top-row">
+      <div class="footer-status-tag">
+        <span class="live-dot"></span>
+        <span>Available for select product leadership &amp; design advisory</span>
+      </div>
       <div class="footer-clock-box" id="delhiClockWrap">
         <span class="live-dot"></span>
         <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
       </div>
     </div>
+
+    <!-- Main hero call to action -->
+    <div class="footer-hero-cta">
+      <h2 class="footer-tagline">Let's build something thoughtful together.</h2>
+      <p class="footer-sublead">Always open to high-impact products, early-stage ventures, and ambitious design challenges.</p>
+      
+      <div class="footer-email-box">
+        <div class="footer-email-pill">
+          <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
+            <span class="email-text">sumitraiworks@gmail.com</span>
+            <span class="email-arrow">&nearr;</span>
+          </a>
+          <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address" title="Copy email address">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="copy-toast">Copied!</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom navigation and meta -->
+    <div class="footer-bottom-nav">
+      <div class="footer-brand-side">
+        <span class="footer-mark">SR</span>
+        <span class="footer-name">Sumit Rai</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-exp-text">8+ years product design &middot; 12+ years design craft</span>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="flinks-nav">
+          <a href="projects.html">Work <span class="nav-key">[W]</span></a>
+          <a href="about.html">About <span class="nav-key">[A]</span></a>
+          <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
+          <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
+          <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
+          <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
+        </div>
+
+        <div class="flinks-social">
+          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram <span class="shahi-arrow">&nearr;</span></a>
+          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF <span class="shahi-arrow">&darr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-credit-row">
+      <span>&copy; 2026 Sumit Rai. All rights reserved.</span>
+      <span>Designed with restraint &middot; Built for craft</span>
+    </div>
+
   </div>
 </footer>
 
@@ -721,6 +756,13 @@
         </span>
         <span class="cmd-shortcut">R</span>
       </a>
+      <a href="resources.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+          <span>Curated Resources (Books &amp; Tools)</span>
+        </span>
+        <span class="cmd-shortcut">B</span>
+      </a>
       <a href="playground.html" class="cmd-item">
         <span class="item-left">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
@@ -759,9 +801,9 @@
     </div>
   </div>
 </div>
-
 <script>
-// ---- Global Audio, Clock, Theme, Keyboard Shortcuts & Command Palette ----
+
+// ---- Global Audio, Clock, Theme & Command Palette Management ----
 (function(){
   // 1. Web Audio Synthesizer Haptic Engine
   const AudioEngine = (function(){
@@ -804,9 +846,27 @@
     return { playTick, toggle, isEnabled };
   })();
 
-  // Play micro click on interactive clicks
+  // Update Sound Button State
+  const soundBtn = document.getElementById('soundToggleBtn');
+  const soundIcon = document.getElementById('soundIcon');
+  const soundLabel = document.getElementById('soundLabel');
+  function updateSoundUI(){
+    const on = AudioEngine.isEnabled();
+    if (soundIcon) soundIcon.textContent = on ? '🔊' : '🔇';
+    if (soundLabel) soundLabel.textContent = on ? 'Sound' : 'Muted';
+    if (soundBtn) soundBtn.classList.toggle('active', on);
+  }
+  updateSoundUI();
+  if (soundBtn) {
+    soundBtn.addEventListener('click', function(){
+      AudioEngine.toggle();
+      updateSoundUI();
+    });
+  }
+
+  // Play micro click on link / button clicks
   document.addEventListener('click', function(e){
-    if (e.target.closest('a, button, .proj-card, .tool-tile')) {
+    if (e.target.closest('a, button, .proj-card, .tool-tile, .resource-card, .pg-card-rich')) {
       AudioEngine.playTick(780, 0.028);
     }
   });
@@ -814,8 +874,8 @@
   // 2. Real-time New Delhi (IST) Clock
   function updateDelhiClock(){
     const textEl = document.getElementById('liveClockText');
-    const pageVal = document.getElementById('delhiLiveClockVal');
     const now = new Date();
+    // New Delhi is UTC +5:30
     const istOffset = 5.5 * 60 * 60 * 1000;
     const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
     const delhiDate = new Date(utc + istOffset);
@@ -828,7 +888,6 @@
 
     const formatted = `${h}:${m}:${s} ${ampm} IST`;
     if (textEl) textEl.textContent = formatted;
-    if (pageVal) pageVal.textContent = formatted;
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
@@ -848,27 +907,50 @@
   }
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 
-  // 4. Scroll Header Auto-Hide
+  // 4. Scroll Header — add scrolled class for backdrop effect
   const header = document.getElementById('siteHeader');
-  let lastY = window.scrollY, ticking = false;
   window.addEventListener('scroll', function(){
-    if (!ticking) {
-      window.requestAnimationFrame(function(){
-        const curY = window.scrollY;
-        if (header && curY > 80 && curY > lastY) {
-          header.classList.add('nav-hidden');
-        } else if (header) {
-          header.classList.remove('nav-hidden');
-        }
-        lastY = curY;
-        ticking = false;
-      });
-      ticking = true;
+    if (header) {
+      header.classList.toggle('nav-scrolled', window.scrollY > 40);
     }
   }, { passive: true });
 
-  // 5. Command + K Palette
+  // 5. Mobile Nav Toggle (hamburger)
+  const navMenuToggle = document.getElementById('navMenuToggle');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  if (navMenuToggle && mobileNavDrawer) {
+    navMenuToggle.addEventListener('click', function(){
+      const isOpen = mobileNavDrawer.classList.toggle('open');
+      navMenuToggle.setAttribute('aria-expanded', isOpen);
+      mobileNavDrawer.setAttribute('aria-hidden', !isOpen);
+      navMenuToggle.classList.toggle('open', isOpen);
+    });
+    // Close drawer on nav link click
+    mobileNavDrawer.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobileNavDrawer.classList.remove('open');
+        navMenuToggle.setAttribute('aria-expanded', 'false');
+        navMenuToggle.classList.remove('open');
+      });
+    });
+  }
+
+  // 6. Copy Email with Toast & Audio
+  const copyBtn = document.getElementById('copyEmailBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(function(){
+        copyBtn.classList.add('copied');
+        AudioEngine.playTick(1020, 0.06);
+        setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
+      });
+    });
+  }
+
+  // 7. Command + K Palette
   const cmdModal = document.getElementById('cmdModal');
+  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
   const cmdInput = document.getElementById('cmdInput');
   const cmdList = document.getElementById('cmdList');
   const cmdThemeBtn = document.getElementById('cmdToggleTheme');
@@ -889,6 +971,7 @@
     cmdModal.classList.remove('active');
   }
 
+  if (cmdTrigger) cmdTrigger.addEventListener('click', openCmd);
   if (cmdModal) {
     cmdModal.addEventListener('click', function(e){
       if (e.target === cmdModal) closeCmd();
@@ -918,9 +1001,8 @@
     });
   }
 
-  // 6. Global Keyboard Shortcuts Navigation (inspired by shahimim.com)
+  // 8. Global Keyboard Shortcuts Navigation (inspired by shahimim.com)
   document.addEventListener('keydown', function(e){
-    // If Cmd+K is pressed
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
       if (cmdModal && cmdModal.classList.contains('active')) {
@@ -931,7 +1013,6 @@
       return;
     }
 
-    // If modal is active, ESC closes it
     if (cmdModal && cmdModal.classList.contains('active')) {
       if (e.key === 'Escape') {
         e.preventDefault();
@@ -959,6 +1040,9 @@
     } else if (key === 'r') {
       AudioEngine.playTick(820, 0.03);
       window.location.href = 'resume.html';
+    } else if (key === 'b') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resources.html';
     } else if (key === 'p') {
       AudioEngine.playTick(820, 0.03);
       window.location.href = 'playground.html';
@@ -971,6 +1055,7 @@
     }
   });
 })();
+
 </script>
 </body>
 </html>

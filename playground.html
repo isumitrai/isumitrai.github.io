@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Playground & Studio Lab — Sumit Rai</title>
-  <meta name="description" content="Sumit Rai (Sumi) — Senior Product Designer &amp; AI Builder with 7+ years of product design and 10+ years of overall design experience across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <title>Playground (Lab) — Sumit Rai</title>
+  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 8+ years of product design and 12+ years of overall design craft across SaaS, AI, EdTech, FinTech, and consumer platforms." />
   <meta name="author" content="Sumit Rai" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,27 +22,45 @@
       </a>
     </div>
 
-    <nav class="nav-tabs" aria-label="Main Navigation">
-      <a href="projects.html" class="">Work</a>
-      <a href="about.html" class="">About</a>
-      <a href="resume.html" class="">Resume</a>
-      <a href="playground.html" class="active">Playground</a>
-      <a href="contact.html" class="">Contact</a>
+    <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
+      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="active">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
     </nav>
 
     <div class="nav-right-actions">
       <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
         <span id="soundIcon">🔊</span>
-        <span id="soundLabel">Sound</span>
+        <span id="soundLabel" class="sound-label-text">Sound</span>
       </button>
-      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick search and jump (Cmd+K)" title="Quick Command Palette (Cmd+K)">
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)" title="Quick Command Palette (Cmd+K)">
         <kbd>⌘K</kbd>
+      </button>
+      <button class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="">Home <span class="nav-key">[Esc]</span></a>
+      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="active">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+    </nav>
+  </div>
 </header>
 
-<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode">
+<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
   <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
   <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 </button>
@@ -51,25 +69,25 @@
   <div class="wrap-wide">
     
     <div class="pg-hero-block">
-      <span class="eyebrow"><span class="dot"></span> Raimage Design Studio Lab</span>
-      <h1>Playground &amp; Creative Lab</h1>
+      <span class="eyebrow"><span class="dot"></span> Raimage Design Lab</span>
+      <h1>Playground &amp; Explorations</h1>
       <p>
-        Visual explorations, experimental tools, fine art prints, and creative side concepts shaped outside client briefs. Inspired by the active studio pipelines at <a href="https://www.raimagedesign.com" target="_blank" rel="noopener" style="text-decoration:underline; font-weight:600;">Raimage Design</a>.
+        Uncommissioned ideas, industrial design concepts, fine art prints, and AI interface experiments from Raimage Design Studio.
       </p>
     </div>
 
-    <!-- Filter Tabs -->
+    <!-- Filter Buttons -->
     <div class="pg-filter-row" id="pgFilterRow">
-      <button class="filter-btn active" data-filter="all">All Experiments (8)</button>
-      <button class="filter-btn" data-filter="tools & ui concepts">Tools &amp; UI Concepts</button>
-      <button class="filter-btn" data-filter="fine art & prints">Fine Art &amp; Prints</button>
-      <button class="filter-btn" data-filter="industrial & 3d">Industrial &amp; 3D</button>
-      <button class="filter-btn" data-filter="brand & packaging">Brand &amp; Packaging</button>
+      <button class="filter-btn active" data-filter="all">All Experiments (6)</button>
+      <button class="filter-btn" data-filter="Tools &amp; UI Concepts">Tools &amp; UI Concepts</button>
+      <button class="filter-btn" data-filter="Industrial &amp; 3D">Industrial &amp; 3D</button>
+      <button class="filter-btn" data-filter="Brand &amp; Packaging">Brand &amp; Packaging</button>
+      <button class="filter-btn" data-filter="Fine Art &amp; Prints">Fine Art &amp; Prints</button>
     </div>
 
     <div class="pg-grid-rich" id="pgGrid">
       
-      <article class="pg-card-rich" data-category="tools & ui concepts" data-title="Stacklet AI Dev Projects" data-desc="AI-native developer terminal HUD, interactive command palettes, and dark-mode coding canvas." data-img="./assets/pg_002.jpg" data-tag="AI · Developer Tool" role="button" tabindex="0">
+      <article class="pg-card-rich" data-category="Tools & UI Concepts">
         <div class="pg-preview">
           <img src="./assets/pg_002.jpg" alt="Stacklet AI Dev Projects" loading="lazy" />
         </div>
@@ -81,13 +99,13 @@
           <h3>Stacklet AI Dev Projects</h3>
           <p>AI-native developer terminal HUD, interactive command palettes, and dark-mode coding canvas.</p>
           <div class="pg-foot">
-            <span>Inspect Exploration &rarr;</span>
-            <span style="font-size:11px; opacity:0.7;">Raimage Lab</span>
+            <span>Raimage Studio Lab</span>
+            <span>&nearr;</span>
           </div>
         </div>
       </article>
 
-      <article class="pg-card-rich" data-category="industrial & 3d" data-title="Koolkidz Watches Design" data-desc="Playful children&#x27;s digital timepiece, tactile silicone strap explorations, and graphic watch faces." data-img="./assets/pg_001.jpg" data-tag="Product · Hardware" role="button" tabindex="0">
+      <article class="pg-card-rich" data-category="Industrial & 3D">
         <div class="pg-preview">
           <img src="./assets/pg_001.jpg" alt="Koolkidz Watches Design" loading="lazy" />
         </div>
@@ -97,15 +115,15 @@
             <span class="pg-year">2025</span>
           </div>
           <h3>Koolkidz Watches Design</h3>
-          <p>Playful children&#x27;s digital timepiece, tactile silicone strap explorations, and graphic watch faces.</p>
+          <p>Playful children's digital timepiece, tactile silicone strap explorations, and graphic watch faces.</p>
           <div class="pg-foot">
-            <span>Inspect Exploration &rarr;</span>
-            <span style="font-size:11px; opacity:0.7;">Raimage Lab</span>
+            <span>Raimage Studio Lab</span>
+            <span>&nearr;</span>
           </div>
         </div>
       </article>
 
-      <article class="pg-card-rich" data-category="industrial & 3d" data-title="Radio Concept Hardware" data-desc="Tactile retro-futuristic audio device concept with mechanical switches and digital frequency display." data-img="./assets/pg_004.jpg" data-tag="Hardware · Audio" role="button" tabindex="0">
+      <article class="pg-card-rich" data-category="Industrial & 3D">
         <div class="pg-preview">
           <img src="./assets/pg_004.jpg" alt="Radio Concept Hardware" loading="lazy" />
         </div>
@@ -117,13 +135,13 @@
           <h3>Radio Concept Hardware</h3>
           <p>Tactile retro-futuristic audio device concept with mechanical switches and digital frequency display.</p>
           <div class="pg-foot">
-            <span>Inspect Exploration &rarr;</span>
-            <span style="font-size:11px; opacity:0.7;">Raimage Lab</span>
+            <span>Raimage Studio Lab</span>
+            <span>&nearr;</span>
           </div>
         </div>
       </article>
 
-      <article class="pg-card-rich" data-category="brand & packaging" data-title="Chhota Bheem Branding" data-desc="Commercial merchandise branding, character packaging system, and retail promotional graphics." data-img="./assets/pg_003.jpg" data-tag="Packaging · Character" role="button" tabindex="0">
+      <article class="pg-card-rich" data-category="Brand & Packaging">
         <div class="pg-preview">
           <img src="./assets/pg_003.jpg" alt="Chhota Bheem Branding" loading="lazy" />
         </div>
@@ -135,13 +153,13 @@
           <h3>Chhota Bheem Branding</h3>
           <p>Commercial merchandise branding, character packaging system, and retail promotional graphics.</p>
           <div class="pg-foot">
-            <span>Inspect Exploration &rarr;</span>
-            <span style="font-size:11px; opacity:0.7;">Raimage Lab</span>
+            <span>Raimage Studio Lab</span>
+            <span>&nearr;</span>
           </div>
         </div>
       </article>
 
-      <article class="pg-card-rich" data-category="fine art & prints" data-title="A Walk to Remember — Art Print" data-desc="Limited digital print study exploring atmospheric lighting, warm monochrome tones, and visual silence. Featured on Raimage Design." data-img="./assets/img_01.jpg" data-tag="Fine Art · Digital Print" role="button" tabindex="0">
+      <article class="pg-card-rich" data-category="Fine Art & Prints">
         <div class="pg-preview">
           <img src="./assets/img_01.jpg" alt="A Walk to Remember — Art Print" loading="lazy" />
         </div>
@@ -153,13 +171,13 @@
           <h3>A Walk to Remember — Art Print</h3>
           <p>Limited digital print study exploring atmospheric lighting, warm monochrome tones, and visual silence. Featured on Raimage Design.</p>
           <div class="pg-foot">
-            <span>Inspect Exploration &rarr;</span>
-            <span style="font-size:11px; opacity:0.7;">Raimage Lab</span>
+            <span>Raimage Studio Lab</span>
+            <span>&nearr;</span>
           </div>
         </div>
       </article>
 
-      <article class="pg-card-rich" data-category="fine art & prints" data-title="A Thousand Years — Typography Study" data-desc="Monochromatic architectural photography coupled with brutalist typographic hierarchy. Available on Raimage Studio Lab." data-img="./assets/img_03.jpg" data-tag="Editorial · Architecture" role="button" tabindex="0">
+      <article class="pg-card-rich" data-category="Fine Art & Prints">
         <div class="pg-preview">
           <img src="./assets/img_03.jpg" alt="A Thousand Years — Typography Study" loading="lazy" />
         </div>
@@ -169,107 +187,96 @@
             <span class="pg-year">2024</span>
           </div>
           <h3>A Thousand Years — Typography Study</h3>
-          <p>Monochromatic architectural photography coupled with brutalist typographic hierarchy. Available on Raimage Studio Lab.</p>
+          <p>Architectural proportions applied to editorial typography and structural layout systems.</p>
           <div class="pg-foot">
-            <span>Inspect Exploration &rarr;</span>
-            <span style="font-size:11px; opacity:0.7;">Raimage Lab</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="pg-card-rich" data-category="tools & ui concepts" data-title="Tactile Color Calibration" data-desc="Experimental design token generator and CMYK print calibration grid designed for studio pipelines." data-img="./assets/img_04.jpg" data-tag="Design Tokens · Palette" role="button" tabindex="0">
-        <div class="pg-preview">
-          <img src="./assets/img_04.jpg" alt="Tactile Color Calibration" loading="lazy" />
-        </div>
-        <div class="pg-meta-body">
-          <div class="pg-cat-row">
-            <span class="pg-tag">Design Tokens · Palette</span>
-            <span class="pg-year">2025</span>
-          </div>
-          <h3>Tactile Color Calibration</h3>
-          <p>Experimental design token generator and CMYK print calibration grid designed for studio pipelines.</p>
-          <div class="pg-foot">
-            <span>Inspect Exploration &rarr;</span>
-            <span style="font-size:11px; opacity:0.7;">Raimage Lab</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="pg-card-rich" data-category="tools & ui concepts" data-title="Generative Waveform Study" data-desc="Procedural noise patterns and audio wave visualizers explored for emerging AI sound interfaces." data-img="./assets/img_07.jpg" data-tag="Generative · Visual" role="button" tabindex="0">
-        <div class="pg-preview">
-          <img src="./assets/img_07.jpg" alt="Generative Waveform Study" loading="lazy" />
-        </div>
-        <div class="pg-meta-body">
-          <div class="pg-cat-row">
-            <span class="pg-tag">Generative · Visual</span>
-            <span class="pg-year">2025</span>
-          </div>
-          <h3>Generative Waveform Study</h3>
-          <p>Procedural noise patterns and audio wave visualizers explored for emerging AI sound interfaces.</p>
-          <div class="pg-foot">
-            <span>Inspect Exploration &rarr;</span>
-            <span style="font-size:11px; opacity:0.7;">Raimage Lab</span>
+            <span>Raimage Studio Lab</span>
+            <span>&nearr;</span>
           </div>
         </div>
       </article>
 
     </div>
+
+    <section class="contact-cta-section" style="margin-top:64px;">
+      <span class="eyebrow"><span class="dot"></span> Custom Collaborations</span>
+      <h2>Interested in bespoke visual or product explorations?</h2>
+      <p>Let's collaborate on creative technology, experimental prototypes, or industrial product design.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary">Start a Collaboration <span class="btn-key">[C]</span> &rarr;</a>
+        <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Sumit</a>
+      </div>
+    </section>
 
   </div>
 </main>
 
-<!-- Lightbox Modal for Playground Artifacts -->
-<div class="cmd-modal" id="pgModal" role="dialog" aria-modal="true" aria-label="Exploration Preview">
-  <div class="cmd-box" style="max-width:720px; padding:0; overflow:hidden;">
-    <div style="aspect-ratio:16/10; width:100%; background:var(--surface-subtle); overflow:hidden;">
-      <img id="pgModalImg" src="" alt="" style="width:100%; height:100%; object-fit:cover;" />
-    </div>
-    <div style="padding:24px 28px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-        <span class="tag-chip" id="pgModalTag" style="color:var(--accent);">Tag</span>
-        <button onclick="document.getElementById('pgModal').classList.remove('active')" style="font-size:12px; font-weight:600; color:var(--ink-soft);">&times; Close</button>
-      </div>
-      <h2 id="pgModalTitle" style="font-size:1.45rem; margin-bottom:8px;">Title</h2>
-      <p id="pgModalDesc" style="font-size:14px; line-height:1.6; color:var(--ink-soft);">Description</p>
-    </div>
-  </div>
-</div>
-
-<footer>
+<footer class="site-footer" id="siteFooter">
   <div class="footer-inner">
-    <div class="footer-status-pill">
-      <span class="dot"></span>
-      <span>Open to Freelance &amp; Product Collaborations</span>
-    </div>
-
-    <h2 class="footer-tagline">
-      Let's build something together.
-    </h2>
-
-    <div class="footer-email-box">
-      <div class="footer-email-pill">
-        <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
-          <span class="email-text">sumitraiworks@gmail.com</span>
-        </a>
-        <button class="copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email address">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span class="copy-toast">Copied!</span>
-        </button>
+    
+    <!-- Top status bar -->
+    <div class="footer-top-row">
+      <div class="footer-status-tag">
+        <span class="live-dot"></span>
+        <span>Available for select product leadership &amp; design advisory</span>
       </div>
-    </div>
-
-    <div class="footer-bottom-row">
       <div class="footer-clock-box" id="delhiClockWrap">
         <span class="live-dot"></span>
         <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
       </div>
-      <div class="flinks">
-        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
-        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram</a>
-        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Main hero call to action -->
+    <div class="footer-hero-cta">
+      <h2 class="footer-tagline">Let's build something thoughtful together.</h2>
+      <p class="footer-sublead">Always open to high-impact products, early-stage ventures, and ambitious design challenges.</p>
+      
+      <div class="footer-email-box">
+        <div class="footer-email-pill">
+          <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
+            <span class="email-text">sumitraiworks@gmail.com</span>
+            <span class="email-arrow">&nearr;</span>
+          </a>
+          <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address" title="Copy email address">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="copy-toast">Copied!</span>
+          </button>
+        </div>
       </div>
     </div>
+
+    <!-- Bottom navigation and meta -->
+    <div class="footer-bottom-nav">
+      <div class="footer-brand-side">
+        <span class="footer-mark">SR</span>
+        <span class="footer-name">Sumit Rai</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-exp-text">8+ years product design &middot; 12+ years design craft</span>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="flinks-nav">
+          <a href="projects.html">Work <span class="nav-key">[W]</span></a>
+          <a href="about.html">About <span class="nav-key">[A]</span></a>
+          <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
+          <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
+          <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
+          <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
+        </div>
+
+        <div class="flinks-social">
+          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram <span class="shahi-arrow">&nearr;</span></a>
+          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF <span class="shahi-arrow">&darr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-credit-row">
+      <span>&copy; 2026 Sumit Rai. All rights reserved.</span>
+      <span>Designed with restraint &middot; Built for craft</span>
+    </div>
+
   </div>
 </footer>
 
@@ -309,6 +316,13 @@
           <span>Resume &amp; Credentials</span>
         </span>
         <span class="cmd-shortcut">R</span>
+      </a>
+      <a href="resources.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+          <span>Curated Resources (Books &amp; Tools)</span>
+        </span>
+        <span class="cmd-shortcut">B</span>
       </a>
       <a href="playground.html" class="cmd-item">
         <span class="item-left">
@@ -413,7 +427,7 @@
 
   // Play micro click on link / button clicks
   document.addEventListener('click', function(e){
-    if (e.target.closest('a, button, .proj-card, .tool-tile, .pg-card-rich')) {
+    if (e.target.closest('a, button, .proj-card, .tool-tile, .resource-card, .pg-card-rich')) {
       AudioEngine.playTick(780, 0.028);
     }
   });
@@ -421,7 +435,6 @@
   // 2. Real-time New Delhi (IST) Clock
   function updateDelhiClock(){
     const textEl = document.getElementById('liveClockText');
-    const pageVal = document.getElementById('delhiLiveClockVal');
     const now = new Date();
     // New Delhi is UTC +5:30
     const istOffset = 5.5 * 60 * 60 * 1000;
@@ -436,7 +449,6 @@
 
     const formatted = `${h}:${m}:${s} ${ampm} IST`;
     if (textEl) textEl.textContent = formatted;
-    if (pageVal) pageVal.textContent = formatted;
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
@@ -456,26 +468,35 @@
   }
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 
-  // 4. Scroll Header Auto-Hide
+  // 4. Scroll Header — add scrolled class for backdrop effect
   const header = document.getElementById('siteHeader');
-  let lastY = window.scrollY, ticking = false;
   window.addEventListener('scroll', function(){
-    if (!ticking) {
-      window.requestAnimationFrame(function(){
-        const curY = window.scrollY;
-        if (header && curY > 80 && curY > lastY) {
-          header.classList.add('nav-hidden');
-        } else if (header) {
-          header.classList.remove('nav-hidden');
-        }
-        lastY = curY;
-        ticking = false;
-      });
-      ticking = true;
+    if (header) {
+      header.classList.toggle('nav-scrolled', window.scrollY > 40);
     }
   }, { passive: true });
 
-  // 5. Copy Email
+  // 5. Mobile Nav Toggle (hamburger)
+  const navMenuToggle = document.getElementById('navMenuToggle');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  if (navMenuToggle && mobileNavDrawer) {
+    navMenuToggle.addEventListener('click', function(){
+      const isOpen = mobileNavDrawer.classList.toggle('open');
+      navMenuToggle.setAttribute('aria-expanded', isOpen);
+      mobileNavDrawer.setAttribute('aria-hidden', !isOpen);
+      navMenuToggle.classList.toggle('open', isOpen);
+    });
+    // Close drawer on nav link click
+    mobileNavDrawer.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobileNavDrawer.classList.remove('open');
+        navMenuToggle.setAttribute('aria-expanded', 'false');
+        navMenuToggle.classList.remove('open');
+      });
+    });
+  }
+
+  // 6. Copy Email with Toast & Audio
   const copyBtn = document.getElementById('copyEmailBtn');
   if (copyBtn) {
     copyBtn.addEventListener('click', function(e){
@@ -485,19 +506,6 @@
         AudioEngine.playTick(1020, 0.06);
         setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
       });
-    });
-  }
-
-  // 6. Interactive Nickname Cycle (Debi Style)
-  const nickBtn = document.getElementById('nicknameToggle');
-  if (nickBtn) {
-    const nicks = ['Sumi', 'Sumo'];
-    let idx = 0;
-    nickBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      idx = (idx + 1) % nicks.length;
-      nickBtn.textContent = nicks[idx];
-      AudioEngine.playTick(880 + (idx * 120), 0.04);
     });
   }
 
@@ -531,19 +539,6 @@
     });
   }
 
-  document.addEventListener('keydown', function(e){
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      if (cmdModal && cmdModal.classList.contains('active')) {
-        closeCmd();
-      } else {
-        openCmd();
-      }
-    } else if (e.key === 'Escape' && cmdModal && cmdModal.classList.contains('active')) {
-      closeCmd();
-    }
-  });
-
   if (cmdThemeBtn) {
     cmdThemeBtn.addEventListener('click', function(){
       toggleTheme();
@@ -566,55 +561,81 @@
       filterCmd(e.target.value);
     });
   }
+
+  // 8. Global Keyboard Shortcuts Navigation (inspired by shahimim.com)
+  document.addEventListener('keydown', function(e){
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) {
+        closeCmd();
+      } else {
+        openCmd();
+      }
+      return;
+    }
+
+    if (cmdModal && cmdModal.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeCmd();
+      }
+      return;
+    }
+
+    // Do not trigger navigation when typing in inputs or holding modifier keys
+    const tag = (e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) {
+      return;
+    }
+    if (e.metaKey || e.ctrlKey || e.altKey) {
+      return;
+    }
+
+    const key = e.key.toLowerCase();
+    if (key === 'w') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'projects.html';
+    } else if (key === 'a') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'about.html';
+    } else if (key === 'r') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resume.html';
+    } else if (key === 'b') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resources.html';
+    } else if (key === 'p') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'playground.html';
+    } else if (key === 'c') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'contact.html';
+    } else if (e.key === 'Escape') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'index.html';
+    }
+  });
 })();
 
 
-  // Filter Playground Items
-  const filterBtns = document.querySelectorAll('#pgFilterRow .filter-btn');
-  const cards = document.querySelectorAll('.pg-card-rich');
+  const pgFilterBtns = document.querySelectorAll('#pgFilterRow .filter-btn');
+  const pgCards = document.querySelectorAll('#pgGrid .pg-card-rich');
 
-  filterBtns.forEach(btn => {
+  pgFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      pgFilterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const target = btn.dataset.filter.toLowerCase();
-      cards.forEach(card => {
-        const cat = card.dataset.category;
-        card.style.display = (target === 'all' || cat.includes(target)) ? 'flex' : 'none';
+      const cat = btn.dataset.filter;
+
+      pgCards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
       });
     });
   });
-
-  // Modal inspection
-  window.openPgModal = function(title, desc, img, tag){
-    const modal = document.getElementById('pgModal');
-    if (!modal) return;
-    document.getElementById('pgModalTitle').textContent = title;
-    document.getElementById('pgModalDesc').textContent = desc;
-    document.getElementById('pgModalImg').src = img;
-    document.getElementById('pgModalTag').textContent = tag;
-    modal.classList.add('active');
-  };
-
-  cards.forEach(card => {
-    function triggerOpen(){
-      openPgModal(card.dataset.title, card.dataset.desc, card.dataset.img, card.dataset.tag);
-    }
-    card.addEventListener('click', triggerOpen);
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        triggerOpen();
-      }
-    });
-  });
-
-  const modal = document.getElementById('pgModal');
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.remove('active');
-    });
-  }
 
 </script>
 </body>

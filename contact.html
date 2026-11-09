@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Sumit Rai</title>
-  <meta name="description" content="Sumit Rai (Sumi) — Senior Product Designer &amp; AI Builder with 7+ years of product design and 10+ years of overall design experience across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 8+ years of product design and 12+ years of overall design craft across SaaS, AI, EdTech, FinTech, and consumer platforms." />
   <meta name="author" content="Sumit Rai" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,27 +22,45 @@
       </a>
     </div>
 
-    <nav class="nav-tabs" aria-label="Main Navigation">
-      <a href="projects.html" class="">Work</a>
-      <a href="about.html" class="">About</a>
-      <a href="resume.html" class="">Resume</a>
-      <a href="playground.html" class="">Playground</a>
-      <a href="contact.html" class="active">Contact</a>
+    <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
+      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="active">Contact <span class="nav-key">[C]</span></a>
     </nav>
 
     <div class="nav-right-actions">
       <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
         <span id="soundIcon">🔊</span>
-        <span id="soundLabel">Sound</span>
+        <span id="soundLabel" class="sound-label-text">Sound</span>
       </button>
-      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick search and jump (Cmd+K)" title="Quick Command Palette (Cmd+K)">
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)" title="Quick Command Palette (Cmd+K)">
         <kbd>⌘K</kbd>
+      </button>
+      <button class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="">Home <span class="nav-key">[Esc]</span></a>
+      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="active">Contact <span class="nav-key">[C]</span></a>
+    </nav>
+  </div>
 </header>
 
-<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode">
+<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
   <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
   <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 </button>
@@ -50,106 +68,87 @@
 <main class="page-body">
   <div class="wrap-wide">
     
-    <!-- Hero -->
     <div class="contact-hero-wrap">
-      <div class="status-pill">
-        <span class="dot"></span>
-        <span>Available for Q1/Q2 2026 Collaborations</span>
-      </div>
-      <h1>Let's start a conversation.</h1>
+      <span class="eyebrow"><span class="dot"></span> Start a Conversation</span>
+      <h1>Get in Touch</h1>
       <p class="lead">
-        Have an early-stage product in mind, a founding design role, or want to explore AI-native workflows? I'm always open to discussing new opportunities.
+        Whether you have an upcoming product launch, early-stage design advisory, or want to discuss emerging AI workflows, I'd love to hear from you.
       </p>
     </div>
 
-    <!-- Layout: Left Interactive Form, Right Live Delhi Clock & Direct Channels -->
     <div class="contact-grid-layout">
       
-      <!-- Interactive Form Card -->
+      <!-- Left Column: Interactive Form -->
       <div class="contact-form-card">
-        <span class="eyebrow"><span class="dot"></span> Quick Inquiries</span>
-        <h2 style="font-size:1.45rem; margin-bottom:12px;">What are you looking to build?</h2>
-        <p style="font-size:13.5px; color:var(--ink-soft); margin-bottom:18px;">
-          Select a project focus below to auto-tailor the message starter:
-        </p>
-
-        <!-- Topic Selector Pills -->
+        <label style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; display:block; margin-bottom:10px; color:var(--ink);">
+          What would you like to discuss?
+        </label>
+        
         <div class="contact-intent-pills" id="intentPills">
-          <button class="intent-pill active" data-topic="0-to-1 Product Design" data-lead="Hi Sumit, I'm working on a zero-to-one product and would love your product design expertise on...">🚀 0-to-1 Product</button>
-          <button class="intent-pill" data-topic="Founding / Senior Role" data-lead="Hi Sumit, we have an exciting founding/senior product design role on our team and would love to chat...">💼 Founding / Senior Role</button>
-          <button class="intent-pill" data-topic="Design System Audit" data-lead="Hi Sumit, we are looking to overhaul or scale our design system across web and mobile...">📐 Design System</button>
-          <button class="intent-pill" data-topic="AI Interface Exploration" data-lead="Hi Sumit, we're building an AI-native product and want to explore modern user interaction patterns...">🤖 AI Interface</button>
-          <button class="intent-pill" data-topic="Just Saying Hi" data-lead="Hi Sumit, love your portfolio! Just reaching out to connect and say hello...">👋 Just Saying Hi</button>
+          <button type="button" class="intent-pill active" data-topic="0-to-1 Product Design" data-lead="Hi Sumit, we are planning a zero-to-one product and need senior design leadership...">0-to-1 Product Design</button>
+          <button type="button" class="intent-pill" data-topic="Design System Architecture" data-lead="Hi Sumit, we want to scale our UI component system and need your architecture expertise...">Design System</button>
+          <button type="button" class="intent-pill" data-topic="AI Interface Exploration" data-lead="Hi Sumit, we are building an AI-native workflow and would love your guidance on the interface...">AI Interface / Prototype</button>
+          <button type="button" class="intent-pill" data-topic="Advisory &amp; Mentorship" data-lead="Hi Sumit, I\'d love to explore design advisory or mentorship for our team...">Design Advisory</button>
+          <button type="button" class="intent-pill" data-topic="General Inquiry" data-lead="Hi Sumit, I came across your portfolio and wanted to reach out...">General Hello</button>
         </div>
 
         <form id="contactForm">
           <div class="contact-form-group">
             <label for="contactName">Your Name</label>
-            <input type="text" id="contactName" class="contact-input" placeholder="e.g. Elena Rostova" required />
+            <input type="text" id="contactName" class="contact-input" placeholder="e.g. Alex Chen" required />
           </div>
 
           <div class="contact-form-group">
             <label for="contactEmail">Your Email</label>
-            <input type="email" id="contactEmail" class="contact-input" placeholder="name@company.com" required />
+            <input type="email" id="contactEmail" class="contact-input" placeholder="e.g. alex@company.com" required />
           </div>
 
           <div class="contact-form-group">
             <label for="contactMsg">Message</label>
-            <textarea id="contactMsg" class="contact-textarea" placeholder="Tell me a bit about your product, timeline, or idea...">Hi Sumit, I'm working on a zero-to-one product and would love your product design expertise on...</textarea>
+            <textarea id="contactMsg" class="contact-textarea" rows="4" required>Hi Sumit, we are planning a zero-to-one product and need senior design leadership...</textarea>
           </div>
 
-          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
-            <button type="submit" class="btn btn-primary" id="sendBtn">
-              <span>Send Message &rarr;</span>
-            </button>
-            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sumitraiworks@gmail.com&amp;su=Product%20Collaboration%20with%20Sumit" target="_blank" rel="noopener" class="btn btn-secondary" title="Open Gmail in web browser">
-              <span>Open in Gmail ↗</span>
-            </a>
-          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; padding:14px; margin-top:8px;">
+            <span>Send Message &rarr;</span>
+          </button>
         </form>
       </div>
 
-      <!-- Sidebar: Live Delhi Time, Turnaround, Direct Info -->
+      <!-- Right Column: Direct Info & Delhi Time -->
       <div class="contact-sidebar-card">
         
-        <!-- Live Time Box -->
         <div class="sidebar-box">
-          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Local Time Widget</div>
-          <h3>📍 New Delhi, India</h3>
-          <p style="font-size:13px; color:var(--ink-soft);">
-            Standard Time (IST &middot; UTC +5:30). Synchronized with active studio hours:
-          </p>
-          <div class="live-time-display">
-            <span class="live-time-val" id="delhiLiveClockVal">--:-- -- IST</span>
-          </div>
-          <p style="font-size:12px; color:var(--ink-faint); margin-top:4px;">
-            Average response time: <strong>&lt; 24 hours</strong> on weekdays.
-          </p>
-        </div>
-
-        <!-- Direct Email Card -->
-        <div class="sidebar-box">
-          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Direct Contact</div>
-          <h3>Direct Email</h3>
-          <p style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:8px;">
+          <h3>Direct Contact</h3>
+          <p style="margin-bottom:12px; color:var(--ink-soft);">Prefer direct email over forms? Reach out anytime:</p>
+          <a href="mailto:sumitraiworks@gmail.com" style="font-family:var(--font-heading); font-size:1.15rem; font-weight:700; color:var(--accent); text-decoration:underline; text-underline-offset:3px;">
             sumitraiworks@gmail.com
-          </p>
-          <button class="btn btn-secondary btn-sm" id="sidebarCopyEmail" style="width:100%; justify-content:center;">
-            <span>📋 Copy Email Address</span>
-          </button>
+          </a>
+          <div style="margin-top:14px;">
+            <button class="btn btn-secondary btn-sm" id="sidebarCopyEmail">
+              <span>📋 Copy Email Address</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Professional Profiles -->
         <div class="sidebar-box">
-          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Digital Presence</div>
-          <h3>Connect &amp; Follow</h3>
-          <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px; font-size:13.5px; font-weight:600;">
+          <h3>Current Location &amp; Time</h3>
+          <p style="color:var(--ink-soft); margin-bottom:6px;">Based in New Delhi, India &middot; Available worldwide across overlapping timezones.</p>
+          <div class="live-time-display">
+            <span class="live-time-val" id="delhiLiveClockVal">--:-- --</span>
+            <span class="live-time-zone">IST (UTC +5:30)</span>
+          </div>
+          <span style="font-size:11.5px; color:var(--ink-faint);">Standard response time: within 24 hours.</span>
+        </div>
+
+        <div class="sidebar-box">
+          <h3>Connect Online</h3>
+          <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px; font-size:13.5px;">
             <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
               <span>LinkedIn</span>
               <span style="color:var(--accent);">&nearr;</span>
             </a>
             <a href="https://x.com/isumitrai" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
-              <span>X (formerly Twitter)</span>
+              <span>X (Twitter)</span>
               <span style="color:var(--accent);">&nearr;</span>
             </a>
             <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
@@ -170,41 +169,73 @@
   </div>
 </main>
 
-<footer>
+<footer class="site-footer" id="siteFooter">
   <div class="footer-inner">
-    <div class="footer-status-pill">
-      <span class="dot"></span>
-      <span>Open to Freelance &amp; Product Collaborations</span>
-    </div>
-
-    <h2 class="footer-tagline">
-      Let's build something together.
-    </h2>
-
-    <div class="footer-email-box">
-      <div class="footer-email-pill">
-        <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
-          <span class="email-text">sumitraiworks@gmail.com</span>
-        </a>
-        <button class="copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email address">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span class="copy-toast">Copied!</span>
-        </button>
+    
+    <!-- Top status bar -->
+    <div class="footer-top-row">
+      <div class="footer-status-tag">
+        <span class="live-dot"></span>
+        <span>Available for select product leadership &amp; design advisory</span>
       </div>
-    </div>
-
-    <div class="footer-bottom-row">
       <div class="footer-clock-box" id="delhiClockWrap">
         <span class="live-dot"></span>
         <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
       </div>
-      <div class="flinks">
-        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
-        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram</a>
-        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Main hero call to action -->
+    <div class="footer-hero-cta">
+      <h2 class="footer-tagline">Let's build something thoughtful together.</h2>
+      <p class="footer-sublead">Always open to high-impact products, early-stage ventures, and ambitious design challenges.</p>
+      
+      <div class="footer-email-box">
+        <div class="footer-email-pill">
+          <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
+            <span class="email-text">sumitraiworks@gmail.com</span>
+            <span class="email-arrow">&nearr;</span>
+          </a>
+          <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address" title="Copy email address">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="copy-toast">Copied!</span>
+          </button>
+        </div>
       </div>
     </div>
+
+    <!-- Bottom navigation and meta -->
+    <div class="footer-bottom-nav">
+      <div class="footer-brand-side">
+        <span class="footer-mark">SR</span>
+        <span class="footer-name">Sumit Rai</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-exp-text">8+ years product design &middot; 12+ years design craft</span>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="flinks-nav">
+          <a href="projects.html">Work <span class="nav-key">[W]</span></a>
+          <a href="about.html">About <span class="nav-key">[A]</span></a>
+          <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
+          <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
+          <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
+          <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
+        </div>
+
+        <div class="flinks-social">
+          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram <span class="shahi-arrow">&nearr;</span></a>
+          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF <span class="shahi-arrow">&darr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-credit-row">
+      <span>&copy; 2026 Sumit Rai. All rights reserved.</span>
+      <span>Designed with restraint &middot; Built for craft</span>
+    </div>
+
   </div>
 </footer>
 
@@ -244,6 +275,13 @@
           <span>Resume &amp; Credentials</span>
         </span>
         <span class="cmd-shortcut">R</span>
+      </a>
+      <a href="resources.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+          <span>Curated Resources (Books &amp; Tools)</span>
+        </span>
+        <span class="cmd-shortcut">B</span>
       </a>
       <a href="playground.html" class="cmd-item">
         <span class="item-left">
@@ -348,7 +386,7 @@
 
   // Play micro click on link / button clicks
   document.addEventListener('click', function(e){
-    if (e.target.closest('a, button, .proj-card, .tool-tile, .pg-card-rich')) {
+    if (e.target.closest('a, button, .proj-card, .tool-tile, .resource-card, .pg-card-rich')) {
       AudioEngine.playTick(780, 0.028);
     }
   });
@@ -356,7 +394,6 @@
   // 2. Real-time New Delhi (IST) Clock
   function updateDelhiClock(){
     const textEl = document.getElementById('liveClockText');
-    const pageVal = document.getElementById('delhiLiveClockVal');
     const now = new Date();
     // New Delhi is UTC +5:30
     const istOffset = 5.5 * 60 * 60 * 1000;
@@ -371,7 +408,6 @@
 
     const formatted = `${h}:${m}:${s} ${ampm} IST`;
     if (textEl) textEl.textContent = formatted;
-    if (pageVal) pageVal.textContent = formatted;
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
@@ -391,26 +427,35 @@
   }
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 
-  // 4. Scroll Header Auto-Hide
+  // 4. Scroll Header — add scrolled class for backdrop effect
   const header = document.getElementById('siteHeader');
-  let lastY = window.scrollY, ticking = false;
   window.addEventListener('scroll', function(){
-    if (!ticking) {
-      window.requestAnimationFrame(function(){
-        const curY = window.scrollY;
-        if (header && curY > 80 && curY > lastY) {
-          header.classList.add('nav-hidden');
-        } else if (header) {
-          header.classList.remove('nav-hidden');
-        }
-        lastY = curY;
-        ticking = false;
-      });
-      ticking = true;
+    if (header) {
+      header.classList.toggle('nav-scrolled', window.scrollY > 40);
     }
   }, { passive: true });
 
-  // 5. Copy Email
+  // 5. Mobile Nav Toggle (hamburger)
+  const navMenuToggle = document.getElementById('navMenuToggle');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  if (navMenuToggle && mobileNavDrawer) {
+    navMenuToggle.addEventListener('click', function(){
+      const isOpen = mobileNavDrawer.classList.toggle('open');
+      navMenuToggle.setAttribute('aria-expanded', isOpen);
+      mobileNavDrawer.setAttribute('aria-hidden', !isOpen);
+      navMenuToggle.classList.toggle('open', isOpen);
+    });
+    // Close drawer on nav link click
+    mobileNavDrawer.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobileNavDrawer.classList.remove('open');
+        navMenuToggle.setAttribute('aria-expanded', 'false');
+        navMenuToggle.classList.remove('open');
+      });
+    });
+  }
+
+  // 6. Copy Email with Toast & Audio
   const copyBtn = document.getElementById('copyEmailBtn');
   if (copyBtn) {
     copyBtn.addEventListener('click', function(e){
@@ -420,19 +465,6 @@
         AudioEngine.playTick(1020, 0.06);
         setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
       });
-    });
-  }
-
-  // 6. Interactive Nickname Cycle (Debi Style)
-  const nickBtn = document.getElementById('nicknameToggle');
-  if (nickBtn) {
-    const nicks = ['Sumi', 'Sumo'];
-    let idx = 0;
-    nickBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      idx = (idx + 1) % nicks.length;
-      nickBtn.textContent = nicks[idx];
-      AudioEngine.playTick(880 + (idx * 120), 0.04);
     });
   }
 
@@ -466,19 +498,6 @@
     });
   }
 
-  document.addEventListener('keydown', function(e){
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      if (cmdModal && cmdModal.classList.contains('active')) {
-        closeCmd();
-      } else {
-        openCmd();
-      }
-    } else if (e.key === 'Escape' && cmdModal && cmdModal.classList.contains('active')) {
-      closeCmd();
-    }
-  });
-
   if (cmdThemeBtn) {
     cmdThemeBtn.addEventListener('click', function(){
       toggleTheme();
@@ -501,6 +520,60 @@
       filterCmd(e.target.value);
     });
   }
+
+  // 8. Global Keyboard Shortcuts Navigation (inspired by shahimim.com)
+  document.addEventListener('keydown', function(e){
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) {
+        closeCmd();
+      } else {
+        openCmd();
+      }
+      return;
+    }
+
+    if (cmdModal && cmdModal.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeCmd();
+      }
+      return;
+    }
+
+    // Do not trigger navigation when typing in inputs or holding modifier keys
+    const tag = (e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) {
+      return;
+    }
+    if (e.metaKey || e.ctrlKey || e.altKey) {
+      return;
+    }
+
+    const key = e.key.toLowerCase();
+    if (key === 'w') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'projects.html';
+    } else if (key === 'a') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'about.html';
+    } else if (key === 'r') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resume.html';
+    } else if (key === 'b') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resources.html';
+    } else if (key === 'p') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'playground.html';
+    } else if (key === 'c') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'contact.html';
+    } else if (e.key === 'Escape') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'index.html';
+    }
+  });
 })();
 
 
@@ -529,12 +602,7 @@
       const msg = document.getElementById('contactMsg').value.trim();
 
       const subject = encodeURIComponent(`[${currentTopic}] From ${name}`);
-      const body = encodeURIComponent(`Name: ${name}
-Email: ${email}
-Topic: ${currentTopic}
-
-Message:
-${msg}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${currentTopic}\n\nMessage:\n${msg}`);
       window.location.href = `mailto:sumitraiworks@gmail.com?subject=${subject}&body=${body}`;
     });
   }

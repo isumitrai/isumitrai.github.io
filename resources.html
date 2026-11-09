@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curated Resources — Sumit Rai</title>
+  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 8+ years of product design and 12+ years of overall design craft across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="author" content="Sumit Rai" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav-wrap" id="siteHeader">
+  <div class="nav-pill">
+    <div class="nav-logo-group">
+      <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
+        <span class="sr-mark">SR</span>
+        <span>Sumit Rai</span>
+      </a>
+    </div>
+
+    <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
+      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="active">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+    </nav>
+
+    <div class="nav-right-actions">
+      <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
+        <span id="soundIcon">🔊</span>
+        <span id="soundLabel" class="sound-label-text">Sound</span>
+      </button>
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)" title="Quick Command Palette (Cmd+K)">
+        <kbd>⌘K</kbd>
+      </button>
+      <button class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="">Home <span class="nav-key">[Esc]</span></a>
+      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="active">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+    </nav>
+  </div>
+</header>
+
+<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+</button>
+
+<main class="page-body">
+  <div class="wrap-wide">
+    
+    <!-- HERO -->
+    <section class="resources-hero-block">
+      <span class="eyebrow"><span class="dot"></span> Knowledge &amp; Reference</span>
+      <h1>Curated Resources</h1>
+      <p class="lead">
+        A personal selection of foundational books, architectural frameworks, and design readings that continuously inform how I think, structure products, and build systems.
+      </p>
+      <div class="resources-note-pill">
+        <span class="dot"></span>
+        <span>Tap any book to view on Amazon &middot; Updated quarterly</span>
+      </div>
+    </section>
+
+    <!-- CATEGORY FILTER TABS -->
+    <div class="resources-filter-row" id="resFilterRow">
+      <button class="res-filter-btn active" data-filter="all">All Reads (12)</button>
+      <button class="res-filter-btn" data-filter="Design Craft">Design Craft</button>
+      <button class="res-filter-btn" data-filter="Product Strategy">Product Strategy</button>
+      <button class="res-filter-btn" data-filter="Systems &amp; Tech">Systems &amp; Tech</button>
+      <button class="res-filter-btn" data-filter="Mindset &amp; Craft">Mindset &amp; Craft</button>
+    </div>
+
+    <!-- CARDS GRID -->
+    <div class="resources-grid" id="resGrid">
+      
+      <article class="resource-card" data-category="Design Craft">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Design Craft</span>
+          <span class="resource-format-tag">Digital & Hardcover</span>
+        </div>
+        <h3 class="resource-title">Refactoring UI</h3>
+        <div class="resource-author">Adam Wathan & Steve Schoger</div>
+        <p class="resource-desc">The most pragmatic guide to designing clean, high-conversion interfaces from a developer and designer perspective.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> Design with visual hierarchy and intentional spacing before decorative chrome.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/B08M3S6W8R" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Refactoring UI on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+      <article class="resource-card" data-category="Product Strategy">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Product Strategy</span>
+          <span class="resource-format-tag">Classic Hardcover</span>
+        </div>
+        <h3 class="resource-title">The Design of Everyday Things</h3>
+        <div class="resource-author">Don Norman</div>
+        <p class="resource-desc">The definitive bible on cognitive ergonomics, affordances, signifiers, and designing products that humans intuitively understand.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> When users fail, it is not user error — it is faulty interface design.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/0465050654" target="_blank" rel="noopener" class="resource-amazon-btn" title="View The Design of Everyday Things on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+      <article class="resource-card" data-category="Design Craft">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Design Craft</span>
+          <span class="resource-format-tag">Reference Book</span>
+        </div>
+        <h3 class="resource-title">The Elements of Typographic Style</h3>
+        <div class="resource-author">Robert Bringhurst</div>
+        <p class="resource-desc">Widely revered as the definitive text on typographic craft, rhythm, proportional scales, and the architecture of the printed page.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> Typography exists to honor content and guide human comprehension.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/0881792128" target="_blank" rel="noopener" class="resource-amazon-btn" title="View The Elements of Typographic Style on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+      <article class="resource-card" data-category="Systems & Tech">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Systems & Tech</span>
+          <span class="resource-format-tag">Technical Book</span>
+        </div>
+        <h3 class="resource-title">A Philosophy of Software Design</h3>
+        <div class="resource-author">John Ousterhout</div>
+        <p class="resource-desc">A masterclass on managing system complexity, modular interfaces, and why shallow modules ruin systems.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> Modules should be deep: simple interfaces hiding profound internal power.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/1732102201" target="_blank" rel="noopener" class="resource-amazon-btn" title="View A Philosophy of Software Design on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+      <article class="resource-card" data-category="Design Craft">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Design Craft</span>
+          <span class="resource-format-tag">Visual Reference</span>
+        </div>
+        <h3 class="resource-title">Universal Principles of Design</h3>
+        <div class="resource-author">William Lidwell, Kritina Holden, Jill Butler</div>
+        <p class="resource-desc">An authoritative encyclopedia of 125 cognitive, perceptual, and structural laws governing human interaction.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> Master Fitts' Law, Hick's Law, and progressive disclosure to reduce cognitive load.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/1592535879" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Universal Principles of Design on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+      <article class="resource-card" data-category="Product Strategy">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Product Strategy</span>
+          <span class="resource-format-tag">Product Methodology</span>
+        </div>
+        <h3 class="resource-title">Shape Up: Stop Running in Circles and Ship Work That Matters</h3>
+        <div class="resource-author">Ryan Singer (Basecamp)</div>
+        <p class="resource-desc">A revolutionary framework for product teams: fixed time, variable scope, 6-week cycles, and building with shaped appetites.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> Never start building until problems are shaped with clear boundaries.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/B081N4R3G9" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Shape Up: Stop Running in Circles and Ship Work That Matters on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+      <article class="resource-card" data-category="Product Strategy">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Product Strategy</span>
+          <span class="resource-format-tag">Management Guide</span>
+        </div>
+        <h3 class="resource-title">Inspired: How to Create Tech Products Customers Love</h3>
+        <div class="resource-author">Marty Cagan</div>
+        <p class="resource-desc">The gold standard for product discovery, continuous customer validation, and building empowered product teams.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> Validate value, usability, feasibility, and viability before writing code.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/1119387507" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Inspired: How to Create Tech Products Customers Love on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+      <article class="resource-card" data-category="Systems & Tech">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Systems & Tech</span>
+          <span class="resource-format-tag">Engineering Architecture</span>
+        </div>
+        <h3 class="resource-title">Designing Data-Intensive Applications</h3>
+        <div class="resource-author">Martin Kleppmann</div>
+        <p class="resource-desc">The definitive exploration of storage engines, distributed consensus, data models, and scalable systems reliability.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> A designer who understands backend latency and data models designs 10x better products.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/1449373321" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Designing Data-Intensive Applications on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+      <article class="resource-card" data-category="Design Craft">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Design Craft</span>
+          <span class="resource-format-tag">Classic Monograph</span>
+        </div>
+        <h3 class="resource-title">Grid Systems in Graphic Design</h3>
+        <div class="resource-author">Josef Müller-Brockmann</div>
+        <p class="resource-desc">The Swiss design masterwork outlining mathematical grid systems for layout, typography, and architectural coherence.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> The grid is a structural aid, not a straightjacket — it creates rhythm and order.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/3721201450" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Grid Systems in Graphic Design on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+      <article class="resource-card" data-category="Mindset & Craft">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Mindset & Craft</span>
+          <span class="resource-format-tag">Illustrated Essay</span>
+        </div>
+        <h3 class="resource-title">Show Your Work!</h3>
+        <div class="resource-author">Austin Kleon</div>
+        <p class="resource-desc">A punchy guide to working in public, building a digital garden, and sharing your creative process openly.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> Become a documentarian of what you do every day; generosity builds lasting influence.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/076117897X" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Show Your Work! on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+      <article class="resource-card" data-category="Systems & Tech">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Systems & Tech</span>
+          <span class="resource-format-tag">Architectural Classic</span>
+        </div>
+        <h3 class="resource-title">A Pattern Language</h3>
+        <div class="resource-author">Christopher Alexander</div>
+        <p class="resource-desc">The seminal architectural philosophy that directly inspired object-oriented programming, design systems, and modular components.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> Reusable patterns solve recurring spatial and informational tensions.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/0195019199" target="_blank" rel="noopener" class="resource-amazon-btn" title="View A Pattern Language on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+      <article class="resource-card" data-category="Mindset & Craft">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">Mindset & Craft</span>
+          <span class="resource-format-tag">Hardcover Memoir</span>
+        </div>
+        <h3 class="resource-title">Creativity, Inc.</h3>
+        <div class="resource-author">Ed Catmull & Amy Wallace</div>
+        <p class="resource-desc">The Pixar co-founder's masterclass on creative culture, candid feedback (Braintrust), and protecting early fragile ideas.</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> Early drafts are never great; psychological safety allows teams to turn raw ideas into masterpieces.
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="https://www.amazon.com/dp/0812993015" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Creativity, Inc. on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- RECOMMENDATION CTA -->
+    <section class="contact-cta-section" style="margin-top:20px;">
+      <span class="eyebrow"><span class="dot"></span> Have a Recommendation?</span>
+      <h2>Read something exceptional recently?</h2>
+      <p>I'm always expanding my reading list across AI, systems architecture, cognitive ergonomics, and design history.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary">Share a Recommendation <span class="btn-key">[C]</span> &rarr;</a>
+        <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Sumit</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer" id="siteFooter">
+  <div class="footer-inner">
+    
+    <!-- Top status bar -->
+    <div class="footer-top-row">
+      <div class="footer-status-tag">
+        <span class="live-dot"></span>
+        <span>Available for select product leadership &amp; design advisory</span>
+      </div>
+      <div class="footer-clock-box" id="delhiClockWrap">
+        <span class="live-dot"></span>
+        <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
+      </div>
+    </div>
+
+    <!-- Main hero call to action -->
+    <div class="footer-hero-cta">
+      <h2 class="footer-tagline">Let's build something thoughtful together.</h2>
+      <p class="footer-sublead">Always open to high-impact products, early-stage ventures, and ambitious design challenges.</p>
+      
+      <div class="footer-email-box">
+        <div class="footer-email-pill">
+          <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
+            <span class="email-text">sumitraiworks@gmail.com</span>
+            <span class="email-arrow">&nearr;</span>
+          </a>
+          <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address" title="Copy email address">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="copy-toast">Copied!</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom navigation and meta -->
+    <div class="footer-bottom-nav">
+      <div class="footer-brand-side">
+        <span class="footer-mark">SR</span>
+        <span class="footer-name">Sumit Rai</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-exp-text">8+ years product design &middot; 12+ years design craft</span>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="flinks-nav">
+          <a href="projects.html">Work <span class="nav-key">[W]</span></a>
+          <a href="about.html">About <span class="nav-key">[A]</span></a>
+          <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
+          <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
+          <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
+          <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
+        </div>
+
+        <div class="flinks-social">
+          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram <span class="shahi-arrow">&nearr;</span></a>
+          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF <span class="shahi-arrow">&darr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-credit-row">
+      <span>&copy; 2026 Sumit Rai. All rights reserved.</span>
+      <span>Designed with restraint &middot; Built for craft</span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Command + K Navigation Modal -->
+<div class="cmd-modal" id="cmdModal" role="dialog" aria-modal="true" aria-label="Quick Command Palette">
+  <div class="cmd-box">
+    <div class="cmd-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" class="cmd-input" id="cmdInput" placeholder="Type a destination or action..." autocomplete="off" />
+      <span class="cmd-esc">ESC</span>
+    </div>
+    <div class="cmd-list" id="cmdList">
+      <a href="index.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </span>
+        <span class="cmd-shortcut">H</span>
+      </a>
+      <a href="projects.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span>Selected Work (Projects)</span>
+        </span>
+        <span class="cmd-shortcut">W</span>
+      </a>
+      <a href="about.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <span>About Sumit</span>
+        </span>
+        <span class="cmd-shortcut">A</span>
+      </a>
+      <a href="resume.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Resume &amp; Credentials</span>
+        </span>
+        <span class="cmd-shortcut">R</span>
+      </a>
+      <a href="resources.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+          <span>Curated Resources (Books &amp; Tools)</span>
+        </span>
+        <span class="cmd-shortcut">B</span>
+      </a>
+      <a href="playground.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
+          <span>Playground (Raimage Lab)</span>
+        </span>
+        <span class="cmd-shortcut">P</span>
+      </a>
+      <a href="contact.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Get in Touch (Contact Page)</span>
+        </span>
+        <span class="cmd-shortcut">C</span>
+      </a>
+      <a href="assets/Sumit_Rai_Resume.pdf" download class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download Resume PDF</span>
+        </span>
+        <span class="cmd-shortcut">PDF</span>
+      </a>
+      <a href="mailto:sumitraiworks@gmail.com" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Email Sumit (sumitraiworks@gmail.com)</span>
+        </span>
+        <span class="cmd-shortcut">@</span>
+      </a>
+      <div class="cmd-item" id="cmdToggleTheme">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
+          <span>Toggle Dark / Light Mode</span>
+        </span>
+        <span class="cmd-shortcut">T</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+
+// ---- Global Audio, Clock, Theme & Command Palette Management ----
+(function(){
+  // 1. Web Audio Synthesizer Haptic Engine
+  const AudioEngine = (function(){
+    let ctx = null;
+    let enabled = localStorage.getItem('sr_sound') === 'true';
+
+    function init(){
+      if (!ctx && (window.AudioContext || window.webkitAudioContext)) {
+        ctx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playTick(freq = 820, dur = 0.035, type = 'sine'){
+      if (!enabled) return;
+      try {
+        init();
+        if (ctx.state === 'suspended') ctx.resume();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(0.06, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + dur);
+      } catch(e) {}
+    }
+
+    function toggle(){
+      enabled = !enabled;
+      localStorage.setItem('sr_sound', enabled);
+      if (enabled) playTick(960, 0.05);
+      return enabled;
+    }
+
+    function isEnabled(){ return enabled; }
+
+    return { playTick, toggle, isEnabled };
+  })();
+
+  // Update Sound Button State
+  const soundBtn = document.getElementById('soundToggleBtn');
+  const soundIcon = document.getElementById('soundIcon');
+  const soundLabel = document.getElementById('soundLabel');
+  function updateSoundUI(){
+    const on = AudioEngine.isEnabled();
+    if (soundIcon) soundIcon.textContent = on ? '🔊' : '🔇';
+    if (soundLabel) soundLabel.textContent = on ? 'Sound' : 'Muted';
+    if (soundBtn) soundBtn.classList.toggle('active', on);
+  }
+  updateSoundUI();
+  if (soundBtn) {
+    soundBtn.addEventListener('click', function(){
+      AudioEngine.toggle();
+      updateSoundUI();
+    });
+  }
+
+  // Play micro click on link / button clicks
+  document.addEventListener('click', function(e){
+    if (e.target.closest('a, button, .proj-card, .tool-tile, .resource-card, .pg-card-rich')) {
+      AudioEngine.playTick(780, 0.028);
+    }
+  });
+
+  // 2. Real-time New Delhi (IST) Clock
+  function updateDelhiClock(){
+    const textEl = document.getElementById('liveClockText');
+    const now = new Date();
+    // New Delhi is UTC +5:30
+    const istOffset = 5.5 * 60 * 60 * 1000;
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const delhiDate = new Date(utc + istOffset);
+
+    let h = delhiDate.getHours();
+    const m = String(delhiDate.getMinutes()).padStart(2, '0');
+    const s = String(delhiDate.getSeconds()).padStart(2, '0');
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+
+    const formatted = `${h}:${m}:${s} ${ampm} IST`;
+    if (textEl) textEl.textContent = formatted;
+  }
+  setInterval(updateDelhiClock, 1000);
+  updateDelhiClock();
+
+  // 3. Dark/Light Mode
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const storedTheme = localStorage.getItem('sr_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  if (storedTheme === 'dark') root.setAttribute('data-theme', 'dark');
+
+  function toggleTheme(){
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('sr_theme', next);
+    AudioEngine.playTick(isDark ? 650 : 880, 0.04);
+  }
+  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+
+  // 4. Scroll Header — add scrolled class for backdrop effect
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function(){
+    if (header) {
+      header.classList.toggle('nav-scrolled', window.scrollY > 40);
+    }
+  }, { passive: true });
+
+  // 5. Mobile Nav Toggle (hamburger)
+  const navMenuToggle = document.getElementById('navMenuToggle');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  if (navMenuToggle && mobileNavDrawer) {
+    navMenuToggle.addEventListener('click', function(){
+      const isOpen = mobileNavDrawer.classList.toggle('open');
+      navMenuToggle.setAttribute('aria-expanded', isOpen);
+      mobileNavDrawer.setAttribute('aria-hidden', !isOpen);
+      navMenuToggle.classList.toggle('open', isOpen);
+    });
+    // Close drawer on nav link click
+    mobileNavDrawer.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobileNavDrawer.classList.remove('open');
+        navMenuToggle.setAttribute('aria-expanded', 'false');
+        navMenuToggle.classList.remove('open');
+      });
+    });
+  }
+
+  // 6. Copy Email with Toast & Audio
+  const copyBtn = document.getElementById('copyEmailBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(function(){
+        copyBtn.classList.add('copied');
+        AudioEngine.playTick(1020, 0.06);
+        setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
+      });
+    });
+  }
+
+  // 7. Command + K Palette
+  const cmdModal = document.getElementById('cmdModal');
+  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
+  const cmdInput = document.getElementById('cmdInput');
+  const cmdList = document.getElementById('cmdList');
+  const cmdThemeBtn = document.getElementById('cmdToggleTheme');
+
+  function openCmd(){
+    if (!cmdModal) return;
+    cmdModal.classList.add('active');
+    AudioEngine.playTick(720, 0.03);
+    if (cmdInput) {
+      cmdInput.value = '';
+      cmdInput.focus();
+    }
+    filterCmd('');
+  }
+
+  function closeCmd(){
+    if (!cmdModal) return;
+    cmdModal.classList.remove('active');
+  }
+
+  if (cmdTrigger) cmdTrigger.addEventListener('click', openCmd);
+  if (cmdModal) {
+    cmdModal.addEventListener('click', function(e){
+      if (e.target === cmdModal) closeCmd();
+    });
+  }
+
+  if (cmdThemeBtn) {
+    cmdThemeBtn.addEventListener('click', function(){
+      toggleTheme();
+      closeCmd();
+    });
+  }
+
+  function filterCmd(q){
+    if (!cmdList) return;
+    const items = cmdList.querySelectorAll('.cmd-item');
+    const query = q.trim().toLowerCase();
+    items.forEach(function(item){
+      const text = item.textContent.toLowerCase();
+      item.style.display = (!query || text.includes(query)) ? 'flex' : 'none';
+    });
+  }
+
+  if (cmdInput) {
+    cmdInput.addEventListener('input', function(e){
+      filterCmd(e.target.value);
+    });
+  }
+
+  // 8. Global Keyboard Shortcuts Navigation (inspired by shahimim.com)
+  document.addEventListener('keydown', function(e){
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) {
+        closeCmd();
+      } else {
+        openCmd();
+      }
+      return;
+    }
+
+    if (cmdModal && cmdModal.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeCmd();
+      }
+      return;
+    }
+
+    // Do not trigger navigation when typing in inputs or holding modifier keys
+    const tag = (e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) {
+      return;
+    }
+    if (e.metaKey || e.ctrlKey || e.altKey) {
+      return;
+    }
+
+    const key = e.key.toLowerCase();
+    if (key === 'w') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'projects.html';
+    } else if (key === 'a') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'about.html';
+    } else if (key === 'r') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resume.html';
+    } else if (key === 'b') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resources.html';
+    } else if (key === 'p') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'playground.html';
+    } else if (key === 'c') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'contact.html';
+    } else if (e.key === 'Escape') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'index.html';
+    }
+  });
+})();
+
+
+  // Filter Tabs logic for Resources Page
+  const filterBtns = document.querySelectorAll('#resFilterRow .res-filter-btn');
+  const cards = document.querySelectorAll('#resGrid .resource-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.filter;
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+</script>
+</body>
+</html>

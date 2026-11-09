@@ -409,10 +409,10 @@ footer_html = """
         </div>
 
         <div class="flinks-social">
-          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn &nearr;</a>
-          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X &nearr;</a>
-          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram &nearr;</a>
-          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF &darr;</a>
+          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram <span class="shahi-arrow">&nearr;</span></a>
+          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF <span class="shahi-arrow">&darr;</span></a>
         </div>
       </div>
     </div>
@@ -783,7 +783,7 @@ def build_index():
           <h3 class="proj-title">{p['title']}</h3>
           <p class="proj-desc">{p['tagline']}</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">View Case Study <span class="shahi-arrow">&nearr;</span></span>
             <div class="proj-tech-tags">
               <span class="proj-tag">{p['tags'][0]}</span>
               <span class="proj-tag">{p['tags'][1]}</span>
@@ -847,7 +847,7 @@ def build_index():
           <h2>Work I'm Proud Of</h2>
           <p>Selected digital products shaped across SaaS, EdTech, mobile apps, and marketplace platforms.</p>
         </div>
-        <a href="projects.html" class="section-header-link">All Work &rarr;</a>
+        <a href="projects.html" class="section-header-link">All Work <span class="shahi-arrow">&nearr;</span></a>
       </div>
 
       <div class="proj-grid">
@@ -888,45 +888,152 @@ def build_index():
       </div>
     </section>
 
-    <!-- SECTION 04 — ABOUT PREVIEW -->
-    <section class="about-preview-section">
-      <div class="about-preview-grid">
-        <div class="about-preview-content">
-          <span class="eyebrow"><span class="dot"></span> Background &amp; Mindset</span>
-          <h2>Designing thoughtful digital experiences since 2014.</h2>
-          <p>
-            I'm a designer and product thinker with 8+ years dedicated to digital product design and 12+ years of overall design craft spanning branding, interfaces, and systems.
-          </p>
-          <p>
-            My work spans SaaS, AI, EdTech, FinTech, HealthTech, and consumer platforms. Lately, I explore how AI and emerging technologies reshape human-computer interfaces, bridging design strategy with functional code.
-          </p>
-          <div style="margin-top:24px;">
-            <a href="about.html" class="btn btn-secondary">More About Me <span class="btn-key">[A]</span> &rarr;</a>
-          </div>
+    <!-- SECTION 04 — BENTO BOX SHOWCASE (Inspired by shahimim.com) -->
+    <section class="bento-section" id="bento">
+      <div class="section-header-row">
+        <div class="section-title-wrap">
+          <span class="eyebrow"><span class="dot"></span> Craft &amp; Systems</span>
+          <h2>At a Glance &mdash; Craft, Stack &amp; Explorations</h2>
+          <p>A multi-disciplinary blend of 8+ years product design leadership, 12+ years total design craft, code prototypes, and curated knowledge.</p>
         </div>
+        <a href="about.html" class="section-header-link">About My Journey <span class="shahi-arrow">&nearr;</span></a>
+      </div>
 
-        <div class="about-stats-grid">
-          <div class="stat-box">
-            <span class="stat-number">8+</span>
-            <span class="stat-label">Years in Product</span>
-            <span class="stat-desc">Dedicated digital product design</span>
+      <div class="bento-grid">
+        <!-- Bento 1: Primary Spotlight (Span 2) -->
+        <a href="about.html" class="bento-card span-2" aria-label="Learn more about Sumit Rai's background and experience">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-badge accent-badge"><span class="live-dot"></span> Senior Product Designer</span>
+              <span class="bento-arrow-btn"><span class="shahi-arrow">&nearr;</span></span>
+            </div>
+            <div class="bento-body">
+              <h3 class="bento-title">Designing Intuitive Systems &amp; High-Impact Products Since 2014</h3>
+              <p class="bento-desc">
+                8+ years leading end-to-end UX/UI product strategy and 12+ years of design craft across visual systems, interactive prototypes, and scalable token architectures. Balancing business revenue with human delight.
+              </p>
+            </div>
+            <div class="bento-stats-row">
+              <div>
+                <span class="bento-stat-num">8+</span>
+                <span class="bento-stat-label">Years in Product</span>
+              </div>
+              <div style="border-left:1px solid var(--line); padding-left:18px;">
+                <span class="bento-stat-num">12+</span>
+                <span class="bento-stat-label">Years Total Craft</span>
+              </div>
+              <div style="border-left:1px solid var(--line); padding-left:18px;">
+                <span class="bento-stat-num">6+</span>
+                <span class="bento-stat-label">Industries Shipped</span>
+              </div>
+            </div>
           </div>
-          <div class="stat-box">
-            <span class="stat-number">12+</span>
-            <span class="stat-label">Years Total Craft</span>
-            <span class="stat-desc">Visual, brand, systems &amp; UI craft</span>
+          <div class="bento-footer">
+            <span class="bento-link-text">Read background &amp; design journey <span class="shahi-arrow">&rarr;</span></span>
+            <span class="bento-tag pop">[A] About</span>
           </div>
-          <div class="stat-box">
-            <span class="stat-number">6+</span>
-            <span class="stat-label">Industries Shipped</span>
-            <span class="stat-desc">SaaS, EdTech, FinTech, HealthTech &amp; AI</span>
+        </a>
+
+        <!-- Bento 2: Raimage Studio Lab (Span 1) -->
+        <a href="playground.html" class="bento-card" aria-label="Explore Raimage Studio Lab experiments">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-badge">Raimage Lab</span>
+              <span class="bento-arrow-btn"><span class="shahi-arrow">&nearr;</span></span>
+            </div>
+            <div class="bento-body">
+              <h3 class="bento-title">AI-Native &amp; Code Prototypes</h3>
+              <p class="bento-desc">
+                Bridging Figma and production with Claude, Gemini APIs, HTML5 Canvas, Web Audio, and generative UI micro-tools.
+              </p>
+            </div>
+            <div class="bento-tags">
+              <span class="bento-tag pop">GenAI</span>
+              <span class="bento-tag">Canvas</span>
+              <span class="bento-tag">Web Audio</span>
+              <span class="bento-tag">Micro-tools</span>
+            </div>
           </div>
-          <div class="stat-box">
-            <span class="stat-number">AI</span>
-            <span class="stat-label">Emerging Tech</span>
-            <span class="stat-desc">AI-native workflows &amp; interactive prototypes</span>
+          <div class="bento-footer">
+            <span class="bento-link-text">Explore interactive lab <span class="shahi-arrow">&rarr;</span></span>
+            <span class="bento-tag">[P] Lab</span>
           </div>
-        </div>
+        </a>
+
+        <!-- Bento 3: Curated Resources / Books (Span 1) -->
+        <a href="resources.html" class="bento-card" aria-label="View curated books and resources">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-badge">Reading Shelf</span>
+              <span class="bento-arrow-btn"><span class="shahi-arrow">&nearr;</span></span>
+            </div>
+            <div class="bento-body">
+              <h3 class="bento-title">12+ Curated Books</h3>
+              <p class="bento-desc">
+                Handpicked texts on systems design, typography, cognitive psychology, and software architecture with personal takeaways.
+              </p>
+            </div>
+            <div class="bento-tags">
+              <span class="bento-tag pop">12 Books</span>
+              <span class="bento-tag">Takeaways</span>
+              <span class="bento-tag">Amazon Links</span>
+            </div>
+          </div>
+          <div class="bento-footer">
+            <span class="bento-link-text">Browse recommended reads <span class="shahi-arrow">&rarr;</span></span>
+            <span class="bento-tag">[B] Books</span>
+          </div>
+        </a>
+
+        <!-- Bento 4: Philosophy & Architecture (Span 1) -->
+        <a href="projects.html" class="bento-card" aria-label="View projects and architecture">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-badge">Philosophy</span>
+              <span class="bento-arrow-btn"><span class="shahi-arrow">&nearr;</span></span>
+            </div>
+            <div class="bento-body">
+              <h3 class="bento-title">Understand &middot; Connect &middot; Ship</h3>
+              <p class="bento-desc">
+                Deep understanding of business goals and user workflows. Scalable design token architectures that engineers love shipping.
+              </p>
+            </div>
+            <div class="bento-tags">
+              <span class="bento-tag pop">Tokens</span>
+              <span class="bento-tag">Figma</span>
+              <span class="bento-tag">WCAG AAA</span>
+            </div>
+          </div>
+          <div class="bento-footer">
+            <span class="bento-link-text">View project case studies <span class="shahi-arrow">&rarr;</span></span>
+            <span class="bento-tag">[W] Work</span>
+          </div>
+        </a>
+
+        <!-- Bento 5: Location & Availability (Span 1) -->
+        <a href="contact.html" class="bento-card" aria-label="Contact Sumit Rai">
+          <div>
+            <div class="bento-top-row">
+              <span class="bento-badge accent-badge"><span class="live-dot"></span> Available</span>
+              <span class="bento-arrow-btn"><span class="shahi-arrow">&nearr;</span></span>
+            </div>
+            <div class="bento-body">
+              <h3 class="bento-title">New Delhi, India</h3>
+              <p class="bento-desc">
+                Available for select senior product design consulting, design systems advisory, and high-impact full-time roles worldwide.
+              </p>
+            </div>
+            <div class="bento-tags">
+              <span class="bento-tag pop">IST (UTC +5:30)</span>
+              <span class="bento-tag">Remote</span>
+              <span class="bento-tag">Hybrid</span>
+            </div>
+          </div>
+          <div class="bento-footer">
+            <span class="bento-link-text">Start a conversation <span class="shahi-arrow">&rarr;</span></span>
+            <span class="bento-tag">[C] Contact</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -938,7 +1045,7 @@ def build_index():
           <h2>Selected Experience</h2>
           <p>Roles and founding product work across high-impact design studios and tech teams.</p>
         </div>
-        <a href="resume.html" class="section-header-link">View Full Resume <span class="btn-key">[R]</span> &rarr;</a>
+        <a href="resume.html" class="section-header-link">View Full Resume <span class="btn-key">[R]</span> <span class="shahi-arrow">&nearr;</span></a>
       </div>
 
       <div class="timeline-list">
@@ -1057,7 +1164,7 @@ def build_projects():
           <h3 class="proj-title">{p['title']}</h3>
           <p class="proj-desc">{p['tagline']}</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">Case Study &rarr;</span>
+            <span class="proj-view-link">Case Study <span class="shahi-arrow">&nearr;</span></span>
             <div class="proj-tech-tags">
               <span class="proj-tag">{p['tags'][0]}</span>
               <span class="proj-tag">{p['tags'][1]}</span>
@@ -1674,7 +1781,7 @@ def build_resources():
           <!-- Update with your Amazon affiliate link anytime -->
           <a href="{r['link']}" target="_blank" rel="noopener" class="resource-amazon-btn" title="View {r['title']} on Amazon">
             <span>Get on Amazon</span>
-            <span class="arrow">&nearr;</span>
+            <span class="arrow shahi-arrow">&nearr;</span>
           </a>
           <span class="resource-format-tag">Curated Read</span>
         </div>

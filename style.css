@@ -775,12 +775,18 @@ header.nav-wrap.nav-hidden {
   align-items: center;
   gap: 6px;
   white-space: nowrap;
-  transition: opacity 0.15s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .section-header-link:hover {
-  opacity: 0.6;
-  color: var(--ink);
+  color: var(--accent);
+  opacity: 1;
+}
+
+.section-header-link:hover .shahi-arrow,
+.section-header-link:hover .arrow-icon {
+  transform: translate(2.5px, -2.5px);
+  color: var(--accent);
 }
 
 .proj-grid {
@@ -1148,8 +1154,9 @@ header.nav-wrap.nav-hidden {
 /* ------------------------------------------------------------
    Requirement 4: Client & Brand Partners (Muted, Less Visual Noise)
    ------------------------------------------------------------ */
-.brands-wrap {
-  margin-top: 72px;
+.brands-wrap,
+.brands-section {
+  margin-bottom: 120px;
   padding-top: 0;
   border-top: none;
 }
@@ -3196,4 +3203,244 @@ footer::before,
 .resource-amazon-btn:hover .arrow {
   transform: translate(2px, -2px);
   color: inherit;
+}
+
+
+/* ==========================================================================
+   BENTO BOX SHOWCASE (Inspired by shahimim.com)
+   Ultra-clean asymmetric grid with accent popups and smooth diagonal arrow lifts
+   ========================================================================== */
+.bento-section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.bento-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 16px 36px -12px var(--accent-glow);
+  transform: translateY(-3px);
+  color: inherit;
+}
+
+.bento-card.span-2 {
+  grid-column: span 2;
+}
+
+.bento-card.span-3 {
+  grid-column: span 3;
+}
+
+/* Card header with badge and shahimim-style circular arrow button */
+.bento-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.bento-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--surface-subtle);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.bento-badge.accent-badge {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent-tint);
+}
+
+/* Circular Shahimim-style Arrow Button */
+.bento-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface-subtle);
+  border: 1px solid var(--line);
+  color: var(--ink-muted);
+  font-size: 15px;
+  line-height: 1;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.bento-card:hover .bento-arrow-btn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #FFFFFF !important;
+  transform: translate(3px, -3px);
+}
+
+/* Bento card body */
+.bento-body {
+  margin-bottom: 20px;
+}
+
+.bento-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.bento-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* Bento stats inside cards */
+.bento-stats-row {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.bento-stat-num {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.bento-stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Bento pill tags */
+.bento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.bento-tag {
+  font-size: 11.5px;
+  font-family: var(--font-mono);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-subtle);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  transition: all 0.2s ease;
+}
+
+.bento-tag.pop {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent-tint);
+  font-weight: 600;
+}
+
+.bento-card:hover .bento-tag:not(.pop) {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+/* Bento bottom row / action link */
+.bento-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-top: auto;
+  transition: color 0.2s ease;
+}
+
+.bento-card:hover .bento-footer {
+  color: var(--ink);
+}
+
+.bento-footer .bento-link-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bento-card:hover .bento-footer .bento-link-text {
+  color: var(--accent);
+}
+
+/* Global Shahimim-Style Arrow Interaction */
+.shahi-arrow {
+  display: inline-block;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+a:hover .shahi-arrow,
+button:hover .shahi-arrow,
+.bento-card:hover .shahi-arrow,
+.proj-card:hover .shahi-arrow {
+  transform: translate(2.5px, -2.5px);
+  color: var(--accent);
+}
+
+/* Responsive bento */
+@media (max-width: 860px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .bento-card.span-2,
+  .bento-card.span-3 {
+    grid-column: span 1;
+  }
+  .bento-stats-row {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
 }

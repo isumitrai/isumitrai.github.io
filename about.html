@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Sumit Rai</title>
-  <meta name="description" content="Sumit Rai (Sumi) — Senior Product Designer &amp; AI Builder with 7+ years of product design and 10+ years of overall design experience across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 8+ years of product design and 12+ years of overall design craft across SaaS, AI, EdTech, FinTech, and consumer platforms." />
   <meta name="author" content="Sumit Rai" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,27 +22,45 @@
       </a>
     </div>
 
-    <nav class="nav-tabs" aria-label="Main Navigation">
-      <a href="projects.html" class="">Work</a>
-      <a href="about.html" class="active">About</a>
-      <a href="resume.html" class="">Resume</a>
-      <a href="playground.html" class="">Playground</a>
-      <a href="contact.html" class="">Contact</a>
+    <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
+      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="active">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
     </nav>
 
     <div class="nav-right-actions">
       <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
         <span id="soundIcon">🔊</span>
-        <span id="soundLabel">Sound</span>
+        <span id="soundLabel" class="sound-label-text">Sound</span>
       </button>
-      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick search and jump (Cmd+K)" title="Quick Command Palette (Cmd+K)">
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)" title="Quick Command Palette (Cmd+K)">
         <kbd>⌘K</kbd>
+      </button>
+      <button class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="">Home <span class="nav-key">[Esc]</span></a>
+      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="active">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+    </nav>
+  </div>
 </header>
 
-<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode">
+<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
   <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
   <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 </button>
@@ -59,11 +77,12 @@
           I'm a product designer, creative thinker and builder interested in how design and technology shape the things we experience every day.
         </p>
         <p>
-          Over the past decade, I've journeyed from crafting brand identities and marketing collateral to architecting complex enterprise SaaS, EdTech ecosystems, and AI-native products. I believe the best products balance strategic clarity with rigorous visual craftsmanship.
+          Over the past 12+ years, I've journeyed from crafting brand identities and marketing collateral to architecting complex enterprise SaaS, EdTech ecosystems, and AI-native products with 8+ years dedicated to digital product design. I believe the best products balance strategic clarity with rigorous visual craftsmanship.
         </p>
         <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;">
-          <a href="resume.html" class="btn btn-primary">Read My Resume &rarr;</a>
-          <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+          <a href="resume.html" class="btn btn-primary">Read Resume <span class="btn-key">[R]</span></a>
+          <a href="resources.html" class="btn btn-secondary">Curated Resources <span class="btn-key">[B]</span></a>
+          <a href="contact.html" class="btn btn-secondary">Get in Touch <span class="btn-key">[C]</span></a>
         </div>
       </div>
 
@@ -77,10 +96,10 @@
       <span class="eyebrow"><span class="dot"></span> Chapter 01</span>
       <h2>My Design Journey</h2>
       <p>
-        My journey into design began in 2015 at Kitaro Trading, where I immersed myself in the fundamentals of visual hierarchy, brand consistency, and graphic design across diverse physical and digital consumer touchpoints. Working across real-world commercial constraints taught me that design is never purely aesthetic &mdash; it must communicate clearly and drive action.
+        My journey into design began in 2014, immersing myself in visual hierarchy, brand consistency, and graphic design across diverse physical and digital consumer touchpoints. Working across real-world commercial constraints taught me that design is never purely aesthetic &mdash; it must communicate clearly and drive action.
       </p>
       <p>
-        In 2019, my focus shifted decisively toward digital product design. At Design Matra, I took ownership of complex user journeys across FinTech, HealthTech, and E-Commerce products, tackling onboarding friction, checkout drop-offs, and multi-platform consistency.
+        In 2018–2019, my focus shifted decisively toward digital product design. At Design Matra, I took ownership of complex user journeys across FinTech, HealthTech, and E-Commerce products, tackling onboarding friction, checkout drop-offs, and multi-platform consistency.
       </p>
       <p>
         Later, as Senior Product Designer at Edfora Infotech, I led end-to-end design across web and mobile platforms for FIITJEE educational products, designing student learning hubs, institutional dashboards, and component design systems that unified multi-disciplinary engineering and academic teams.
@@ -134,7 +153,7 @@
             <span class="comp-role">Graphic &amp; UI Designer</span>
           </div>
           <div class="timeline-details">
-            <p>Crafted digital brand identities, marketing assets, and early web interfaces across consumer lifestyle products.</p>
+            <p>Crafted digital brand identities, marketing assets, and consumer interfaces across multi-channel digital touchpoints.</p>
           </div>
           <div class="timeline-period">2015 &mdash; 2021</div>
         </div>
@@ -193,8 +212,8 @@
       <h2>Read My Resume</h2>
       <p>Explore my detailed professional timeline, credentials, key accomplishments, and download a printable PDF copy.</p>
       <div class="cta-btns">
-        <a href="resume.html" class="btn btn-primary">Go to Resume Page &rarr;</a>
-        <a href="assets/Sumit_Rai_Resume.pdf" download class="btn btn-secondary">Download Resume PDF &darr;</a>
+        <a href="resume.html" class="btn btn-primary">Resume Page <span class="btn-key">[R]</span></a>
+        <a href="assets/Sumit_Rai_Resume.pdf" download class="btn btn-secondary">Download PDF &darr;</a>
       </div>
     </section>
 
@@ -229,41 +248,73 @@
   </div>
 </main>
 
-<footer>
+<footer class="site-footer" id="siteFooter">
   <div class="footer-inner">
-    <div class="footer-status-pill">
-      <span class="dot"></span>
-      <span>Open to Freelance &amp; Product Collaborations</span>
-    </div>
-
-    <h2 class="footer-tagline">
-      Let's build something together.
-    </h2>
-
-    <div class="footer-email-box">
-      <div class="footer-email-pill">
-        <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
-          <span class="email-text">sumitraiworks@gmail.com</span>
-        </a>
-        <button class="copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email address">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span class="copy-toast">Copied!</span>
-        </button>
+    
+    <!-- Top status bar -->
+    <div class="footer-top-row">
+      <div class="footer-status-tag">
+        <span class="live-dot"></span>
+        <span>Available for select product leadership &amp; design advisory</span>
       </div>
-    </div>
-
-    <div class="footer-bottom-row">
       <div class="footer-clock-box" id="delhiClockWrap">
         <span class="live-dot"></span>
         <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
       </div>
-      <div class="flinks">
-        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
-        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram</a>
-        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Main hero call to action -->
+    <div class="footer-hero-cta">
+      <h2 class="footer-tagline">Let's build something thoughtful together.</h2>
+      <p class="footer-sublead">Always open to high-impact products, early-stage ventures, and ambitious design challenges.</p>
+      
+      <div class="footer-email-box">
+        <div class="footer-email-pill">
+          <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
+            <span class="email-text">sumitraiworks@gmail.com</span>
+            <span class="email-arrow">&nearr;</span>
+          </a>
+          <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address" title="Copy email address">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="copy-toast">Copied!</span>
+          </button>
+        </div>
       </div>
     </div>
+
+    <!-- Bottom navigation and meta -->
+    <div class="footer-bottom-nav">
+      <div class="footer-brand-side">
+        <span class="footer-mark">SR</span>
+        <span class="footer-name">Sumit Rai</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-exp-text">8+ years product design &middot; 12+ years design craft</span>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="flinks-nav">
+          <a href="projects.html">Work <span class="nav-key">[W]</span></a>
+          <a href="about.html">About <span class="nav-key">[A]</span></a>
+          <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
+          <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
+          <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
+          <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
+        </div>
+
+        <div class="flinks-social">
+          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram <span class="shahi-arrow">&nearr;</span></a>
+          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF <span class="shahi-arrow">&darr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-credit-row">
+      <span>&copy; 2026 Sumit Rai. All rights reserved.</span>
+      <span>Designed with restraint &middot; Built for craft</span>
+    </div>
+
   </div>
 </footer>
 
@@ -303,6 +354,13 @@
           <span>Resume &amp; Credentials</span>
         </span>
         <span class="cmd-shortcut">R</span>
+      </a>
+      <a href="resources.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+          <span>Curated Resources (Books &amp; Tools)</span>
+        </span>
+        <span class="cmd-shortcut">B</span>
       </a>
       <a href="playground.html" class="cmd-item">
         <span class="item-left">
@@ -407,7 +465,7 @@
 
   // Play micro click on link / button clicks
   document.addEventListener('click', function(e){
-    if (e.target.closest('a, button, .proj-card, .tool-tile, .pg-card-rich')) {
+    if (e.target.closest('a, button, .proj-card, .tool-tile, .resource-card, .pg-card-rich')) {
       AudioEngine.playTick(780, 0.028);
     }
   });
@@ -415,7 +473,6 @@
   // 2. Real-time New Delhi (IST) Clock
   function updateDelhiClock(){
     const textEl = document.getElementById('liveClockText');
-    const pageVal = document.getElementById('delhiLiveClockVal');
     const now = new Date();
     // New Delhi is UTC +5:30
     const istOffset = 5.5 * 60 * 60 * 1000;
@@ -430,7 +487,6 @@
 
     const formatted = `${h}:${m}:${s} ${ampm} IST`;
     if (textEl) textEl.textContent = formatted;
-    if (pageVal) pageVal.textContent = formatted;
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
@@ -450,26 +506,35 @@
   }
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 
-  // 4. Scroll Header Auto-Hide
+  // 4. Scroll Header — add scrolled class for backdrop effect
   const header = document.getElementById('siteHeader');
-  let lastY = window.scrollY, ticking = false;
   window.addEventListener('scroll', function(){
-    if (!ticking) {
-      window.requestAnimationFrame(function(){
-        const curY = window.scrollY;
-        if (header && curY > 80 && curY > lastY) {
-          header.classList.add('nav-hidden');
-        } else if (header) {
-          header.classList.remove('nav-hidden');
-        }
-        lastY = curY;
-        ticking = false;
-      });
-      ticking = true;
+    if (header) {
+      header.classList.toggle('nav-scrolled', window.scrollY > 40);
     }
   }, { passive: true });
 
-  // 5. Copy Email
+  // 5. Mobile Nav Toggle (hamburger)
+  const navMenuToggle = document.getElementById('navMenuToggle');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  if (navMenuToggle && mobileNavDrawer) {
+    navMenuToggle.addEventListener('click', function(){
+      const isOpen = mobileNavDrawer.classList.toggle('open');
+      navMenuToggle.setAttribute('aria-expanded', isOpen);
+      mobileNavDrawer.setAttribute('aria-hidden', !isOpen);
+      navMenuToggle.classList.toggle('open', isOpen);
+    });
+    // Close drawer on nav link click
+    mobileNavDrawer.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobileNavDrawer.classList.remove('open');
+        navMenuToggle.setAttribute('aria-expanded', 'false');
+        navMenuToggle.classList.remove('open');
+      });
+    });
+  }
+
+  // 6. Copy Email with Toast & Audio
   const copyBtn = document.getElementById('copyEmailBtn');
   if (copyBtn) {
     copyBtn.addEventListener('click', function(e){
@@ -479,19 +544,6 @@
         AudioEngine.playTick(1020, 0.06);
         setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
       });
-    });
-  }
-
-  // 6. Interactive Nickname Cycle (Debi Style)
-  const nickBtn = document.getElementById('nicknameToggle');
-  if (nickBtn) {
-    const nicks = ['Sumi', 'Sumo'];
-    let idx = 0;
-    nickBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      idx = (idx + 1) % nicks.length;
-      nickBtn.textContent = nicks[idx];
-      AudioEngine.playTick(880 + (idx * 120), 0.04);
     });
   }
 
@@ -525,19 +577,6 @@
     });
   }
 
-  document.addEventListener('keydown', function(e){
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      if (cmdModal && cmdModal.classList.contains('active')) {
-        closeCmd();
-      } else {
-        openCmd();
-      }
-    } else if (e.key === 'Escape' && cmdModal && cmdModal.classList.contains('active')) {
-      closeCmd();
-    }
-  });
-
   if (cmdThemeBtn) {
     cmdThemeBtn.addEventListener('click', function(){
       toggleTheme();
@@ -560,6 +599,60 @@
       filterCmd(e.target.value);
     });
   }
+
+  // 8. Global Keyboard Shortcuts Navigation (inspired by shahimim.com)
+  document.addEventListener('keydown', function(e){
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) {
+        closeCmd();
+      } else {
+        openCmd();
+      }
+      return;
+    }
+
+    if (cmdModal && cmdModal.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeCmd();
+      }
+      return;
+    }
+
+    // Do not trigger navigation when typing in inputs or holding modifier keys
+    const tag = (e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) {
+      return;
+    }
+    if (e.metaKey || e.ctrlKey || e.altKey) {
+      return;
+    }
+
+    const key = e.key.toLowerCase();
+    if (key === 'w') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'projects.html';
+    } else if (key === 'a') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'about.html';
+    } else if (key === 'r') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resume.html';
+    } else if (key === 'b') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resources.html';
+    } else if (key === 'p') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'playground.html';
+    } else if (key === 'c') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'contact.html';
+    } else if (e.key === 'Escape') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'index.html';
+    }
+  });
 })();
 
 </script>

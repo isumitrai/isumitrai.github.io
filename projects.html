@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Work & Case Studies — Sumit Rai</title>
-  <meta name="description" content="Sumit Rai (Sumi) — Senior Product Designer &amp; AI Builder with 7+ years of product design and 10+ years of overall design experience across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 8+ years of product design and 12+ years of overall design craft across SaaS, AI, EdTech, FinTech, and consumer platforms." />
   <meta name="author" content="Sumit Rai" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,27 +22,45 @@
       </a>
     </div>
 
-    <nav class="nav-tabs" aria-label="Main Navigation">
-      <a href="projects.html" class="active">Work</a>
-      <a href="about.html" class="">About</a>
-      <a href="resume.html" class="">Resume</a>
-      <a href="playground.html" class="">Playground</a>
-      <a href="contact.html" class="">Contact</a>
+    <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
+      <a href="projects.html" class="active">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
     </nav>
 
     <div class="nav-right-actions">
       <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
         <span id="soundIcon">🔊</span>
-        <span id="soundLabel">Sound</span>
+        <span id="soundLabel" class="sound-label-text">Sound</span>
       </button>
-      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick search and jump (Cmd+K)" title="Quick Command Palette (Cmd+K)">
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)" title="Quick Command Palette (Cmd+K)">
         <kbd>⌘K</kbd>
+      </button>
+      <button class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="">Home <span class="nav-key">[Esc]</span></a>
+      <a href="projects.html" class="active">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+    </nav>
+  </div>
 </header>
 
-<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode">
+<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
   <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
   <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 </button>
@@ -83,7 +101,7 @@
           <h3 class="proj-title">EduManage</h3>
           <p class="proj-desc">A modern institution dashboard shaped around academic operations, content management, and day-to-day school workflows.</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">Case Study <span class="shahi-arrow">&nearr;</span></span>
             <div class="proj-tech-tags">
               <span class="proj-tag">SaaS</span>
               <span class="proj-tag">Dashboard</span>
@@ -104,7 +122,7 @@
           <h3 class="proj-title">Quayo Basket</h3>
           <p class="proj-desc">A grocery mobile app paired with a fresh retail brand identity system for a clearer, friendlier shopping experience.</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">Case Study <span class="shahi-arrow">&nearr;</span></span>
             <div class="proj-tech-tags">
               <span class="proj-tag">Mobile App</span>
               <span class="proj-tag">UI/UX</span>
@@ -125,7 +143,7 @@
           <h3 class="proj-title">Musafir</h3>
           <p class="proj-desc">A travel marketplace landing page redesigned for stronger conversion paths, clear destination framing, and confident decision-making.</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">Case Study <span class="shahi-arrow">&nearr;</span></span>
             <div class="proj-tech-tags">
               <span class="proj-tag">Web Design</span>
               <span class="proj-tag">Travel</span>
@@ -146,7 +164,7 @@
           <h3 class="proj-title">Community</h3>
           <p class="proj-desc">A student learning hub designed to support academic growth through shared peer discussions, study resources, and platform-led engagement.</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">Case Study <span class="shahi-arrow">&nearr;</span></span>
             <div class="proj-tech-tags">
               <span class="proj-tag">EdTech</span>
               <span class="proj-tag">Platform</span>
@@ -168,49 +186,153 @@
         <span class="tag-chip" id="caseCategoryChip">SaaS Product</span>
       </div>
 
-      <div id="caseStudyContent">
-        <!-- Rendered dynamically -->
+      <!-- Meta Card -->
+      <article class="case-meta-card">
+        <div class="case-title-row">
+          <h1 id="caseTitle">EduManage</h1>
+          <p class="case-tagline" id="caseTagline">A modern institution dashboard shaped around academic operations.</p>
+        </div>
+        <div class="case-meta-grid">
+          <div class="case-meta-item">
+            <span class="label">Role</span>
+            <span class="val" id="caseRole">Senior Product Designer</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Timeline</span>
+            <span class="val" id="caseTimeline">2024 — 2026</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Focus</span>
+            <span class="val" id="caseFocus">SaaS Dashboard · CMS</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Impact</span>
+            <span class="val" id="caseImpact">High-clarity workflows</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Hero Visual -->
+      <div class="case-hero-image">
+        <img id="caseHeroImg" src="./assets/proj_edumanage.png" alt="Case Study hero" />
       </div>
+
+      <!-- Editorial Narrative Flow -->
+      <div class="case-body-flow">
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> The Overview</h3>
+          <p id="caseOverviewText">Enterprise-grade institution management dashboard engineered for operational clarity.</p>
+        </div>
+
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> The Challenge</h3>
+          <p id="caseChallengeText">Educational institutions traditionally rely on disconnected legacy tools and disparate spreadsheets.</p>
+        </div>
+
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> My Role &amp; Responsibilities</h3>
+          <p id="caseRoleText">I directed end-to-end user research, information architecture, design systems, and clickable prototypes.</p>
+        </div>
+
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> Approach &amp; Process</h3>
+          <p id="caseApproachText">I mapped administrative user journeys to uncover recurring bottlenecks and structured role-based modular layouts.</p>
+        </div>
+
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> The Solution</h3>
+          <p id="caseSolutionText">Delivered an actionable multi-tenant dashboard with automated telemetry and multi-tiered permission management.</p>
+        </div>
+
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> Outcomes &amp; Impact</h3>
+          <p id="caseOutcomeText">Significantly reduced task completion times and established a unified design system adopted across portals.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Prev / Next Nav -->
+      <nav class="case-nav" aria-label="Case Study Navigation">
+        <button class="case-nav-btn prev" id="prevCaseBtn">
+          <span class="nav-eyebrow">&larr; Previous Project</span>
+          <span class="nav-proj-name" id="prevCaseTitle">Community</span>
+        </button>
+        <button class="case-nav-btn next" id="nextCaseBtn">
+          <span class="nav-eyebrow">Next Project &rarr;</span>
+          <span class="nav-proj-name" id="nextCaseTitle">Quayo Basket</span>
+        </button>
+      </nav>
     </div>
 
   </div>
 </main>
 
-<footer>
+<footer class="site-footer" id="siteFooter">
   <div class="footer-inner">
-    <div class="footer-status-pill">
-      <span class="dot"></span>
-      <span>Open to Freelance &amp; Product Collaborations</span>
-    </div>
-
-    <h2 class="footer-tagline">
-      Let's build something together.
-    </h2>
-
-    <div class="footer-email-box">
-      <div class="footer-email-pill">
-        <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
-          <span class="email-text">sumitraiworks@gmail.com</span>
-        </a>
-        <button class="copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email address">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span class="copy-toast">Copied!</span>
-        </button>
+    
+    <!-- Top status bar -->
+    <div class="footer-top-row">
+      <div class="footer-status-tag">
+        <span class="live-dot"></span>
+        <span>Available for select product leadership &amp; design advisory</span>
       </div>
-    </div>
-
-    <div class="footer-bottom-row">
       <div class="footer-clock-box" id="delhiClockWrap">
         <span class="live-dot"></span>
         <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
       </div>
-      <div class="flinks">
-        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
-        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram</a>
-        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Main hero call to action -->
+    <div class="footer-hero-cta">
+      <h2 class="footer-tagline">Let's build something thoughtful together.</h2>
+      <p class="footer-sublead">Always open to high-impact products, early-stage ventures, and ambitious design challenges.</p>
+      
+      <div class="footer-email-box">
+        <div class="footer-email-pill">
+          <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
+            <span class="email-text">sumitraiworks@gmail.com</span>
+            <span class="email-arrow">&nearr;</span>
+          </a>
+          <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address" title="Copy email address">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="copy-toast">Copied!</span>
+          </button>
+        </div>
       </div>
     </div>
+
+    <!-- Bottom navigation and meta -->
+    <div class="footer-bottom-nav">
+      <div class="footer-brand-side">
+        <span class="footer-mark">SR</span>
+        <span class="footer-name">Sumit Rai</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-exp-text">8+ years product design &middot; 12+ years design craft</span>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="flinks-nav">
+          <a href="projects.html">Work <span class="nav-key">[W]</span></a>
+          <a href="about.html">About <span class="nav-key">[A]</span></a>
+          <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
+          <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
+          <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
+          <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
+        </div>
+
+        <div class="flinks-social">
+          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X <span class="shahi-arrow">&nearr;</span></a>
+          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram <span class="shahi-arrow">&nearr;</span></a>
+          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF <span class="shahi-arrow">&darr;</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-credit-row">
+      <span>&copy; 2026 Sumit Rai. All rights reserved.</span>
+      <span>Designed with restraint &middot; Built for craft</span>
+    </div>
+
   </div>
 </footer>
 
@@ -250,6 +372,13 @@
           <span>Resume &amp; Credentials</span>
         </span>
         <span class="cmd-shortcut">R</span>
+      </a>
+      <a href="resources.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+          <span>Curated Resources (Books &amp; Tools)</span>
+        </span>
+        <span class="cmd-shortcut">B</span>
       </a>
       <a href="playground.html" class="cmd-item">
         <span class="item-left">
@@ -354,7 +483,7 @@
 
   // Play micro click on link / button clicks
   document.addEventListener('click', function(e){
-    if (e.target.closest('a, button, .proj-card, .tool-tile, .pg-card-rich')) {
+    if (e.target.closest('a, button, .proj-card, .tool-tile, .resource-card, .pg-card-rich')) {
       AudioEngine.playTick(780, 0.028);
     }
   });
@@ -362,7 +491,6 @@
   // 2. Real-time New Delhi (IST) Clock
   function updateDelhiClock(){
     const textEl = document.getElementById('liveClockText');
-    const pageVal = document.getElementById('delhiLiveClockVal');
     const now = new Date();
     // New Delhi is UTC +5:30
     const istOffset = 5.5 * 60 * 60 * 1000;
@@ -377,7 +505,6 @@
 
     const formatted = `${h}:${m}:${s} ${ampm} IST`;
     if (textEl) textEl.textContent = formatted;
-    if (pageVal) pageVal.textContent = formatted;
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
@@ -397,26 +524,35 @@
   }
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 
-  // 4. Scroll Header Auto-Hide
+  // 4. Scroll Header — add scrolled class for backdrop effect
   const header = document.getElementById('siteHeader');
-  let lastY = window.scrollY, ticking = false;
   window.addEventListener('scroll', function(){
-    if (!ticking) {
-      window.requestAnimationFrame(function(){
-        const curY = window.scrollY;
-        if (header && curY > 80 && curY > lastY) {
-          header.classList.add('nav-hidden');
-        } else if (header) {
-          header.classList.remove('nav-hidden');
-        }
-        lastY = curY;
-        ticking = false;
-      });
-      ticking = true;
+    if (header) {
+      header.classList.toggle('nav-scrolled', window.scrollY > 40);
     }
   }, { passive: true });
 
-  // 5. Copy Email
+  // 5. Mobile Nav Toggle (hamburger)
+  const navMenuToggle = document.getElementById('navMenuToggle');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  if (navMenuToggle && mobileNavDrawer) {
+    navMenuToggle.addEventListener('click', function(){
+      const isOpen = mobileNavDrawer.classList.toggle('open');
+      navMenuToggle.setAttribute('aria-expanded', isOpen);
+      mobileNavDrawer.setAttribute('aria-hidden', !isOpen);
+      navMenuToggle.classList.toggle('open', isOpen);
+    });
+    // Close drawer on nav link click
+    mobileNavDrawer.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobileNavDrawer.classList.remove('open');
+        navMenuToggle.setAttribute('aria-expanded', 'false');
+        navMenuToggle.classList.remove('open');
+      });
+    });
+  }
+
+  // 6. Copy Email with Toast & Audio
   const copyBtn = document.getElementById('copyEmailBtn');
   if (copyBtn) {
     copyBtn.addEventListener('click', function(e){
@@ -426,19 +562,6 @@
         AudioEngine.playTick(1020, 0.06);
         setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
       });
-    });
-  }
-
-  // 6. Interactive Nickname Cycle (Debi Style)
-  const nickBtn = document.getElementById('nicknameToggle');
-  if (nickBtn) {
-    const nicks = ['Sumi', 'Sumo'];
-    let idx = 0;
-    nickBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      idx = (idx + 1) % nicks.length;
-      nickBtn.textContent = nicks[idx];
-      AudioEngine.playTick(880 + (idx * 120), 0.04);
     });
   }
 
@@ -472,19 +595,6 @@
     });
   }
 
-  document.addEventListener('keydown', function(e){
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      if (cmdModal && cmdModal.classList.contains('active')) {
-        closeCmd();
-      } else {
-        openCmd();
-      }
-    } else if (e.key === 'Escape' && cmdModal && cmdModal.classList.contains('active')) {
-      closeCmd();
-    }
-  });
-
   if (cmdThemeBtn) {
     cmdThemeBtn.addEventListener('click', function(){
       toggleTheme();
@@ -507,176 +617,138 @@
       filterCmd(e.target.value);
     });
   }
+
+  // 8. Global Keyboard Shortcuts Navigation (inspired by shahimim.com)
+  document.addEventListener('keydown', function(e){
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) {
+        closeCmd();
+      } else {
+        openCmd();
+      }
+      return;
+    }
+
+    if (cmdModal && cmdModal.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeCmd();
+      }
+      return;
+    }
+
+    // Do not trigger navigation when typing in inputs or holding modifier keys
+    const tag = (e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) {
+      return;
+    }
+    if (e.metaKey || e.ctrlKey || e.altKey) {
+      return;
+    }
+
+    const key = e.key.toLowerCase();
+    if (key === 'w') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'projects.html';
+    } else if (key === 'a') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'about.html';
+    } else if (key === 'r') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resume.html';
+    } else if (key === 'b') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resources.html';
+    } else if (key === 'p') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'playground.html';
+    } else if (key === 'c') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'contact.html';
+    } else if (e.key === 'Escape') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'index.html';
+    }
+  });
 })();
 
 
   const allProjects = [{"id": "edumanage", "title": "EduManage", "full_title": "EduManage \u2014 Smart Educational Management Dashboard", "category": "SaaS Product \u00b7 CMS", "year": "2024 \u2014 2026", "tagline": "A modern institution dashboard shaped around academic operations, content management, and day-to-day school workflows.", "image": "./assets/proj_edumanage.png", "role": "Senior Product Designer (Lead UI/UX, Information Architecture)", "focus_areas": "SaaS Dashboard \u00b7 Multi-Tenant CMS \u00b7 Academic Workflows \u00b7 Design System", "timeline": "2024 \u2014 2026", "in_short": "Streamlined fragmented school administrative workflows into an intuitive, high-clarity operational workspace.", "overview": "EduManage is an enterprise-grade institution management dashboard engineered to bring student records, curriculum administration, examination schedules, and faculty workflows into a cohesive, single-screen command centre. The product serves academic coordinators and school directors who require rapid operational overview without informational clutter.", "challenge": "Educational institutions traditionally rely on disconnected legacy tools, disparate spreadsheets, and fragmented notification channels. Coordinators struggled with slow data retrieval, disjointed approval cycles, and cognitive overload during peak examination and enrollment cycles.", "my_role": "As the Senior Product Designer, I directed end-to-end user research, information architecture, component design systems, and rapid clickable prototypes. I worked directly alongside school administrators, product management, and engineering teams from problem definition to live release.", "approach": "I mapped administrative user journeys to uncover recurring bottlenecks. Rather than reproducing paper forms digitally, I structured the interface around role-based modular cards, contextual status widgets, and high-density data tables optimized for quick scanning and keyboard navigation.", "solution": "Designed a unified multi-tenant dashboard incorporating automated attendance telemetry, course schedule visualization, multi-tiered permission management, and an actionable alert drawer that surfaces critical deadlines before they escalate.", "outcome": "Significantly reduced coordinator task completion times, minimized administrative data entry errors, and established a scalable design system now adopted across multiple sister educational portals.", "tags": ["SaaS", "Dashboard", "CMS", "EdTech"]}, {"id": "quayo", "title": "Quayo Basket", "full_title": "Quayo Basket \u2014 Grocery App & Brand Identity System", "category": "Grocery App \u00b7 Brand Identity", "year": "2024 \u2014 2026", "tagline": "A grocery mobile app paired with a fresh retail brand identity system for a clearer, friendlier shopping experience.", "image": "./assets/proj_quayo.png", "role": "Lead Product Designer & Brand Strategist", "focus_areas": "Mobile UX/UI \u00b7 Brand Identity \u00b7 Grocery Checkout Flows \u00b7 Micro-interactions", "timeline": "2024 \u2014 2026", "in_short": "Crafted an inviting visual language and simplified multi-category grocery shopping to boost repeat orders.", "overview": "Quayo Basket combines an intuitive on-demand grocery shopping application with a comprehensive retail brand identity. The project aimed to deliver effortless fresh produce discovery, transparent pricing, and rapid checkout experiences for busy urban households.", "challenge": "Grocery consumers drop off when search yields overwhelming category trees, item quantities are confusing to adjust, or cart substitutions are poorly communicated. The client needed both an app that felt effortless and a memorable brand personality that stood out in a competitive market.", "my_role": "I led both product design and visual identity. This included user journey mapping, design of the mobile interface (iOS & Android), brand guidelines, packaging touchpoints, icon systems, and prototype user testing.", "approach": "I designed for one-handed thumb interaction, focusing heavily on quick quantity adjustments directly from search results and shelf views. I paired clean typography with warm orange and green accents that evoke freshness without overwhelming the product photography.", "solution": "Delivered an end-to-end mobile app featuring visual basket meters, smart past-order reordering in two taps, real-time inventory substitution preferences, and an optimized single-screen checkout flow.", "outcome": "The refreshed shopping experience lowered checkout abandonment rates, boosted repeat weekly cart creation, and established an authentic brand identity that resonated with customers across digital and physical packaging.", "tags": ["Mobile App", "UI/UX", "Branding", "E-Commerce"]}, {"id": "musafir", "title": "Musafir", "full_title": "Musafir \u2014 Travel Marketplace Landing Page Redesign", "category": "Web Design \u00b7 Marketplace", "year": "2024 \u2014 2025", "tagline": "A travel marketplace landing page redesigned for stronger conversion paths, clear destination framing, and confident decision-making.", "image": "./assets/proj_musafir.png", "role": "Product & Visual Designer", "focus_areas": "Landing Page Architecture \u00b7 Destination Discovery \u00b7 Conversion Rate Optimization", "timeline": "2024 \u2014 2025", "in_short": "Transformed an information-dense travel portal into an editorial, high-converting discovery destination.", "overview": "Musafir is a premier travel discovery and booking platform connecting travelers with curated journeys and vacation packages. The redesign focused on overhauling the public-facing web landing experience to elevate destination storytelling while maximizing booking search intent.", "challenge": "The previous landing page suffered from banner blindness, cluttered deal carousels, and vague search filters that caused prospective travelers to leave without exploring destinations or entering the search funnel.", "my_role": "I served as Product & Visual Designer, responsible for competitive UX benchmarking, wireframing, high-fidelity responsive UI design, visual art direction, and conversion funnels.", "approach": "I structured the homepage as an editorial travel magazine: large, inspiring destination imagery paired with concise package highlights, verified guest reviews, transparent pricing tags, and a prominent persistent search bar.", "solution": "Introduced a modern search module with interactive date-flexibility toggles, thematic collections ('Weekend Escapes', 'Cultural Expeditions'), social proof badges, and clear visual hierarchy guiding visitors smoothly toward booking queries.", "outcome": "The redesigned landing page achieved notable improvements in search initiation rates and dwell time, establishing a trustworthy first impression that reinforced Musafir's position as an aspirational travel provider.", "tags": ["Web Design", "Travel", "Marketplace", "Conversion"]}, {"id": "community", "title": "Community", "full_title": "Community \u2014 Student Learning Hub & EdTech Platform", "category": "EdTech \u00b7 Community Platform", "year": "2023 \u2014 2025", "tagline": "A student learning hub designed to support academic growth through shared peer discussions, study resources, and platform-led engagement.", "image": "./assets/proj_community.png", "role": "Product Designer (FIITJEE / Edfora Ecosystem)", "focus_areas": "EdTech Platform Design \u00b7 Peer Interaction Workflows \u00b7 Resource Architecture", "timeline": "2023 \u2014 2025", "in_short": "Designed approachable study circles, resource bookmarks, and peer engagement structures for active student participation.", "overview": "Community is an educational collaboration platform designed to empower students preparing for competitive academic milestones. It bridges solitary studying with peer motivation through question-and-answer channels, mentor-moderated study rooms, and curated subject repositories.", "challenge": "Students studying for high-stakes exams often experience isolation and hesitation when asking questions in large public forums. The objective was to cultivate a safe, distraction-free environment that incentivizes constructive knowledge sharing.", "my_role": "As Product Designer, I spearheaded user research interviews with students and educators, mapped community governance workflows, designed responsive desktop and tablet interfaces, and collaborated with frontend engineers on implementation.", "approach": "I broke down intimidating monolithic forums into topic-focused micro-communities. Emphasized clear thread hierarchy, verified solution badges from educators, and lightweight bookmarking so students could preserve revision notes effortlessly.", "solution": "Built a clean, minimal learning platform incorporating contextual markdown equation support, peer study circles, weekly revision leaderboards, and a distraction-free reader mode for academic materials.", "outcome": "Doubled daily active peer discussions, reduced average unanswered question duration, and created a positive digital study environment embraced by both educators and competitive learners.", "tags": ["EdTech", "Platform", "Community", "Collaboration"]}];
-
-  const archiveGrid = document.getElementById('projectsArchiveGrid');
-  const filterTabs = document.getElementById('projectFilterTabs');
   const listView = document.getElementById('projectsListView');
   const caseView = document.getElementById('caseStudyView');
-  const caseContent = document.getElementById('caseStudyContent');
   const backBtn = document.getElementById('backToProjectsBtn');
-  const categoryChip = document.getElementById('caseCategoryChip');
+  const filterTabs = document.querySelectorAll('#projectFilterTabs .filter-btn');
 
-  function renderProjects(filter = 'all') {
-    if (!archiveGrid) return;
-    archiveGrid.innerHTML = '';
-    const filtered = allProjects.filter(p => {
-      if (filter === 'all') return true;
-      if (filter === 'saas') return p.tags.includes('SaaS') || p.tags.includes('CMS');
-      if (filter === 'mobile') return p.tags.includes('Mobile App');
-      if (filter === 'web') return p.tags.includes('Web Design') || p.tags.includes('Marketplace');
-      if (filter === 'edtech') return p.tags.includes('EdTech');
-      return true;
-    });
-
-    filtered.forEach(p => {
-      const card = document.createElement('article');
-      card.className = 'proj-card';
-      card.setAttribute('role', 'button');
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('aria-label', 'Open case study for ' + p.title);
-      card.innerHTML = `
-        <div class="proj-image">
-          <img src="${p.image}" alt="${p.full_title}" loading="lazy" />
-        </div>
-        <div class="proj-body">
-          <div class="proj-meta">
-            <span class="proj-category">${p.category}</span>
-            <span class="proj-year">${p.year}</span>
-          </div>
-          <h3 class="proj-title">${p.title}</h3>
-          <p class="proj-desc">${p.tagline}</p>
-          <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
-            <div class="proj-tech-tags">
-              <span class="proj-tag">${p.tags[0]}</span>
-              <span class="proj-tag">${p.tags[1]}</span>
-            </div>
-          </div>
-        </div>
-      `;
-      card.addEventListener('click', () => openCaseStudy(p.id));
-      card.addEventListener('keydown', (e) => { if (e.key === 'Enter') openCaseStudy(p.id); });
-      archiveGrid.appendChild(card);
-    });
-  }
-
-  if (filterTabs) {
-    filterTabs.addEventListener('click', (e) => {
-      const btn = e.target.closest('.filter-btn');
-      if (!btn) return;
-      filterTabs.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  // Filter functionality
+  filterTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterTabs.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      renderProjects(btn.dataset.filter);
+      const cat = btn.dataset.filter;
+      const cards = document.querySelectorAll('#projectsArchiveGrid .proj-card');
+      
+      cards.forEach((card, idx) => {
+        const p = allProjects[idx];
+        if (cat === 'all') {
+          card.style.display = 'flex';
+        } else if (cat === 'saas' && p.category.toLowerCase().includes('saas')) {
+          card.style.display = 'flex';
+        } else if (cat === 'mobile' && p.category.toLowerCase().includes('grocery')) {
+          card.style.display = 'flex';
+        } else if (cat === 'web' && p.category.toLowerCase().includes('web')) {
+          card.style.display = 'flex';
+        } else if (cat === 'edtech' && p.category.toLowerCase().includes('edtech')) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
-  }
+  });
 
+  // Open Case Study Details
   function openCaseStudy(projId) {
-    const project = allProjects.find(p => p.id === projId);
-    if (!project) return;
+    const pIndex = allProjects.findIndex(item => item.id === projId);
+    if (pIndex === -1) return;
+    const p = allProjects[pIndex];
 
-    const idx = allProjects.findIndex(p => p.id === projId);
-    const prev = allProjects[(idx - 1 + allProjects.length) % allProjects.length];
-    const next = allProjects[(idx + 1) % allProjects.length];
+    document.getElementById('caseTitle').textContent = p.title;
+    document.getElementById('caseTagline').textContent = p.tagline;
+    document.getElementById('caseCategoryChip').textContent = p.category;
+    document.getElementById('caseRole').textContent = p.role;
+    document.getElementById('caseTimeline').textContent = p.timeline;
+    document.getElementById('caseFocus').textContent = p.focus_areas;
+    document.getElementById('caseImpact').textContent = p.in_short;
+    document.getElementById('caseHeroImg').src = p.image;
+    document.getElementById('caseHeroImg').alt = p.full_title;
 
-    if (categoryChip) categoryChip.textContent = project.category;
+    document.getElementById('caseOverviewText').textContent = p.overview;
+    document.getElementById('caseChallengeText').textContent = p.challenge;
+    document.getElementById('caseRoleText').textContent = p.my_role;
+    document.getElementById('caseApproachText').textContent = p.approach;
+    document.getElementById('caseSolutionText').textContent = p.solution;
+    document.getElementById('caseOutcomeText').textContent = p.outcome;
 
-    caseContent.innerHTML = `
-      <!-- COMPACT INFO BLOCK -->
-      <div class="case-meta-card">
-        <div class="case-title-row">
-          <span class="eyebrow"><span class="dot"></span> Case Study</span>
-          <h1>${project.full_title}</h1>
-        </div>
-        <p class="case-tagline">${project.tagline}</p>
-        
-        <div class="case-meta-grid">
-          <div class="case-meta-item">
-            <div class="label">My Role</div>
-            <div class="val">${project.role}</div>
-          </div>
-          <div class="case-meta-item">
-            <div class="label">Focus Areas</div>
-            <div class="val">${project.focus_areas}</div>
-          </div>
-          <div class="case-meta-item">
-            <div class="label">Timeline</div>
-            <div class="val">${project.timeline}</div>
-          </div>
-          <div class="case-meta-item">
-            <div class="label">In Short</div>
-            <div class="val">${project.in_short}</div>
-          </div>
-        </div>
-      </div>
+    // Prev / Next setup
+    const prevIndex = (pIndex - 1 + allProjects.length) % allProjects.length;
+    const nextIndex = (pIndex + 1) % allProjects.length;
 
-      <!-- HERO IMAGE PREVIEW -->
-      <div class="case-hero-image">
-        <img src="${project.image}" alt="${project.full_title} hero preview" />
-      </div>
+    const prevP = allProjects[prevIndex];
+    const nextP = allProjects[nextIndex];
 
-      <!-- STRUCTURED CASE STUDY SECTIONS -->
-      <div class="case-body-flow">
-        
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 01 &mdash; Project Overview</h3>
-          <p>${project.overview}</p>
-        </div>
+    const prevBtn = document.getElementById('prevCaseBtn');
+    const nextBtn = document.getElementById('nextCaseBtn');
 
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 02 &mdash; The Challenge</h3>
-          <p>${project.challenge}</p>
-        </div>
+    document.getElementById('prevCaseTitle').textContent = prevP.title;
+    document.getElementById('nextCaseTitle').textContent = nextP.title;
 
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 03 &mdash; My Role &amp; Responsibilities</h3>
-          <p>${project.my_role}</p>
-        </div>
-
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 04 &mdash; My Approach &amp; Process</h3>
-          <p>${project.approach}</p>
-        </div>
-
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 05 &mdash; The Solution</h3>
-          <p>${project.solution}</p>
-        </div>
-
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 06 &mdash; Outcome &amp; Impact</h3>
-          <p>${project.outcome}</p>
-        </div>
-
-        <div class="case-section-box" style="background:var(--surface-subtle); border-color:rgba(224,99,30,0.25);">
-          <h3><span class="sec-dot"></span> 07 &mdash; In Short</h3>
-          <p style="font-weight:600; color:var(--ink);">${project.in_short}</p>
-        </div>
-
-      </div>
-
-      <!-- PREV / NEXT NAVIGATION -->
-      <div class="case-nav">
-        <button class="case-nav-btn prev" id="prevCaseBtn">
-          <span class="nav-eyebrow">&larr; Previous Case Study</span>
-          <span class="nav-proj-name">${prev.title}</span>
-        </button>
-        <button class="case-nav-btn next" id="nextCaseBtn">
-          <span class="nav-eyebrow">Next Case Study &rarr;</span>
-          <span class="nav-proj-name">${next.title}</span>
-        </button>
-      </div>
-    `;
-
-    document.getElementById('prevCaseBtn').addEventListener('click', () => openCaseStudy(prev.id));
-    document.getElementById('nextCaseBtn').addEventListener('click', () => openCaseStudy(next.id));
+    prevBtn.onclick = () => openCaseStudy(prevP.id);
+    nextBtn.onclick = () => openCaseStudy(nextP.id);
 
     listView.hidden = true;
     caseView.hidden = false;
-    window.location.hash = project.id;
+    window.location.hash = projId;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
