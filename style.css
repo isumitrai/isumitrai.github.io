@@ -264,16 +264,36 @@ img, svg {
    Header & Navigation
    ============================================================ */
 header.nav-wrap {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
-  padding: 14px 24px 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  padding: 12px 24px;
   background: transparent;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: padding 0.3s ease, background 0.3s ease;
 }
 
+header.nav-wrap.nav-scrolled {
+  padding: 8px 24px;
+  background: rgba(253, 251, 247, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+
+[data-theme="dark"] header.nav-wrap.nav-scrolled {
+  background: rgba(18, 17, 16, 0.85);
+}
+
+/* remove old nav-hidden */
 header.nav-wrap.nav-hidden {
-  transform: translateY(-115%);
+  transform: none;
+}
+
+/* body offset so content isn't under fixed nav */
+body {
+  padding-top: 72px;
 }
 
 .nav-pill {
@@ -284,12 +304,21 @@ header.nav-wrap.nav-hidden {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 10px 18px;
+  padding: 10px 20px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   position: relative;
+  transition: box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+/* When scrolled — tighten the pill to look more compact */
+.nav-scrolled .nav-pill {
+  border-radius: var(--radius-md);
+  box-shadow: none;
+  border-color: transparent;
+  background: transparent;
 }
 
 .nav-logo-group {
@@ -301,7 +330,7 @@ header.nav-wrap.nav-hidden {
 .nav-logo {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 16.5px;
+  font-size: 16px;
   color: var(--ink);
   letter-spacing: -0.03em;
   display: inline-flex;
@@ -321,6 +350,7 @@ header.nav-wrap.nav-hidden {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.04em;
+  flex-shrink: 0;
 }
 
 [data-theme="dark"] .nav-logo .sr-mark {
@@ -331,16 +361,17 @@ header.nav-wrap.nav-hidden {
 .nav-tabs {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
 }
 
 .nav-tabs a {
-  padding: 7px 13px;
+  padding: 6px 12px;
   border-radius: var(--radius-full);
-  font-size: 12.5px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--ink-soft);
-  transition: color 0.18s ease, background-color 0.18s ease;
+  transition: color 0.15s ease, background-color 0.15s ease;
+  letter-spacing: 0;
 }
 
 .nav-tabs a:hover {
@@ -392,6 +423,89 @@ header.nav-wrap.nav-hidden {
   background: var(--surface);
   border: 1px solid var(--line);
   color: var(--ink);
+}
+
+.sound-label-text {
+  display: inline;
+}
+
+/* Mobile hamburger button */
+.nav-menu-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.18s;
+}
+
+.nav-menu-toggle:hover {
+  border-color: var(--ink);
+}
+
+.hamburger-line {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-menu-toggle.open .hamburger-line:first-child {
+  transform: translateY(3.25px) rotate(45deg);
+}
+
+.nav-menu-toggle.open .hamburger-line:last-child {
+  transform: translateY(-3.25px) rotate(-45deg);
+}
+
+/* Mobile nav drawer */
+.mobile-nav-drawer {
+  display: none;
+  max-width: var(--wrap-max);
+  margin: 8px auto 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-nav-drawer.open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 2px;
+}
+
+.mobile-nav-links a {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: color 0.15s, background 0.15s;
+}
+
+.mobile-nav-links a:hover,
+.mobile-nav-links a.active {
+  color: var(--ink);
+  background: var(--surface-subtle);
 }
 
 /* Floating Theme Toggle */
@@ -2356,17 +2470,34 @@ footer .footer-inner {
     padding: 8px 12px;
   }
 
-  .nav-tabs a {
-    padding: 6px 10px;
-    font-size: 11px;
+  /* Show hamburger, hide desktop tabs and action pills */
+  .nav-tabs {
+    display: none;
   }
 
   .nav-action-pill {
     display: none;
   }
 
+  .sound-label-text {
+    display: none;
+  }
+
+  .nav-menu-toggle {
+    display: flex;
+  }
+
+  .mobile-nav-drawer {
+    display: block;
+  }
+
+  /* body offset for mobile - header shorter */
+  body {
+    padding-top: 60px;
+  }
+
   .hero {
-    padding: 40px 0 32px;
+    padding: 32px 0 28px;
   }
 
   .stat-row, .about-stats-grid {
@@ -2426,5 +2557,17 @@ footer .footer-inner {
 
   .contact-form-card {
     padding: 24px 20px;
+  }
+}
+
+/* Tablet — partial hamburger (between 641-860px show tablet nav) */
+@media (min-width: 641px) and (max-width: 860px) {
+  .nav-tabs a {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .nav-action-pill .sound-label-text {
+    display: none;
   }
 }

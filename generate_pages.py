@@ -158,7 +158,7 @@ def get_head(title="Sumit Rai — Senior Product Designer | AI Builder", active_
   <meta name="author" content="Sumit Rai" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -169,13 +169,13 @@ def get_nav(active_page):
 <header class="nav-wrap" id="siteHeader">
   <div class="nav-pill">
     <div class="nav-logo-group">
-      <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
+      <a href="index.html" class="nav-logo" title="Sumit Rai">
         <span class="sr-mark">SR</span>
         <span>Sumit Rai</span>
       </a>
     </div>
 
-    <nav class="nav-tabs" aria-label="Main Navigation">
+    <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
       <a href="projects.html" class="{'active' if active_page in ['projects'] else ''}">Work</a>
       <a href="about.html" class="{'active' if active_page == 'about' else ''}">About</a>
       <a href="resume.html" class="{'active' if active_page == 'resume' else ''}">Resume</a>
@@ -184,14 +184,30 @@ def get_nav(active_page):
     </nav>
 
     <div class="nav-right-actions">
-      <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
+      <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds">
         <span id="soundIcon">🔊</span>
-        <span id="soundLabel">Sound</span>
+        <span id="soundLabel" class="sound-label-text">Sound</span>
       </button>
-      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick search and jump (Cmd+K)" title="Quick Command Palette (Cmd+K)">
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)">
         <kbd>⌘K</kbd>
       </button>
+      <button class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
+  </div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="{'active' if active_page == 'index' else ''}">Home</a>
+      <a href="projects.html" class="{'active' if active_page in ['projects'] else ''}">Work</a>
+      <a href="about.html" class="{'active' if active_page == 'about' else ''}">About</a>
+      <a href="resume.html" class="{'active' if active_page == 'resume' else ''}">Resume</a>
+      <a href="playground.html" class="{'active' if active_page == 'playground' else ''}">Playground</a>
+      <a href="contact.html" class="{'active' if active_page == 'contact' else ''}">Contact</a>
+    </nav>
   </div>
 </header>
 
@@ -424,24 +440,33 @@ global_js = """
   }
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 
-  // 4. Scroll Header Auto-Hide
+  // 4. Scroll Header — add scrolled class for backdrop effect (always visible)
   const header = document.getElementById('siteHeader');
-  let lastY = window.scrollY, ticking = false;
   window.addEventListener('scroll', function(){
-    if (!ticking) {
-      window.requestAnimationFrame(function(){
-        const curY = window.scrollY;
-        if (header && curY > 80 && curY > lastY) {
-          header.classList.add('nav-hidden');
-        } else if (header) {
-          header.classList.remove('nav-hidden');
-        }
-        lastY = curY;
-        ticking = false;
-      });
-      ticking = true;
+    if (header) {
+      header.classList.toggle('nav-scrolled', window.scrollY > 40);
     }
   }, { passive: true });
+
+  // 4b. Mobile Nav Toggle (hamburger)
+  const navMenuToggle = document.getElementById('navMenuToggle');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  if (navMenuToggle && mobileNavDrawer) {
+    navMenuToggle.addEventListener('click', function(){
+      const isOpen = mobileNavDrawer.classList.toggle('open');
+      navMenuToggle.setAttribute('aria-expanded', isOpen);
+      mobileNavDrawer.setAttribute('aria-hidden', !isOpen);
+      navMenuToggle.classList.toggle('open', isOpen);
+    });
+    // Close drawer on nav link click
+    mobileNavDrawer.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobileNavDrawer.classList.remove('open');
+        navMenuToggle.setAttribute('aria-expanded', 'false');
+        navMenuToggle.classList.remove('open');
+      });
+    });
+  }
 
   // 5. Copy Email
   const copyBtn = document.getElementById('copyEmailBtn');
@@ -556,7 +581,7 @@ def build_index():
           <h3 class="proj-title">{p['title']}</h3>
           <p class="proj-desc">{p['tagline']}</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">Case Study</span>
             <div class="proj-tech-tags">
               <span class="proj-tag">{p['tags'][0]}</span>
               <span class="proj-tag">{p['tags'][1]}</span>
@@ -589,7 +614,7 @@ def build_index():
 <main class="page-body">
   <div class="wrap-wide">
     
-    <!-- SECTION 01 — HERO / INTRODUCTION (DEBI-STYLE NICKNAME) -->
+    <!-- SECTION 01 — HERO -->
     <section class="hero">
       <div class="status-pill">
         <span class="dot"></span>
@@ -597,19 +622,19 @@ def build_index():
       </div>
 
       <h1 class="hero-greeting">
-        Hi, I'm Sumit Rai <span class="nickname-note">(most people call me <button class="nickname-pill-toggle" id="nicknameToggle" title="Click to switch nickname">Sumi</button> or <strong class="accent">Sumo</strong>)</span>.
+        Hi, I'm Sumit Rai.
       </h1>
 
-      <p class="hero-statement">I design products, build experiences and explore what's next.</p>
+      <p class="hero-statement">I design products, build experiences<br>and explore what's next.</p>
       
       <p class="hero-description">
-        I'm a Senior Product Designer and AI Builder, exploring the intersection of design, technology and thoughtful product experiences.
+        Senior Product Designer and AI Builder — exploring the intersection of design, technology and thoughtful product experiences.
       </p>
 
       <div class="cta-row">
-        <a href="#work" class="btn btn-primary">View My Work &darr;</a>
-        <a href="about.html" class="btn btn-secondary">More About Me &rarr;</a>
-        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+        <a href="#work" class="btn btn-primary">View My Work</a>
+        <a href="about.html" class="btn btn-secondary">About Me</a>
+        <a href="contact.html" class="btn btn-ghost">Get in Touch</a>
       </div>
     </section>
 
@@ -621,7 +646,7 @@ def build_index():
           <h2>Work I'm Proud Of</h2>
           <p>Selected digital products shaped across SaaS, EdTech, mobile apps, and marketplace platforms.</p>
         </div>
-        <a href="projects.html" class="section-header-link">See All My Work &rarr;</a>
+        <a href="projects.html" class="section-header-link">All Work</a>
       </div>
 
       <div class="proj-grid">
@@ -629,7 +654,7 @@ def build_index():
       </div>
 
       <div class="see-all-wrap">
-        <a href="projects.html" class="btn btn-secondary">See All My Work &rarr;</a>
+        <a href="projects.html" class="btn btn-secondary">All Work</a>
       </div>
     </section>
 
@@ -675,7 +700,7 @@ def build_index():
             My work spans SaaS, AI, EdTech, FinTech, HealthTech, and consumer platforms. Lately, I explore how AI and emerging technologies reshape human-computer interfaces, bridging design strategy with functional code.
           </p>
           <div style="margin-top:24px;">
-            <a href="about.html" class="btn btn-secondary">More About Me &rarr;</a>
+            <a href="about.html" class="btn btn-secondary">About Me</a>
           </div>
         </div>
 
@@ -712,7 +737,7 @@ def build_index():
           <h2>Selected Experience</h2>
           <p>Roles and founding product work across high-impact design studios and tech teams.</p>
         </div>
-        <a href="resume.html" class="section-header-link">View Full Resume &rarr;</a>
+        <a href="resume.html" class="section-header-link">Full Resume</a>
       </div>
 
       <div class="timeline-list">
@@ -794,7 +819,7 @@ def build_index():
       <h2>Have something interesting in mind?</h2>
       <p>I'm always open to meaningful conversations, interesting ideas and opportunities to build something thoughtful.</p>
       <div class="cta-btns">
-        <a href="contact.html" class="btn btn-primary">Get in Touch &rarr;</a>
+        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
         <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Me</a>
       </div>
     </section>
@@ -825,7 +850,7 @@ def build_projects():
           <h3 class="proj-title">{p['title']}</h3>
           <p class="proj-desc">{p['tagline']}</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">Case Study</span>
             <div class="proj-tech-tags">
               <span class="proj-tag">{p['tags'][0]}</span>
               <span class="proj-tag">{p['tags'][1]}</span>
@@ -923,7 +948,7 @@ def build_projects():
           <h3 class="proj-title">${{p.title}}</h3>
           <p class="proj-desc">${{p.tagline}}</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">View Case Study &rarr;</span>
+            <span class="proj-view-link">Case Study</span>
             <div class="proj-tech-tags">
               <span class="proj-tag">${{p.tags[0]}}</span>
               <span class="proj-tag">${{p.tags[1]}}</span>
@@ -1034,11 +1059,11 @@ def build_projects():
       <!-- PREV / NEXT NAVIGATION -->
       <div class="case-nav">
         <button class="case-nav-btn prev" id="prevCaseBtn">
-          <span class="nav-eyebrow">&larr; Previous Case Study</span>
+          <span class="nav-eyebrow">Previous</span>
           <span class="nav-proj-name">${{prev.title}}</span>
         </button>
         <button class="case-nav-btn next" id="nextCaseBtn">
-          <span class="nav-eyebrow">Next Case Study &rarr;</span>
+          <span class="nav-eyebrow">Next</span>
           <span class="nav-proj-name">${{next.title}}</span>
         </button>
       </div>
@@ -1092,7 +1117,7 @@ def build_about():
           Over the past decade, I've journeyed from crafting brand identities and marketing collateral to architecting complex enterprise SaaS, EdTech ecosystems, and AI-native products. I believe the best products balance strategic clarity with rigorous visual craftsmanship.
         </p>
         <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;">
-          <a href="resume.html" class="btn btn-primary">Read My Resume &rarr;</a>
+          <a href="resume.html" class="btn btn-primary">Read Resume</a>
           <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
         </div>
       </div>
@@ -1223,8 +1248,8 @@ def build_about():
       <h2>Read My Resume</h2>
       <p>Explore my detailed professional timeline, credentials, key accomplishments, and download a printable PDF copy.</p>
       <div class="cta-btns">
-        <a href="resume.html" class="btn btn-primary">Go to Resume Page &rarr;</a>
-        <a href="assets/Sumit_Rai_Resume.pdf" download class="btn btn-secondary">Download Resume PDF &darr;</a>
+        <a href="resume.html" class="btn btn-primary">Resume Page</a>
+        <a href="assets/Sumit_Rai_Resume.pdf" download class="btn btn-secondary">Download PDF</a>
       </div>
     </section>
 
@@ -1273,7 +1298,7 @@ def build_resume():
       
       <!-- Top Actions Bar -->
       <div class="resume-top-bar">
-        <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+        <a href="index.html" class="back-link">Back to Portfolio</a>
         <div class="resume-actions-group">
           <button class="btn btn-secondary btn-sm" onclick="window.print()" title="Print or save as PDF">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
@@ -1281,7 +1306,7 @@ def build_resume():
           </button>
           <a href="./assets/Sumit_Rai_Resume.pdf" download="Sumit_Rai_Resume.pdf" class="btn btn-primary btn-sm" id="downloadResumePdf">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download Resume PDF &darr;</span>
+            <span>Download PDF</span>
           </a>
         </div>
       </div>
@@ -1446,7 +1471,7 @@ def build_resume():
 
       <div style="display:flex; justify-content:center; margin-top:32px;">
         <a href="./assets/Sumit_Rai_Resume.pdf" download="Sumit_Rai_Resume.pdf" class="btn btn-primary">
-          Download Official Resume PDF &darr;
+          Download Resume PDF
         </a>
       </div>
 
@@ -1554,7 +1579,7 @@ def build_playground():
           <h3>{safe_title}</h3>
           <p>{safe_desc}</p>
           <div class="pg-foot">
-            <span>Inspect Exploration &rarr;</span>
+            <span>Inspect</span>
             <span style="font-size:11px; opacity:0.7;">Raimage Lab</span>
           </div>
         </div>
@@ -1716,7 +1741,7 @@ def build_contact():
 
           <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
             <button type="submit" class="btn btn-primary" id="sendBtn">
-              <span>Send Message &rarr;</span>
+              <span>Send Message</span>
             </button>
             <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sumitraiworks@gmail.com&amp;su=Product%20Collaboration%20with%20Sumit" target="_blank" rel="noopener" class="btn btn-secondary" title="Open Gmail in web browser">
               <span>Open in Gmail ↗</span>
