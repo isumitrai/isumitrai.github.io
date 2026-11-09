@@ -1,26 +1,41 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sumit Rai — Product Designer</title>
-<meta name="description" content="Sumit Rai — Senior Product Designer & AI Builder. Case studies, about, resume, playground." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Sumit Rai</title>
+  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 7+ years of product design and 10+ years of overall design experience across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="author" content="Sumit Rai" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="nav-wrap" id="siteHeader">
   <div class="nav-pill">
-    <a href="index.html" class="logo nav-logo">Sumit Rai</a>
-    <nav class="nav-tabs">
-      <a href="projects.html" class="">Projects</a>
+    <div class="nav-logo-group">
+      <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
+        <span class="sr-mark">SR</span>
+        <span>Sumit Rai</span>
+      </a>
+    </div>
+
+    <nav class="nav-tabs" aria-label="Main Navigation">
+      <a href="projects.html" class="">Work</a>
       <a href="about.html" class="active">About</a>
       <a href="resume.html" class="">Resume</a>
       <a href="playground.html" class="">Playground</a>
     </nav>
+
+    <div class="nav-right-actions">
+      <button class="nav-cmd-btn" id="cmdPaletteTrigger" aria-label="Quick search and jump (Cmd+K)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span>Search</span>
+        <kbd>⌘K</kbd>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -31,213 +46,402 @@
 
 <main class="page-body">
   <div class="wrap-wide">
-    <div class="about-hero">
-      <div>
-        <span class="eyebrow about-eyebrow">Senior Product Designer &amp; AI Builder</span>
-        <h1>12+ years. 7 industries.<br>One design mindset.</h1>
-        <p>I go from research to shipped product — across EdTech, FinTech, HealthTech, and consumer apps. Lately I spend as much time in code as in Figma, building AI-native interfaces end-to-end.</p>
-        <div class="about-cta-row">
-          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener" class="clay-btn primary">LinkedIn ↗</a>
-          <a href="mailto:sumitraiworks@gmail.com" class="clay-btn">Send Email</a>
+    
+    <!-- 01 — INTRODUCTION -->
+    <section class="about-hero-grid">
+      <div class="about-hero-copy">
+        <span class="eyebrow"><span class="dot"></span> Senior Product Designer &middot; AI Builder</span>
+        <h1>Hi, I'm Sumit Rai.</h1>
+        <p class="lead">
+          I'm a product designer, creative thinker and builder interested in how design and technology shape the things we experience every day.
+        </p>
+        <p>
+          Over the past decade, I've journeyed from crafting brand identities and marketing collateral to architecting complex enterprise SaaS, EdTech ecosystems, and AI-native products. I believe the best products balance strategic clarity with rigorous visual craftsmanship.
+        </p>
+        <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;">
+          <a href="resume.html" class="btn btn-primary">Read My Resume &rarr;</a>
+          <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Me</a>
         </div>
       </div>
-      <div class="about-photo-wrap">
-        <div class="about-photo">
-          <img src="./assets/AVATAR.png" alt="Sumit Rai portrait" />
+
+      <div class="about-avatar-card">
+        <img src="./assets/avatar.jpg" alt="Sumit Rai portrait" />
+      </div>
+    </section>
+
+    <!-- 02 — MY DESIGN JOURNEY -->
+    <section class="about-editorial-block">
+      <span class="eyebrow"><span class="dot"></span> Chapter 01</span>
+      <h2>My Design Journey</h2>
+      <p>
+        My journey into design began in 2015 at Kitaro Trading, where I immersed myself in the fundamentals of visual hierarchy, brand consistency, and graphic design across diverse physical and digital consumer touchpoints. Working across real-world commercial constraints taught me that design is never purely aesthetic &mdash; it must communicate clearly and drive action.
+      </p>
+      <p>
+        In 2019, my focus shifted decisively toward digital product design. At Design Matra, I took ownership of complex user journeys across FinTech, HealthTech, and E-Commerce products, tackling onboarding friction, checkout drop-offs, and multi-platform consistency.
+      </p>
+      <p>
+        Later, as Senior Product Designer at Edfora Infotech, I led end-to-end design across web and mobile platforms for FIITJEE educational products, designing student learning hubs, institutional dashboards, and component design systems that unified multi-disciplinary engineering and academic teams.
+      </p>
+      <p>
+        Today, at Raimage Design, I work as an independent founding designer partnering directly with founders and product teams. I frequently build high-fidelity interactive prototypes in code, exploring AI-native interfaces that make complex data actionable and effortless.
+      </p>
+    </section>
+
+    <!-- 03 — EXPERIENCE CHRONOLOGY -->
+    <section class="about-editorial-block">
+      <span class="eyebrow"><span class="dot"></span> Chapter 02</span>
+      <h2>Professional Experience</h2>
+      <div class="timeline-list" style="margin-top:20px;">
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Raimage Design</span>
+            <span class="comp-role">Founding Designer</span>
+          </div>
+          <div class="timeline-details">
+            <p>Directing zero-to-one product design, brand identity systems, and AI-native interface explorations for early-stage and growth tech ventures.</p>
+          </div>
+          <div class="timeline-period">2025 &mdash; Present</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Edfora Infotech</span>
+            <span class="comp-role">Senior Product Designer</span>
+          </div>
+          <div class="timeline-details">
+            <p>Led end-to-end UX/UI design across student portals, administrator dashboards, and cross-platform design systems in the FIITJEE ecosystem.</p>
+          </div>
+          <div class="timeline-period">2023 &mdash; 2025</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Design Matra</span>
+            <span class="comp-role">Product Designer</span>
+          </div>
+          <div class="timeline-details">
+            <p>Designed core flows for SaaS, FinTech, and consumer applications. Conducted user research sprints and established modular interface libraries.</p>
+          </div>
+          <div class="timeline-period">2021 &mdash; 2023</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Kitaro Trading</span>
+            <span class="comp-role">Graphic &amp; UI Designer</span>
+          </div>
+          <div class="timeline-details">
+            <p>Crafted digital brand identities, marketing assets, and early web interfaces across consumer lifestyle products.</p>
+          </div>
+          <div class="timeline-period">2015 &mdash; 2021</div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="stat-row">
-      <div class="stat-item">
-        <div class="stat-num">12+</div>
-        <div class="stat-label">Years Experience</div>
-        <div class="stat-sub">Product &amp; Systems Leadership</div>
+    <!-- 04 — WHAT I EXPLORE -->
+    <section class="about-editorial-block">
+      <span class="eyebrow"><span class="dot"></span> Chapter 03</span>
+      <h2>What I Explore</h2>
+      <p>My current focus areas across the spectrum of product thinking and craft:</p>
+      
+      <div class="explore-grid">
+        <div class="explore-pill">
+          <h4>Product Design</h4>
+          <p>Architecting user journeys, wireframing, and delivering pixel-perfect production screens.</p>
+        </div>
+        <div class="explore-pill">
+          <h4>User Experience</h4>
+          <p>Rooting decisions in user testing, cognitive ergonomics, and information hierarchy.</p>
+        </div>
+        <div class="explore-pill">
+          <h4>Design Systems</h4>
+          <p>Building reusable component libraries, design tokens, and scalable team guidelines.</p>
+        </div>
+        <div class="explore-pill">
+          <h4>AI &amp; Emerging Tech</h4>
+          <p>Exploring conversational interfaces, generative workflows, and AI-assisted creation.</p>
+        </div>
+        <div class="explore-pill">
+          <h4>Product Strategy</h4>
+          <p>Aligning customer desirability with business viability and technical feasibility.</p>
+        </div>
+        <div class="explore-pill">
+          <h4>Creative Exploration</h4>
+          <p>Pushing visual craft outside briefs through experiments, industrial design, and 3D shots.</p>
+        </div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">200+</div>
-        <div class="stat-label">Projects Shipped</div>
-        <div class="stat-sub">Web, Mobile &amp; AI Products</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">7</div>
-        <div class="stat-label">Industries</div>
-        <div class="stat-sub">FinTech, EdTech, SaaS, Health &amp; More</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Core Disciplines</div>
-        <div class="stat-sub">Brand, UI/UX &amp; Motion</div>
-      </div>
-    </div>
+    </section>
 
-    <div class="worklogos" style="margin-top:52px;">
-      <div class="section-label" style="display:flex;align-items:center;gap:8px;margin-bottom:26px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);">I have worked at</span></div>
-      <div class="work-row" id="workRow"></div>
-    </div>
+    <!-- 05 — MY PERSPECTIVE -->
+    <section class="about-editorial-block">
+      <span class="eyebrow"><span class="dot"></span> Chapter 04</span>
+      <h2>My Perspective</h2>
+      <p>
+        I believe that great product design is rarely about adding more &mdash; it is about deliberate subtraction until what remains feels obvious, natural, and indispensable.
+      </p>
+      <p>
+        Curiosity is the fuel. Whether diving into frontend code, testing a new LLM model, or examining physical product packaging, staying curious ensures that every solution is informed by a broad perspective on how things work and why people care.
+      </p>
+    </section>
 
-    <div class="beyond-wrap">
-      <div class="section-label">
-        <span class="dot"></span>
-        <span>Beyond the pixel</span>
+    <!-- 06 — READ MY RESUME CTA -->
+    <section class="contact-cta-section" style="margin-top:40px; margin-bottom:56px;">
+      <span class="eyebrow"><span class="dot"></span> Career History</span>
+      <h2>Read My Resume</h2>
+      <p>Explore my detailed professional timeline, credentials, key accomplishments, and download a printable PDF copy.</p>
+      <div class="cta-btns">
+        <a href="resume.html" class="btn btn-primary">Go to Resume Page &rarr;</a>
+        <a href="assets/Sumit_Rai_Resume.pdf" download class="btn btn-secondary">Download Resume PDF &darr;</a>
       </div>
-      <div class="beyond-gallery" aria-label="Beyond the pixel photo reel">
+    </section>
+
+    <!-- BEYOND THE PIXEL PHOTO GALLERY -->
+    <section class="beyond-wrap">
+      <div class="section-header-row" style="margin-bottom:16px;">
+        <div class="section-title-wrap">
+          <span class="eyebrow"><span class="dot"></span> Life Outside Pixels</span>
+          <h3 style="font-size:1.3rem;">Beyond the Screen</h3>
+        </div>
+      </div>
+
+      <div class="beyond-gallery" aria-label="Moments and photography by Sumit Rai">
         <div class="beyond-track">
-          <figure class="photo-card"><img src="./assets/IMG_01.png" alt="Beyond the pixel moment 01" /></figure>
-          <figure class="photo-card"><img src="./assets/IMG_03.jpg" alt="Beyond the pixel moment 03" /></figure>
-          <figure class="photo-card"><img src="./assets/IMG_04.jpg" alt="Beyond the pixel moment 04" /></figure>
-          <figure class="photo-card"><img src="./assets/IMG_06.jpg" alt="Beyond the pixel moment 06" /></figure>
-          <figure class="photo-card"><img src="./assets/IMG_07.jpg" alt="Beyond the pixel moment 07" /></figure>
-          <figure class="photo-card"><img src="./assets/IMG_08.jpg" alt="Beyond the pixel moment 08" /></figure>
-          <!-- Duplicated set for seamless loop -->
-          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_01.png" alt="" /></figure>
-          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_03.jpg" alt="" /></figure>
-          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_04.jpg" alt="" /></figure>
-          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_06.jpg" alt="" /></figure>
-          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_07.jpg" alt="" /></figure>
-          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_08.jpg" alt="" /></figure>
+          <figure class="photo-card"><img src="./assets/img_01.jpg" alt="Moment 01" loading="lazy" /></figure>
+          <figure class="photo-card"><img src="./assets/img_03.jpg" alt="Moment 03" loading="lazy" /></figure>
+          <figure class="photo-card"><img src="./assets/img_04.jpg" alt="Moment 04" loading="lazy" /></figure>
+          <figure class="photo-card"><img src="./assets/img_06.jpg" alt="Moment 06" loading="lazy" /></figure>
+          <figure class="photo-card"><img src="./assets/img_07.jpg" alt="Moment 07" loading="lazy" /></figure>
+          <figure class="photo-card"><img src="./assets/img_08.jpg" alt="Moment 08" loading="lazy" /></figure>
+          <!-- Loop Duplicates -->
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/img_01.jpg" alt="" loading="lazy" /></figure>
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/img_03.jpg" alt="" loading="lazy" /></figure>
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/img_04.jpg" alt="" loading="lazy" /></figure>
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/img_06.jpg" alt="" loading="lazy" /></figure>
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/img_07.jpg" alt="" loading="lazy" /></figure>
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/img_08.jpg" alt="" loading="lazy" /></figure>
         </div>
       </div>
-    </div>
+    </section>
+
   </div>
 </main>
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-badge-wrap">
-      <div class="footer-status-pill">
-        <span class="dot"></span>
-        <span class="mono">OPEN TO FREELANCE &amp; PRODUCT COLLABORATIONS</span>
-      </div>
+    <div class="footer-status-pill">
+      <span class="dot"></span>
+      <span>Open to Freelance &amp; Product Collaborations</span>
     </div>
-    
+
     <h2 class="footer-tagline">
       Let's build something together.
     </h2>
 
     <div class="footer-email-box">
       <div class="footer-email-pill">
-        <a class="pill-left" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sumitraiworks@gmail.com&amp;su=Hello%20Sumit" target="_blank" rel="noopener" title="Open in Gmail">
-          <span class="pill-icon-chip">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 6l-10 7L2 6"/></svg>
-          </span>
+        <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
           <span class="email-text">sumitraiworks@gmail.com</span>
         </a>
-        <button class="pill-icon-chip copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <button class="copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email address">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           <span class="copy-toast">Copied!</span>
         </button>
       </div>
     </div>
 
-    <div class="footer-row-simple">
+    <div class="footer-bottom-row">
+      <span>&copy; Sumit Rai &middot; Senior Product Designer &amp; AI Builder &middot; Delhi, India</span>
       <div class="flinks">
-        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">INSTAGRAM</a>
+        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
-        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LINKEDIN</a>
+        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </div>
 </footer>
 
+<!-- Command + K Navigation Modal -->
+<div class="cmd-modal" id="cmdModal" role="dialog" aria-modal="true" aria-label="Quick Command Palette">
+  <div class="cmd-box">
+    <div class="cmd-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" class="cmd-input" id="cmdInput" placeholder="Type a destination or action..." autocomplete="off" />
+      <span class="cmd-esc">ESC</span>
+    </div>
+    <div class="cmd-list" id="cmdList">
+      <a href="index.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </span>
+        <span class="cmd-shortcut">H</span>
+      </a>
+      <a href="projects.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span>Selected Work (Projects)</span>
+        </span>
+        <span class="cmd-shortcut">W</span>
+      </a>
+      <a href="about.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <span>About Sumit</span>
+        </span>
+        <span class="cmd-shortcut">A</span>
+      </a>
+      <a href="resume.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Resume &amp; Experience</span>
+        </span>
+        <span class="cmd-shortcut">R</span>
+      </a>
+      <a href="assets/Sumit_Rai_Resume.pdf" download class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download Resume PDF</span>
+        </span>
+        <span class="cmd-shortcut">PDF</span>
+      </a>
+      <a href="playground.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
+          <span>Playground &amp; UI Experiments</span>
+        </span>
+        <span class="cmd-shortcut">P</span>
+      </a>
+      <a href="mailto:sumitraiworks@gmail.com" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Email Sumit (sumitraiworks@gmail.com)</span>
+        </span>
+        <span class="cmd-shortcut">@</span>
+      </a>
+      <div class="cmd-item" id="cmdToggleTheme">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
+          <span>Toggle Dark / Light Mode</span>
+        </span>
+        <span class="cmd-shortcut">T</span>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
 
-  const companies = [
-    { name:"Raimage Design", role:"Founding Designer", years:"2025 — Now" },
-    { name:"Edfora Infotech", role:"Senior Product Designer", years:"2023 — 2025" },
-    { name:"Design Matra", role:"Product Designer", years:"2021 — 2023" },
-    { name:"Kitaro Trading", role:"Graphic Designer", years:"2012 — 2021" },
-  ];
-
-  const workRow = document.getElementById('workRow');
-  if (workRow) {
-    companies.forEach((c) => {
-      const item = document.createElement('div');
-      item.className = 'work-item clay-sm';
-      item.innerHTML = `
-        <div class="work-company">${c.name}</div>
-        <div class="work-role">${c.role}</div>
-        <div class="work-year mono">${c.years}</div>
-      `;
-      workRow.appendChild(item);
-    });
-  }
-
-// ---- Scroll-hide header ----
+// ---- Global Theme, Header & Command Palette Management ----
 (function(){
-  const header = document.getElementById('siteHeader');
-  let lastY = 0, ticking = false;
-  const THRESHOLD = 80;
-
-  function onScroll(){
-    const y = window.scrollY;
-    if (header) {
-      if (y > lastY && y > THRESHOLD) {
-        header.classList.add('nav-hidden');
-      } else {
-        header.classList.remove('nav-hidden');
-      }
-    }
-    lastY = y;
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', function(){
-    if (!ticking){ requestAnimationFrame(onScroll); ticking = true; }
-  }, {passive:true});
-})();
-
-// ---- Animated status chip ----
-(function(){
-  const chipText = document.getElementById('chipText');
-  if (!chipText) return;
-  const lines = [
-    'Currently designing at <strong>Raimage Design</strong> · New Delhi, India',
-    'Open to freelance &amp; product collaborations',
-    '12+ years · 7 industries · One design mindset',
-    'Building AI-native interfaces end-to-end',
-  ];
-  let idx = 0;
-  function cycle(){
-    chipText.style.opacity = '0';
-    chipText.style.transform = 'translateY(6px)';
-    setTimeout(()=>{
-      idx = (idx + 1) % lines.length;
-      chipText.innerHTML = lines[idx];
-      chipText.style.opacity = '1';
-      chipText.style.transform = 'translateY(0)';
-    }, 320);
-  }
-  setInterval(cycle, 3400);
-})();
-
-// ---- Dark / Light theme toggle ----
-(function(){
-  const btn = document.getElementById('themeToggle');
-  if (!btn) return;
+  // Dark/Light Mode
   const root = document.documentElement;
-  const stored = localStorage.getItem('theme');
-  if (stored === 'dark') root.setAttribute('data-theme','dark');
+  const themeToggle = document.getElementById('themeToggle');
+  const storedTheme = localStorage.getItem('sr_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  if (storedTheme === 'dark') root.setAttribute('data-theme', 'dark');
 
-  btn.addEventListener('click', ()=>{
+  function toggleTheme(){
     const isDark = root.getAttribute('data-theme') === 'dark';
-    root.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-  });
-})();
+    const next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('sr_theme', next);
+  }
 
-// ---- Copy Email Clipboard ----
-(function(){
+  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+
+  // Scroll Header Auto-Hide
+  const header = document.getElementById('siteHeader');
+  let lastY = window.scrollY, ticking = false;
+  window.addEventListener('scroll', function(){
+    if (!ticking) {
+      window.requestAnimationFrame(function(){
+        const curY = window.scrollY;
+        if (header && curY > 80 && curY > lastY) {
+          header.classList.add('nav-hidden');
+        } else if (header) {
+          header.classList.remove('nav-hidden');
+        }
+        lastY = curY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Copy Email Clipboard
   const copyBtn = document.getElementById('copyEmailBtn');
-  if (!copyBtn) return;
-  copyBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    navigator.clipboard.writeText('sumitraiworks@gmail.com').then(() => {
-      copyBtn.classList.add('copied');
-      setTimeout(() => copyBtn.classList.remove('copied'), 2200);
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(function(){
+        copyBtn.classList.add('copied');
+        setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
+      });
     });
+  }
+
+  // Command + K Palette
+  const cmdModal = document.getElementById('cmdModal');
+  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
+  const cmdInput = document.getElementById('cmdInput');
+  const cmdList = document.getElementById('cmdList');
+  const cmdThemeBtn = document.getElementById('cmdToggleTheme');
+
+  function openCmd(){
+    if (!cmdModal) return;
+    cmdModal.classList.add('active');
+    if (cmdInput) {
+      cmdInput.value = '';
+      cmdInput.focus();
+    }
+    filterCmd('');
+  }
+
+  function closeCmd(){
+    if (!cmdModal) return;
+    cmdModal.classList.remove('active');
+  }
+
+  if (cmdTrigger) cmdTrigger.addEventListener('click', openCmd);
+  if (cmdModal) {
+    cmdModal.addEventListener('click', function(e){
+      if (e.target === cmdModal) closeCmd();
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) {
+        closeCmd();
+      } else {
+        openCmd();
+      }
+    } else if (e.key === 'Escape' && cmdModal && cmdModal.classList.contains('active')) {
+      closeCmd();
+    }
   });
+
+  if (cmdThemeBtn) {
+    cmdThemeBtn.addEventListener('click', function(){
+      toggleTheme();
+      closeCmd();
+    });
+  }
+
+  function filterCmd(q){
+    if (!cmdList) return;
+    const items = cmdList.querySelectorAll('.cmd-item');
+    const query = q.trim().toLowerCase();
+    items.forEach(function(item){
+      const text = item.textContent.toLowerCase();
+      item.style.display = (!query || text.includes(query)) ? 'flex' : 'none';
+    });
+  }
+
+  if (cmdInput) {
+    cmdInput.addEventListener('input', function(e){
+      filterCmd(e.target.value);
+    });
+  }
 })();
 
 </script>

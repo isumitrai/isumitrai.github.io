@@ -1,26 +1,41 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sumit Rai — Product Designer</title>
-<meta name="description" content="Sumit Rai — Senior Product Designer & AI Builder. Case studies, about, resume, playground." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sumit Rai — Senior Product Designer | AI Builder</title>
+  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 7+ years of product design and 10+ years of overall design experience across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="author" content="Sumit Rai" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="nav-wrap" id="siteHeader">
   <div class="nav-pill">
-    <a href="index.html" class="logo nav-logo">Sumit Rai</a>
-    <nav class="nav-tabs">
-      <a href="projects.html" class="active">Projects</a>
+    <div class="nav-logo-group">
+      <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
+        <span class="sr-mark">SR</span>
+        <span>Sumit Rai</span>
+      </a>
+    </div>
+
+    <nav class="nav-tabs" aria-label="Main Navigation">
+      <a href="projects.html" class="">Work</a>
       <a href="about.html" class="">About</a>
       <a href="resume.html" class="">Resume</a>
       <a href="playground.html" class="">Playground</a>
     </nav>
+
+    <div class="nav-right-actions">
+      <button class="nav-cmd-btn" id="cmdPaletteTrigger" aria-label="Quick search and jump (Cmd+K)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span>Search</span>
+        <kbd>⌘K</kbd>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -31,366 +46,606 @@
 
 <main class="page-body">
   <div class="wrap-wide">
-    <div id="projectsListView">
-      <div class="hero">
-        <div class="clay-sm current-chip" id="statusChip">
-          <span class="dot"></span>
-          <span class="chip-text mono" id="chipText">Currently designing at <strong>Raimage Design</strong> · New Delhi, India</span>
-        </div>
-        <p class="eyebrow">Senior Product Designer</p>
-        <h1>I'm Sumit Rai, a multidisciplinary <span class="accent">product designer</span> exploring better ways to design, build, and ship digital products.</h1>
-        <div class="cta-row">
-          <a href="resume.html" class="clay-btn primary">View Resume</a>
-          <a href="mailto:sumitraiworks@gmail.com" class="clay-btn">Send Email</a>
-        </div>
+    
+    <!-- SECTION 01 — HERO / INTRODUCTION -->
+    <section class="hero">
+      <div class="status-pill">
+        <span class="dot"></span>
+        <span>Senior Product Designer &middot; AI Builder</span>
       </div>
 
-      <div style="display:flex;align-items:center;margin:48px 0 16px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:8px;"></span><h2 style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);font-weight:500;margin:0;">Selected Works</h2></div>
-      <div class="proj-grid" id="projectGrid"></div>
-    <!-- BRANDS -->
-    <section class="home-section brands-section">
-      <div class="section-label-row">
-        <span class="dot-accent"></span>
-        <span class="seclabel">Brands I've Worked With</span>
-      </div>
-      <div class="brands-grid">
-        <!-- Row 1 -->
-        <div class="brand-cell"><img src="./assets/Brands01.png" alt="brand01" loading="lazy" /></div>
-        <div class="brand-cell"><img src="./assets/Brands02.png" alt="FIITJEE" loading="lazy" /></div>
-        <div class="brand-cell"><img src="./assets/Brands03.png" alt="JADE" loading="lazy" /></div>
-        <div class="brand-cell"><img src="./assets/Brands03.png" alt="Holy Basti" loading="lazy" onerror="this.parentElement.innerHTML='<span style='font-weight:700;font-size:13px;color:#E05C1A;'>Holy Basti</span>'"/></div>
-        <!-- Row 2 -->
-        <div class="brand-cell"><img src="./assets/Brands05.png" alt="Modicare" loading="lazy" /></div>
-        <div class="brand-cell"><img src="https://logo.clearbit.com/tohelp.in" alt="ToHelp" loading="lazy" onerror="this.parentElement.innerHTML='<span style='font-weight:700;font-size:13px;color:#00A650;'>ToHelp</span>'"/></div>
-        <div class="brand-cell"><img src="./assets/Brands 07.png" alt="Allied Digital" loading="lazy" /></div>
-        <div class="brand-cell"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;color:var(--ink);">Mamily.</span></div>
-        <!-- Row 3 -->
-        <div class="brand-cell"><img src="./assets/Brands 09.png" alt="QUANT LEGALTECH" loading="lazy" /></div>
-        <div class="brand-cell"><img src="./assets/Brands 10.png" alt="NAVTECH" loading="lazy" /></div>
-        <div class="brand-cell"><img src="./assets/Brands 11.png" alt="BJP" loading="lazy" /></div>
-        <div class="brand-cell"><img src="./assets/Brands 12.png" alt="Fantasy World" loading="lazy" /></div>
-        <!-- Row 4 -->
-        <div class="brand-cell"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:900;font-size:20px;color:var(--ink);">Young</span></div>
-        <div class="brand-cell"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;color:#F27830;">Quayo <span style="font-size:12px;color:var(--ink-soft);font-weight:600;">Basket</span></span></div>
-        <div class="brand-cell"><img src="./assets/Brands 15.png" alt="FLUID" loading="lazy" /></div>
-        <div class="brand-cell"><img src="./assets/Brands 16.png" alt="maxima" loading="lazy" /></div>
-        <!-- Row 5 -->
-        <div class="brand-cell"><img src="./assets/Brands 17.png" alt="Prans" loading="lazy" /></div>
-        <div class="brand-cell"><img src="./assets/Brands 18.png" alt="SONATA" loading="lazy" /></div>
-        <div class="brand-cell"><img src="./assets/Brands 19.png" alt="Gecko Bold" loading="lazy" /></div>
-        <div class="brand-cell"><img src="./assets/Brands 20.png" alt="KidKidz" loading="lazy" /></div>
+      <h1 class="hero-greeting">Hi, I'm Sumit Rai.</h1>
+      <p class="hero-statement">I design products, build experiences and explore what's next.</p>
+      <p class="hero-description">
+        I'm a Senior Product Designer and AI Builder, exploring the intersection of design, technology and thoughtful product experiences.
+      </p>
+
+      <div class="cta-row">
+        <a href="#work" class="btn btn-primary">View My Work &darr;</a>
+        <a href="about.html" class="btn btn-secondary">More About Me &rarr;</a>
       </div>
     </section>
 
-    <!-- TOOLS -->
-    <section class="home-section tools-section">
-      <div class="section-label-row">
-        <span class="dot-accent"></span>
-        <span class="seclabel">Tools I use to think, design, and build.</span>
+    <!-- SECTION 02 — WORK I'M PROUD OF -->
+    <section class="home-work-section" id="work">
+      <div class="section-header-row">
+        <div class="section-title-wrap">
+          <span class="eyebrow"><span class="dot"></span> Selected Projects</span>
+          <h2>Work I'm Proud Of</h2>
+          <p>Selected digital products shaped across SaaS, EdTech, mobile apps, and marketplace platforms.</p>
+        </div>
+        <a href="projects.html" class="section-header-link">See All My Work &rarr;</a>
       </div>
-      <div class="tools-grid">
-        <div class="tool-chip" title="Figma"><svg viewBox="0 0 38 57" width="22" height="22" fill="none"><path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 0 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 0 0 0-19H19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/><path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/></svg></div>
-        <div class="tool-chip" title="Framer"><svg viewBox="0 0 14 21" width="20" height="20" fill="currentColor"><path d="M0 0h14v7H7L0 0zm0 7h7l7 7H7v7L0 14V7z"/></svg></div>
-        <div class="tool-chip" title="Webflow"><svg viewBox="0 0 128 128" width="22" height="22" fill="#4353FF"><path d="M94.5 38.1c-6.9 0-13.1 3.4-16.9 8.7-2.4-5.5-7.9-9.4-14.3-9.4-5.2 0-9.8 2.4-12.9 6.2V38.7H33.5v50.6h17V66.7c0-5.2 4.2-9.4 9.4-9.4s9.4 4.2 9.4 9.4v22.6h17V66.7c0-5.2 4.2-9.4 9.4-9.4s9.4 4.2 9.4 9.4v22.6h17V63.5c0-14-11.3-25.4-25.2-25.4z"/></svg></div>
-        <div class="tool-chip" title="Arc Browser"><svg viewBox="0 0 100 100" width="20" height="20" fill="none"><circle cx="50" cy="50" r="48" stroke="#FF4F00" stroke-width="4"/><path d="M30 70 Q50 30 70 70" stroke="#FF4F00" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div>
-        <div class="tool-chip" title="VS Code"><svg viewBox="0 0 32 32" width="20" height="20" fill="none"><path d="M28.5 4.5l-8.5 8-8.5-8-7.5 4 8 8-8 8 7.5 4 8.5-8 8.5 8 3.5-2v-22z" fill="#0078D7"/></svg></div>
-        <div class="tool-chip" title="Cursor"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-7 2-4 7L5 3z"/></svg></div>
-        <div class="tool-chip" title="Spline 3D"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(-30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(30 12 12)"/></svg></div>
-        <div class="tool-chip" title="Midjourney"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20L12 4l8 16"/><path d="M7 14h10"/></svg></div>
-        <div class="tool-chip" title="Notion"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></div>
-        <div class="tool-chip" title="ChatGPT"><svg viewBox="0 0 41 41" width="20" height="20" fill="currentColor"><path d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835 9.964 9.964 0 0 0-6.505-3.49 10.079 10.079 0 0 0-10.47 4.93 9.967 9.967 0 0 0-6.659 4.712 10.08 10.08 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 6.504 3.49 10.08 10.08 0 0 0 10.475-4.930 9.967 9.967 0 0 0 6.66-4.712 10.079 10.079 0 0 0-1.243-11.818zm-22.023 7.278a6.85 6.85 0 0 1-4.487-1.672l.22-.125 7.45-4.3a1.221 1.221 0 0 0 .617-1.063V9.503l3.15 1.818a.112.112 0 0 1 .063.088v8.7a6.876 6.876 0 0 1-6.013 6.039zm-12.867-6.303a6.845 6.845 0 0 1-.82-4.6l.22.131 7.45 4.3a1.22 1.22 0 0 0 1.233 0l9.097-5.252v3.638a.116.116 0 0 1-.046.1l-7.527 4.348a6.876 6.876 0 0 1-9.607-2.665zm-1.041-15.23a6.843 6.843 0 0 1 3.57-3.008v8.802a1.22 1.22 0 0 0 .616 1.062l9.073 5.239-3.15 1.818a.111.111 0 0 1-.108.013L3.574 11.056a6.875 6.875 0 0 1-.972-8.441zm25.889 5.91l-9.098-5.252 3.15-1.818a.113.113 0 0 1 .108-.013l7.528 4.347a6.872 6.872 0 0 1-1.064 12.413v-8.802a1.221 1.221 0 0 0-.624-1.075zm3.133-4.622l-.22-.131-7.45-4.3a1.22 1.22 0 0 0-1.233 0L12.73 14.622V10.985a.115.115 0 0 1 .046-.1l7.527-4.342a6.873 6.873 0 0 1 10.21 7.117zm-19.741 6.49l-3.15-1.818a.111.111 0 0 1-.063-.088v-8.7a6.872 6.872 0 0 1 11.278-5.282l-.22.125-7.45 4.3a1.221 1.221 0 0 0-.617 1.063V19.17a.115.115 0 0 1-.022.043zm1.71-3.69l4.048-2.336 4.048 2.336v4.672l-4.048 2.337-4.048-2.337V16.703z"/></svg></div>
-        <div class="tool-chip" title="Bolt.new"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <div class="tool-chip" title="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></div>
-        <div class="tool-chip" title="Adobe Illustrator"><svg viewBox="0 0 24 24" width="20" height="20" fill="#FF9A00"><path d="M7.045 0h9.91C20.4 0 24 3.6 24 8.045v7.91C24 20.4 20.4 24 15.955 24h-9.91C2.1 24 0 21.9 0 15.955v-7.91C0 3.6 2.1 0 7.045 0zm5.098 6.02L9.58 13.33h1.72l.566-1.602h2.812l.565 1.602H17L14.427 6.02H12.14zm1.286 2.14l.955 2.726h-1.91l.955-2.726zm-7.44-.957c.467 0 .814.135 1.04.404.227.27.34.664.34 1.183 0 .533-.126.95-.378 1.25-.252.3-.617.45-1.092.45H5.25V7.2h.74zm-.123 2.4c.28 0 .49-.09.628-.272.138-.18.207-.454.207-.822 0-.335-.06-.582-.18-.74-.12-.16-.31-.24-.564-.24h-.308v2.074h.217z"/></svg></div>
-        <div class="tool-chip" title="Adobe Photoshop"><svg viewBox="0 0 24 24" width="20" height="20" fill="#31A8FF"><path d="M7.045 0h9.91C20.4 0 24 3.6 24 8.045v7.91C24 20.4 20.4 24 15.955 24h-9.91C2.1 24 0 21.9 0 15.955v-7.91C0 3.6 2.1 0 7.045 0zm2.49 6.14H7.44V17.1H9.1v-4.185c.185.015.45.022.797.022.836 0 1.49-.22 1.963-.664.473-.445.71-1.063.71-1.856 0-.763-.22-1.358-.664-1.783-.44-.425-1.11-.64-2.01-.64-.6 0-1.13.05-1.362.106zm.09 1.41c.122-.023.31-.034.564-.034.79 0 1.185.382 1.185 1.148 0 .822-.42 1.233-1.258 1.233-.232 0-.41-.01-.49-.034V7.55zm6.9-1.53c-.834 0-1.514.283-2.044.848-.528.565-.793 1.304-.793 2.217 0 .85.257 1.54.77 2.065.514.525 1.196.788 2.047.788.854 0 1.546-.27 2.076-.81.53-.54.795-1.25.795-2.13 0-.884-.267-1.594-.8-2.13-.533-.536-1.22-.847-2.05-.847zm.02 1.384c.43 0 .756.166.977.498.22.33.33.805.33 1.422 0 .618-.112 1.086-.336 1.406-.224.32-.55.48-.977.48-.42 0-.742-.162-.965-.487-.223-.325-.334-.8-.334-1.422 0-.616.11-1.087.332-1.41.222-.325.543-.487.972-.487z"/></svg></div>
-        <div class="tool-chip" title="Adobe InDesign"><svg viewBox="0 0 24 24" width="20" height="20" fill="#EE3D8F"><path d="M7.045 0h9.91C20.4 0 24 3.6 24 8.045v7.91C24 20.4 20.4 24 15.955 24h-9.91C2.1 24 0 21.9 0 15.955v-7.91C0 3.6 2.1 0 7.045 0zM9 6H7.44v11h1.56V6zm5.7 0h-1.55v4.49a3.2 3.2 0 0 0-.7-.07c-1.8 0-3.2 1.4-3.2 3.2S10.65 17 12.45 17a3.08 3.08 0 0 0 2.8-1.72V17H16.7V6h-2zm-2.25 9.6c-.93 0-1.65-.73-1.65-1.87 0-1.14.72-1.87 1.65-1.87.28 0 .55.08.8.23V15c-.25.4-.63.6-1.08.6h.28z"/></svg></div>
-        <div class="tool-chip" title="Slack"><svg viewBox="0 0 24 24" width="20" height="20" fill="#4A154B"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zm2.521-10.123a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg></div>
-        <div class="tool-chip" title="Jira"><svg viewBox="0 0 24 24" width="20" height="20" fill="#0052CC"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.004-1.005zm5.723-5.756H5.757a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.762a1.005 1.005 0 0 0-1.022-1.005zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24.019 12.49V1.005A1.005 1.005 0 0 0 23.013 0z"/></svg></div>
+
+      <div class="proj-grid">
+        
+      <article class="proj-card" onclick="window.location.href='projects.html#edumanage'" role="button" tabindex="0" aria-label="View case study for EduManage">
+        <div class="proj-image">
+          <img src="./assets/proj_edumanage.png" alt="EduManage — Smart Educational Management Dashboard" loading="lazy" />
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-category">SaaS Product · CMS</span>
+            <span class="proj-year">2024 — 2026</span>
+          </div>
+          <h3 class="proj-title">EduManage</h3>
+          <p class="proj-desc">A modern institution dashboard shaped around academic operations, content management, and day-to-day school workflows.</p>
+          <div class="proj-link-row">
+            <span class="proj-view-link">View Case Study &rarr;</span>
+            <div class="proj-tech-tags">
+              <span class="proj-tag">SaaS</span>
+              <span class="proj-tag">Dashboard</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" onclick="window.location.href='projects.html#quayo'" role="button" tabindex="0" aria-label="View case study for Quayo Basket">
+        <div class="proj-image">
+          <img src="./assets/proj_quayo.png" alt="Quayo Basket — Grocery App & Brand Identity System" loading="lazy" />
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-category">Grocery App · Brand Identity</span>
+            <span class="proj-year">2024 — 2026</span>
+          </div>
+          <h3 class="proj-title">Quayo Basket</h3>
+          <p class="proj-desc">A grocery mobile app paired with a fresh retail brand identity system for a clearer, friendlier shopping experience.</p>
+          <div class="proj-link-row">
+            <span class="proj-view-link">View Case Study &rarr;</span>
+            <div class="proj-tech-tags">
+              <span class="proj-tag">Mobile App</span>
+              <span class="proj-tag">UI/UX</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" onclick="window.location.href='projects.html#musafir'" role="button" tabindex="0" aria-label="View case study for Musafir">
+        <div class="proj-image">
+          <img src="./assets/proj_musafir.png" alt="Musafir — Travel Marketplace Landing Page Redesign" loading="lazy" />
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-category">Web Design · Marketplace</span>
+            <span class="proj-year">2024 — 2025</span>
+          </div>
+          <h3 class="proj-title">Musafir</h3>
+          <p class="proj-desc">A travel marketplace landing page redesigned for stronger conversion paths, clear destination framing, and confident decision-making.</p>
+          <div class="proj-link-row">
+            <span class="proj-view-link">View Case Study &rarr;</span>
+            <div class="proj-tech-tags">
+              <span class="proj-tag">Web Design</span>
+              <span class="proj-tag">Travel</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card" onclick="window.location.href='projects.html#community'" role="button" tabindex="0" aria-label="View case study for Community">
+        <div class="proj-image">
+          <img src="./assets/proj_community.png" alt="Community — Student Learning Hub & EdTech Platform" loading="lazy" />
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-category">EdTech · Community Platform</span>
+            <span class="proj-year">2023 — 2025</span>
+          </div>
+          <h3 class="proj-title">Community</h3>
+          <p class="proj-desc">A student learning hub designed to support academic growth through shared peer discussions, study resources, and platform-led engagement.</p>
+          <div class="proj-link-row">
+            <span class="proj-view-link">View Case Study &rarr;</span>
+            <div class="proj-tech-tags">
+              <span class="proj-tag">EdTech</span>
+              <span class="proj-tag">Platform</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      </div>
+
+      <div class="see-all-wrap">
+        <a href="projects.html" class="btn btn-secondary">See All My Work &rarr;</a>
       </div>
     </section>
 
-    </div>
-
-    <div id="caseStudyView" class="case-view" hidden>
-      <div class="case-top-actions">
-        <button class="case-pill-btn" id="backToProjects">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          Back
-        </button>
+    <!-- SECTION 03 — MY APPROACH -->
+    <section class="approach-section">
+      <div class="approach-quote-box">
+        <span class="eyebrow"><span class="dot"></span> Design Philosophy</span>
+        <h2>Good design starts with understanding.</h2>
+        <p class="approach-lead">
+          I explore the problem, question assumptions, connect ideas and turn them into experiences that make sense for people and businesses.
+        </p>
       </div>
-      <div id="caseStudyBody"></div>
-    </div>
+
+      <div class="approach-grid">
+        <div class="approach-card">
+          <span class="approach-num">01 / DISCOVER</span>
+          <h3>Explore &amp; Understand</h3>
+          <p>Dig into the core problem, understand business goals, and listen closely to user workflows before pushing pixels.</p>
+        </div>
+        <div class="approach-card">
+          <span class="approach-num">02 / CONNECT</span>
+          <h3>Question Assumptions</h3>
+          <p>Connect complex system architecture with human interaction, validating hypotheses with rapid prototypes.</p>
+        </div>
+        <div class="approach-card">
+          <span class="approach-num">03 / DELIVER</span>
+          <h3>Ship with Purpose</h3>
+          <p>Build scalable design systems, partner tightly with engineering, and iterate toward measurable business clarity.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04 — ABOUT PREVIEW -->
+    <section class="about-preview-section">
+      <div class="about-preview-grid">
+        <div class="about-preview-content">
+          <span class="eyebrow"><span class="dot"></span> Background &amp; Mindset</span>
+          <h2>Designing thoughtful digital experiences since 2015.</h2>
+          <p>
+            I'm a designer and product thinker with 7+ years dedicated to digital product design since 2019, and 10+ years of overall design craft spanning branding, interfaces, and systems.
+          </p>
+          <p>
+            My work spans SaaS, AI, EdTech, FinTech, HealthTech, and consumer platforms. Lately, I explore how AI and emerging technologies reshape human-computer interfaces, bridging design strategy with functional code.
+          </p>
+          <div style="margin-top:24px;">
+            <a href="about.html" class="btn btn-secondary">More About Me &rarr;</a>
+          </div>
+        </div>
+
+        <div class="about-stats-grid">
+          <div class="stat-box">
+            <span class="stat-number">7+</span>
+            <span class="stat-label">Years in Product</span>
+            <span class="stat-desc">Dedicated product design since 2019</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Years Total Craft</span>
+            <span class="stat-desc">Visual, brand &amp; UI experience since 2015</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">6+</span>
+            <span class="stat-label">Industries Shipped</span>
+            <span class="stat-desc">SaaS, EdTech, FinTech, HealthTech &amp; AI</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">AI</span>
+            <span class="stat-label">Emerging Tech</span>
+            <span class="stat-desc">AI-native workflows &amp; interactive prototypes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05 — SELECTED EXPERIENCE / JOURNEY -->
+    <section class="experience-section">
+      <div class="section-header-row">
+        <div class="section-title-wrap">
+          <span class="eyebrow"><span class="dot"></span> Professional Journey</span>
+          <h2>Selected Experience</h2>
+          <p>Roles and founding product work across high-impact design studios and tech teams.</p>
+        </div>
+        <a href="resume.html" class="section-header-link">View Full Resume &rarr;</a>
+      </div>
+
+      <div class="timeline-list">
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Raimage Design</span>
+            <span class="comp-role">Founding Designer</span>
+          </div>
+          <div class="timeline-details">
+            <p>Independent Design Studio. Leading end-to-end product design, brand systems, and AI-native interface explorations for high-growth ventures.</p>
+          </div>
+          <div class="timeline-period">2025 &mdash; Present</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Edfora Infotech</span>
+            <span class="comp-role">Senior Product Designer</span>
+          </div>
+          <div class="timeline-details">
+            <p>EdTech / FIITJEE ecosystem. Directed product design for student learning hubs, institutional dashboards, and unified component design systems.</p>
+          </div>
+          <div class="timeline-period">2023 &mdash; 2025</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Design Matra</span>
+            <span class="comp-role">Product Designer</span>
+          </div>
+          <div class="timeline-details">
+            <p>Owned UX/UI design across SaaS, FinTech, HealthTech, and E-Commerce products. Iterated core onboarding and checkout funnels.</p>
+          </div>
+          <div class="timeline-period">2021 &mdash; 2023</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-company">
+            <span class="comp-name">Kitaro Trading</span>
+            <span class="comp-role">Graphic &amp; UI Designer</span>
+          </div>
+          <div class="timeline-details">
+            <p>Designed brand identities, consumer interfaces, and established foundational design standards across multi-channel digital touchpoints.</p>
+          </div>
+          <div class="timeline-period">2015 &mdash; 2021</div>
+        </div>
+      </div>
+
+      <!-- BRANDS WORKED WITH -->
+      <div class="brands-wrap">
+        <div class="section-header-row" style="margin-bottom:16px;">
+          <div class="section-title-wrap">
+            <span class="eyebrow"><span class="dot"></span> Client &amp; Brand Partners</span>
+            <h3 style="font-size:1.3rem;">Brands I've Helped Shape</h3>
+          </div>
+        </div>
+        <div class="brands-grid">
+          
+        <div class="brand-cell" title="MakeMyTrip">
+          <img src="./assets/src/brands01.jpg" alt="MakeMyTrip logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="FIITJEE">
+          <img src="./assets/src/brands02.jpg" alt="FIITJEE logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="JADE">
+          <img src="./assets/src/brands03.jpg" alt="JADE logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Holy Basti">
+          <img src="./assets/src/brands04.jpg" alt="Holy Basti logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Modicare">
+          <img src="./assets/src/brands05.jpg" alt="Modicare logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="ToHelp">
+          <img src="./assets/src/brands06.jpg" alt="ToHelp logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Allied Digital">
+          <img src="./assets/src/brands07.jpg" alt="Allied Digital logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Mamily">
+          <img src="./assets/src/brands08.jpg" alt="Mamily logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Quant Legaltech">
+          <img src="./assets/src/brands09.jpg" alt="Quant Legaltech logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Navtech">
+          <img src="./assets/src/brands10.jpg" alt="Navtech logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="BJP">
+          <img src="./assets/src/brands11.jpg" alt="BJP logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Fantasy World">
+          <img src="./assets/src/brands12.jpg" alt="Fantasy World logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Young">
+          <img src="./assets/src/brands13.jpg" alt="Young logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Quayo Basket">
+          <img src="./assets/src/brands14.jpg" alt="Quayo Basket logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Fluid">
+          <img src="./assets/src/brands15.jpg" alt="Fluid logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Maxima">
+          <img src="./assets/src/brands16.jpg" alt="Maxima logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Prans">
+          <img src="./assets/src/brands17.jpg" alt="Prans logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Sonata">
+          <img src="./assets/src/brands18.jpg" alt="Sonata logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="Gecko Bold">
+          <img src="./assets/src/brands19.jpg" alt="Gecko Bold logo" loading="lazy" />
+        </div>
+
+        <div class="brand-cell" title="KidKidz">
+          <img src="./assets/src/brands20.jpg" alt="KidKidz logo" loading="lazy" />
+        </div>
+
+        </div>
+      </div>
+
+      <!-- TOOLS STACK -->
+      <div class="tools-wrap">
+        <div class="section-header-row" style="margin-bottom:16px;">
+          <div class="section-title-wrap">
+            <span class="eyebrow"><span class="dot"></span> Toolkit &amp; Environment</span>
+            <h3 style="font-size:1.3rem;">Tools I Use to Think, Design &amp; Build</h3>
+          </div>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-chip"><svg viewBox="0 0 38 57" fill="none"><path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 0 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 0 0 0-19H19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/><path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/></svg><span>Figma</span></div>
+          <div class="tool-chip"><svg viewBox="0 0 14 21" fill="currentColor"><path d="M0 0h14v7H7L0 0zm0 7h7l7 7H7v7L0 14V7z"/></svg><span>Framer</span></div>
+          <div class="tool-chip"><svg viewBox="0 0 128 128" fill="#4353FF"><path d="M94.5 38.1c-6.9 0-13.1 3.4-16.9 8.7-2.4-5.5-7.9-9.4-14.3-9.4-5.2 0-9.8 2.4-12.9 6.2V38.7H33.5v50.6h17V66.7c0-5.2 4.2-9.4 9.4-9.4s9.4 4.2 9.4 9.4v22.6h17V66.7c0-5.2 4.2-9.4 9.4-9.4s9.4 4.2 9.4 9.4v22.6h17V63.5c0-14-11.3-25.4-25.2-25.4z"/></svg><span>Webflow</span></div>
+          <div class="tool-chip"><svg viewBox="0 0 32 32" fill="none"><path d="M28.5 4.5l-8.5 8-8.5-8-7.5 4 8 8-8 8 7.5 4 8.5-8 8.5 8 3.5-2v-22z" fill="#0078D7"/></svg><span>VS Code</span></div>
+          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-7 2-4 7L5 3z"/></svg><span>Cursor</span></div>
+          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(-30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(30 12 12)"/></svg><span>Spline 3D</span></div>
+          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20L12 4l8 16"/><path d="M7 14h10"/></svg><span>Midjourney</span></div>
+          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg><span>Notion</span></div>
+          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg><span>GitHub</span></div>
+          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="#FF9A00"><path d="M7.045 0h9.91C20.4 0 24 3.6 24 8.045v7.91C24 20.4 20.4 24 15.955 24h-9.91C2.1 24 0 21.9 0 15.955v-7.91C0 3.6 2.1 0 7.045 0zm5.098 6.02L9.58 13.33h1.72l.566-1.602h2.812l.565 1.602H17L14.427 6.02H12.14zm1.286 2.14l.955 2.726h-1.91l.955-2.726zm-7.44-.957c.467 0 .814.135 1.04.404.227.27.34.664.34 1.183 0 .533-.126.95-.378 1.25-.252.3-.617.45-1.092.45H5.25V7.2h.74zm-.123 2.4c.28 0 .49-.09.628-.272.138-.18.207-.454.207-.822 0-.335-.06-.582-.18-.74-.12-.16-.31-.24-.564-.24h-.308v2.074h.217z"/></svg><span>Illustrator</span></div>
+          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="#31A8FF"><path d="M7.045 0h9.91C20.4 0 24 3.6 24 8.045v7.91C24 20.4 20.4 24 15.955 24h-9.91C2.1 24 0 21.9 0 15.955v-7.91C0 3.6 2.1 0 7.045 0zm2.49 6.14H7.44V17.1H9.1v-4.185c.185.015.45.022.797.022.836 0 1.49-.22 1.963-.664.473-.445.71-1.063.71-1.856 0-.763-.22-1.358-.664-1.783-.44-.425-1.11-.64-2.01-.64-.6 0-1.13.05-1.362.106zm.09 1.41c.122-.023.31-.034.564-.034.79 0 1.185.382 1.185 1.148 0 .822-.42 1.233-1.258 1.233-.232 0-.41-.01-.49-.034V7.55zm6.9-1.53c-.834 0-1.514.283-2.044.848-.528.565-.793 1.304-.793 2.217 0 .85.257 1.54.77 2.065.514.525 1.196.788 2.047.788.854 0 1.546-.27 2.076-.81.53-.54.795-1.25.795-2.13 0-.884-.267-1.594-.8-2.13-.533-.536-1.22-.847-2.05-.847zm.02 1.384c.43 0 .756.166.977.498.22.33.33.805.33 1.422 0 .618-.112 1.086-.336 1.406-.224.32-.55.48-.977.48-.42 0-.742-.162-.965-.487-.223-.325-.334-.8-.334-1.422 0-.616.11-1.087.332-1.41.222-.325.543-.487.972-.487z"/></svg><span>Photoshop</span></div>
+          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="#0052CC"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.004-1.005zm5.723-5.756H5.757a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.762a1.005 1.005 0 0 0-1.022-1.005zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24.019 12.49V1.005A1.005 1.005 0 0 0 23.013 0z"/></svg><span>Jira</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06 — CONTACT CTA -->
+    <section class="contact-cta-section">
+      <span class="eyebrow"><span class="dot"></span> Contact</span>
+      <h2>Have something interesting in mind?</h2>
+      <p>I'm always open to meaningful conversations, interesting ideas and opportunities to build something thoughtful.</p>
+      <div class="cta-btns">
+        <a href="mailto:sumitraiworks@gmail.com?subject=Hello%20Sumit" class="btn btn-primary">Get in Touch &rarr;</a>
+        <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Me</a>
+      </div>
+    </section>
+
   </div>
 </main>
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-badge-wrap">
-      <div class="footer-status-pill">
-        <span class="dot"></span>
-        <span class="mono">OPEN TO FREELANCE &amp; PRODUCT COLLABORATIONS</span>
-      </div>
+    <div class="footer-status-pill">
+      <span class="dot"></span>
+      <span>Open to Freelance &amp; Product Collaborations</span>
     </div>
-    
+
     <h2 class="footer-tagline">
       Let's build something together.
     </h2>
 
     <div class="footer-email-box">
       <div class="footer-email-pill">
-        <a class="pill-left" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sumitraiworks@gmail.com&amp;su=Hello%20Sumit" target="_blank" rel="noopener" title="Open in Gmail">
-          <span class="pill-icon-chip">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 6l-10 7L2 6"/></svg>
-          </span>
+        <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
           <span class="email-text">sumitraiworks@gmail.com</span>
         </a>
-        <button class="pill-icon-chip copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <button class="copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email address">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           <span class="copy-toast">Copied!</span>
         </button>
       </div>
     </div>
 
-    <div class="footer-row-simple">
+    <div class="footer-bottom-row">
+      <span>&copy; Sumit Rai &middot; Senior Product Designer &amp; AI Builder &middot; Delhi, India</span>
       <div class="flinks">
-        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">INSTAGRAM</a>
+        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
-        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LINKEDIN</a>
+        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </div>
 </footer>
 
+<!-- Command + K Navigation Modal -->
+<div class="cmd-modal" id="cmdModal" role="dialog" aria-modal="true" aria-label="Quick Command Palette">
+  <div class="cmd-box">
+    <div class="cmd-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" class="cmd-input" id="cmdInput" placeholder="Type a destination or action..." autocomplete="off" />
+      <span class="cmd-esc">ESC</span>
+    </div>
+    <div class="cmd-list" id="cmdList">
+      <a href="index.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </span>
+        <span class="cmd-shortcut">H</span>
+      </a>
+      <a href="projects.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span>Selected Work (Projects)</span>
+        </span>
+        <span class="cmd-shortcut">W</span>
+      </a>
+      <a href="about.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <span>About Sumit</span>
+        </span>
+        <span class="cmd-shortcut">A</span>
+      </a>
+      <a href="resume.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Resume &amp; Experience</span>
+        </span>
+        <span class="cmd-shortcut">R</span>
+      </a>
+      <a href="assets/Sumit_Rai_Resume.pdf" download class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download Resume PDF</span>
+        </span>
+        <span class="cmd-shortcut">PDF</span>
+      </a>
+      <a href="playground.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
+          <span>Playground &amp; UI Experiments</span>
+        </span>
+        <span class="cmd-shortcut">P</span>
+      </a>
+      <a href="mailto:sumitraiworks@gmail.com" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Email Sumit (sumitraiworks@gmail.com)</span>
+        </span>
+        <span class="cmd-shortcut">@</span>
+      </a>
+      <div class="cmd-item" id="cmdToggleTheme">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
+          <span>Toggle Dark / Light Mode</span>
+        </span>
+        <span class="cmd-shortcut">T</span>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
 
-  const projects = [
-    {
-      id: "edumanage",
-      tag: "SaaS Product · CMS",
-      title: "EduManage - Smart educational management dashboard",
-      summary: "A modern institution dashboard shaped around academic operations, content management, and day-to-day school workflows.",
-      metric: "Dashboard",
-      year: "2026",
-      tech: ["CMS", "Dashboard", "SaaS"],
-      image: "./assets/proj_edumanage.png",
-      sections: [
-        { id:"overview", h:"Overview", body:"EduManage is a smart educational management dashboard for modern institutions, designed to bring core academic and administrative tasks into one clear workspace." },
-        { id:"focus", h:"Focus", body:"The work centers on CMS patterns, dashboard clarity, and SaaS usability for teams that need to scan information quickly and act with confidence." },
-        { id:"direction", h:"Design Direction", body:"The interface uses structured cards, visible hierarchy, and operational views that help institutions move from fragmented workflows to a more organized management system." },
-      ]
-    },
-    {
-      id: "quayo",
-      tag: "Grocery App Design · Branding",
-      title: "Quayo Basket - Grocery app and brand identity",
-      summary: "A grocery mobile app paired with a brand identity system for a clearer, friendlier shopping experience.",
-      metric: "Mobile App",
-      year: "2026",
-      tech: ["Mobile App", "UI/UX", "Branding"],
-      image: "./assets/proj_quayo.png",
-      sections: [
-        { id:"overview", h:"Overview", body:"Quayo Basket combines grocery app design with a brand identity system, giving the product a recognizable retail feel across browsing, basket, and checkout moments." },
-        { id:"focus", h:"Focus", body:"The selected work highlights mobile UI/UX, grocery shopping flows, and branding decisions that support quick product discovery and repeat ordering." },
-        { id:"direction", h:"Design Direction", body:"The design language leans into clear product presentation, simple navigation, and a visual identity that can stretch from app screens to customer-facing brand touchpoints." },
-      ]
-    },
-    {
-      id: "musafir",
-      tag: "Landing Page · Travel",
-      title: "Musafir - Landing page redesign",
-      summary: "A travel marketplace landing page redesigned for stronger conversion paths and clearer decision-making.",
-      metric: "Web Design",
-      year: "2026",
-      tech: ["Travel", "Web Design", "Marketplace"],
-      image: "./assets/proj_musafir.png",
-      sections: [
-        { id:"overview", h:"Overview", body:"Musafir is a travel landing page redesign focused on helping visitors understand the offer faster and move into the marketplace journey with less friction." },
-        { id:"focus", h:"Focus", body:"The work combines travel storytelling, web design, and marketplace conversion patterns across the first impression, offer framing, and call-to-action areas." },
-        { id:"direction", h:"Design Direction", body:"The page prioritizes direct messaging, destination-led visual cues, and clearer conversion paths for visitors comparing travel options." },
-      ]
-    },
-    {
-      id: "community",
-      tag: "Community Platform · EdTech",
-      title: "Community - Student learning hub",
-      summary: "A student learning hub designed to support growth through community, resources, and platform-led engagement.",
-      metric: "Platform",
-      year: "2026",
-      tech: ["EdTech", "Platform", "Community"],
-      image: "./assets/proj_community.png",
-      sections: [
-        { id:"overview", h:"Overview", body:"Community is a student learning hub built around growth, shared learning, and easier access to the resources students need to stay engaged." },
-        { id:"focus", h:"Focus", body:"The selected work highlights EdTech platform design, community workflows, and learner-facing structures that make participation feel more approachable." },
-        { id:"direction", h:"Design Direction", body:"The product direction balances content discovery, peer connection, and a simple platform architecture that can support ongoing student activity." },
-      ]
-    },
-  ];
+// ---- Global Theme, Header & Command Palette Management ----
+(function(){
+  // Dark/Light Mode
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const storedTheme = localStorage.getItem('sr_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  if (storedTheme === 'dark') root.setAttribute('data-theme', 'dark');
 
-  const caseIconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-11 11"/></svg>`;
-
-  const grid = document.getElementById('projectGrid');
-  if (grid) {
-    projects.forEach((p) => {
-      const card = document.createElement('button');
-      card.className = 'proj-card';
-      card.innerHTML = `
-        <div class="proj-image">
-          ${p.image
-            ? `<img src="${p.image}" alt="${p.title}" loading="lazy" />`
-            : `<div class="img-fallback">${caseIconSvg}</div>`
-          }
-        </div>
-        <div class="proj-body">
-          <div class="proj-eyebrow">${p.tag.split(' · ')[0]}</div>
-          <h3>${p.title}</h3>
-          <div class="tech-row">
-            ${p.tech.slice(0,3).map(t => `<span class="tech-chip">${t}</span>`).join('')}
-          </div>
-        </div>
-      `;
-      card.addEventListener('click', () => openCaseStudy(p));
-      grid.appendChild(card);
-    });
+  function toggleTheme(){
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('sr_theme', next);
   }
 
-  const listView = document.getElementById('projectsListView');
-  const caseView = document.getElementById('caseStudyView');
-  const caseBody = document.getElementById('caseStudyBody');
-  const backBtn = document.getElementById('backToProjects');
+  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 
-  function openCaseStudy(project){
-    const idx = projects.findIndex(p => p.id === project.id);
-    const prev = projects[(idx - 1 + projects.length) % projects.length];
-    const next = projects[(idx + 1) % projects.length];
+  // Scroll Header Auto-Hide
+  const header = document.getElementById('siteHeader');
+  let lastY = window.scrollY, ticking = false;
+  window.addEventListener('scroll', function(){
+    if (!ticking) {
+      window.requestAnimationFrame(function(){
+        const curY = window.scrollY;
+        if (header && curY > 80 && curY > lastY) {
+          header.classList.add('nav-hidden');
+        } else if (header) {
+          header.classList.remove('nav-hidden');
+        }
+        lastY = curY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 
-    caseBody.innerHTML = `
-      <div class="case-header-chip mono">
-        <span class="dot"></span> Selected Works &nbsp;&middot;&nbsp; ${project.tag.split(' · ')[0]} &nbsp;&middot;&nbsp; ${project.year}
-      </div>
-      <div class="case-head">
-        <h2>${project.title}</h2>
-        <p class="summary">${project.summary}</p>
-      </div>
-      <div class="case-image clay">
-        ${project.image ? `<img src="${project.image}" alt="${project.title}" />` : caseIconSvg}
-      </div>
-      <div class="case-sections-grid">
-        ${project.sections.map(sec => `
-          <div class="case-section-card clay-sm">
-            <h3>${sec.h}</h3>
-            <p>${sec.body}</p>
-          </div>
-        `).join('')}
-      </div>
-      <div class="case-nav">
-        <button class="case-nav-btn prev clay-sm" data-nav="${prev.id}">
-          <span class="nav-label">← Previous Project</span>
-          <span class="nav-title">${prev.title}</span>
-        </button>
-        <button class="case-nav-btn next clay-sm" data-nav="${next.id}">
-          <span class="nav-label">Next Project →</span>
-          <span class="nav-title">${next.title}</span>
-        </button>
-      </div>
-    `;
-
-    caseBody.querySelectorAll('[data-nav]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = projects.find(p => p.id === btn.dataset.nav);
-        openCaseStudy(target);
+  // Copy Email Clipboard
+  const copyBtn = document.getElementById('copyEmailBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(function(){
+        copyBtn.classList.add('copied');
+        setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
       });
     });
-
-    listView.hidden = true;
-    caseView.hidden = false;
-    window.scrollTo({top:0, behavior:'smooth'});
   }
 
-  function closeCaseStudy(){
-    caseView.hidden = true;
-    listView.hidden = false;
-    window.scrollTo({top:0, behavior:'smooth'});
-  }
+  // Command + K Palette
+  const cmdModal = document.getElementById('cmdModal');
+  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
+  const cmdInput = document.getElementById('cmdInput');
+  const cmdList = document.getElementById('cmdList');
+  const cmdThemeBtn = document.getElementById('cmdToggleTheme');
 
-  if (backBtn) {
-    backBtn.addEventListener('click', closeCaseStudy);
-  }
-
-// ---- Scroll-hide header ----
-(function(){
-  const header = document.getElementById('siteHeader');
-  let lastY = 0, ticking = false;
-  const THRESHOLD = 80;
-
-  function onScroll(){
-    const y = window.scrollY;
-    if (header) {
-      if (y > lastY && y > THRESHOLD) {
-        header.classList.add('nav-hidden');
-      } else {
-        header.classList.remove('nav-hidden');
-      }
+  function openCmd(){
+    if (!cmdModal) return;
+    cmdModal.classList.add('active');
+    if (cmdInput) {
+      cmdInput.value = '';
+      cmdInput.focus();
     }
-    lastY = y;
-    ticking = false;
+    filterCmd('');
   }
 
-  window.addEventListener('scroll', function(){
-    if (!ticking){ requestAnimationFrame(onScroll); ticking = true; }
-  }, {passive:true});
-})();
-
-// ---- Animated status chip ----
-(function(){
-  const chipText = document.getElementById('chipText');
-  if (!chipText) return;
-  const lines = [
-    'Currently designing at <strong>Raimage Design</strong> · New Delhi, India',
-    'Open to freelance &amp; product collaborations',
-    '12+ years · 7 industries · One design mindset',
-    'Building AI-native interfaces end-to-end',
-  ];
-  let idx = 0;
-  function cycle(){
-    chipText.style.opacity = '0';
-    chipText.style.transform = 'translateY(6px)';
-    setTimeout(()=>{
-      idx = (idx + 1) % lines.length;
-      chipText.innerHTML = lines[idx];
-      chipText.style.opacity = '1';
-      chipText.style.transform = 'translateY(0)';
-    }, 320);
+  function closeCmd(){
+    if (!cmdModal) return;
+    cmdModal.classList.remove('active');
   }
-  setInterval(cycle, 3400);
-})();
 
-// ---- Dark / Light theme toggle ----
-(function(){
-  const btn = document.getElementById('themeToggle');
-  if (!btn) return;
-  const root = document.documentElement;
-  const stored = localStorage.getItem('theme');
-  if (stored === 'dark') root.setAttribute('data-theme','dark');
-
-  btn.addEventListener('click', ()=>{
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    root.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-  });
-})();
-
-// ---- Copy Email Clipboard ----
-(function(){
-  const copyBtn = document.getElementById('copyEmailBtn');
-  if (!copyBtn) return;
-  copyBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    navigator.clipboard.writeText('sumitraiworks@gmail.com').then(() => {
-      copyBtn.classList.add('copied');
-      setTimeout(() => copyBtn.classList.remove('copied'), 2200);
+  if (cmdTrigger) cmdTrigger.addEventListener('click', openCmd);
+  if (cmdModal) {
+    cmdModal.addEventListener('click', function(e){
+      if (e.target === cmdModal) closeCmd();
     });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) {
+        closeCmd();
+      } else {
+        openCmd();
+      }
+    } else if (e.key === 'Escape' && cmdModal && cmdModal.classList.contains('active')) {
+      closeCmd();
+    }
   });
+
+  if (cmdThemeBtn) {
+    cmdThemeBtn.addEventListener('click', function(){
+      toggleTheme();
+      closeCmd();
+    });
+  }
+
+  function filterCmd(q){
+    if (!cmdList) return;
+    const items = cmdList.querySelectorAll('.cmd-item');
+    const query = q.trim().toLowerCase();
+    items.forEach(function(item){
+      const text = item.textContent.toLowerCase();
+      item.style.display = (!query || text.includes(query)) ? 'flex' : 'none';
+    });
+  }
+
+  if (cmdInput) {
+    cmdInput.addEventListener('input', function(e){
+      filterCmd(e.target.value);
+    });
+  }
 })();
 
 </script>
