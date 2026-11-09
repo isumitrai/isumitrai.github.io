@@ -2949,65 +2949,251 @@ footer::before,
   max-width: 760px;
 }
 
-/* Minimal Footer Layout */
-.minimal-footer {
-  background: transparent;
-  border-top: 1px solid var(--line);
-  padding: 80px 0 48px;
-  width: 100%;
+/* ============================================================
+   Brands & Tools Section Styling (Clean, Zero Divider Duplicity)
+   ============================================================ */
+.brands-section,
+.tools-section {
+  margin-bottom: 100px;
 }
 
-.minimal-footer .footer-inner {
-  max-width: var(--wrap-max);
-  margin: 0 auto;
-  padding: 0 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+.brands-section .section-header-row,
+.tools-section .section-header-row {
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brands-wrap,
+.tools-wrap {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ============================================================
+   Resources Page (Curated Design, Product & Systems Reads)
+   ============================================================ */
+.resources-hero-block {
   text-align: center;
+  padding: 48px 0 36px;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
-.footer-email-line .plain-email-link {
-  font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-  font-weight: 600;
+.resources-hero-block h1 {
+  font-size: clamp(2.4rem, 4.6vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin-bottom: 16px;
   color: var(--ink);
-  letter-spacing: -0.03em;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-color: var(--line-strong);
-  transition: opacity 0.15s ease;
 }
 
-.footer-email-line .plain-email-link:hover {
-  opacity: 0.7;
+.resources-hero-block p.lead {
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
 }
 
-.footer-social-line {
-  display: flex;
+.resources-note-pill {
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-full);
   font-family: var(--font-mono);
   font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: 14px;
+}
+
+.resources-note-pill .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.resources-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 32px 0 40px;
+}
+
+.res-filter-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.res-filter-btn:hover {
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+
+.res-filter-btn.active {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+[data-theme="dark"] .res-filter-btn.active {
+  background: #E8E8E8;
+  color: #0A0A0A;
+  border-color: #E8E8E8;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+@media (max-width: 800px) {
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 26px 26px 22px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  position: relative;
+}
+
+.resource-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 85, 0, 0.4);
+  box-shadow: 0 12px 32px -10px var(--accent-glow);
+}
+
+.resource-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.resource-cat-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  color: var(--accent);
 }
 
-.footer-social-line a {
-  color: var(--ink-soft);
-  transition: color 0.15s ease, opacity 0.15s ease;
-}
-
-.footer-social-line a:hover {
-  color: var(--ink);
-  opacity: 1;
-}
-
-.footer-social-line .sep {
+.resource-format-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
   color: var(--ink-faint);
 }
 
-.footer-location-line {
-  margin-top: 4px;
+.resource-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.resource-author {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+.resource-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.resource-takeaway {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-subtle);
+  border-left: 2px solid var(--accent);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+
+.resource-takeaway strong {
+  color: var(--ink);
+}
+
+.resource-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  margin-top: auto;
+}
+
+.resource-amazon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-subtle);
+  border: 1px solid var(--line);
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.resource-amazon-btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  opacity: 1;
+}
+
+[data-theme="dark"] .resource-amazon-btn:hover {
+  background: #E8E8E8;
+  color: #0A0A0A;
+  border-color: #E8E8E8;
+}
+
+.resource-amazon-btn .arrow {
+  color: var(--accent);
+  transition: transform 0.15s ease;
+}
+
+.resource-amazon-btn:hover .arrow {
+  transform: translate(2px, -2px);
+  color: inherit;
 }
