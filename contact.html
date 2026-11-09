@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Sumit Rai</title>
+  <meta name="description" content="Sumit Rai (Sumi) — Senior Product Designer &amp; AI Builder with 7+ years of product design and 10+ years of overall design experience across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="author" content="Sumit Rai" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav-wrap" id="siteHeader">
+  <div class="nav-pill">
+    <div class="nav-logo-group">
+      <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
+        <span class="sr-mark">SR</span>
+        <span>Sumit Rai</span>
+      </a>
+    </div>
+
+    <nav class="nav-tabs" aria-label="Main Navigation">
+      <a href="projects.html" class="">Work</a>
+      <a href="about.html" class="">About</a>
+      <a href="resume.html" class="">Resume</a>
+      <a href="playground.html" class="">Playground</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <div class="nav-right-actions">
+      <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
+        <span id="soundIcon">🔊</span>
+        <span id="soundLabel">Sound</span>
+      </button>
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick search and jump (Cmd+K)" title="Quick Command Palette (Cmd+K)">
+        <kbd>⌘K</kbd>
+      </button>
+    </div>
+  </div>
+</header>
+
+<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode">
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+</button>
+
+<main class="page-body">
+  <div class="wrap-wide">
+    
+    <!-- Hero -->
+    <div class="contact-hero-wrap">
+      <div class="status-pill">
+        <span class="dot"></span>
+        <span>Available for Q1/Q2 2026 Collaborations</span>
+      </div>
+      <h1>Let's start a conversation.</h1>
+      <p class="lead">
+        Have an early-stage product in mind, a founding design role, or want to explore AI-native workflows? I'm always open to discussing new opportunities.
+      </p>
+    </div>
+
+    <!-- Layout: Left Interactive Form, Right Live Delhi Clock & Direct Channels -->
+    <div class="contact-grid-layout">
+      
+      <!-- Interactive Form Card -->
+      <div class="contact-form-card">
+        <span class="eyebrow"><span class="dot"></span> Quick Inquiries</span>
+        <h2 style="font-size:1.45rem; margin-bottom:12px;">What are you looking to build?</h2>
+        <p style="font-size:13.5px; color:var(--ink-soft); margin-bottom:18px;">
+          Select a project focus below to auto-tailor the message starter:
+        </p>
+
+        <!-- Topic Selector Pills -->
+        <div class="contact-intent-pills" id="intentPills">
+          <button class="intent-pill active" data-topic="0-to-1 Product Design" data-lead="Hi Sumit, I'm working on a zero-to-one product and would love your product design expertise on...">🚀 0-to-1 Product</button>
+          <button class="intent-pill" data-topic="Founding / Senior Role" data-lead="Hi Sumit, we have an exciting founding/senior product design role on our team and would love to chat...">💼 Founding / Senior Role</button>
+          <button class="intent-pill" data-topic="Design System Audit" data-lead="Hi Sumit, we are looking to overhaul or scale our design system across web and mobile...">📐 Design System</button>
+          <button class="intent-pill" data-topic="AI Interface Exploration" data-lead="Hi Sumit, we're building an AI-native product and want to explore modern user interaction patterns...">🤖 AI Interface</button>
+          <button class="intent-pill" data-topic="Just Saying Hi" data-lead="Hi Sumit, love your portfolio! Just reaching out to connect and say hello...">👋 Just Saying Hi</button>
+        </div>
+
+        <form id="contactForm">
+          <div class="contact-form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" class="contact-input" placeholder="e.g. Elena Rostova" required />
+          </div>
+
+          <div class="contact-form-group">
+            <label for="contactEmail">Your Email</label>
+            <input type="email" id="contactEmail" class="contact-input" placeholder="name@company.com" required />
+          </div>
+
+          <div class="contact-form-group">
+            <label for="contactMsg">Message</label>
+            <textarea id="contactMsg" class="contact-textarea" placeholder="Tell me a bit about your product, timeline, or idea...">Hi Sumit, I'm working on a zero-to-one product and would love your product design expertise on...</textarea>
+          </div>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <button type="submit" class="btn btn-primary" id="sendBtn">
+              <span>Send Message &rarr;</span>
+            </button>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sumitraiworks@gmail.com&amp;su=Product%20Collaboration%20with%20Sumit" target="_blank" rel="noopener" class="btn btn-secondary" title="Open Gmail in web browser">
+              <span>Open in Gmail ↗</span>
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sidebar: Live Delhi Time, Turnaround, Direct Info -->
+      <div class="contact-sidebar-card">
+        
+        <!-- Live Time Box -->
+        <div class="sidebar-box">
+          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Local Time Widget</div>
+          <h3>📍 New Delhi, India</h3>
+          <p style="font-size:13px; color:var(--ink-soft);">
+            Standard Time (IST &middot; UTC +5:30). Synchronized with active studio hours:
+          </p>
+          <div class="live-time-display">
+            <span class="live-time-val" id="delhiLiveClockVal">--:-- -- IST</span>
+          </div>
+          <p style="font-size:12px; color:var(--ink-faint); margin-top:4px;">
+            Average response time: <strong>&lt; 24 hours</strong> on weekdays.
+          </p>
+        </div>
+
+        <!-- Direct Email Card -->
+        <div class="sidebar-box">
+          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Direct Contact</div>
+          <h3>Direct Email</h3>
+          <p style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:8px;">
+            sumitraiworks@gmail.com
+          </p>
+          <button class="btn btn-secondary btn-sm" id="sidebarCopyEmail" style="width:100%; justify-content:center;">
+            <span>📋 Copy Email Address</span>
+          </button>
+        </div>
+
+        <!-- Professional Profiles -->
+        <div class="sidebar-box">
+          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Digital Presence</div>
+          <h3>Connect &amp; Follow</h3>
+          <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px; font-size:13.5px; font-weight:600;">
+            <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
+              <span>LinkedIn</span>
+              <span style="color:var(--accent);">&nearr;</span>
+            </a>
+            <a href="https://x.com/isumitrai" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
+              <span>X (formerly Twitter)</span>
+              <span style="color:var(--accent);">&nearr;</span>
+            </a>
+            <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
+              <span>Instagram</span>
+              <span style="color:var(--accent);">&nearr;</span>
+            </a>
+            <a href="https://www.raimagedesign.com" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
+              <span>Raimage Design Studio</span>
+              <span style="color:var(--accent);">&nearr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-status-pill">
+      <span class="dot"></span>
+      <span>Open to Freelance &amp; Product Collaborations</span>
+    </div>
+
+    <h2 class="footer-tagline">
+      Let's build something together.
+    </h2>
+
+    <div class="footer-email-box">
+      <div class="footer-email-pill">
+        <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
+          <span class="email-text">sumitraiworks@gmail.com</span>
+        </a>
+        <button class="copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email address">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span class="copy-toast">Copied!</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <div class="footer-clock-box" id="delhiClockWrap">
+        <span class="live-dot"></span>
+        <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
+      </div>
+      <div class="flinks">
+        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
+        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Command + K Navigation Modal -->
+<div class="cmd-modal" id="cmdModal" role="dialog" aria-modal="true" aria-label="Quick Command Palette">
+  <div class="cmd-box">
+    <div class="cmd-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" class="cmd-input" id="cmdInput" placeholder="Type a destination or action..." autocomplete="off" />
+      <span class="cmd-esc">ESC</span>
+    </div>
+    <div class="cmd-list" id="cmdList">
+      <a href="index.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </span>
+        <span class="cmd-shortcut">H</span>
+      </a>
+      <a href="projects.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span>Selected Work (Projects)</span>
+        </span>
+        <span class="cmd-shortcut">W</span>
+      </a>
+      <a href="about.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <span>About Sumit</span>
+        </span>
+        <span class="cmd-shortcut">A</span>
+      </a>
+      <a href="resume.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Resume &amp; Credentials</span>
+        </span>
+        <span class="cmd-shortcut">R</span>
+      </a>
+      <a href="playground.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
+          <span>Playground (Raimage Lab)</span>
+        </span>
+        <span class="cmd-shortcut">P</span>
+      </a>
+      <a href="contact.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Get in Touch (Contact Page)</span>
+        </span>
+        <span class="cmd-shortcut">C</span>
+      </a>
+      <a href="assets/Sumit_Rai_Resume.pdf" download class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download Resume PDF</span>
+        </span>
+        <span class="cmd-shortcut">PDF</span>
+      </a>
+      <a href="mailto:sumitraiworks@gmail.com" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Email Sumit (sumitraiworks@gmail.com)</span>
+        </span>
+        <span class="cmd-shortcut">@</span>
+      </a>
+      <div class="cmd-item" id="cmdToggleTheme">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
+          <span>Toggle Dark / Light Mode</span>
+        </span>
+        <span class="cmd-shortcut">T</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+
+// ---- Global Audio, Clock, Theme & Command Palette Management ----
+(function(){
+  // 1. Web Audio Synthesizer Haptic Engine
+  const AudioEngine = (function(){
+    let ctx = null;
+    let enabled = localStorage.getItem('sr_sound') === 'true';
+
+    function init(){
+      if (!ctx && (window.AudioContext || window.webkitAudioContext)) {
+        ctx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playTick(freq = 820, dur = 0.035, type = 'sine'){
+      if (!enabled) return;
+      try {
+        init();
+        if (ctx.state === 'suspended') ctx.resume();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(0.06, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + dur);
+      } catch(e) {}
+    }
+
+    function toggle(){
+      enabled = !enabled;
+      localStorage.setItem('sr_sound', enabled);
+      if (enabled) playTick(960, 0.05);
+      return enabled;
+    }
+
+    function isEnabled(){ return enabled; }
+
+    return { playTick, toggle, isEnabled };
+  })();
+
+  // Update Sound Button State
+  const soundBtn = document.getElementById('soundToggleBtn');
+  const soundIcon = document.getElementById('soundIcon');
+  const soundLabel = document.getElementById('soundLabel');
+  function updateSoundUI(){
+    const on = AudioEngine.isEnabled();
+    if (soundIcon) soundIcon.textContent = on ? '🔊' : '🔇';
+    if (soundLabel) soundLabel.textContent = on ? 'Sound' : 'Muted';
+    if (soundBtn) soundBtn.classList.toggle('active', on);
+  }
+  updateSoundUI();
+  if (soundBtn) {
+    soundBtn.addEventListener('click', function(){
+      AudioEngine.toggle();
+      updateSoundUI();
+    });
+  }
+
+  // Play micro click on link / button clicks
+  document.addEventListener('click', function(e){
+    if (e.target.closest('a, button, .proj-card, .tool-tile, .pg-card-rich')) {
+      AudioEngine.playTick(780, 0.028);
+    }
+  });
+
+  // 2. Real-time New Delhi (IST) Clock
+  function updateDelhiClock(){
+    const textEl = document.getElementById('liveClockText');
+    const pageVal = document.getElementById('delhiLiveClockVal');
+    const now = new Date();
+    // New Delhi is UTC +5:30
+    const istOffset = 5.5 * 60 * 60 * 1000;
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const delhiDate = new Date(utc + istOffset);
+
+    let h = delhiDate.getHours();
+    const m = String(delhiDate.getMinutes()).padStart(2, '0');
+    const s = String(delhiDate.getSeconds()).padStart(2, '0');
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+
+    const formatted = `${h}:${m}:${s} ${ampm} IST`;
+    if (textEl) textEl.textContent = formatted;
+    if (pageVal) pageVal.textContent = formatted;
+  }
+  setInterval(updateDelhiClock, 1000);
+  updateDelhiClock();
+
+  // 3. Dark/Light Mode
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const storedTheme = localStorage.getItem('sr_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  if (storedTheme === 'dark') root.setAttribute('data-theme', 'dark');
+
+  function toggleTheme(){
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('sr_theme', next);
+    AudioEngine.playTick(isDark ? 650 : 880, 0.04);
+  }
+  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+
+  // 4. Scroll Header Auto-Hide
+  const header = document.getElementById('siteHeader');
+  let lastY = window.scrollY, ticking = false;
+  window.addEventListener('scroll', function(){
+    if (!ticking) {
+      window.requestAnimationFrame(function(){
+        const curY = window.scrollY;
+        if (header && curY > 80 && curY > lastY) {
+          header.classList.add('nav-hidden');
+        } else if (header) {
+          header.classList.remove('nav-hidden');
+        }
+        lastY = curY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // 5. Copy Email
+  const copyBtn = document.getElementById('copyEmailBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(function(){
+        copyBtn.classList.add('copied');
+        AudioEngine.playTick(1020, 0.06);
+        setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
+      });
+    });
+  }
+
+  // 6. Interactive Nickname Cycle (Debi Style)
+  const nickBtn = document.getElementById('nicknameToggle');
+  if (nickBtn) {
+    const nicks = ['Sumi', 'Sumo'];
+    let idx = 0;
+    nickBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      idx = (idx + 1) % nicks.length;
+      nickBtn.textContent = nicks[idx];
+      AudioEngine.playTick(880 + (idx * 120), 0.04);
+    });
+  }
+
+  // 7. Command + K Palette
+  const cmdModal = document.getElementById('cmdModal');
+  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
+  const cmdInput = document.getElementById('cmdInput');
+  const cmdList = document.getElementById('cmdList');
+  const cmdThemeBtn = document.getElementById('cmdToggleTheme');
+
+  function openCmd(){
+    if (!cmdModal) return;
+    cmdModal.classList.add('active');
+    AudioEngine.playTick(720, 0.03);
+    if (cmdInput) {
+      cmdInput.value = '';
+      cmdInput.focus();
+    }
+    filterCmd('');
+  }
+
+  function closeCmd(){
+    if (!cmdModal) return;
+    cmdModal.classList.remove('active');
+  }
+
+  if (cmdTrigger) cmdTrigger.addEventListener('click', openCmd);
+  if (cmdModal) {
+    cmdModal.addEventListener('click', function(e){
+      if (e.target === cmdModal) closeCmd();
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) {
+        closeCmd();
+      } else {
+        openCmd();
+      }
+    } else if (e.key === 'Escape' && cmdModal && cmdModal.classList.contains('active')) {
+      closeCmd();
+    }
+  });
+
+  if (cmdThemeBtn) {
+    cmdThemeBtn.addEventListener('click', function(){
+      toggleTheme();
+      closeCmd();
+    });
+  }
+
+  function filterCmd(q){
+    if (!cmdList) return;
+    const items = cmdList.querySelectorAll('.cmd-item');
+    const query = q.trim().toLowerCase();
+    items.forEach(function(item){
+      const text = item.textContent.toLowerCase();
+      item.style.display = (!query || text.includes(query)) ? 'flex' : 'none';
+    });
+  }
+
+  if (cmdInput) {
+    cmdInput.addEventListener('input', function(e){
+      filterCmd(e.target.value);
+    });
+  }
+})();
+
+
+  // Intent Pills Dynamic Tailoring
+  const pills = document.querySelectorAll('#intentPills .intent-pill');
+  const msgField = document.getElementById('contactMsg');
+  let currentTopic = "0-to-1 Product Design";
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', (e) => {
+      e.preventDefault();
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      currentTopic = pill.dataset.topic;
+      if (msgField) msgField.value = pill.dataset.lead;
+    });
+  });
+
+  // Handle Form Submission -> mailto link
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const msg = document.getElementById('contactMsg').value.trim();
+
+      const subject = encodeURIComponent(`[${currentTopic}] From ${name}`);
+      const body = encodeURIComponent(`Name: ${name}
+Email: ${email}
+Topic: ${currentTopic}
+
+Message:
+${msg}`);
+      window.location.href = `mailto:sumitraiworks@gmail.com?subject=${subject}&body=${body}`;
+    });
+  }
+
+  // Sidebar Copy Email
+  const sbCopy = document.getElementById('sidebarCopyEmail');
+  if (sbCopy) {
+    sbCopy.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(() => {
+        sbCopy.innerHTML = '<span>&check; Copied to Clipboard!</span>';
+        setTimeout(() => {
+          sbCopy.innerHTML = '<span>📋 Copy Email Address</span>';
+        }, 2200);
+      });
+    });
+  }
+
+</script>
+</body>
+</html>

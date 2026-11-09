@@ -1,294 +1,23 @@
 #!/usr/bin/env python3
 """
-Master Page Generator for Sumit Rai Portfolio V2
-Generates index.html, projects.html, about.html, resume.html, and playground.html.
-Adheres strictly to the V2 redesign brief:
-- Minimal, editorial, sophisticated aesthetic
-- 2 font families (Bricolage Grotesque for headings, Inter for body/UI)
-- Black, White/Warm Paper, Accent Orange color scheme
-- Preserves Sumit Rai brand identity, real assets, verified experience
-- Dedicated resume with working PDF download & print styles
-- Dedicated about page with editorial storytelling
-- Structured case study layouts with compact info blocks
-- Interactive Command+K quick navigation palette
+Master Page Generator for Sumit Rai Portfolio V2 — Enhanced Edition
+Fulfills all updated user requirements:
+1. Typography from ref Debi portfolio: Plus Jakarta Sans (Headings) + Inter (Body/UI) + Space Mono (Micro-copy)
+2. Debi-style nickname treatment on main page: "Hi, I'm Sumit Rai (most people call me Sumi or Sumo)"
+3. Toolkit & Environment: Uses images tools01.jpg through tools18.jpg from assets/src/
+4. Client & Brand Partners: Clean unbordered layout, equalized logo sizes, uniform grayscale, NO color inversion in dark mode!
+5. Playground: Enhanced with Raimage Design studio lab styling (fine art prints, tools & UI concepts, industrial & 3D)
+6. Dedicated Contact Page (contact.html) + Surprise features:
+   - Live New Delhi, India local time clock widget (real-time updating)
+   - Interactive intent pill selector with auto-drafting email
+   - Pure Web Audio synthetic haptic sound engine (toggleable via header pill)
 """
 
 import os
+import json
+import html
 
-# Base HTML Header
-def get_head(title="Sumit Rai — Senior Product Designer | AI Builder", active_page="index"):
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title}</title>
-  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 7+ years of product design and 10+ years of overall design experience across SaaS, AI, EdTech, FinTech, and consumer platforms." />
-  <meta name="author" content="Sumit Rai" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-"""
-
-def get_nav(active_page):
-    return f"""
-<header class="nav-wrap" id="siteHeader">
-  <div class="nav-pill">
-    <div class="nav-logo-group">
-      <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
-        <span class="sr-mark">SR</span>
-        <span>Sumit Rai</span>
-      </a>
-    </div>
-
-    <nav class="nav-tabs" aria-label="Main Navigation">
-      <a href="projects.html" class="{'active' if active_page in ['projects'] else ''}">Work</a>
-      <a href="about.html" class="{'active' if active_page == 'about' else ''}">About</a>
-      <a href="resume.html" class="{'active' if active_page == 'resume' else ''}">Resume</a>
-      <a href="playground.html" class="{'active' if active_page == 'playground' else ''}">Playground</a>
-    </nav>
-
-    <div class="nav-right-actions">
-      <button class="nav-cmd-btn" id="cmdPaletteTrigger" aria-label="Quick search and jump (Cmd+K)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <span>Search</span>
-        <kbd>⌘K</kbd>
-      </button>
-    </div>
-  </div>
-</header>
-
-<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode">
-  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-</button>
-"""
-
-footer_html = """
-<footer>
-  <div class="footer-inner">
-    <div class="footer-status-pill">
-      <span class="dot"></span>
-      <span>Open to Freelance &amp; Product Collaborations</span>
-    </div>
-
-    <h2 class="footer-tagline">
-      Let's build something together.
-    </h2>
-
-    <div class="footer-email-box">
-      <div class="footer-email-pill">
-        <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
-          <span class="email-text">sumitraiworks@gmail.com</span>
-        </a>
-        <button class="copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email address">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span class="copy-toast">Copied!</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="footer-bottom-row">
-      <span>&copy; Sumit Rai &middot; Senior Product Designer &amp; AI Builder &middot; Delhi, India</span>
-      <div class="flinks">
-        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
-        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Command + K Navigation Modal -->
-<div class="cmd-modal" id="cmdModal" role="dialog" aria-modal="true" aria-label="Quick Command Palette">
-  <div class="cmd-box">
-    <div class="cmd-header">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-      <input type="text" class="cmd-input" id="cmdInput" placeholder="Type a destination or action..." autocomplete="off" />
-      <span class="cmd-esc">ESC</span>
-    </div>
-    <div class="cmd-list" id="cmdList">
-      <a href="index.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span>Home</span>
-        </span>
-        <span class="cmd-shortcut">H</span>
-      </a>
-      <a href="projects.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <span>Selected Work (Projects)</span>
-        </span>
-        <span class="cmd-shortcut">W</span>
-      </a>
-      <a href="about.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-          <span>About Sumit</span>
-        </span>
-        <span class="cmd-shortcut">A</span>
-      </a>
-      <a href="resume.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          <span>Resume &amp; Experience</span>
-        </span>
-        <span class="cmd-shortcut">R</span>
-      </a>
-      <a href="assets/Sumit_Rai_Resume.pdf" download class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span>Download Resume PDF</span>
-        </span>
-        <span class="cmd-shortcut">PDF</span>
-      </a>
-      <a href="playground.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
-          <span>Playground &amp; UI Experiments</span>
-        </span>
-        <span class="cmd-shortcut">P</span>
-      </a>
-      <a href="mailto:sumitraiworks@gmail.com" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <span>Email Sumit (sumitraiworks@gmail.com)</span>
-        </span>
-        <span class="cmd-shortcut">@</span>
-      </a>
-      <div class="cmd-item" id="cmdToggleTheme">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
-          <span>Toggle Dark / Light Mode</span>
-        </span>
-        <span class="cmd-shortcut">T</span>
-      </div>
-    </div>
-  </div>
-</div>
-"""
-
-global_js = """
-// ---- Global Theme, Header & Command Palette Management ----
-(function(){
-  // Dark/Light Mode
-  const root = document.documentElement;
-  const themeToggle = document.getElementById('themeToggle');
-  const storedTheme = localStorage.getItem('sr_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  if (storedTheme === 'dark') root.setAttribute('data-theme', 'dark');
-
-  function toggleTheme(){
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    const next = isDark ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    localStorage.setItem('sr_theme', next);
-  }
-
-  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
-
-  // Scroll Header Auto-Hide
-  const header = document.getElementById('siteHeader');
-  let lastY = window.scrollY, ticking = false;
-  window.addEventListener('scroll', function(){
-    if (!ticking) {
-      window.requestAnimationFrame(function(){
-        const curY = window.scrollY;
-        if (header && curY > 80 && curY > lastY) {
-          header.classList.add('nav-hidden');
-        } else if (header) {
-          header.classList.remove('nav-hidden');
-        }
-        lastY = curY;
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-
-  // Copy Email Clipboard
-  const copyBtn = document.getElementById('copyEmailBtn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(function(){
-        copyBtn.classList.add('copied');
-        setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
-      });
-    });
-  }
-
-  // Command + K Palette
-  const cmdModal = document.getElementById('cmdModal');
-  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
-  const cmdInput = document.getElementById('cmdInput');
-  const cmdList = document.getElementById('cmdList');
-  const cmdThemeBtn = document.getElementById('cmdToggleTheme');
-
-  function openCmd(){
-    if (!cmdModal) return;
-    cmdModal.classList.add('active');
-    if (cmdInput) {
-      cmdInput.value = '';
-      cmdInput.focus();
-    }
-    filterCmd('');
-  }
-
-  function closeCmd(){
-    if (!cmdModal) return;
-    cmdModal.classList.remove('active');
-  }
-
-  if (cmdTrigger) cmdTrigger.addEventListener('click', openCmd);
-  if (cmdModal) {
-    cmdModal.addEventListener('click', function(e){
-      if (e.target === cmdModal) closeCmd();
-    });
-  }
-
-  document.addEventListener('keydown', function(e){
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      if (cmdModal && cmdModal.classList.contains('active')) {
-        closeCmd();
-      } else {
-        openCmd();
-      }
-    } else if (e.key === 'Escape' && cmdModal && cmdModal.classList.contains('active')) {
-      closeCmd();
-    }
-  });
-
-  if (cmdThemeBtn) {
-    cmdThemeBtn.addEventListener('click', function(){
-      toggleTheme();
-      closeCmd();
-    });
-  }
-
-  function filterCmd(q){
-    if (!cmdList) return;
-    const items = cmdList.querySelectorAll('.cmd-item');
-    const query = q.trim().toLowerCase();
-    items.forEach(function(item){
-      const text = item.textContent.toLowerCase();
-      item.style.display = (!query || text.includes(query)) ? 'flex' : 'none';
-    });
-  }
-
-  if (cmdInput) {
-    cmdInput.addEventListener('input', function(e){
-      filterCmd(e.target.value);
-    });
-  }
-})();
-"""
-
-# Projects Database with complete structured case studies
+# Projects Database with structured case studies
 PROJECTS = [
     {
         "id": "edumanage",
@@ -396,6 +125,418 @@ BRANDS = [
     {"name": "KidKidz", "img": "./assets/src/brands20.jpg"}
 ]
 
+# 18 Real Tool Images (assets/src/tools01.jpg to tools18.jpg)
+TOOLS = [
+    {"name": "Figma", "img": "./assets/src/tools01.jpg"},
+    {"name": "Framer", "img": "./assets/src/tools02.jpg"},
+    {"name": "Webflow", "img": "./assets/src/tools03.jpg"},
+    {"name": "Arc", "img": "./assets/src/tools04.jpg"},
+    {"name": "VS Code", "img": "./assets/src/tools05.jpg"},
+    {"name": "Cursor", "img": "./assets/src/tools06.jpg"},
+    {"name": "Spline 3D", "img": "./assets/src/tools07.jpg"},
+    {"name": "Midjourney", "img": "./assets/src/tools08.jpg"},
+    {"name": "Notion", "img": "./assets/src/tools09.jpg"},
+    {"name": "ChatGPT", "img": "./assets/src/tools10.jpg"},
+    {"name": "Bolt.new", "img": "./assets/src/tools11.jpg"},
+    {"name": "GitHub", "img": "./assets/src/tools12.jpg"},
+    {"name": "Illustrator", "img": "./assets/src/tools13.jpg"},
+    {"name": "Photoshop", "img": "./assets/src/tools14.jpg"},
+    {"name": "InDesign", "img": "./assets/src/tools15.jpg"},
+    {"name": "Slack", "img": "./assets/src/tools16.jpg"},
+    {"name": "Jira", "img": "./assets/src/tools17.jpg"},
+    {"name": "Linear", "img": "./assets/src/tools18.jpg"}
+]
+
+def get_head(title="Sumit Rai — Senior Product Designer | AI Builder", active_page="index"):
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content="Sumit Rai (Sumi) — Senior Product Designer &amp; AI Builder with 7+ years of product design and 10+ years of overall design experience across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="author" content="Sumit Rai" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+"""
+
+def get_nav(active_page):
+    return f"""
+<header class="nav-wrap" id="siteHeader">
+  <div class="nav-pill">
+    <div class="nav-logo-group">
+      <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
+        <span class="sr-mark">SR</span>
+        <span>Sumit Rai</span>
+      </a>
+    </div>
+
+    <nav class="nav-tabs" aria-label="Main Navigation">
+      <a href="projects.html" class="{'active' if active_page in ['projects'] else ''}">Work</a>
+      <a href="about.html" class="{'active' if active_page == 'about' else ''}">About</a>
+      <a href="resume.html" class="{'active' if active_page == 'resume' else ''}">Resume</a>
+      <a href="playground.html" class="{'active' if active_page == 'playground' else ''}">Playground</a>
+      <a href="contact.html" class="{'active' if active_page == 'contact' else ''}">Contact</a>
+    </nav>
+
+    <div class="nav-right-actions">
+      <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
+        <span id="soundIcon">🔊</span>
+        <span id="soundLabel">Sound</span>
+      </button>
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick search and jump (Cmd+K)" title="Quick Command Palette (Cmd+K)">
+        <kbd>⌘K</kbd>
+      </button>
+    </div>
+  </div>
+</header>
+
+<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode">
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+</button>
+"""
+
+footer_html = """
+<footer>
+  <div class="footer-inner">
+    <div class="footer-status-pill">
+      <span class="dot"></span>
+      <span>Open to Freelance &amp; Product Collaborations</span>
+    </div>
+
+    <h2 class="footer-tagline">
+      Let's build something together.
+    </h2>
+
+    <div class="footer-email-box">
+      <div class="footer-email-pill">
+        <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
+          <span class="email-text">sumitraiworks@gmail.com</span>
+        </a>
+        <button class="copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email address">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span class="copy-toast">Copied!</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <div class="footer-clock-box" id="delhiClockWrap">
+        <span class="live-dot"></span>
+        <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
+      </div>
+      <div class="flinks">
+        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
+        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Command + K Navigation Modal -->
+<div class="cmd-modal" id="cmdModal" role="dialog" aria-modal="true" aria-label="Quick Command Palette">
+  <div class="cmd-box">
+    <div class="cmd-header">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" class="cmd-input" id="cmdInput" placeholder="Type a destination or action..." autocomplete="off" />
+      <span class="cmd-esc">ESC</span>
+    </div>
+    <div class="cmd-list" id="cmdList">
+      <a href="index.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </span>
+        <span class="cmd-shortcut">H</span>
+      </a>
+      <a href="projects.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span>Selected Work (Projects)</span>
+        </span>
+        <span class="cmd-shortcut">W</span>
+      </a>
+      <a href="about.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <span>About Sumit</span>
+        </span>
+        <span class="cmd-shortcut">A</span>
+      </a>
+      <a href="resume.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Resume &amp; Credentials</span>
+        </span>
+        <span class="cmd-shortcut">R</span>
+      </a>
+      <a href="playground.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
+          <span>Playground (Raimage Lab)</span>
+        </span>
+        <span class="cmd-shortcut">P</span>
+      </a>
+      <a href="contact.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Get in Touch (Contact Page)</span>
+        </span>
+        <span class="cmd-shortcut">C</span>
+      </a>
+      <a href="assets/Sumit_Rai_Resume.pdf" download class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download Resume PDF</span>
+        </span>
+        <span class="cmd-shortcut">PDF</span>
+      </a>
+      <a href="mailto:sumitraiworks@gmail.com" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>Email Sumit (sumitraiworks@gmail.com)</span>
+        </span>
+        <span class="cmd-shortcut">@</span>
+      </a>
+      <div class="cmd-item" id="cmdToggleTheme">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
+          <span>Toggle Dark / Light Mode</span>
+        </span>
+        <span class="cmd-shortcut">T</span>
+      </div>
+    </div>
+  </div>
+</div>
+"""
+
+global_js = """
+// ---- Global Audio, Clock, Theme & Command Palette Management ----
+(function(){
+  // 1. Web Audio Synthesizer Haptic Engine
+  const AudioEngine = (function(){
+    let ctx = null;
+    let enabled = localStorage.getItem('sr_sound') === 'true';
+
+    function init(){
+      if (!ctx && (window.AudioContext || window.webkitAudioContext)) {
+        ctx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playTick(freq = 820, dur = 0.035, type = 'sine'){
+      if (!enabled) return;
+      try {
+        init();
+        if (ctx.state === 'suspended') ctx.resume();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(0.06, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + dur);
+      } catch(e) {}
+    }
+
+    function toggle(){
+      enabled = !enabled;
+      localStorage.setItem('sr_sound', enabled);
+      if (enabled) playTick(960, 0.05);
+      return enabled;
+    }
+
+    function isEnabled(){ return enabled; }
+
+    return { playTick, toggle, isEnabled };
+  })();
+
+  // Update Sound Button State
+  const soundBtn = document.getElementById('soundToggleBtn');
+  const soundIcon = document.getElementById('soundIcon');
+  const soundLabel = document.getElementById('soundLabel');
+  function updateSoundUI(){
+    const on = AudioEngine.isEnabled();
+    if (soundIcon) soundIcon.textContent = on ? '🔊' : '🔇';
+    if (soundLabel) soundLabel.textContent = on ? 'Sound' : 'Muted';
+    if (soundBtn) soundBtn.classList.toggle('active', on);
+  }
+  updateSoundUI();
+  if (soundBtn) {
+    soundBtn.addEventListener('click', function(){
+      AudioEngine.toggle();
+      updateSoundUI();
+    });
+  }
+
+  // Play micro click on link / button clicks
+  document.addEventListener('click', function(e){
+    if (e.target.closest('a, button, .proj-card, .tool-tile, .pg-card-rich')) {
+      AudioEngine.playTick(780, 0.028);
+    }
+  });
+
+  // 2. Real-time New Delhi (IST) Clock
+  function updateDelhiClock(){
+    const textEl = document.getElementById('liveClockText');
+    const pageVal = document.getElementById('delhiLiveClockVal');
+    const now = new Date();
+    // New Delhi is UTC +5:30
+    const istOffset = 5.5 * 60 * 60 * 1000;
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const delhiDate = new Date(utc + istOffset);
+
+    let h = delhiDate.getHours();
+    const m = String(delhiDate.getMinutes()).padStart(2, '0');
+    const s = String(delhiDate.getSeconds()).padStart(2, '0');
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+
+    const formatted = `${h}:${m}:${s} ${ampm} IST`;
+    if (textEl) textEl.textContent = formatted;
+    if (pageVal) pageVal.textContent = formatted;
+  }
+  setInterval(updateDelhiClock, 1000);
+  updateDelhiClock();
+
+  // 3. Dark/Light Mode
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const storedTheme = localStorage.getItem('sr_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  if (storedTheme === 'dark') root.setAttribute('data-theme', 'dark');
+
+  function toggleTheme(){
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('sr_theme', next);
+    AudioEngine.playTick(isDark ? 650 : 880, 0.04);
+  }
+  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+
+  // 4. Scroll Header Auto-Hide
+  const header = document.getElementById('siteHeader');
+  let lastY = window.scrollY, ticking = false;
+  window.addEventListener('scroll', function(){
+    if (!ticking) {
+      window.requestAnimationFrame(function(){
+        const curY = window.scrollY;
+        if (header && curY > 80 && curY > lastY) {
+          header.classList.add('nav-hidden');
+        } else if (header) {
+          header.classList.remove('nav-hidden');
+        }
+        lastY = curY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // 5. Copy Email
+  const copyBtn = document.getElementById('copyEmailBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(function(){
+        copyBtn.classList.add('copied');
+        AudioEngine.playTick(1020, 0.06);
+        setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
+      });
+    });
+  }
+
+  // 6. Interactive Nickname Cycle (Debi Style)
+  const nickBtn = document.getElementById('nicknameToggle');
+  if (nickBtn) {
+    const nicks = ['Sumi', 'Sumo'];
+    let idx = 0;
+    nickBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      idx = (idx + 1) % nicks.length;
+      nickBtn.textContent = nicks[idx];
+      AudioEngine.playTick(880 + (idx * 120), 0.04);
+    });
+  }
+
+  // 7. Command + K Palette
+  const cmdModal = document.getElementById('cmdModal');
+  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
+  const cmdInput = document.getElementById('cmdInput');
+  const cmdList = document.getElementById('cmdList');
+  const cmdThemeBtn = document.getElementById('cmdToggleTheme');
+
+  function openCmd(){
+    if (!cmdModal) return;
+    cmdModal.classList.add('active');
+    AudioEngine.playTick(720, 0.03);
+    if (cmdInput) {
+      cmdInput.value = '';
+      cmdInput.focus();
+    }
+    filterCmd('');
+  }
+
+  function closeCmd(){
+    if (!cmdModal) return;
+    cmdModal.classList.remove('active');
+  }
+
+  if (cmdTrigger) cmdTrigger.addEventListener('click', openCmd);
+  if (cmdModal) {
+    cmdModal.addEventListener('click', function(e){
+      if (e.target === cmdModal) closeCmd();
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) {
+        closeCmd();
+      } else {
+        openCmd();
+      }
+    } else if (e.key === 'Escape' && cmdModal && cmdModal.classList.contains('active')) {
+      closeCmd();
+    }
+  });
+
+  if (cmdThemeBtn) {
+    cmdThemeBtn.addEventListener('click', function(){
+      toggleTheme();
+      closeCmd();
+    });
+  }
+
+  function filterCmd(q){
+    if (!cmdList) return;
+    const items = cmdList.querySelectorAll('.cmd-item');
+    const query = q.trim().toLowerCase();
+    items.forEach(function(item){
+      const text = item.textContent.toLowerCase();
+      item.style.display = (!query || text.includes(query)) ? 'flex' : 'none';
+    });
+  }
+
+  if (cmdInput) {
+    cmdInput.addEventListener('input', function(e){
+      filterCmd(e.target.value);
+    });
+  }
+})();
+"""
+
 # -------------------------------------------------------------
 # PAGE 1: INDEX.HTML (HOMEPAGE)
 # -------------------------------------------------------------
@@ -425,11 +566,22 @@ def build_index():
       </article>
 """
 
+    # Requirement 4: Clean, unbordered, equalized grayscale logos (NO COLOR INVERT IN DARK MODE)
     brands_html = ""
     for b in BRANDS:
         brands_html += f"""
-        <div class="brand-cell" title="{b['name']}">
-          <img src="{b['img']}" alt="{b['name']} logo" loading="lazy" />
+        <div class="brand-item-clean" title="{b['name']}">
+          <img src="{b['img']}" alt="{b['name']}" loading="lazy" />
+        </div>
+"""
+
+    # Requirement 3: 18 tool images from assets/src/tools01.jpg to tools18.jpg
+    tools_html = ""
+    for t in TOOLS:
+        tools_html += f"""
+        <div class="tool-tile" title="{t['name']}">
+          <img src="{t['img']}" alt="{t['name']}" loading="lazy" />
+          <span class="tool-name">{t['name']}</span>
         </div>
 """
 
@@ -437,15 +589,19 @@ def build_index():
 <main class="page-body">
   <div class="wrap-wide">
     
-    <!-- SECTION 01 — HERO / INTRODUCTION -->
+    <!-- SECTION 01 — HERO / INTRODUCTION (DEBI-STYLE NICKNAME) -->
     <section class="hero">
       <div class="status-pill">
         <span class="dot"></span>
         <span>Senior Product Designer &middot; AI Builder</span>
       </div>
 
-      <h1 class="hero-greeting">Hi, I'm Sumit Rai.</h1>
+      <h1 class="hero-greeting">
+        Hi, I'm Sumit Rai <span class="nickname-note">(most people call me <button class="nickname-pill-toggle" id="nicknameToggle" title="Click to switch nickname">Sumi</button> or <strong class="accent">Sumo</strong>)</span>.
+      </h1>
+
       <p class="hero-statement">I design products, build experiences and explore what's next.</p>
+      
       <p class="hero-description">
         I'm a Senior Product Designer and AI Builder, exploring the intersection of design, technology and thoughtful product experiences.
       </p>
@@ -453,6 +609,7 @@ def build_index():
       <div class="cta-row">
         <a href="#work" class="btn btn-primary">View My Work &darr;</a>
         <a href="about.html" class="btn btn-secondary">More About Me &rarr;</a>
+        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
       </div>
     </section>
 
@@ -604,40 +761,29 @@ def build_index():
         </div>
       </div>
 
-      <!-- BRANDS WORKED WITH -->
+      <!-- REQUIREMENT 4: CLIENT BRANDS (CLEAN, EQUAL SIZE, MONOCHROME, NO INVERT IN DARK) -->
       <div class="brands-wrap">
         <div class="section-header-row" style="margin-bottom:16px;">
           <div class="section-title-wrap">
             <span class="eyebrow"><span class="dot"></span> Client &amp; Brand Partners</span>
-            <h3 style="font-size:1.3rem;">Brands I've Helped Shape</h3>
+            <h3 style="font-size:1.35rem;">Brands I've Helped Shape</h3>
           </div>
         </div>
-        <div class="brands-grid">
+        <div class="brands-grid-clean">
           {brands_html}
         </div>
       </div>
 
-      <!-- TOOLS STACK -->
+      <!-- REQUIREMENT 3: TOOLKIT & ENVIRONMENT WITH IMAGES (tools01 to tools18) -->
       <div class="tools-wrap">
         <div class="section-header-row" style="margin-bottom:16px;">
           <div class="section-title-wrap">
             <span class="eyebrow"><span class="dot"></span> Toolkit &amp; Environment</span>
-            <h3 style="font-size:1.3rem;">Tools I Use to Think, Design &amp; Build</h3>
+            <h3 style="font-size:1.35rem;">Tools I Use to Think, Design &amp; Build</h3>
           </div>
         </div>
-        <div class="tools-grid">
-          <div class="tool-chip"><svg viewBox="0 0 38 57" fill="none"><path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 0 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 0 0 0-19H19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/><path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/></svg><span>Figma</span></div>
-          <div class="tool-chip"><svg viewBox="0 0 14 21" fill="currentColor"><path d="M0 0h14v7H7L0 0zm0 7h7l7 7H7v7L0 14V7z"/></svg><span>Framer</span></div>
-          <div class="tool-chip"><svg viewBox="0 0 128 128" fill="#4353FF"><path d="M94.5 38.1c-6.9 0-13.1 3.4-16.9 8.7-2.4-5.5-7.9-9.4-14.3-9.4-5.2 0-9.8 2.4-12.9 6.2V38.7H33.5v50.6h17V66.7c0-5.2 4.2-9.4 9.4-9.4s9.4 4.2 9.4 9.4v22.6h17V66.7c0-5.2 4.2-9.4 9.4-9.4s9.4 4.2 9.4 9.4v22.6h17V63.5c0-14-11.3-25.4-25.2-25.4z"/></svg><span>Webflow</span></div>
-          <div class="tool-chip"><svg viewBox="0 0 32 32" fill="none"><path d="M28.5 4.5l-8.5 8-8.5-8-7.5 4 8 8-8 8 7.5 4 8.5-8 8.5 8 3.5-2v-22z" fill="#0078D7"/></svg><span>VS Code</span></div>
-          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-7 2-4 7L5 3z"/></svg><span>Cursor</span></div>
-          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(-30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(30 12 12)"/></svg><span>Spline 3D</span></div>
-          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20L12 4l8 16"/><path d="M7 14h10"/></svg><span>Midjourney</span></div>
-          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg><span>Notion</span></div>
-          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg><span>GitHub</span></div>
-          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="#FF9A00"><path d="M7.045 0h9.91C20.4 0 24 3.6 24 8.045v7.91C24 20.4 20.4 24 15.955 24h-9.91C2.1 24 0 21.9 0 15.955v-7.91C0 3.6 2.1 0 7.045 0zm5.098 6.02L9.58 13.33h1.72l.566-1.602h2.812l.565 1.602H17L14.427 6.02H12.14zm1.286 2.14l.955 2.726h-1.91l.955-2.726zm-7.44-.957c.467 0 .814.135 1.04.404.227.27.34.664.34 1.183 0 .533-.126.95-.378 1.25-.252.3-.617.45-1.092.45H5.25V7.2h.74zm-.123 2.4c.28 0 .49-.09.628-.272.138-.18.207-.454.207-.822 0-.335-.06-.582-.18-.74-.12-.16-.31-.24-.564-.24h-.308v2.074h.217z"/></svg><span>Illustrator</span></div>
-          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="#31A8FF"><path d="M7.045 0h9.91C20.4 0 24 3.6 24 8.045v7.91C24 20.4 20.4 24 15.955 24h-9.91C2.1 24 0 21.9 0 15.955v-7.91C0 3.6 2.1 0 7.045 0zm2.49 6.14H7.44V17.1H9.1v-4.185c.185.015.45.022.797.022.836 0 1.49-.22 1.963-.664.473-.445.71-1.063.71-1.856 0-.763-.22-1.358-.664-1.783-.44-.425-1.11-.64-2.01-.64-.6 0-1.13.05-1.362.106zm.09 1.41c.122-.023.31-.034.564-.034.79 0 1.185.382 1.185 1.148 0 .822-.42 1.233-1.258 1.233-.232 0-.41-.01-.49-.034V7.55zm6.9-1.53c-.834 0-1.514.283-2.044.848-.528.565-.793 1.304-.793 2.217 0 .85.257 1.54.77 2.065.514.525 1.196.788 2.047.788.854 0 1.546-.27 2.076-.81.53-.54.795-1.25.795-2.13 0-.884-.267-1.594-.8-2.13-.533-.536-1.22-.847-2.05-.847zm.02 1.384c.43 0 .756.166.977.498.22.33.33.805.33 1.422 0 .618-.112 1.086-.336 1.406-.224.32-.55.48-.977.48-.42 0-.742-.162-.965-.487-.223-.325-.334-.8-.334-1.422 0-.616.11-1.087.332-1.41.222-.325.543-.487.972-.487z"/></svg><span>Photoshop</span></div>
-          <div class="tool-chip"><svg viewBox="0 0 24 24" fill="#0052CC"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.004-1.005zm5.723-5.756H5.757a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.762a1.005 1.005 0 0 0-1.022-1.005zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24.019 12.49V1.005A1.005 1.005 0 0 0 23.013 0z"/></svg><span>Jira</span></div>
+        <div class="tools-grid-img">
+          {tools_html}
         </div>
       </div>
     </section>
@@ -648,7 +794,7 @@ def build_index():
       <h2>Have something interesting in mind?</h2>
       <p>I'm always open to meaningful conversations, interesting ideas and opportunities to build something thoughtful.</p>
       <div class="cta-btns">
-        <a href="mailto:sumitraiworks@gmail.com?subject=Hello%20Sumit" class="btn btn-primary">Get in Touch &rarr;</a>
+        <a href="contact.html" class="btn btn-primary">Get in Touch &rarr;</a>
         <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Me</a>
       </div>
     </section>
@@ -656,13 +802,12 @@ def build_index():
   </div>
 </main>
 """
-    return get_head("Sumit Rai — Senior Product Designer | AI Builder", "index") + get_nav("index") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
+    return get_head("Sumit Rai (Sumi) — Senior Product Designer | AI Builder", "index") + get_nav("index") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
 
 # -------------------------------------------------------------
 # PAGE 2: PROJECTS.HTML (WORK ARCHIVE & INTERACTIVE CASE STUDIES)
 # -------------------------------------------------------------
 def build_projects():
-    import json
     projects_json = json.dumps(PROJECTS)
 
     initial_projects_html = ""
@@ -917,9 +1062,7 @@ def build_projects():
 
   if (backBtn) backBtn.addEventListener('click', closeCaseStudy);
 
-  // Check URL hash on page load
   window.addEventListener('DOMContentLoaded', () => {{
-    renderProjects('all');
     const hash = window.location.hash.replace('#', '');
     if (hash && allProjects.some(p => p.id === hash)) {{
       openCaseStudy(hash);
@@ -950,7 +1093,7 @@ def build_about():
         </p>
         <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;">
           <a href="resume.html" class="btn btn-primary">Read My Resume &rarr;</a>
-          <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Me</a>
+          <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
         </div>
       </div>
 
@@ -1090,7 +1233,7 @@ def build_about():
       <div class="section-header-row" style="margin-bottom:16px;">
         <div class="section-title-wrap">
           <span class="eyebrow"><span class="dot"></span> Life Outside Pixels</span>
-          <h3 style="font-size:1.3rem;">Beyond the Screen</h3>
+          <h3 style="font-size:1.35rem;">Beyond the Screen</h3>
         </div>
       </div>
 
@@ -1102,7 +1245,7 @@ def build_about():
           <figure class="photo-card"><img src="./assets/img_06.jpg" alt="Moment 06" loading="lazy" /></figure>
           <figure class="photo-card"><img src="./assets/img_07.jpg" alt="Moment 07" loading="lazy" /></figure>
           <figure class="photo-card"><img src="./assets/img_08.jpg" alt="Moment 08" loading="lazy" /></figure>
-          <!-- Loop Duplicates -->
+          <!-- Duplicates for seamless looping -->
           <figure class="photo-card" aria-hidden="true"><img src="./assets/img_01.jpg" alt="" loading="lazy" /></figure>
           <figure class="photo-card" aria-hidden="true"><img src="./assets/img_03.jpg" alt="" loading="lazy" /></figure>
           <figure class="photo-card" aria-hidden="true"><img src="./assets/img_04.jpg" alt="" loading="lazy" /></figure>
@@ -1315,26 +1458,105 @@ def build_resume():
     return get_head("Resume — Sumit Rai", "resume") + get_nav("resume") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
 
 # -------------------------------------------------------------
-# PAGE 5: PLAYGROUND.HTML (EXPERIMENTS & UI SHOTS)
+# PAGE 5: PLAYGROUND.HTML (RAIMAGE STUDIO LAB REFERENCE STYLE)
 # -------------------------------------------------------------
 def build_playground():
     items = [
-        {"title": "Koolkidz Watches Design", "desc": "Playful children's product concept and watch face visual explorations.", "img": "./assets/pg_001.jpg"},
-        {"title": "Stacklet AI Dev Projects", "desc": "Dark-mode AI developer environment and command dashboard concept.", "img": "./assets/pg_002.jpg"},
-        {"title": "Chhota Bheem Branding", "desc": "Character packaging and identity exploration for merchandise.", "img": "./assets/pg_003.jpg"},
-        {"title": "Radio Concept", "desc": "Retro-futuristic physical audio device interface and hardware study.", "img": "./assets/pg_004.jpg"},
+        {
+            "id": "pg-1",
+            "title": "Stacklet AI Dev Projects",
+            "category": "Tools & UI Concepts",
+            "tag": "AI · Developer Tool",
+            "year": "2026",
+            "desc": "AI-native developer terminal HUD, interactive command palettes, and dark-mode coding canvas.",
+            "img": "./assets/pg_002.jpg"
+        },
+        {
+            "id": "pg-2",
+            "title": "Koolkidz Watches Design",
+            "category": "Industrial & 3D",
+            "tag": "Product · Hardware",
+            "year": "2025",
+            "desc": "Playful children's digital timepiece, tactile silicone strap explorations, and graphic watch faces.",
+            "img": "./assets/pg_001.jpg"
+        },
+        {
+            "id": "pg-3",
+            "title": "Radio Concept Hardware",
+            "category": "Industrial & 3D",
+            "tag": "Hardware · Audio",
+            "year": "2025",
+            "desc": "Tactile retro-futuristic audio device concept with mechanical switches and digital frequency display.",
+            "img": "./assets/pg_004.jpg"
+        },
+        {
+            "id": "pg-4",
+            "title": "Chhota Bheem Branding",
+            "category": "Brand & Packaging",
+            "tag": "Packaging · Character",
+            "year": "2024",
+            "desc": "Commercial merchandise branding, character packaging system, and retail promotional graphics.",
+            "img": "./assets/pg_003.jpg"
+        },
+        {
+            "id": "pg-5",
+            "title": "A Walk to Remember — Art Print",
+            "category": "Fine Art & Prints",
+            "tag": "Fine Art · Digital Print",
+            "year": "2025",
+            "desc": "Limited digital print study exploring atmospheric lighting, warm monochrome tones, and visual silence. Featured on Raimage Design.",
+            "img": "./assets/img_01.jpg"
+        },
+        {
+            "id": "pg-6",
+            "title": "A Thousand Years — Typography Study",
+            "category": "Fine Art & Prints",
+            "tag": "Editorial · Architecture",
+            "year": "2024",
+            "desc": "Monochromatic architectural photography coupled with brutalist typographic hierarchy. Available on Raimage Studio Lab.",
+            "img": "./assets/img_03.jpg"
+        },
+        {
+            "id": "pg-7",
+            "title": "Tactile Color Calibration",
+            "category": "Tools & UI Concepts",
+            "tag": "Design Tokens · Palette",
+            "year": "2025",
+            "desc": "Experimental design token generator and CMYK print calibration grid designed for studio pipelines.",
+            "img": "./assets/img_04.jpg"
+        },
+        {
+            "id": "pg-8",
+            "title": "Generative Waveform Study",
+            "category": "Tools & UI Concepts",
+            "tag": "Generative · Visual",
+            "year": "2025",
+            "desc": "Procedural noise patterns and audio wave visualizers explored for emerging AI sound interfaces.",
+            "img": "./assets/img_07.jpg"
+        }
     ]
 
     cards_html = ""
     for item in items:
+        safe_title = html.escape(item['title'], quote=True)
+        safe_desc = html.escape(item['desc'], quote=True)
+        safe_tag = html.escape(item['tag'], quote=True)
         cards_html += f"""
-      <article class="pg-card">
-        <div class="pg-img">
-          <img src="{item['img']}" alt="{item['title']}" loading="lazy" />
+      <article class="pg-card-rich" data-category="{item['category'].lower()}" data-title="{safe_title}" data-desc="{safe_desc}" data-img="{item['img']}" data-tag="{safe_tag}" role="button" tabindex="0">
+        <div class="pg-preview">
+          <img src="{item['img']}" alt="{safe_title}" loading="lazy" />
         </div>
-        <div class="pg-info">
-          <h3>{item['title']}</h3>
-          <p>{item['desc']}</p>
+        <div class="pg-meta-body">
+          <div class="pg-cat-row">
+            <span class="pg-tag">{safe_tag}</span>
+            <span class="pg-year">{item['year']}</span>
+          </div>
+          <h3>{safe_title}</h3>
+          <p>{safe_desc}</p>
+          <div class="pg-foot">
+            <span>Inspect Exploration &rarr;</span>
+            <span style="font-size:11px; opacity:0.7;">Raimage Lab</span>
+          </div>
         </div>
       </article>
 """
@@ -1343,22 +1565,275 @@ def build_playground():
 <main class="page-body">
   <div class="wrap-wide">
     
-    <div class="section-header-row" style="margin-top:24px; margin-bottom:32px;">
-      <div class="section-title-wrap">
-        <span class="eyebrow"><span class="dot"></span> Creative Explorations</span>
-        <h1 style="font-size:clamp(2rem, 3.6vw, 2.8rem); margin-bottom:8px;">Experiments &amp; UI shots</h1>
-        <p>Visual explorations, UI experiments, and creative side concepts built outside production briefs.</p>
-      </div>
+    <div class="pg-hero-block">
+      <span class="eyebrow"><span class="dot"></span> Raimage Design Studio Lab</span>
+      <h1>Playground &amp; Creative Lab</h1>
+      <p>
+        Visual explorations, experimental tools, fine art prints, and creative side concepts shaped outside client briefs. Inspired by the active studio pipelines at <a href="https://www.raimagedesign.com" target="_blank" rel="noopener" style="text-decoration:underline; font-weight:600;">Raimage Design</a>.
+      </p>
     </div>
 
-    <div class="pg-grid">
+    <!-- Filter Tabs -->
+    <div class="pg-filter-row" id="pgFilterRow">
+      <button class="filter-btn active" data-filter="all">All Experiments (8)</button>
+      <button class="filter-btn" data-filter="tools & ui concepts">Tools &amp; UI Concepts</button>
+      <button class="filter-btn" data-filter="fine art & prints">Fine Art &amp; Prints</button>
+      <button class="filter-btn" data-filter="industrial & 3d">Industrial &amp; 3D</button>
+      <button class="filter-btn" data-filter="brand & packaging">Brand &amp; Packaging</button>
+    </div>
+
+    <div class="pg-grid-rich" id="pgGrid">
       {cards_html}
     </div>
 
   </div>
 </main>
+
+<!-- Lightbox Modal for Playground Artifacts -->
+<div class="cmd-modal" id="pgModal" role="dialog" aria-modal="true" aria-label="Exploration Preview">
+  <div class="cmd-box" style="max-width:720px; padding:0; overflow:hidden;">
+    <div style="aspect-ratio:16/10; width:100%; background:var(--surface-subtle); overflow:hidden;">
+      <img id="pgModalImg" src="" alt="" style="width:100%; height:100%; object-fit:cover;" />
+    </div>
+    <div style="padding:24px 28px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+        <span class="tag-chip" id="pgModalTag" style="color:var(--accent);">Tag</span>
+        <button onclick="document.getElementById('pgModal').classList.remove('active')" style="font-size:12px; font-weight:600; color:var(--ink-soft);">&times; Close</button>
+      </div>
+      <h2 id="pgModalTitle" style="font-size:1.45rem; margin-bottom:8px;">Title</h2>
+      <p id="pgModalDesc" style="font-size:14px; line-height:1.6; color:var(--ink-soft);">Description</p>
+    </div>
+  </div>
+</div>
 """
-    return get_head("Playground — Sumit Rai", "playground") + get_nav("playground") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
+
+    pg_js = """
+  // Filter Playground Items
+  const filterBtns = document.querySelectorAll('#pgFilterRow .filter-btn');
+  const cards = document.querySelectorAll('.pg-card-rich');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const target = btn.dataset.filter.toLowerCase();
+      cards.forEach(card => {
+        const cat = card.dataset.category;
+        card.style.display = (target === 'all' || cat.includes(target)) ? 'flex' : 'none';
+      });
+    });
+  });
+
+  // Modal inspection
+  window.openPgModal = function(title, desc, img, tag){
+    const modal = document.getElementById('pgModal');
+    if (!modal) return;
+    document.getElementById('pgModalTitle').textContent = title;
+    document.getElementById('pgModalDesc').textContent = desc;
+    document.getElementById('pgModalImg').src = img;
+    document.getElementById('pgModalTag').textContent = tag;
+    modal.classList.add('active');
+  };
+
+  cards.forEach(card => {
+    function triggerOpen(){
+      openPgModal(card.dataset.title, card.dataset.desc, card.dataset.img, card.dataset.tag);
+    }
+    card.addEventListener('click', triggerOpen);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        triggerOpen();
+      }
+    });
+  });
+
+  const modal = document.getElementById('pgModal');
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+  }
+"""
+
+    return get_head("Playground & Studio Lab — Sumit Rai", "playground") + get_nav("playground") + content + footer_html + f"<script>\n{global_js}\n{pg_js}\n</script>\n</body>\n</html>"
+
+# -------------------------------------------------------------
+# PAGE 6: CONTACT.HTML (DEDICATED CONTACT PAGE + SURPRISE FEATURES)
+# -------------------------------------------------------------
+def build_contact():
+    content = f"""
+<main class="page-body">
+  <div class="wrap-wide">
+    
+    <!-- Hero -->
+    <div class="contact-hero-wrap">
+      <div class="status-pill">
+        <span class="dot"></span>
+        <span>Available for Q1/Q2 2026 Collaborations</span>
+      </div>
+      <h1>Let's start a conversation.</h1>
+      <p class="lead">
+        Have an early-stage product in mind, a founding design role, or want to explore AI-native workflows? I'm always open to discussing new opportunities.
+      </p>
+    </div>
+
+    <!-- Layout: Left Interactive Form, Right Live Delhi Clock & Direct Channels -->
+    <div class="contact-grid-layout">
+      
+      <!-- Interactive Form Card -->
+      <div class="contact-form-card">
+        <span class="eyebrow"><span class="dot"></span> Quick Inquiries</span>
+        <h2 style="font-size:1.45rem; margin-bottom:12px;">What are you looking to build?</h2>
+        <p style="font-size:13.5px; color:var(--ink-soft); margin-bottom:18px;">
+          Select a project focus below to auto-tailor the message starter:
+        </p>
+
+        <!-- Topic Selector Pills -->
+        <div class="contact-intent-pills" id="intentPills">
+          <button class="intent-pill active" data-topic="0-to-1 Product Design" data-lead="Hi Sumit, I'm working on a zero-to-one product and would love your product design expertise on...">🚀 0-to-1 Product</button>
+          <button class="intent-pill" data-topic="Founding / Senior Role" data-lead="Hi Sumit, we have an exciting founding/senior product design role on our team and would love to chat...">💼 Founding / Senior Role</button>
+          <button class="intent-pill" data-topic="Design System Audit" data-lead="Hi Sumit, we are looking to overhaul or scale our design system across web and mobile...">📐 Design System</button>
+          <button class="intent-pill" data-topic="AI Interface Exploration" data-lead="Hi Sumit, we're building an AI-native product and want to explore modern user interaction patterns...">🤖 AI Interface</button>
+          <button class="intent-pill" data-topic="Just Saying Hi" data-lead="Hi Sumit, love your portfolio! Just reaching out to connect and say hello...">👋 Just Saying Hi</button>
+        </div>
+
+        <form id="contactForm">
+          <div class="contact-form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" class="contact-input" placeholder="e.g. Elena Rostova" required />
+          </div>
+
+          <div class="contact-form-group">
+            <label for="contactEmail">Your Email</label>
+            <input type="email" id="contactEmail" class="contact-input" placeholder="name@company.com" required />
+          </div>
+
+          <div class="contact-form-group">
+            <label for="contactMsg">Message</label>
+            <textarea id="contactMsg" class="contact-textarea" placeholder="Tell me a bit about your product, timeline, or idea...">Hi Sumit, I'm working on a zero-to-one product and would love your product design expertise on...</textarea>
+          </div>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+            <button type="submit" class="btn btn-primary" id="sendBtn">
+              <span>Send Message &rarr;</span>
+            </button>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sumitraiworks@gmail.com&amp;su=Product%20Collaboration%20with%20Sumit" target="_blank" rel="noopener" class="btn btn-secondary" title="Open Gmail in web browser">
+              <span>Open in Gmail ↗</span>
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sidebar: Live Delhi Time, Turnaround, Direct Info -->
+      <div class="contact-sidebar-card">
+        
+        <!-- Live Time Box -->
+        <div class="sidebar-box">
+          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Local Time Widget</div>
+          <h3>📍 New Delhi, India</h3>
+          <p style="font-size:13px; color:var(--ink-soft);">
+            Standard Time (IST &middot; UTC +5:30). Synchronized with active studio hours:
+          </p>
+          <div class="live-time-display">
+            <span class="live-time-val" id="delhiLiveClockVal">--:-- -- IST</span>
+          </div>
+          <p style="font-size:12px; color:var(--ink-faint); margin-top:4px;">
+            Average response time: <strong>&lt; 24 hours</strong> on weekdays.
+          </p>
+        </div>
+
+        <!-- Direct Email Card -->
+        <div class="sidebar-box">
+          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Direct Contact</div>
+          <h3>Direct Email</h3>
+          <p style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:8px;">
+            sumitraiworks@gmail.com
+          </p>
+          <button class="btn btn-secondary btn-sm" id="sidebarCopyEmail" style="width:100%; justify-content:center;">
+            <span>📋 Copy Email Address</span>
+          </button>
+        </div>
+
+        <!-- Professional Profiles -->
+        <div class="sidebar-box">
+          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Digital Presence</div>
+          <h3>Connect &amp; Follow</h3>
+          <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px; font-size:13.5px; font-weight:600;">
+            <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
+              <span>LinkedIn</span>
+              <span style="color:var(--accent);">&nearr;</span>
+            </a>
+            <a href="https://x.com/isumitrai" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
+              <span>X (formerly Twitter)</span>
+              <span style="color:var(--accent);">&nearr;</span>
+            </a>
+            <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
+              <span>Instagram</span>
+              <span style="color:var(--accent);">&nearr;</span>
+            </a>
+            <a href="https://www.raimagedesign.com" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
+              <span>Raimage Design Studio</span>
+              <span style="color:var(--accent);">&nearr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</main>
+"""
+
+    contact_js = """
+  // Intent Pills Dynamic Tailoring
+  const pills = document.querySelectorAll('#intentPills .intent-pill');
+  const msgField = document.getElementById('contactMsg');
+  let currentTopic = "0-to-1 Product Design";
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', (e) => {
+      e.preventDefault();
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      currentTopic = pill.dataset.topic;
+      if (msgField) msgField.value = pill.dataset.lead;
+    });
+  });
+
+  // Handle Form Submission -> mailto link
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const msg = document.getElementById('contactMsg').value.trim();
+
+      const subject = encodeURIComponent(`[${currentTopic}] From ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${currentTopic}\n\nMessage:\n${msg}`);
+      window.location.href = `mailto:sumitraiworks@gmail.com?subject=${subject}&body=${body}`;
+    });
+  }
+
+  // Sidebar Copy Email
+  const sbCopy = document.getElementById('sidebarCopyEmail');
+  if (sbCopy) {
+    sbCopy.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(() => {
+        sbCopy.innerHTML = '<span>&check; Copied to Clipboard!</span>';
+        setTimeout(() => {
+          sbCopy.innerHTML = '<span>📋 Copy Email Address</span>';
+        }, 2200);
+      });
+    });
+  }
+"""
+
+    return get_head("Contact — Sumit Rai", "contact") + get_nav("contact") + content + footer_html + f"<script>\n{global_js}\n{contact_js}\n</script>\n</body>\n</html>"
 
 
 # -------------------------------------------------------------
@@ -1370,7 +1845,8 @@ def main():
         "projects.html": build_projects(),
         "about.html": build_about(),
         "resume.html": build_resume(),
-        "playground.html": build_playground()
+        "playground.html": build_playground(),
+        "contact.html": build_contact()
     }
 
     for filename, html in pages.items():
