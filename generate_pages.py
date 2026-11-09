@@ -412,11 +412,9 @@ def get_nav(active_page):
     </div>
 
     <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
-      <a href="projects.html">Work <span class="nav-key">[W]</span></a>
-      <a href="about.html">About <span class="nav-key">[A]</span></a>
-      <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
-      <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
+      <a href="projects.html">Selected Work <span class="nav-key">[W]</span></a>
+      <a href="about.html">About Me <span class="nav-key">[A]</span></a>
+      <a href="resources.html">Resources &amp; Gear <span class="nav-key">[B]</span></a>
       <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
     </nav>
 
@@ -439,12 +437,12 @@ def get_nav(active_page):
   <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
     <nav class="mobile-nav-links">
       <a href="index.html" class="active">Home <span class="nav-key">[Esc]</span></a>
-      <a href="projects.html">Work <span class="nav-key">[W]</span></a>
-      <a href="about.html">About <span class="nav-key">[A]</span></a>
-      <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
-      <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
+      <a href="projects.html">Selected Work <span class="nav-key">[W]</span></a>
+      <a href="about.html">About Me <span class="nav-key">[A]</span></a>
+      <a href="resources.html">Resources &amp; Gear <span class="nav-key">[B]</span></a>
       <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
+      <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
+      <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
     </nav>
   </div>
 </header>
@@ -553,8 +551,81 @@ footer_html = """
 
 global_js = """
 (function(){
+  /* ================================================================
+     CUSTOM CURSOR — Red square, shahimim.com inspired
+     Only active on devices with a fine pointer (mouse / trackpad)
+     ================================================================ */
+  const hasFineMouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (hasFineMouse) {
+    const cursor = document.createElement('div');
+    cursor.id = 'custom-cursor';
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    let rafId = null;
+
+    // Smooth spring-follow cursor
+    function animateCursor() {
+      // Spring coefficient: 0.10 = slow/smooth, 0.18 = snappier
+      cursorX += (mouseX - cursorX) * 0.14;
+      cursorY += (mouseY - cursorY) * 0.14;
+      cursor.style.transform = 'translate(' + cursorX + 'px, ' + cursorY + 'px)';
+      rafId = requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    document.addEventListener('mousemove', function(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursor.style.opacity = '1';
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', function() {
+      cursor.style.opacity = '0';
+    });
+
+    // Hover: enlarge on interactive elements
+    function addHover(selector) {
+      document.querySelectorAll(selector).forEach(function(el) {
+        el.addEventListener('mouseenter', function() {
+          cursor.classList.add('cursor-hover');
+          cursor.classList.remove('cursor-text', 'cursor-click');
+        });
+        el.addEventListener('mouseleave', function() {
+          cursor.classList.remove('cursor-hover', 'cursor-text', 'cursor-click');
+        });
+      });
+    }
+
+    addHover('a, button, [role="button"], .shahi-card, .shahi-media-card, .proj-card, .editorial-proj-card, .editorial-exp-card, .garden-item, .setup-card, .resource-card, .pg-card-rich, label, select');
+
+    // Text cursor on inputs
+    document.querySelectorAll('input, textarea, [contenteditable]').forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        cursor.classList.add('cursor-text');
+        cursor.classList.remove('cursor-hover', 'cursor-click');
+      });
+      el.addEventListener('mouseleave', function() {
+        cursor.classList.remove('cursor-text', 'cursor-hover', 'cursor-click');
+      });
+    });
+
+    // Click flash
+    document.addEventListener('mousedown', function() {
+      cursor.classList.add('cursor-click');
+    });
+    document.addEventListener('mouseup', function() {
+      cursor.classList.remove('cursor-click');
+    });
+  }
+
+  /* ================================================================
+     AUDIO ENGINE
+     ================================================================ */
   const AudioEngine = {
-    ctx: null,
     enabled: true,
     init() {
       if (!this.ctx) {
@@ -839,7 +910,7 @@ def build_index():
         <a href="#work" class="btn btn-primary">Selected Work <span class="btn-key">[W]</span></a>
         <a href="about.html" class="btn btn-secondary">About Me <span class="btn-key">[A]</span></a>
         <a href="resources.html" class="btn btn-secondary">Resources &amp; Gear <span class="btn-key">[B]</span></a>
-        <a href="contact.html" class="btn btn-secondary">Contact <span class="btn-key">[C]</span></a>
+        <a href="playground.html" class="btn btn-secondary">Playground <span class="btn-key">[P]</span></a>
       </div>
     </section>
 
@@ -969,15 +1040,15 @@ def build_index():
           <span class="shahi-card-key">B</span>
         </a>
 
-        <!-- Card 4: Contact (Bottom Left) -->
-        <a href="contact.html" class="shahi-card" aria-label="Contact Sumit Rai">
-          <span class="shahi-card-label">Contact</span>
+        <!-- Card 4: Studio / Services (Bottom Left) — NOT the contact page -->
+        <a href="contact.html" class="shahi-card" aria-label="Work with Sumit Rai">
+          <span class="shahi-card-label">Studio</span>
           <div class="contact-tier-preview">
             <div>Advisory &amp; coaching</div>
             <div class="highlight">Design mentorship</div>
             <div>Talks &amp; panels</div>
           </div>
-          <span class="shahi-card-key">C</span>
+          <span class="shahi-card-key">S</span>
         </a>
 
         <!-- Card 5: Resources with colourful book spines (Bottom Right) -->

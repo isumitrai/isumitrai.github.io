@@ -582,8 +582,81 @@
 <script>
 
 (function(){
+  /* ================================================================
+     CUSTOM CURSOR — Red square, shahimim.com inspired
+     Only active on devices with a fine pointer (mouse / trackpad)
+     ================================================================ */
+  const hasFineMouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (hasFineMouse) {
+    const cursor = document.createElement('div');
+    cursor.id = 'custom-cursor';
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    let rafId = null;
+
+    // Smooth spring-follow cursor
+    function animateCursor() {
+      // Spring coefficient: 0.10 = slow/smooth, 0.18 = snappier
+      cursorX += (mouseX - cursorX) * 0.14;
+      cursorY += (mouseY - cursorY) * 0.14;
+      cursor.style.transform = 'translate(' + cursorX + 'px, ' + cursorY + 'px)';
+      rafId = requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    document.addEventListener('mousemove', function(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursor.style.opacity = '1';
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', function() {
+      cursor.style.opacity = '0';
+    });
+
+    // Hover: enlarge on interactive elements
+    function addHover(selector) {
+      document.querySelectorAll(selector).forEach(function(el) {
+        el.addEventListener('mouseenter', function() {
+          cursor.classList.add('cursor-hover');
+          cursor.classList.remove('cursor-text', 'cursor-click');
+        });
+        el.addEventListener('mouseleave', function() {
+          cursor.classList.remove('cursor-hover', 'cursor-text', 'cursor-click');
+        });
+      });
+    }
+
+    addHover('a, button, [role="button"], .shahi-card, .shahi-media-card, .proj-card, .editorial-proj-card, .editorial-exp-card, .garden-item, .setup-card, .resource-card, .pg-card-rich, label, select');
+
+    // Text cursor on inputs
+    document.querySelectorAll('input, textarea, [contenteditable]').forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        cursor.classList.add('cursor-text');
+        cursor.classList.remove('cursor-hover', 'cursor-click');
+      });
+      el.addEventListener('mouseleave', function() {
+        cursor.classList.remove('cursor-text', 'cursor-hover', 'cursor-click');
+      });
+    });
+
+    // Click flash
+    document.addEventListener('mousedown', function() {
+      cursor.classList.add('cursor-click');
+    });
+    document.addEventListener('mouseup', function() {
+      cursor.classList.remove('cursor-click');
+    });
+  }
+
+  /* ================================================================
+     AUDIO ENGINE
+     ================================================================ */
   const AudioEngine = {
-    ctx: null,
     enabled: true,
     init() {
       if (!this.ctx) {

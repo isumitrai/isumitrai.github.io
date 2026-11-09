@@ -4668,3 +4668,85 @@ button:hover .shahi-arrow,
     padding-right: 0;
   }
 }
+
+
+/* ============================================================
+   Custom Cursor — Red Square (shahimim.com inspired)
+   ============================================================ */
+
+/* Hide default cursor on desktop */
+@media (hover: hover) and (pointer: fine) {
+  *,
+  a,
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea,
+  label {
+    cursor: none !important;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 999999;
+  opacity: 0;
+  will-change: transform;
+  /* Centered on cursor point */
+  margin-top: -4px;
+  margin-left: -4px;
+  transition:
+    opacity 0.25s ease,
+    width 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    margin 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.18s ease;
+}
+
+/* Hover state: larger square */
+.custom-cursor.cursor-hover {
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -12px;
+  background: var(--accent);
+  opacity: 0.55;
+}
+
+/* Click / active state */
+.custom-cursor.cursor-click {
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  margin-left: -7px;
+  opacity: 1;
+}
+
+/* Text selection state: thin vertical bar */
+.custom-cursor.cursor-text {
+  width: 2px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -1px;
+  background: var(--accent);
+  opacity: 0.9;
+}
+
+/* Dark mode: brighter */
+[data-theme="dark"] .custom-cursor {
+  background: var(--accent);
+}
+
+/* Only show on devices with fine pointer (mouse) */
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
