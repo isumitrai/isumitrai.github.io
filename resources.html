@@ -1,21 +1,28 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Curated Resources — Sumit Rai</title>
-  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 8+ years of product design and 12+ years of overall design craft across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Resources & Gear — Sumit Rai</title>
+  <meta name="description" content="Sumit Rai — Senior Product Designer with 8+ years product design experience and 12+ years of overall design craft across SaaS, AI, EdTech, and consumer platforms." />
   <meta name="author" content="Sumit Rai" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
+<body data-page="resources">
 
 <header class="nav-wrap" id="siteHeader">
   <div class="nav-pill">
     <div class="nav-logo-group">
+      
+      <a href="index.html" class="nav-back-pill" title="Back to Home [Esc]">
+        <span class="back-arrow">&larr;</span>
+        <span class="back-text">Back</span>
+        <span class="nav-key">[Esc]</span>
+      </a>
       <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
         <span class="sr-mark">SR</span>
         <span>Sumit Rai</span>
@@ -27,8 +34,8 @@
       <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
       <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
       <a href="resources.html" class="active">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+      <a href="playground.html" class="">Lab &amp; Shop <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Work with me <span class="nav-key">[C]</span></a>
     </nav>
 
     <div class="nav-right-actions">
@@ -54,8 +61,8 @@
       <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
       <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
       <a href="resources.html" class="active">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+      <a href="playground.html" class="">Lab &amp; Shop <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Work with me <span class="nav-key">[C]</span></a>
     </nav>
   </div>
 </header>
@@ -68,31 +75,105 @@
 <main class="page-body">
   <div class="wrap-wide">
     
-    <!-- HERO -->
-    <section class="resources-hero-block">
-      <span class="eyebrow"><span class="dot"></span> Knowledge &amp; Reference</span>
-      <h1>Curated Resources</h1>
-      <p class="lead">
-        A personal selection of foundational books, architectural frameworks, and design readings that continuously inform how I think, structure products, and build systems.
-      </p>
-      <div class="resources-note-pill">
-        <span class="dot"></span>
-        <span>Tap any book to view on Amazon &middot; Updated quarterly</span>
+    <!-- HERO (Matching Image 4) -->
+    <div style="margin-bottom:40px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+        <span style="font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--accent);">[R]</span>
+        <h1 style="font-size:32px; font-weight:700; letter-spacing:-0.03em; margin:0; color:var(--ink);">Resources &amp; Gear</h1>
       </div>
-    </section>
+      <p style="font-size:15px; color:var(--ink-soft); max-width:650px; line-height:1.6; margin:0;">
+        Well-designed things worth owning, books worth reading, tools worth keeping, links worth saving. Curated by Sumit Rai.
+      </p>
 
-    <!-- CATEGORY FILTER TABS -->
-    <div class="resources-filter-row" id="resFilterRow">
-      <button class="res-filter-btn active" data-filter="all">All Reads (12)</button>
-      <button class="res-filter-btn" data-filter="Design Craft">Design Craft</button>
-      <button class="res-filter-btn" data-filter="Product Strategy">Product Strategy</button>
-      <button class="res-filter-btn" data-filter="Systems &amp; Tech">Systems &amp; Tech</button>
-      <button class="res-filter-btn" data-filter="Mindset &amp; Craft">Mindset &amp; Craft</button>
+      <!-- Substack callout -->
+      <div style="margin-top:16px;">
+        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;">
+          <span>Read Writing on Substack</span>
+          <span class="shahi-arrow">&nearr;</span>
+        </a>
+      </div>
     </div>
 
-    <!-- CARDS GRID -->
-    <div class="resources-grid" id="resGrid">
-      
+    <!-- Filter Buttons & Search -->
+    <div class="resources-filter-row" id="resFilterRow" style="margin-bottom:32px;">
+      <button class="filter-btn active" data-tab="setup">My Setup &amp; Gear (6)</button>
+      <button class="filter-btn" data-tab="books">Curated Books (12)</button>
+      <button class="filter-btn" data-tab="garden">Digital Garden (6 Notes)</button>
+    </div>
+
+    <!-- TAB 1: SETUP & GEAR (Matching Image 4) -->
+    <div id="tabSetup" class="res-tab-pane">
+      <div style="margin-bottom:16px;">
+        <h3 style="font-size:18px; font-weight:600; color:var(--ink); margin:0;">My Setup</h3>
+        <p style="font-size:13.5px; color:var(--ink-soft); margin:4px 0 0;">Hardware and daily instruments for industrial craft and software design.</p>
+      </div>
+      <div class="setup-grid">
+        
+      <a href="https://www.hermanmiller.com/products/seating/office-chairs/aeron-chairs/" target="_blank" rel="noopener" class="setup-card" title="View Aeron Chair">
+        <span class="setup-hover-pill">Visit <span class="shahi-arrow">&nearr;</span></span>
+        <div class="setup-img-wrap">
+          <img src="https://images.unsplash.com/photo-1580481077148-52b34a66d035?auto=format&fit=crop&w=500&q=80" alt="Aeron Chair" loading="lazy" />
+        </div>
+        <div class="setup-card-name">Aeron Chair</div>
+        <div class="setup-card-brand">Herman Miller &middot; Ergonomics</div>
+      </a>
+
+      <a href="https://www.apple.com/studio-display/" target="_blank" rel="noopener" class="setup-card" title="View Studio Display 27″">
+        <span class="setup-hover-pill">Visit <span class="shahi-arrow">&nearr;</span></span>
+        <div class="setup-img-wrap">
+          <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=500&q=80" alt="Studio Display 27″" loading="lazy" />
+        </div>
+        <div class="setup-card-name">Studio Display 27″</div>
+        <div class="setup-card-brand">Apple &middot; Display</div>
+      </a>
+
+      <a href="https://www.apple.com/airpods-max/" target="_blank" rel="noopener" class="setup-card" title="View AirPods Max">
+        <span class="setup-hover-pill">Visit <span class="shahi-arrow">&nearr;</span></span>
+        <div class="setup-img-wrap">
+          <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=500&q=80" alt="AirPods Max" loading="lazy" />
+        </div>
+        <div class="setup-card-name">AirPods Max</div>
+        <div class="setup-card-brand">Apple &middot; Audio</div>
+      </a>
+
+      <a href="https://www.logitech.com/en-us/products/mice/mx-master-3s.html" target="_blank" rel="noopener" class="setup-card" title="View MX Master 3S">
+        <span class="setup-hover-pill">Visit <span class="shahi-arrow">&nearr;</span></span>
+        <div class="setup-img-wrap">
+          <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=500&q=80" alt="MX Master 3S" loading="lazy" />
+        </div>
+        <div class="setup-card-name">MX Master 3S</div>
+        <div class="setup-card-brand">Logitech &middot; Peripherals</div>
+      </a>
+
+      <a href="https://www.apple.com/macbook-pro/" target="_blank" rel="noopener" class="setup-card" title="View MacBook Pro 16″ M3 Max">
+        <span class="setup-hover-pill">Visit <span class="shahi-arrow">&nearr;</span></span>
+        <div class="setup-img-wrap">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80" alt="MacBook Pro 16″ M3 Max" loading="lazy" />
+        </div>
+        <div class="setup-card-name">MacBook Pro 16″ M3 Max</div>
+        <div class="setup-card-brand">Apple &middot; Workstation</div>
+      </a>
+
+      <a href="https://teenage.engineering/products/op-1" target="_blank" rel="noopener" class="setup-card" title="View OP-1 Field Synthesizer">
+        <span class="setup-hover-pill">Visit <span class="shahi-arrow">&nearr;</span></span>
+        <div class="setup-img-wrap">
+          <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=500&q=80" alt="OP-1 Field Synthesizer" loading="lazy" />
+        </div>
+        <div class="setup-card-name">OP-1 Field Synthesizer</div>
+        <div class="setup-card-brand">Teenage Engineering &middot; Audio & Industrial Design</div>
+      </a>
+
+      </div>
+    </div>
+
+    <!-- TAB 2: CURATED BOOKS (Matching shahimim.com/#resources) -->
+    <div id="tabBooks" class="res-tab-pane" style="display:none;">
+      <div style="margin-bottom:16px;">
+        <h3 style="font-size:18px; font-weight:600; color:var(--ink); margin:0;">Reading Shelf</h3>
+        <p style="font-size:13.5px; color:var(--ink-soft); margin:4px 0 0;">12+ foundational texts on software architecture, design craft, and cognitive ergonomics.</p>
+      </div>
+      <div class="resources-grid" id="resGrid">
+        
       <article class="resource-card" data-category="Design Craft">
         <div class="resource-card-header">
           <span class="resource-cat-tag">Design Craft</span>
@@ -105,7 +186,6 @@
           <strong>Key insight:</strong> Design with visual hierarchy and intentional spacing before decorative chrome.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
           <a href="https://www.amazon.com/dp/B08M3S6W8R" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Refactoring UI on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
@@ -126,7 +206,6 @@
           <strong>Key insight:</strong> When users fail, it is not user error — it is faulty interface design.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
           <a href="https://www.amazon.com/dp/0465050654" target="_blank" rel="noopener" class="resource-amazon-btn" title="View The Design of Everyday Things on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
@@ -147,7 +226,6 @@
           <strong>Key insight:</strong> Typography exists to honor content and guide human comprehension.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
           <a href="https://www.amazon.com/dp/0881792128" target="_blank" rel="noopener" class="resource-amazon-btn" title="View The Elements of Typographic Style on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
@@ -163,12 +241,11 @@
         </div>
         <h3 class="resource-title">A Philosophy of Software Design</h3>
         <div class="resource-author">John Ousterhout</div>
-        <p class="resource-desc">A masterclass on managing system complexity, modular interfaces, and why shallow modules ruin systems.</p>
+        <p class="resource-desc">A masterclass on managing system complexity, modular interfaces, and why shallow modules ruin large systems.</p>
         <div class="resource-takeaway">
           <strong>Key insight:</strong> Modules should be deep: simple interfaces hiding profound internal power.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
           <a href="https://www.amazon.com/dp/1732102201" target="_blank" rel="noopener" class="resource-amazon-btn" title="View A Philosophy of Software Design on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
@@ -183,13 +260,12 @@
           <span class="resource-format-tag">Visual Reference</span>
         </div>
         <h3 class="resource-title">Universal Principles of Design</h3>
-        <div class="resource-author">William Lidwell, Kritina Holden, Jill Butler</div>
+        <div class="resource-author">William Lidwell et al.</div>
         <p class="resource-desc">An authoritative encyclopedia of 125 cognitive, perceptual, and structural laws governing human interaction.</p>
         <div class="resource-takeaway">
           <strong>Key insight:</strong> Master Fitts' Law, Hick's Law, and progressive disclosure to reduce cognitive load.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
           <a href="https://www.amazon.com/dp/1592535879" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Universal Principles of Design on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
@@ -203,15 +279,14 @@
           <span class="resource-cat-tag">Product Strategy</span>
           <span class="resource-format-tag">Product Methodology</span>
         </div>
-        <h3 class="resource-title">Shape Up: Stop Running in Circles and Ship Work That Matters</h3>
+        <h3 class="resource-title">Shape Up</h3>
         <div class="resource-author">Ryan Singer (Basecamp)</div>
         <p class="resource-desc">A revolutionary framework for product teams: fixed time, variable scope, 6-week cycles, and building with shaped appetites.</p>
         <div class="resource-takeaway">
           <strong>Key insight:</strong> Never start building until problems are shaped with clear boundaries.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
-          <a href="https://www.amazon.com/dp/B081N4R3G9" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Shape Up: Stop Running in Circles and Ship Work That Matters on Amazon">
+          <a href="https://www.amazon.com/dp/B081N4R3G9" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Shape Up on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
           </a>
@@ -224,15 +299,14 @@
           <span class="resource-cat-tag">Product Strategy</span>
           <span class="resource-format-tag">Management Guide</span>
         </div>
-        <h3 class="resource-title">Inspired: How to Create Tech Products Customers Love</h3>
+        <h3 class="resource-title">Inspired: How to Create Tech Products</h3>
         <div class="resource-author">Marty Cagan</div>
         <p class="resource-desc">The gold standard for product discovery, continuous customer validation, and building empowered product teams.</p>
         <div class="resource-takeaway">
           <strong>Key insight:</strong> Validate value, usability, feasibility, and viability before writing code.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
-          <a href="https://www.amazon.com/dp/1119387507" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Inspired: How to Create Tech Products Customers Love on Amazon">
+          <a href="https://www.amazon.com/dp/1119387507" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Inspired: How to Create Tech Products on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
           </a>
@@ -252,7 +326,6 @@
           <strong>Key insight:</strong> A designer who understands backend latency and data models designs 10x better products.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
           <a href="https://www.amazon.com/dp/1449373321" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Designing Data-Intensive Applications on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
@@ -273,7 +346,6 @@
           <strong>Key insight:</strong> The grid is a structural aid, not a straightjacket — it creates rhythm and order.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
           <a href="https://www.amazon.com/dp/3721201450" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Grid Systems in Graphic Design on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
@@ -294,7 +366,6 @@
           <strong>Key insight:</strong> Become a documentarian of what you do every day; generosity builds lasting influence.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
           <a href="https://www.amazon.com/dp/076117897X" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Show Your Work! on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
@@ -315,7 +386,6 @@
           <strong>Key insight:</strong> Reusable patterns solve recurring spatial and informational tensions.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
           <a href="https://www.amazon.com/dp/0195019199" target="_blank" rel="noopener" class="resource-amazon-btn" title="View A Pattern Language on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
@@ -336,7 +406,6 @@
           <strong>Key insight:</strong> Early drafts are never great; psychological safety allows teams to turn raw ideas into masterpieces.
         </div>
         <div class="resource-action-row">
-          <!-- Update with your Amazon affiliate link anytime -->
           <a href="https://www.amazon.com/dp/0812993015" target="_blank" rel="noopener" class="resource-amazon-btn" title="View Creativity, Inc. on Amazon">
             <span>Get on Amazon</span>
             <span class="arrow shahi-arrow">&nearr;</span>
@@ -345,89 +414,143 @@
         </div>
       </article>
 
+      </div>
     </div>
 
-    <!-- RECOMMENDATION CTA -->
-    <section class="contact-cta-section" style="margin-top:20px;">
-      <span class="eyebrow"><span class="dot"></span> Have a Recommendation?</span>
-      <h2>Read something exceptional recently?</h2>
-      <p>I'm always expanding my reading list across AI, systems architecture, cognitive ergonomics, and design history.</p>
-      <div class="cta-btns">
-        <a href="contact.html" class="btn btn-primary">Share a Recommendation <span class="btn-key">[C]</span> &rarr;</a>
-        <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Sumit</a>
+    <!-- TAB 3: DIGITAL GARDEN (Matching Image 5) -->
+    <div id="tabGarden" class="res-tab-pane" style="display:none;">
+      <div style="margin-bottom:16px;">
+        <h3 style="font-size:18px; font-weight:600; color:var(--ink); margin:0;">Digital Garden &amp; Notes</h3>
+        <p style="font-size:13.5px; color:var(--ink-soft); margin:4px 0 0;">Atomic essays on product thinking, design systems, and interface craft.</p>
       </div>
-    </section>
+      <div class="garden-list">
+        
+        <div class="garden-item" onclick="openGardenNote('g-1')" role="button" tabindex="0" aria-label="Read The Illusion of Productivity">
+          <div class="garden-left-meta">
+            <span class="garden-tag">Product Strategy</span>
+            <span class="garden-date">19.04.26</span>
+          </div>
+          <div class="garden-main-body">
+            <h3 class="garden-title">The Illusion of Productivity</h3>
+            <p class="garden-snippet">I've been thinking about the tech industry lately. And why all of a sudden everyone is building.</p>
+          </div>
+          <div class="garden-right-meta">
+            <span class="garden-read-time">5 min read</span>
+            <span class="shahi-arrow">&nearr;</span>
+          </div>
+        </div>
+
+        <div class="garden-item" onclick="openGardenNote('g-2')" role="button" tabindex="0" aria-label="Read The Engagement Paradox">
+          <div class="garden-left-meta">
+            <span class="garden-tag">UX Ethics</span>
+            <span class="garden-date">22.10.25</span>
+          </div>
+          <div class="garden-main-body">
+            <h3 class="garden-title">The Engagement Paradox</h3>
+            <p class="garden-snippet">Separating efficiency from effectiveness in user interaction models.</p>
+          </div>
+          <div class="garden-right-meta">
+            <span class="garden-read-time">4 min read</span>
+            <span class="shahi-arrow">&nearr;</span>
+          </div>
+        </div>
+
+        <div class="garden-item" onclick="openGardenNote('g-3')" role="button" tabindex="0" aria-label="Read When Measuring Something Destroys It">
+          <div class="garden-left-meta">
+            <span class="garden-tag">UX Metrics</span>
+            <span class="garden-date">08.08.25</span>
+          </div>
+          <div class="garden-main-body">
+            <h3 class="garden-title">When Measuring Something Destroys It</h3>
+            <p class="garden-snippet">When a metric becomes a target, it ceases to be a good metric. Goodhart's Law in interfaces.</p>
+          </div>
+          <div class="garden-right-meta">
+            <span class="garden-read-time">4 min read</span>
+            <span class="shahi-arrow">&nearr;</span>
+          </div>
+        </div>
+
+        <div class="garden-item" onclick="openGardenNote('g-4')" role="button" tabindex="0" aria-label="Read Dogfooding: You Can't Outsource Empathy">
+          <div class="garden-left-meta">
+            <span class="garden-tag">Design Craft</span>
+            <span class="garden-date">15.06.25</span>
+          </div>
+          <div class="garden-main-body">
+            <h3 class="garden-title">Dogfooding: You Can't Outsource Empathy</h3>
+            <p class="garden-snippet">User research shows what users say; using your own software shows where it actually hurts.</p>
+          </div>
+          <div class="garden-right-meta">
+            <span class="garden-read-time">3 min read</span>
+            <span class="shahi-arrow">&nearr;</span>
+          </div>
+        </div>
+
+        <div class="garden-item" onclick="openGardenNote('g-5')" role="button" tabindex="0" aria-label="Read Interface Clarity Is Subtracted Decisions">
+          <div class="garden-left-meta">
+            <span class="garden-tag">Systems</span>
+            <span class="garden-date">12.04.25</span>
+          </div>
+          <div class="garden-main-body">
+            <h3 class="garden-title">Interface Clarity Is Subtracted Decisions</h3>
+            <p class="garden-snippet">Great software is not made of features added, but cognitive friction removed before the user notices.</p>
+          </div>
+          <div class="garden-right-meta">
+            <span class="garden-read-time">4 min read</span>
+            <span class="shahi-arrow">&nearr;</span>
+          </div>
+        </div>
+
+        <div class="garden-item" onclick="openGardenNote('g-6')" role="button" tabindex="0" aria-label="Read Competitor Analysis: Baseline, Not North Star">
+          <div class="garden-left-meta">
+            <span class="garden-tag">Strategy</span>
+            <span class="garden-date">20.01.25</span>
+          </div>
+          <div class="garden-main-body">
+            <h3 class="garden-title">Competitor Analysis: Baseline, Not North Star</h3>
+            <p class="garden-snippet">Mimicry inherits competitors' unvalidated mistakes and structural technical debt.</p>
+          </div>
+          <div class="garden-right-meta">
+            <span class="garden-read-time">3 min read</span>
+            <span class="shahi-arrow">&nearr;</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
   </div>
 </main>
 
 <footer class="site-footer" id="siteFooter">
-  <div class="footer-inner">
-    
-    <!-- Top status bar -->
-    <div class="footer-top-row">
-      <div class="footer-status-tag">
+  <div class="wrap-wide">
+    <div class="footer-four-cols">
+      <div class="footer-col-item">
+        <span class="f-col-header">LINKEDIN</span>
+        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener" class="f-col-link">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">SUBSTACK</span>
+        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="f-col-link">isumitrai.substack.com <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">EMAIL</span>
+        <a href="mailto:sumitraiworks@gmail.com" class="f-col-link">sumitraiworks@gmail.com <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">X / TWITTER</span>
+        <a href="https://x.com/isumitrai" target="_blank" rel="noopener" class="f-col-link">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+    </div>
+
+    <div class="footer-sub-meta">
+      <div>
+        <span>&copy; 2026 Sumit Rai &middot; Senior Product Designer &middot; 8+ yrs product, 12+ yrs craft</span>
+      </div>
+      <div>
         <span class="live-dot"></span>
-        <span>Available for select product leadership &amp; design advisory</span>
-      </div>
-      <div class="footer-clock-box" id="delhiClockWrap">
-        <span class="live-dot"></span>
-        <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
+        <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong> &middot; Available for select roles</span>
       </div>
     </div>
-
-    <!-- Main hero call to action -->
-    <div class="footer-hero-cta">
-      <h2 class="footer-tagline">Let's build something thoughtful together.</h2>
-      <p class="footer-sublead">Always open to high-impact products, early-stage ventures, and ambitious design challenges.</p>
-      
-      <div class="footer-email-box">
-        <div class="footer-email-pill">
-          <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
-            <span class="email-text">sumitraiworks@gmail.com</span>
-            <span class="email-arrow">&nearr;</span>
-          </a>
-          <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address" title="Copy email address">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <span class="copy-toast">Copied!</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom navigation and meta -->
-    <div class="footer-bottom-nav">
-      <div class="footer-brand-side">
-        <span class="footer-mark">SR</span>
-        <span class="footer-name">Sumit Rai</span>
-        <span class="footer-sep">&middot;</span>
-        <span class="footer-exp-text">8+ years product design &middot; 12+ years design craft</span>
-      </div>
-
-      <div class="footer-links-group">
-        <div class="flinks-nav">
-          <a href="projects.html">Work <span class="nav-key">[W]</span></a>
-          <a href="about.html">About <span class="nav-key">[A]</span></a>
-          <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
-          <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
-          <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
-          <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
-        </div>
-
-        <div class="flinks-social">
-          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn <span class="shahi-arrow">&nearr;</span></a>
-          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X <span class="shahi-arrow">&nearr;</span></a>
-          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram <span class="shahi-arrow">&nearr;</span></a>
-          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF <span class="shahi-arrow">&darr;</span></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-credit-row">
-      <span>&copy; 2026 Sumit Rai. All rights reserved.</span>
-      <span>Designed with restraint &middot; Built for craft</span>
-    </div>
-
   </div>
 </footer>
 
@@ -441,306 +564,243 @@
     </div>
     <div class="cmd-list" id="cmdList">
       <a href="index.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span>Home</span>
-        </span>
+        <span class="item-left"><span>Home</span></span>
         <span class="cmd-shortcut">H</span>
       </a>
       <a href="projects.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <span>Selected Work (Projects)</span>
-        </span>
+        <span class="item-left"><span>Selected Work</span></span>
         <span class="cmd-shortcut">W</span>
       </a>
       <a href="about.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-          <span>About Sumit</span>
-        </span>
+        <span class="item-left"><span>About Sumit</span></span>
         <span class="cmd-shortcut">A</span>
       </a>
       <a href="resume.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          <span>Resume &amp; Credentials</span>
-        </span>
+        <span class="item-left"><span>Resume &amp; Credentials</span></span>
         <span class="cmd-shortcut">R</span>
       </a>
       <a href="resources.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
-          <span>Curated Resources (Books &amp; Tools)</span>
-        </span>
+        <span class="item-left"><span>Resources &amp; Gear</span></span>
         <span class="cmd-shortcut">B</span>
       </a>
       <a href="playground.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
-          <span>Playground (Raimage Lab)</span>
-        </span>
+        <span class="item-left"><span>Lab &amp; Shop</span></span>
         <span class="cmd-shortcut">P</span>
       </a>
       <a href="contact.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>Get in Touch (Contact Page)</span>
-        </span>
+        <span class="item-left"><span>Work with me</span></span>
         <span class="cmd-shortcut">C</span>
       </a>
+      <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="cmd-item">
+        <span class="item-left"><span>Substack Newsletter</span></span>
+        <span class="cmd-shortcut">SUB</span>
+      </a>
       <a href="assets/Sumit_Rai_Resume.pdf" download class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span>Download Resume PDF</span>
-        </span>
+        <span class="item-left"><span>Download Resume PDF</span></span>
         <span class="cmd-shortcut">PDF</span>
       </a>
-      <a href="mailto:sumitraiworks@gmail.com" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <span>Email Sumit (sumitraiworks@gmail.com)</span>
-        </span>
-        <span class="cmd-shortcut">@</span>
-      </a>
       <div class="cmd-item" id="cmdToggleTheme">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
-          <span>Toggle Dark / Light Mode</span>
-        </span>
+        <span class="item-left"><span>Toggle Dark / Light Mode</span></span>
         <span class="cmd-shortcut">T</span>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Garden Note Reader Modal -->
+<div class="garden-modal" id="gardenModal" role="dialog" aria-modal="true" aria-label="Digital Garden Note">
+  <div class="garden-modal-box">
+    <button class="garden-modal-close" onclick="closeGardenNote()" aria-label="Close note">&times;</button>
+    <div id="gardenModalBody"></div>
+  </div>
+</div>
 <script>
 
-// ---- Global Audio, Clock, Theme & Command Palette Management ----
 (function(){
-  // 1. Web Audio Synthesizer Haptic Engine
-  const AudioEngine = (function(){
-    let ctx = null;
-    let enabled = localStorage.getItem('sr_sound') === 'true';
-
-    function init(){
-      if (!ctx && (window.AudioContext || window.webkitAudioContext)) {
-        ctx = new (window.AudioContext || window.webkitAudioContext)();
+  // Audio Feedback Engine
+  const AudioEngine = {
+    ctx: null,
+    enabled: true,
+    init() {
+      if (!this.ctx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) this.ctx = new AudioContext();
       }
-    }
-
-    function playTick(freq = 820, dur = 0.035, type = 'sine'){
-      if (!enabled) return;
+    },
+    playTick(freq = 900, dur = 0.02) {
+      if (!this.enabled) return;
       try {
-        init();
-        if (ctx.state === 'suspended') ctx.resume();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = type;
-        osc.frequency.setValueAtTime(freq, ctx.currentTime);
-        gain.gain.setValueAtTime(0.06, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+        this.init();
+        if (!this.ctx) return;
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+        gain.gain.setValueAtTime(0.025, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + dur);
         osc.connect(gain);
-        gain.connect(ctx.destination);
+        gain.connect(this.ctx.destination);
         osc.start();
-        osc.stop(ctx.currentTime + dur);
-      } catch(e) {}
+        osc.stop(this.ctx.currentTime + dur);
+      } catch(e){}
     }
+  };
 
-    function toggle(){
-      enabled = !enabled;
-      localStorage.setItem('sr_sound', enabled);
-      if (enabled) playTick(960, 0.05);
-      return enabled;
-    }
-
-    function isEnabled(){ return enabled; }
-
-    return { playTick, toggle, isEnabled };
-  })();
-
-  // Update Sound Button State
+  // Sound toggle button
   const soundBtn = document.getElementById('soundToggleBtn');
   const soundIcon = document.getElementById('soundIcon');
   const soundLabel = document.getElementById('soundLabel');
-  function updateSoundUI(){
-    const on = AudioEngine.isEnabled();
-    if (soundIcon) soundIcon.textContent = on ? '🔊' : '🔇';
-    if (soundLabel) soundLabel.textContent = on ? 'Sound' : 'Muted';
-    if (soundBtn) soundBtn.classList.toggle('active', on);
-  }
-  updateSoundUI();
   if (soundBtn) {
     soundBtn.addEventListener('click', function(){
-      AudioEngine.toggle();
-      updateSoundUI();
+      AudioEngine.enabled = !AudioEngine.enabled;
+      if (soundIcon) soundIcon.textContent = AudioEngine.enabled ? '🔊' : '🔇';
+      if (soundLabel) soundLabel.textContent = AudioEngine.enabled ? 'Sound' : 'Mute';
+      if (AudioEngine.enabled) AudioEngine.playTick(1000, 0.03);
     });
   }
 
-  // Play micro click on link / button clicks
-  document.addEventListener('click', function(e){
-    if (e.target.closest('a, button, .proj-card, .tool-tile, .resource-card, .pg-card-rich')) {
-      AudioEngine.playTick(780, 0.028);
+  // Theme Management
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlEl = document.documentElement;
+  const savedTheme = localStorage.getItem('folio_theme') || 'light';
+  htmlEl.setAttribute('data-theme', savedTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      AudioEngine.playTick(1200, 0.03);
+      const cur = htmlEl.getAttribute('data-theme') || 'light';
+      const nxt = cur === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', nxt);
+      localStorage.setItem('folio_theme', nxt);
+    });
+  }
+
+  // Mobile drawer toggle
+  const menuToggle = document.getElementById('navMenuToggle');
+  const drawer = document.getElementById('mobileNavDrawer');
+  if (menuToggle && drawer) {
+    menuToggle.addEventListener('click', () => {
+      AudioEngine.playTick(750, 0.03);
+      const open = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !open);
+      drawer.setAttribute('aria-hidden', open);
+      drawer.classList.toggle('active', !open);
+    });
+  }
+
+  // Real-time Delhi IST Clock
+  function updateDelhiClock() {
+    const el = document.getElementById('liveClockText');
+    if (!el) return;
+    try {
+      const now = new Date();
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+      el.textContent = now.toLocaleTimeString('en-US', options) + ' IST';
+    } catch(e) {
+      el.textContent = '17:30 IST';
     }
-  });
-
-  // 2. Real-time New Delhi (IST) Clock
-  function updateDelhiClock(){
-    const textEl = document.getElementById('liveClockText');
-    const now = new Date();
-    // New Delhi is UTC +5:30
-    const istOffset = 5.5 * 60 * 60 * 1000;
-    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-    const delhiDate = new Date(utc + istOffset);
-
-    let h = delhiDate.getHours();
-    const m = String(delhiDate.getMinutes()).padStart(2, '0');
-    const s = String(delhiDate.getSeconds()).padStart(2, '0');
-    const ampm = h >= 12 ? 'PM' : 'AM';
-    h = h % 12 || 12;
-
-    const formatted = `${h}:${m}:${s} ${ampm} IST`;
-    if (textEl) textEl.textContent = formatted;
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
 
-  // 3. Dark/Light Mode
-  const root = document.documentElement;
-  const themeToggle = document.getElementById('themeToggle');
-  const storedTheme = localStorage.getItem('sr_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  if (storedTheme === 'dark') root.setAttribute('data-theme', 'dark');
-
-  function toggleTheme(){
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    const next = isDark ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    localStorage.setItem('sr_theme', next);
-    AudioEngine.playTick(isDark ? 650 : 880, 0.04);
-  }
-  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
-
-  // 4. Scroll Header — add scrolled class for backdrop effect
-  const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', function(){
-    if (header) {
-      header.classList.toggle('nav-scrolled', window.scrollY > 40);
-    }
-  }, { passive: true });
-
-  // 5. Mobile Nav Toggle (hamburger)
-  const navMenuToggle = document.getElementById('navMenuToggle');
-  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
-  if (navMenuToggle && mobileNavDrawer) {
-    navMenuToggle.addEventListener('click', function(){
-      const isOpen = mobileNavDrawer.classList.toggle('open');
-      navMenuToggle.setAttribute('aria-expanded', isOpen);
-      mobileNavDrawer.setAttribute('aria-hidden', !isOpen);
-      navMenuToggle.classList.toggle('open', isOpen);
-    });
-    // Close drawer on nav link click
-    mobileNavDrawer.querySelectorAll('a').forEach(function(link){
-      link.addEventListener('click', function(){
-        mobileNavDrawer.classList.remove('open');
-        navMenuToggle.setAttribute('aria-expanded', 'false');
-        navMenuToggle.classList.remove('open');
-      });
-    });
-  }
-
-  // 6. Copy Email with Toast & Audio
-  const copyBtn = document.getElementById('copyEmailBtn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(function(){
-        copyBtn.classList.add('copied');
-        AudioEngine.playTick(1020, 0.06);
-        setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
-      });
-    });
-  }
-
-  // 7. Command + K Palette
+  // Command + K Palette
   const cmdModal = document.getElementById('cmdModal');
-  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
   const cmdInput = document.getElementById('cmdInput');
-  const cmdList = document.getElementById('cmdList');
-  const cmdThemeBtn = document.getElementById('cmdToggleTheme');
+  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
 
-  function openCmd(){
-    if (!cmdModal) return;
-    cmdModal.classList.add('active');
-    AudioEngine.playTick(720, 0.03);
-    if (cmdInput) {
-      cmdInput.value = '';
-      cmdInput.focus();
+  function openCmd() {
+    AudioEngine.playTick(950, 0.03);
+    if (cmdModal) {
+      cmdModal.classList.add('active');
+      if (cmdInput) {
+        cmdInput.value = '';
+        cmdInput.focus();
+      }
+      document.body.style.overflow = 'hidden';
     }
-    filterCmd('');
   }
 
-  function closeCmd(){
-    if (!cmdModal) return;
-    cmdModal.classList.remove('active');
+  function closeCmd() {
+    if (cmdModal) {
+      cmdModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   }
 
   if (cmdTrigger) cmdTrigger.addEventListener('click', openCmd);
   if (cmdModal) {
-    cmdModal.addEventListener('click', function(e){
+    cmdModal.addEventListener('click', (e) => {
       if (e.target === cmdModal) closeCmd();
     });
   }
 
-  if (cmdThemeBtn) {
-    cmdThemeBtn.addEventListener('click', function(){
-      toggleTheme();
-      closeCmd();
-    });
-  }
+  // Garden Modal Reader
+  window.openGardenNote = function(noteId) {
+    const note = (window.GARDEN_DATA || []).find(n => n.id === noteId);
+    if (!note) return;
+    const body = document.getElementById('gardenModalBody');
+    const modal = document.getElementById('gardenModal');
+    if (!body || !modal) return;
+    body.innerHTML = `
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+        <span class="garden-tag">${note.topic}</span>
+        <span class="garden-date">${note.date} &middot; ${note.read}</span>
+      </div>
+      <h2 style="font-size:24px; font-weight:700; letter-spacing:-0.025em; margin-bottom:20px; line-height:1.25; color:var(--ink);">${note.title}</h2>
+      <div style="font-size:15px; line-height:1.7; color:var(--ink-soft);">${note.content}</div>
+      <div style="margin-top:32px; padding-top:20px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <span style="font-size:12px; color:var(--ink-muted); font-family:var(--font-mono);">From Sumit Rai's Digital Garden</span>
+        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" style="font-size:13px; font-weight:600; color:var(--accent); text-decoration:none;">Read on Substack <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+    `;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    AudioEngine.playTick(880, 0.03);
+  };
 
-  function filterCmd(q){
-    if (!cmdList) return;
-    const items = cmdList.querySelectorAll('.cmd-item');
-    const query = q.trim().toLowerCase();
-    items.forEach(function(item){
-      const text = item.textContent.toLowerCase();
-      item.style.display = (!query || text.includes(query)) ? 'flex' : 'none';
-    });
-  }
+  window.closeGardenNote = function() {
+    const modal = document.getElementById('gardenModal');
+    if (modal) modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
 
-  if (cmdInput) {
-    cmdInput.addEventListener('input', function(e){
-      filterCmd(e.target.value);
-    });
-  }
-
-  // 8. Global Keyboard Shortcuts Navigation (inspired by shahimim.com)
+  // Keyboard Shortcuts Navigation
   document.addEventListener('keydown', function(e){
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) closeCmd();
+      else openCmd();
+      return;
+    }
+
+    if (e.key === 'Escape') {
+      const gModal = document.getElementById('gardenModal');
+      if (gModal && gModal.classList.contains('active')) {
+        closeGardenNote();
+        return;
+      }
       if (cmdModal && cmdModal.classList.contains('active')) {
         closeCmd();
-      } else {
-        openCmd();
+        return;
       }
-      return;
+      const curPage = document.body.dataset.page;
+      if (curPage && curPage !== 'index') {
+        AudioEngine.playTick(820, 0.03);
+        window.location.href = 'index.html';
+        return;
+      }
     }
 
-    if (cmdModal && cmdModal.classList.contains('active')) {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        closeCmd();
-      }
-      return;
-    }
-
-    // Do not trigger navigation when typing in inputs or holding modifier keys
     const tag = (e.target.tagName || '').toLowerCase();
-    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) {
-      return;
-    }
-    if (e.metaKey || e.ctrlKey || e.altKey) {
-      return;
-    }
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
 
     const key = e.key.toLowerCase();
     if (key === 'w') {
@@ -761,33 +821,44 @@
     } else if (key === 'c') {
       AudioEngine.playTick(820, 0.03);
       window.location.href = 'contact.html';
-    } else if (e.key === 'Escape') {
-      AudioEngine.playTick(820, 0.03);
-      window.location.href = 'index.html';
+    } else if (key === 't') {
+      AudioEngine.playTick(1200, 0.03);
+      const cur = htmlEl.getAttribute('data-theme') || 'light';
+      const nxt = cur === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', nxt);
+      localStorage.setItem('folio_theme', nxt);
     }
   });
 })();
 
 
-  // Filter Tabs logic for Resources Page
-  const filterBtns = document.querySelectorAll('#resFilterRow .res-filter-btn');
-  const cards = document.querySelectorAll('#resGrid .resource-card');
+  window.GARDEN_DATA = [{"id": "g-1", "title": "The Illusion of Productivity", "topic": "Product Strategy", "date": "19.04.26", "read": "5 min read", "hook": "I've been thinking about the tech industry lately. And why all of a sudden everyone is building.", "content": "<p>In high-growth tech teams, busyness is routinely conflated with progress. Velocity charts tick upward, PRs merge daily, and design files fill up with dozens of polished flows. Yet, month after month, customer churn remains stagnant and core activation metrics refuse to budge.</p><p>True product velocity is not measured in tickets closed or Figma frames completed. It is measured in the cycle time between an unvalidated assumption and a verified customer outcome. When teams optimize for output rather than outcome, they build complex software that solves imaginary problems at extraordinary speed.</p><p><strong>Principle:</strong> Before starting any feature sprint, ask: <em>If this succeeds, what specific human behavior changes tomorrow?</em> If you can't answer with precision, you are manufacturing the illusion of progress.</p>"}, {"id": "g-2", "title": "The Engagement Paradox", "topic": "UX Ethics", "date": "22.10.25", "read": "4 min read", "hook": "Separating efficiency from effectiveness in user interaction models.", "content": "<p>When a product team measures health exclusively through session duration and daily opens, the user experience invariably deteriorates. Notifications become urgent, red badges proliferate, and algorithmic feeds hijack dopamine loops.</p><p>The paradox is that while short-term metrics spike, long-term customer utility plummets. Great software respects human attention. It enables users to accomplish their core intent in minimal steps, then gracefully gets out of the way so they can return to their real lives.</p>"}, {"id": "g-3", "title": "When Measuring Something Destroys It", "topic": "UX Metrics", "date": "08.08.25", "read": "4 min read", "hook": "When a metric becomes a target, it ceases to be a good metric. Goodhart's Law in interfaces.", "content": "<p>Goodhart's Law states that when a metric becomes a target, it ceases to be a good metric. In product design, this manifests when conversion rates are prioritized over user trust.</p><p>Unsubscribe links hidden beneath grey-on-grey text, pre-checked opt-in boxes, and misleading dialog options may pump weekly numbers, but they permanently erode brand goodwill. The best teams optimize for sustainable trust rather than myopic quarterly spikes.</p>"}, {"id": "g-4", "title": "Dogfooding: You Can't Outsource Empathy", "topic": "Design Craft", "date": "15.06.25", "read": "3 min read", "hook": "User research shows what users say; using your own software shows where it actually hurts.", "content": "<p>User research interviews are invaluable, but they operate in controlled 45-minute stage plays. To understand software at an instinctual level, designers must live inside their own systems under genuine pressure.</p><p>Experience the exact edge cases, sluggish load states, and clunky form fields that real users endure every day. Empathy is not a persona slide; empathy is the acute frustration you feel when completing real workflows with your own creation.</p>"}, {"id": "g-5", "title": "Interface Clarity Is Subtracted Decisions", "topic": "Systems", "date": "12.04.25", "read": "4 min read", "hook": "Great software is not made of features added, but cognitive friction removed before the user notices.", "content": "<p>Every redundant configuration dropdown and modal toggle is an outsourced decision. It is the product team conceding: <em>'We couldn't decide what was best, so we passed the cognitive load onto you.'</em></p><p>Clarity comes from opinionated defaults, contextual deduction, and ruthless elimination of extraneous chrome. Make the interface feel intuitive by solving complexity internally rather than offloading it to the user.</p>"}, {"id": "g-6", "title": "Competitor Analysis: Baseline, Not North Star", "topic": "Strategy", "date": "20.01.25", "read": "3 min read", "hook": "Mimicry inherits competitors' unvalidated mistakes and structural technical debt.", "content": "<p>When kickoff boards consist solely of competitor screenshots, beware. Incumbent features were frequently shipped under tight deadlines years ago, unmeasured, and regretted by their creators.</p><p>Use competitor analysis only to calibrate baseline mental models and established terminology. Solve the problem itself from first principles: the genuine human tension and business mechanic.</p>"}];
 
-  filterBtns.forEach(btn => {
+  const tabBtns = document.querySelectorAll('#resFilterRow .filter-btn');
+  const tabSetup = document.getElementById('tabSetup');
+  const tabBooks = document.getElementById('tabBooks');
+  const tabGarden = document.getElementById('tabGarden');
+
+  function showTab(tabName) {
+    tabBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.tab === tabName);
+    });
+    if (tabSetup) tabSetup.style.display = tabName === 'setup' ? 'block' : 'none';
+    if (tabBooks) tabBooks.style.display = tabName === 'books' ? 'block' : 'none';
+    if (tabGarden) tabGarden.style.display = tabName === 'garden' ? 'block' : 'none';
+  }
+
+  tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.filter;
-
-      cards.forEach(card => {
-        if (cat === 'all' || card.dataset.category === cat) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      showTab(btn.dataset.tab);
     });
   });
+
+  if (window.location.hash === '#garden') {
+    showTab('garden');
+  } else if (window.location.hash === '#books') {
+    showTab('books');
+  }
 
 </script>
 </body>

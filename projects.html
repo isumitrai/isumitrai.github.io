@@ -1,21 +1,28 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work & Case Studies — Sumit Rai</title>
-  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 8+ years of product design and 12+ years of overall design craft across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Selected Work — Sumit Rai</title>
+  <meta name="description" content="Sumit Rai — Senior Product Designer with 8+ years product design experience and 12+ years of overall design craft across SaaS, AI, EdTech, and consumer platforms." />
   <meta name="author" content="Sumit Rai" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
+<body data-page="projects">
 
 <header class="nav-wrap" id="siteHeader">
   <div class="nav-pill">
     <div class="nav-logo-group">
+      
+      <a href="index.html" class="nav-back-pill" title="Back to Home [Esc]">
+        <span class="back-arrow">&larr;</span>
+        <span class="back-text">Back</span>
+        <span class="nav-key">[Esc]</span>
+      </a>
       <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
         <span class="sr-mark">SR</span>
         <span>Sumit Rai</span>
@@ -27,8 +34,8 @@
       <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
       <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
       <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+      <a href="playground.html" class="">Lab &amp; Shop <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Work with me <span class="nav-key">[C]</span></a>
     </nav>
 
     <div class="nav-right-actions">
@@ -54,8 +61,8 @@
       <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
       <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
       <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+      <a href="playground.html" class="">Lab &amp; Shop <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Work with me <span class="nav-key">[C]</span></a>
     </nav>
   </div>
 </header>
@@ -68,271 +75,183 @@
 <main class="page-body">
   <div class="wrap-wide">
     
-    <!-- LIST VIEW -->
-    <div id="projectsListView">
-      <div class="section-header-row" style="margin-top:24px; margin-bottom:32px;">
-        <div class="section-title-wrap">
-          <span class="eyebrow"><span class="dot"></span> Selected Works</span>
-          <h1 style="font-size:clamp(2rem, 3.6vw, 2.8rem); margin-bottom:8px;">A glimpse into the products, systems, and experiences I've helped shape.</h1>
-          <p>End-to-end design across SaaS, EdTech, mobile apps, and marketplace platforms.</p>
-        </div>
-      </div>
+    <div class="page-header-block">
+      <span class="eyebrow"><span class="dot"></span> Selected Work</span>
+      <h1>Products &amp; Case Studies</h1>
+      <p>A curated selection of digital products, design systems, and software shaped over 8+ years in product design.</p>
+    </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="filter-tabs" id="projectFilterTabs" role="tablist">
-        <button class="filter-btn active" data-filter="all">All Projects (4)</button>
-        <button class="filter-btn" data-filter="saas">SaaS &amp; CMS</button>
-        <button class="filter-btn" data-filter="mobile">Mobile App</button>
-        <button class="filter-btn" data-filter="web">Web &amp; Marketplace</button>
-        <button class="filter-btn" data-filter="edtech">EdTech</button>
-      </div>
-
-      <div class="proj-grid" id="projectsArchiveGrid">
-        
-      <article class="proj-card" onclick="openCaseStudy('edumanage')" role="button" tabindex="0" aria-label="Open case study for EduManage">
-        <div class="proj-image">
-          <img src="./assets/proj_edumanage.png" alt="EduManage — Smart Educational Management Dashboard" loading="lazy" />
+    <div class="projects-case-list">
+      
+      <article class="proj-case-card" id="proj-1">
+        <div class="proj-case-img">
+          <img src="./assets/proj_001.png" alt="PhysicsWallah — Scaled EdTech Platform & Design Architecture" loading="lazy" />
         </div>
-        <div class="proj-body">
+        <div class="proj-case-body">
           <div class="proj-meta">
-            <span class="proj-category">SaaS Product · CMS</span>
-            <span class="proj-year">2024 — 2026</span>
+            <span class="proj-category">EdTech · SaaS & Mobile</span>
+            <span class="proj-year">2023 — Present</span>
           </div>
-          <h3 class="proj-title">EduManage</h3>
-          <p class="proj-desc">A modern institution dashboard shaped around academic operations, content management, and day-to-day school workflows.</p>
-          <div class="proj-link-row">
-            <span class="proj-view-link">Case Study <span class="shahi-arrow">&nearr;</span></span>
-            <div class="proj-tech-tags">
-              <span class="proj-tag">SaaS</span>
-              <span class="proj-tag">Dashboard</span>
+          <h2>PhysicsWallah (PW)</h2>
+          <p class="proj-case-tagline">Architecting learning systems, test prep flows, and responsive web platforms for millions of active learners across India.</p>
+          <div class="proj-case-details">
+            <div class="detail-item">
+              <span class="detail-lbl">Client</span>
+              <span class="detail-val">PhysicsWallah (PW)</span>
             </div>
+            <div class="detail-item">
+              <span class="detail-lbl">Role</span>
+              <span class="detail-val">Senior Product Designer</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-lbl">Impact</span>
+              <span class="detail-val">Serves millions of daily active students; unified design tokens reduced engineering handoff time by 35%.</span>
+            </div>
+          </div>
+          <div class="proj-tech-tags" style="margin-top:16px;">
+            <span class="proj-tag">Design Systems</span> <span class="proj-tag">EdTech</span> <span class="proj-tag">Web & Mobile App</span>
           </div>
         </div>
       </article>
 
-      <article class="proj-card" onclick="openCaseStudy('quayo')" role="button" tabindex="0" aria-label="Open case study for Quayo Basket">
-        <div class="proj-image">
-          <img src="./assets/proj_quayo.png" alt="Quayo Basket — Grocery App & Brand Identity System" loading="lazy" />
+      <article class="proj-case-card" id="proj-2">
+        <div class="proj-case-img">
+          <img src="./assets/proj_002.png" alt="Stanza Living — Resident Experience & Community Living Platform" loading="lazy" />
         </div>
-        <div class="proj-body">
+        <div class="proj-case-body">
           <div class="proj-meta">
-            <span class="proj-category">Grocery App · Brand Identity</span>
-            <span class="proj-year">2024 — 2026</span>
+            <span class="proj-category">PropTech · Consumer App</span>
+            <span class="proj-year">2021 — 2023</span>
           </div>
-          <h3 class="proj-title">Quayo Basket</h3>
-          <p class="proj-desc">A grocery mobile app paired with a fresh retail brand identity system for a clearer, friendlier shopping experience.</p>
-          <div class="proj-link-row">
-            <span class="proj-view-link">Case Study <span class="shahi-arrow">&nearr;</span></span>
-            <div class="proj-tech-tags">
-              <span class="proj-tag">Mobile App</span>
-              <span class="proj-tag">UI/UX</span>
+          <h2>Stanza Living</h2>
+          <p class="proj-case-tagline">Designing resident onboarding, zero-friction rent payment flows, and hostel community operations for India's largest managed living network.</p>
+          <div class="proj-case-details">
+            <div class="detail-item">
+              <span class="detail-lbl">Client</span>
+              <span class="detail-val">Stanza Living</span>
             </div>
+            <div class="detail-item">
+              <span class="detail-lbl">Role</span>
+              <span class="detail-val">Product Designer</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-lbl">Impact</span>
+              <span class="detail-val">Boosted on-time digital rent payments by 28%; reduced maintenance ticket resolution cycles across 70,000+ residents.</span>
+            </div>
+          </div>
+          <div class="proj-tech-tags" style="margin-top:16px;">
+            <span class="proj-tag">FinTech</span> <span class="proj-tag">PropTech</span> <span class="proj-tag">Design Tokens</span>
           </div>
         </div>
       </article>
 
-      <article class="proj-card" onclick="openCaseStudy('musafir')" role="button" tabindex="0" aria-label="Open case study for Musafir">
-        <div class="proj-image">
-          <img src="./assets/proj_musafir.png" alt="Musafir — Travel Marketplace Landing Page Redesign" loading="lazy" />
+      <article class="proj-case-card" id="proj-3">
+        <div class="proj-case-img">
+          <img src="./assets/proj_003.png" alt="Astra AI — Multimodal Developer Copilot & Interface Architecture" loading="lazy" />
         </div>
-        <div class="proj-body">
+        <div class="proj-case-body">
           <div class="proj-meta">
-            <span class="proj-category">Web Design · Marketplace</span>
+            <span class="proj-category">AI / Emerging Tech · Desktop & Web</span>
             <span class="proj-year">2024 — 2025</span>
           </div>
-          <h3 class="proj-title">Musafir</h3>
-          <p class="proj-desc">A travel marketplace landing page redesigned for stronger conversion paths, clear destination framing, and confident decision-making.</p>
-          <div class="proj-link-row">
-            <span class="proj-view-link">Case Study <span class="shahi-arrow">&nearr;</span></span>
-            <div class="proj-tech-tags">
-              <span class="proj-tag">Web Design</span>
-              <span class="proj-tag">Travel</span>
+          <h2>Astra AI Assistant</h2>
+          <p class="proj-case-tagline">Designing natural-language interface systems, streaming response states, and proactive coding suggestions for high-velocity software engineers.</p>
+          <div class="proj-case-details">
+            <div class="detail-item">
+              <span class="detail-lbl">Client</span>
+              <span class="detail-val">Astra Labs (Independent)</span>
             </div>
+            <div class="detail-item">
+              <span class="detail-lbl">Role</span>
+              <span class="detail-val">Lead Product Designer & Prototype Engineer</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-lbl">Impact</span>
+              <span class="detail-val">Sub-50ms perceived latency via optimistic rendering; streamlined multimodal prompt architecture.</span>
+            </div>
+          </div>
+          <div class="proj-tech-tags" style="margin-top:16px;">
+            <span class="proj-tag">GenAI</span> <span class="proj-tag">Developer Tools</span> <span class="proj-tag">Interface Design</span>
           </div>
         </div>
       </article>
 
-      <article class="proj-card" onclick="openCaseStudy('community')" role="button" tabindex="0" aria-label="Open case study for Community">
-        <div class="proj-image">
-          <img src="./assets/proj_community.png" alt="Community — Student Learning Hub & EdTech Platform" loading="lazy" />
+      <article class="proj-case-card" id="proj-4">
+        <div class="proj-case-img">
+          <img src="./assets/proj_004.png" alt="FinPulse — Institutional Wealth & Portfolio Analytics Engine" loading="lazy" />
         </div>
-        <div class="proj-body">
+        <div class="proj-case-body">
           <div class="proj-meta">
-            <span class="proj-category">EdTech · Community Platform</span>
-            <span class="proj-year">2023 — 2025</span>
+            <span class="proj-category">FinTech · Enterprise SaaS</span>
+            <span class="proj-year">2022 — 2023</span>
           </div>
-          <h3 class="proj-title">Community</h3>
-          <p class="proj-desc">A student learning hub designed to support academic growth through shared peer discussions, study resources, and platform-led engagement.</p>
-          <div class="proj-link-row">
-            <span class="proj-view-link">Case Study <span class="shahi-arrow">&nearr;</span></span>
-            <div class="proj-tech-tags">
-              <span class="proj-tag">EdTech</span>
-              <span class="proj-tag">Platform</span>
+          <h2>FinPulse Analytics</h2>
+          <p class="proj-case-tagline">Transforming dense financial data streams into actionable, modular dashboard cards and real-time portfolio rebalancing workflows.</p>
+          <div class="proj-case-details">
+            <div class="detail-item">
+              <span class="detail-lbl">Client</span>
+              <span class="detail-val">FinPulse Capital</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-lbl">Role</span>
+              <span class="detail-val">Senior UX Consultant</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-lbl">Impact</span>
+              <span class="detail-val">Consolidated 8 disparate reporting systems into a single configurable command center with WCAG AAA accessibility.</span>
             </div>
           </div>
-        </div>
-      </article>
-
-      </div>
-    </div>
-
-    <!-- SINGLE CASE STUDY VIEW -->
-    <div id="caseStudyView" class="case-view" hidden>
-      <div class="case-top-actions">
-        <button class="case-pill-btn" id="backToProjectsBtn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          <span>Back to All Projects</span>
-        </button>
-        <span class="tag-chip" id="caseCategoryChip">SaaS Product</span>
-      </div>
-
-      <!-- Meta Card -->
-      <article class="case-meta-card">
-        <div class="case-title-row">
-          <h1 id="caseTitle">EduManage</h1>
-          <p class="case-tagline" id="caseTagline">A modern institution dashboard shaped around academic operations.</p>
-        </div>
-        <div class="case-meta-grid">
-          <div class="case-meta-item">
-            <span class="label">Role</span>
-            <span class="val" id="caseRole">Senior Product Designer</span>
-          </div>
-          <div class="case-meta-item">
-            <span class="label">Timeline</span>
-            <span class="val" id="caseTimeline">2024 — 2026</span>
-          </div>
-          <div class="case-meta-item">
-            <span class="label">Focus</span>
-            <span class="val" id="caseFocus">SaaS Dashboard · CMS</span>
-          </div>
-          <div class="case-meta-item">
-            <span class="label">Impact</span>
-            <span class="val" id="caseImpact">High-clarity workflows</span>
+          <div class="proj-tech-tags" style="margin-top:16px;">
+            <span class="proj-tag">FinTech</span> <span class="proj-tag">Enterprise SaaS</span> <span class="proj-tag">Data Viz</span>
           </div>
         </div>
       </article>
 
-      <!-- Hero Visual -->
-      <div class="case-hero-image">
-        <img id="caseHeroImg" src="./assets/proj_edumanage.png" alt="Case Study hero" />
-      </div>
-
-      <!-- Editorial Narrative Flow -->
-      <div class="case-body-flow">
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> The Overview</h3>
-          <p id="caseOverviewText">Enterprise-grade institution management dashboard engineered for operational clarity.</p>
-        </div>
-
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> The Challenge</h3>
-          <p id="caseChallengeText">Educational institutions traditionally rely on disconnected legacy tools and disparate spreadsheets.</p>
-        </div>
-
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> My Role &amp; Responsibilities</h3>
-          <p id="caseRoleText">I directed end-to-end user research, information architecture, design systems, and clickable prototypes.</p>
-        </div>
-
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> Approach &amp; Process</h3>
-          <p id="caseApproachText">I mapped administrative user journeys to uncover recurring bottlenecks and structured role-based modular layouts.</p>
-        </div>
-
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> The Solution</h3>
-          <p id="caseSolutionText">Delivered an actionable multi-tenant dashboard with automated telemetry and multi-tiered permission management.</p>
-        </div>
-
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> Outcomes &amp; Impact</h3>
-          <p id="caseOutcomeText">Significantly reduced task completion times and established a unified design system adopted across portals.</p>
-        </div>
-      </div>
-
-      <!-- Bottom Prev / Next Nav -->
-      <nav class="case-nav" aria-label="Case Study Navigation">
-        <button class="case-nav-btn prev" id="prevCaseBtn">
-          <span class="nav-eyebrow">&larr; Previous Project</span>
-          <span class="nav-proj-name" id="prevCaseTitle">Community</span>
-        </button>
-        <button class="case-nav-btn next" id="nextCaseBtn">
-          <span class="nav-eyebrow">Next Project &rarr;</span>
-          <span class="nav-proj-name" id="nextCaseTitle">Quayo Basket</span>
-        </button>
-      </nav>
     </div>
+
+    <section class="contact-cta-section" style="margin-top:64px;">
+      <span class="eyebrow"><span class="dot"></span> Collaboration</span>
+      <h2>Have a project in mind?</h2>
+      <p>I partner with ambitious teams to turn complex ideas into refined, scalable digital products.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary">Work with me <span class="btn-key">[C]</span> <span class="shahi-arrow">&nearr;</span></a>
+        <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Sumit</a>
+      </div>
+    </section>
 
   </div>
 </main>
 
 <footer class="site-footer" id="siteFooter">
-  <div class="footer-inner">
-    
-    <!-- Top status bar -->
-    <div class="footer-top-row">
-      <div class="footer-status-tag">
+  <div class="wrap-wide">
+    <div class="footer-four-cols">
+      <div class="footer-col-item">
+        <span class="f-col-header">LINKEDIN</span>
+        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener" class="f-col-link">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">SUBSTACK</span>
+        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="f-col-link">isumitrai.substack.com <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">EMAIL</span>
+        <a href="mailto:sumitraiworks@gmail.com" class="f-col-link">sumitraiworks@gmail.com <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">X / TWITTER</span>
+        <a href="https://x.com/isumitrai" target="_blank" rel="noopener" class="f-col-link">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+    </div>
+
+    <div class="footer-sub-meta">
+      <div>
+        <span>&copy; 2026 Sumit Rai &middot; Senior Product Designer &middot; 8+ yrs product, 12+ yrs craft</span>
+      </div>
+      <div>
         <span class="live-dot"></span>
-        <span>Available for select product leadership &amp; design advisory</span>
-      </div>
-      <div class="footer-clock-box" id="delhiClockWrap">
-        <span class="live-dot"></span>
-        <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
+        <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong> &middot; Available for select roles</span>
       </div>
     </div>
-
-    <!-- Main hero call to action -->
-    <div class="footer-hero-cta">
-      <h2 class="footer-tagline">Let's build something thoughtful together.</h2>
-      <p class="footer-sublead">Always open to high-impact products, early-stage ventures, and ambitious design challenges.</p>
-      
-      <div class="footer-email-box">
-        <div class="footer-email-pill">
-          <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
-            <span class="email-text">sumitraiworks@gmail.com</span>
-            <span class="email-arrow">&nearr;</span>
-          </a>
-          <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address" title="Copy email address">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <span class="copy-toast">Copied!</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom navigation and meta -->
-    <div class="footer-bottom-nav">
-      <div class="footer-brand-side">
-        <span class="footer-mark">SR</span>
-        <span class="footer-name">Sumit Rai</span>
-        <span class="footer-sep">&middot;</span>
-        <span class="footer-exp-text">8+ years product design &middot; 12+ years design craft</span>
-      </div>
-
-      <div class="footer-links-group">
-        <div class="flinks-nav">
-          <a href="projects.html">Work <span class="nav-key">[W]</span></a>
-          <a href="about.html">About <span class="nav-key">[A]</span></a>
-          <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
-          <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
-          <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
-          <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
-        </div>
-
-        <div class="flinks-social">
-          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn <span class="shahi-arrow">&nearr;</span></a>
-          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X <span class="shahi-arrow">&nearr;</span></a>
-          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram <span class="shahi-arrow">&nearr;</span></a>
-          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF <span class="shahi-arrow">&darr;</span></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-credit-row">
-      <span>&copy; 2026 Sumit Rai. All rights reserved.</span>
-      <span>Designed with restraint &middot; Built for craft</span>
-    </div>
-
   </div>
 </footer>
 
@@ -346,306 +265,243 @@
     </div>
     <div class="cmd-list" id="cmdList">
       <a href="index.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span>Home</span>
-        </span>
+        <span class="item-left"><span>Home</span></span>
         <span class="cmd-shortcut">H</span>
       </a>
       <a href="projects.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <span>Selected Work (Projects)</span>
-        </span>
+        <span class="item-left"><span>Selected Work</span></span>
         <span class="cmd-shortcut">W</span>
       </a>
       <a href="about.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-          <span>About Sumit</span>
-        </span>
+        <span class="item-left"><span>About Sumit</span></span>
         <span class="cmd-shortcut">A</span>
       </a>
       <a href="resume.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          <span>Resume &amp; Credentials</span>
-        </span>
+        <span class="item-left"><span>Resume &amp; Credentials</span></span>
         <span class="cmd-shortcut">R</span>
       </a>
       <a href="resources.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
-          <span>Curated Resources (Books &amp; Tools)</span>
-        </span>
+        <span class="item-left"><span>Resources &amp; Gear</span></span>
         <span class="cmd-shortcut">B</span>
       </a>
       <a href="playground.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
-          <span>Playground (Raimage Lab)</span>
-        </span>
+        <span class="item-left"><span>Lab &amp; Shop</span></span>
         <span class="cmd-shortcut">P</span>
       </a>
       <a href="contact.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>Get in Touch (Contact Page)</span>
-        </span>
+        <span class="item-left"><span>Work with me</span></span>
         <span class="cmd-shortcut">C</span>
       </a>
+      <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="cmd-item">
+        <span class="item-left"><span>Substack Newsletter</span></span>
+        <span class="cmd-shortcut">SUB</span>
+      </a>
       <a href="assets/Sumit_Rai_Resume.pdf" download class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span>Download Resume PDF</span>
-        </span>
+        <span class="item-left"><span>Download Resume PDF</span></span>
         <span class="cmd-shortcut">PDF</span>
       </a>
-      <a href="mailto:sumitraiworks@gmail.com" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <span>Email Sumit (sumitraiworks@gmail.com)</span>
-        </span>
-        <span class="cmd-shortcut">@</span>
-      </a>
       <div class="cmd-item" id="cmdToggleTheme">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
-          <span>Toggle Dark / Light Mode</span>
-        </span>
+        <span class="item-left"><span>Toggle Dark / Light Mode</span></span>
         <span class="cmd-shortcut">T</span>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Garden Note Reader Modal -->
+<div class="garden-modal" id="gardenModal" role="dialog" aria-modal="true" aria-label="Digital Garden Note">
+  <div class="garden-modal-box">
+    <button class="garden-modal-close" onclick="closeGardenNote()" aria-label="Close note">&times;</button>
+    <div id="gardenModalBody"></div>
+  </div>
+</div>
 <script>
 
-// ---- Global Audio, Clock, Theme & Command Palette Management ----
 (function(){
-  // 1. Web Audio Synthesizer Haptic Engine
-  const AudioEngine = (function(){
-    let ctx = null;
-    let enabled = localStorage.getItem('sr_sound') === 'true';
-
-    function init(){
-      if (!ctx && (window.AudioContext || window.webkitAudioContext)) {
-        ctx = new (window.AudioContext || window.webkitAudioContext)();
+  // Audio Feedback Engine
+  const AudioEngine = {
+    ctx: null,
+    enabled: true,
+    init() {
+      if (!this.ctx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) this.ctx = new AudioContext();
       }
-    }
-
-    function playTick(freq = 820, dur = 0.035, type = 'sine'){
-      if (!enabled) return;
+    },
+    playTick(freq = 900, dur = 0.02) {
+      if (!this.enabled) return;
       try {
-        init();
-        if (ctx.state === 'suspended') ctx.resume();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = type;
-        osc.frequency.setValueAtTime(freq, ctx.currentTime);
-        gain.gain.setValueAtTime(0.06, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+        this.init();
+        if (!this.ctx) return;
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+        gain.gain.setValueAtTime(0.025, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + dur);
         osc.connect(gain);
-        gain.connect(ctx.destination);
+        gain.connect(this.ctx.destination);
         osc.start();
-        osc.stop(ctx.currentTime + dur);
-      } catch(e) {}
+        osc.stop(this.ctx.currentTime + dur);
+      } catch(e){}
     }
+  };
 
-    function toggle(){
-      enabled = !enabled;
-      localStorage.setItem('sr_sound', enabled);
-      if (enabled) playTick(960, 0.05);
-      return enabled;
-    }
-
-    function isEnabled(){ return enabled; }
-
-    return { playTick, toggle, isEnabled };
-  })();
-
-  // Update Sound Button State
+  // Sound toggle button
   const soundBtn = document.getElementById('soundToggleBtn');
   const soundIcon = document.getElementById('soundIcon');
   const soundLabel = document.getElementById('soundLabel');
-  function updateSoundUI(){
-    const on = AudioEngine.isEnabled();
-    if (soundIcon) soundIcon.textContent = on ? '🔊' : '🔇';
-    if (soundLabel) soundLabel.textContent = on ? 'Sound' : 'Muted';
-    if (soundBtn) soundBtn.classList.toggle('active', on);
-  }
-  updateSoundUI();
   if (soundBtn) {
     soundBtn.addEventListener('click', function(){
-      AudioEngine.toggle();
-      updateSoundUI();
+      AudioEngine.enabled = !AudioEngine.enabled;
+      if (soundIcon) soundIcon.textContent = AudioEngine.enabled ? '🔊' : '🔇';
+      if (soundLabel) soundLabel.textContent = AudioEngine.enabled ? 'Sound' : 'Mute';
+      if (AudioEngine.enabled) AudioEngine.playTick(1000, 0.03);
     });
   }
 
-  // Play micro click on link / button clicks
-  document.addEventListener('click', function(e){
-    if (e.target.closest('a, button, .proj-card, .tool-tile, .resource-card, .pg-card-rich')) {
-      AudioEngine.playTick(780, 0.028);
+  // Theme Management
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlEl = document.documentElement;
+  const savedTheme = localStorage.getItem('folio_theme') || 'light';
+  htmlEl.setAttribute('data-theme', savedTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      AudioEngine.playTick(1200, 0.03);
+      const cur = htmlEl.getAttribute('data-theme') || 'light';
+      const nxt = cur === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', nxt);
+      localStorage.setItem('folio_theme', nxt);
+    });
+  }
+
+  // Mobile drawer toggle
+  const menuToggle = document.getElementById('navMenuToggle');
+  const drawer = document.getElementById('mobileNavDrawer');
+  if (menuToggle && drawer) {
+    menuToggle.addEventListener('click', () => {
+      AudioEngine.playTick(750, 0.03);
+      const open = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !open);
+      drawer.setAttribute('aria-hidden', open);
+      drawer.classList.toggle('active', !open);
+    });
+  }
+
+  // Real-time Delhi IST Clock
+  function updateDelhiClock() {
+    const el = document.getElementById('liveClockText');
+    if (!el) return;
+    try {
+      const now = new Date();
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+      el.textContent = now.toLocaleTimeString('en-US', options) + ' IST';
+    } catch(e) {
+      el.textContent = '17:30 IST';
     }
-  });
-
-  // 2. Real-time New Delhi (IST) Clock
-  function updateDelhiClock(){
-    const textEl = document.getElementById('liveClockText');
-    const now = new Date();
-    // New Delhi is UTC +5:30
-    const istOffset = 5.5 * 60 * 60 * 1000;
-    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-    const delhiDate = new Date(utc + istOffset);
-
-    let h = delhiDate.getHours();
-    const m = String(delhiDate.getMinutes()).padStart(2, '0');
-    const s = String(delhiDate.getSeconds()).padStart(2, '0');
-    const ampm = h >= 12 ? 'PM' : 'AM';
-    h = h % 12 || 12;
-
-    const formatted = `${h}:${m}:${s} ${ampm} IST`;
-    if (textEl) textEl.textContent = formatted;
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
 
-  // 3. Dark/Light Mode
-  const root = document.documentElement;
-  const themeToggle = document.getElementById('themeToggle');
-  const storedTheme = localStorage.getItem('sr_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  if (storedTheme === 'dark') root.setAttribute('data-theme', 'dark');
-
-  function toggleTheme(){
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    const next = isDark ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    localStorage.setItem('sr_theme', next);
-    AudioEngine.playTick(isDark ? 650 : 880, 0.04);
-  }
-  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
-
-  // 4. Scroll Header — add scrolled class for backdrop effect
-  const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', function(){
-    if (header) {
-      header.classList.toggle('nav-scrolled', window.scrollY > 40);
-    }
-  }, { passive: true });
-
-  // 5. Mobile Nav Toggle (hamburger)
-  const navMenuToggle = document.getElementById('navMenuToggle');
-  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
-  if (navMenuToggle && mobileNavDrawer) {
-    navMenuToggle.addEventListener('click', function(){
-      const isOpen = mobileNavDrawer.classList.toggle('open');
-      navMenuToggle.setAttribute('aria-expanded', isOpen);
-      mobileNavDrawer.setAttribute('aria-hidden', !isOpen);
-      navMenuToggle.classList.toggle('open', isOpen);
-    });
-    // Close drawer on nav link click
-    mobileNavDrawer.querySelectorAll('a').forEach(function(link){
-      link.addEventListener('click', function(){
-        mobileNavDrawer.classList.remove('open');
-        navMenuToggle.setAttribute('aria-expanded', 'false');
-        navMenuToggle.classList.remove('open');
-      });
-    });
-  }
-
-  // 6. Copy Email with Toast & Audio
-  const copyBtn = document.getElementById('copyEmailBtn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(function(){
-        copyBtn.classList.add('copied');
-        AudioEngine.playTick(1020, 0.06);
-        setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
-      });
-    });
-  }
-
-  // 7. Command + K Palette
+  // Command + K Palette
   const cmdModal = document.getElementById('cmdModal');
-  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
   const cmdInput = document.getElementById('cmdInput');
-  const cmdList = document.getElementById('cmdList');
-  const cmdThemeBtn = document.getElementById('cmdToggleTheme');
+  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
 
-  function openCmd(){
-    if (!cmdModal) return;
-    cmdModal.classList.add('active');
-    AudioEngine.playTick(720, 0.03);
-    if (cmdInput) {
-      cmdInput.value = '';
-      cmdInput.focus();
+  function openCmd() {
+    AudioEngine.playTick(950, 0.03);
+    if (cmdModal) {
+      cmdModal.classList.add('active');
+      if (cmdInput) {
+        cmdInput.value = '';
+        cmdInput.focus();
+      }
+      document.body.style.overflow = 'hidden';
     }
-    filterCmd('');
   }
 
-  function closeCmd(){
-    if (!cmdModal) return;
-    cmdModal.classList.remove('active');
+  function closeCmd() {
+    if (cmdModal) {
+      cmdModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   }
 
   if (cmdTrigger) cmdTrigger.addEventListener('click', openCmd);
   if (cmdModal) {
-    cmdModal.addEventListener('click', function(e){
+    cmdModal.addEventListener('click', (e) => {
       if (e.target === cmdModal) closeCmd();
     });
   }
 
-  if (cmdThemeBtn) {
-    cmdThemeBtn.addEventListener('click', function(){
-      toggleTheme();
-      closeCmd();
-    });
-  }
+  // Garden Modal Reader
+  window.openGardenNote = function(noteId) {
+    const note = (window.GARDEN_DATA || []).find(n => n.id === noteId);
+    if (!note) return;
+    const body = document.getElementById('gardenModalBody');
+    const modal = document.getElementById('gardenModal');
+    if (!body || !modal) return;
+    body.innerHTML = `
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+        <span class="garden-tag">${note.topic}</span>
+        <span class="garden-date">${note.date} &middot; ${note.read}</span>
+      </div>
+      <h2 style="font-size:24px; font-weight:700; letter-spacing:-0.025em; margin-bottom:20px; line-height:1.25; color:var(--ink);">${note.title}</h2>
+      <div style="font-size:15px; line-height:1.7; color:var(--ink-soft);">${note.content}</div>
+      <div style="margin-top:32px; padding-top:20px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <span style="font-size:12px; color:var(--ink-muted); font-family:var(--font-mono);">From Sumit Rai's Digital Garden</span>
+        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" style="font-size:13px; font-weight:600; color:var(--accent); text-decoration:none;">Read on Substack <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+    `;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    AudioEngine.playTick(880, 0.03);
+  };
 
-  function filterCmd(q){
-    if (!cmdList) return;
-    const items = cmdList.querySelectorAll('.cmd-item');
-    const query = q.trim().toLowerCase();
-    items.forEach(function(item){
-      const text = item.textContent.toLowerCase();
-      item.style.display = (!query || text.includes(query)) ? 'flex' : 'none';
-    });
-  }
+  window.closeGardenNote = function() {
+    const modal = document.getElementById('gardenModal');
+    if (modal) modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
 
-  if (cmdInput) {
-    cmdInput.addEventListener('input', function(e){
-      filterCmd(e.target.value);
-    });
-  }
-
-  // 8. Global Keyboard Shortcuts Navigation (inspired by shahimim.com)
+  // Keyboard Shortcuts Navigation
   document.addEventListener('keydown', function(e){
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) closeCmd();
+      else openCmd();
+      return;
+    }
+
+    if (e.key === 'Escape') {
+      const gModal = document.getElementById('gardenModal');
+      if (gModal && gModal.classList.contains('active')) {
+        closeGardenNote();
+        return;
+      }
       if (cmdModal && cmdModal.classList.contains('active')) {
         closeCmd();
-      } else {
-        openCmd();
+        return;
       }
-      return;
+      const curPage = document.body.dataset.page;
+      if (curPage && curPage !== 'index') {
+        AudioEngine.playTick(820, 0.03);
+        window.location.href = 'index.html';
+        return;
+      }
     }
 
-    if (cmdModal && cmdModal.classList.contains('active')) {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        closeCmd();
-      }
-      return;
-    }
-
-    // Do not trigger navigation when typing in inputs or holding modifier keys
     const tag = (e.target.tagName || '').toLowerCase();
-    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) {
-      return;
-    }
-    if (e.metaKey || e.ctrlKey || e.altKey) {
-      return;
-    }
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
 
     const key = e.key.toLowerCase();
     if (key === 'w') {
@@ -666,107 +522,15 @@
     } else if (key === 'c') {
       AudioEngine.playTick(820, 0.03);
       window.location.href = 'contact.html';
-    } else if (e.key === 'Escape') {
-      AudioEngine.playTick(820, 0.03);
-      window.location.href = 'index.html';
+    } else if (key === 't') {
+      AudioEngine.playTick(1200, 0.03);
+      const cur = htmlEl.getAttribute('data-theme') || 'light';
+      const nxt = cur === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', nxt);
+      localStorage.setItem('folio_theme', nxt);
     }
   });
 })();
-
-
-  const allProjects = [{"id": "edumanage", "title": "EduManage", "full_title": "EduManage \u2014 Smart Educational Management Dashboard", "category": "SaaS Product \u00b7 CMS", "year": "2024 \u2014 2026", "tagline": "A modern institution dashboard shaped around academic operations, content management, and day-to-day school workflows.", "image": "./assets/proj_edumanage.png", "role": "Senior Product Designer (Lead UI/UX, Information Architecture)", "focus_areas": "SaaS Dashboard \u00b7 Multi-Tenant CMS \u00b7 Academic Workflows \u00b7 Design System", "timeline": "2024 \u2014 2026", "in_short": "Streamlined fragmented school administrative workflows into an intuitive, high-clarity operational workspace.", "overview": "EduManage is an enterprise-grade institution management dashboard engineered to bring student records, curriculum administration, examination schedules, and faculty workflows into a cohesive, single-screen command centre. The product serves academic coordinators and school directors who require rapid operational overview without informational clutter.", "challenge": "Educational institutions traditionally rely on disconnected legacy tools, disparate spreadsheets, and fragmented notification channels. Coordinators struggled with slow data retrieval, disjointed approval cycles, and cognitive overload during peak examination and enrollment cycles.", "my_role": "As the Senior Product Designer, I directed end-to-end user research, information architecture, component design systems, and rapid clickable prototypes. I worked directly alongside school administrators, product management, and engineering teams from problem definition to live release.", "approach": "I mapped administrative user journeys to uncover recurring bottlenecks. Rather than reproducing paper forms digitally, I structured the interface around role-based modular cards, contextual status widgets, and high-density data tables optimized for quick scanning and keyboard navigation.", "solution": "Designed a unified multi-tenant dashboard incorporating automated attendance telemetry, course schedule visualization, multi-tiered permission management, and an actionable alert drawer that surfaces critical deadlines before they escalate.", "outcome": "Significantly reduced coordinator task completion times, minimized administrative data entry errors, and established a scalable design system now adopted across multiple sister educational portals.", "tags": ["SaaS", "Dashboard", "CMS", "EdTech"]}, {"id": "quayo", "title": "Quayo Basket", "full_title": "Quayo Basket \u2014 Grocery App & Brand Identity System", "category": "Grocery App \u00b7 Brand Identity", "year": "2024 \u2014 2026", "tagline": "A grocery mobile app paired with a fresh retail brand identity system for a clearer, friendlier shopping experience.", "image": "./assets/proj_quayo.png", "role": "Lead Product Designer & Brand Strategist", "focus_areas": "Mobile UX/UI \u00b7 Brand Identity \u00b7 Grocery Checkout Flows \u00b7 Micro-interactions", "timeline": "2024 \u2014 2026", "in_short": "Crafted an inviting visual language and simplified multi-category grocery shopping to boost repeat orders.", "overview": "Quayo Basket combines an intuitive on-demand grocery shopping application with a comprehensive retail brand identity. The project aimed to deliver effortless fresh produce discovery, transparent pricing, and rapid checkout experiences for busy urban households.", "challenge": "Grocery consumers drop off when search yields overwhelming category trees, item quantities are confusing to adjust, or cart substitutions are poorly communicated. The client needed both an app that felt effortless and a memorable brand personality that stood out in a competitive market.", "my_role": "I led both product design and visual identity. This included user journey mapping, design of the mobile interface (iOS & Android), brand guidelines, packaging touchpoints, icon systems, and prototype user testing.", "approach": "I designed for one-handed thumb interaction, focusing heavily on quick quantity adjustments directly from search results and shelf views. I paired clean typography with warm orange and green accents that evoke freshness without overwhelming the product photography.", "solution": "Delivered an end-to-end mobile app featuring visual basket meters, smart past-order reordering in two taps, real-time inventory substitution preferences, and an optimized single-screen checkout flow.", "outcome": "The refreshed shopping experience lowered checkout abandonment rates, boosted repeat weekly cart creation, and established an authentic brand identity that resonated with customers across digital and physical packaging.", "tags": ["Mobile App", "UI/UX", "Branding", "E-Commerce"]}, {"id": "musafir", "title": "Musafir", "full_title": "Musafir \u2014 Travel Marketplace Landing Page Redesign", "category": "Web Design \u00b7 Marketplace", "year": "2024 \u2014 2025", "tagline": "A travel marketplace landing page redesigned for stronger conversion paths, clear destination framing, and confident decision-making.", "image": "./assets/proj_musafir.png", "role": "Product & Visual Designer", "focus_areas": "Landing Page Architecture \u00b7 Destination Discovery \u00b7 Conversion Rate Optimization", "timeline": "2024 \u2014 2025", "in_short": "Transformed an information-dense travel portal into an editorial, high-converting discovery destination.", "overview": "Musafir is a premier travel discovery and booking platform connecting travelers with curated journeys and vacation packages. The redesign focused on overhauling the public-facing web landing experience to elevate destination storytelling while maximizing booking search intent.", "challenge": "The previous landing page suffered from banner blindness, cluttered deal carousels, and vague search filters that caused prospective travelers to leave without exploring destinations or entering the search funnel.", "my_role": "I served as Product & Visual Designer, responsible for competitive UX benchmarking, wireframing, high-fidelity responsive UI design, visual art direction, and conversion funnels.", "approach": "I structured the homepage as an editorial travel magazine: large, inspiring destination imagery paired with concise package highlights, verified guest reviews, transparent pricing tags, and a prominent persistent search bar.", "solution": "Introduced a modern search module with interactive date-flexibility toggles, thematic collections ('Weekend Escapes', 'Cultural Expeditions'), social proof badges, and clear visual hierarchy guiding visitors smoothly toward booking queries.", "outcome": "The redesigned landing page achieved notable improvements in search initiation rates and dwell time, establishing a trustworthy first impression that reinforced Musafir's position as an aspirational travel provider.", "tags": ["Web Design", "Travel", "Marketplace", "Conversion"]}, {"id": "community", "title": "Community", "full_title": "Community \u2014 Student Learning Hub & EdTech Platform", "category": "EdTech \u00b7 Community Platform", "year": "2023 \u2014 2025", "tagline": "A student learning hub designed to support academic growth through shared peer discussions, study resources, and platform-led engagement.", "image": "./assets/proj_community.png", "role": "Product Designer (FIITJEE / Edfora Ecosystem)", "focus_areas": "EdTech Platform Design \u00b7 Peer Interaction Workflows \u00b7 Resource Architecture", "timeline": "2023 \u2014 2025", "in_short": "Designed approachable study circles, resource bookmarks, and peer engagement structures for active student participation.", "overview": "Community is an educational collaboration platform designed to empower students preparing for competitive academic milestones. It bridges solitary studying with peer motivation through question-and-answer channels, mentor-moderated study rooms, and curated subject repositories.", "challenge": "Students studying for high-stakes exams often experience isolation and hesitation when asking questions in large public forums. The objective was to cultivate a safe, distraction-free environment that incentivizes constructive knowledge sharing.", "my_role": "As Product Designer, I spearheaded user research interviews with students and educators, mapped community governance workflows, designed responsive desktop and tablet interfaces, and collaborated with frontend engineers on implementation.", "approach": "I broke down intimidating monolithic forums into topic-focused micro-communities. Emphasized clear thread hierarchy, verified solution badges from educators, and lightweight bookmarking so students could preserve revision notes effortlessly.", "solution": "Built a clean, minimal learning platform incorporating contextual markdown equation support, peer study circles, weekly revision leaderboards, and a distraction-free reader mode for academic materials.", "outcome": "Doubled daily active peer discussions, reduced average unanswered question duration, and created a positive digital study environment embraced by both educators and competitive learners.", "tags": ["EdTech", "Platform", "Community", "Collaboration"]}];
-  const listView = document.getElementById('projectsListView');
-  const caseView = document.getElementById('caseStudyView');
-  const backBtn = document.getElementById('backToProjectsBtn');
-  const filterTabs = document.querySelectorAll('#projectFilterTabs .filter-btn');
-
-  // Filter functionality
-  filterTabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterTabs.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.filter;
-      const cards = document.querySelectorAll('#projectsArchiveGrid .proj-card');
-      
-      cards.forEach((card, idx) => {
-        const p = allProjects[idx];
-        if (cat === 'all') {
-          card.style.display = 'flex';
-        } else if (cat === 'saas' && p.category.toLowerCase().includes('saas')) {
-          card.style.display = 'flex';
-        } else if (cat === 'mobile' && p.category.toLowerCase().includes('grocery')) {
-          card.style.display = 'flex';
-        } else if (cat === 'web' && p.category.toLowerCase().includes('web')) {
-          card.style.display = 'flex';
-        } else if (cat === 'edtech' && p.category.toLowerCase().includes('edtech')) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-
-  // Open Case Study Details
-  function openCaseStudy(projId) {
-    const pIndex = allProjects.findIndex(item => item.id === projId);
-    if (pIndex === -1) return;
-    const p = allProjects[pIndex];
-
-    document.getElementById('caseTitle').textContent = p.title;
-    document.getElementById('caseTagline').textContent = p.tagline;
-    document.getElementById('caseCategoryChip').textContent = p.category;
-    document.getElementById('caseRole').textContent = p.role;
-    document.getElementById('caseTimeline').textContent = p.timeline;
-    document.getElementById('caseFocus').textContent = p.focus_areas;
-    document.getElementById('caseImpact').textContent = p.in_short;
-    document.getElementById('caseHeroImg').src = p.image;
-    document.getElementById('caseHeroImg').alt = p.full_title;
-
-    document.getElementById('caseOverviewText').textContent = p.overview;
-    document.getElementById('caseChallengeText').textContent = p.challenge;
-    document.getElementById('caseRoleText').textContent = p.my_role;
-    document.getElementById('caseApproachText').textContent = p.approach;
-    document.getElementById('caseSolutionText').textContent = p.solution;
-    document.getElementById('caseOutcomeText').textContent = p.outcome;
-
-    // Prev / Next setup
-    const prevIndex = (pIndex - 1 + allProjects.length) % allProjects.length;
-    const nextIndex = (pIndex + 1) % allProjects.length;
-
-    const prevP = allProjects[prevIndex];
-    const nextP = allProjects[nextIndex];
-
-    const prevBtn = document.getElementById('prevCaseBtn');
-    const nextBtn = document.getElementById('nextCaseBtn');
-
-    document.getElementById('prevCaseTitle').textContent = prevP.title;
-    document.getElementById('nextCaseTitle').textContent = nextP.title;
-
-    prevBtn.onclick = () => openCaseStudy(prevP.id);
-    nextBtn.onclick = () => openCaseStudy(nextP.id);
-
-    listView.hidden = true;
-    caseView.hidden = false;
-    window.location.hash = projId;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function closeCaseStudy() {
-    caseView.hidden = true;
-    listView.hidden = false;
-    history.pushState("", document.title, window.location.pathname);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  if (backBtn) backBtn.addEventListener('click', closeCaseStudy);
-
-  window.addEventListener('DOMContentLoaded', () => {
-    const hash = window.location.hash.replace('#', '');
-    if (hash && allProjects.some(p => p.id === hash)) {
-      openCaseStudy(hash);
-    }
-  });
 
 </script>
 </body>

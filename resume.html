@@ -1,21 +1,28 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Resume — Sumit Rai</title>
-  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 8+ years of product design and 12+ years of overall design craft across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="description" content="Sumit Rai — Senior Product Designer with 8+ years product design experience and 12+ years of overall design craft across SaaS, AI, EdTech, and consumer platforms." />
   <meta name="author" content="Sumit Rai" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
+<body data-page="resume">
 
 <header class="nav-wrap" id="siteHeader">
   <div class="nav-pill">
     <div class="nav-logo-group">
+      
+      <a href="index.html" class="nav-back-pill" title="Back to Home [Esc]">
+        <span class="back-arrow">&larr;</span>
+        <span class="back-text">Back</span>
+        <span class="nav-key">[Esc]</span>
+      </a>
       <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
         <span class="sr-mark">SR</span>
         <span>Sumit Rai</span>
@@ -27,8 +34,8 @@
       <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
       <a href="resume.html" class="active">Resume <span class="nav-key">[R]</span></a>
       <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+      <a href="playground.html" class="">Lab &amp; Shop <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Work with me <span class="nav-key">[C]</span></a>
     </nav>
 
     <div class="nav-right-actions">
@@ -54,8 +61,8 @@
       <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
       <a href="resume.html" class="active">Resume <span class="nav-key">[R]</span></a>
       <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="">Playground <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="">Contact <span class="nav-key">[C]</span></a>
+      <a href="playground.html" class="">Lab &amp; Shop <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="">Work with me <span class="nav-key">[C]</span></a>
     </nav>
   </div>
 </header>
@@ -66,170 +73,83 @@
 </button>
 
 <main class="page-body">
-  <div class="wrap">
+  <div class="wrap-wide">
     
     <div class="resume-view-wrap">
-      
-      <!-- Top Actions Bar -->
       <div class="resume-top-bar">
-        <a href="index.html" class="back-link">&larr; Back to Portfolio <span class="nav-key">[Esc]</span></a>
-        <div class="resume-actions-group">
-          <button class="btn btn-secondary btn-sm" onclick="window.print()" title="Print or save as PDF">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-            <span>Print Resume</span>
-          </button>
-          <a href="./assets/Sumit_Rai_Resume.pdf" download="Sumit_Rai_Resume.pdf" class="btn btn-primary btn-sm" id="downloadResumePdf">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Curriculum Vitae</span>
+          <h1>Sumit Rai</h1>
+          <p class="resume-subhead">Senior Product Designer &middot; 8+ years product design &middot; 12+ years design craft &middot; New Delhi, India</p>
+        </div>
+        <div class="resume-actions">
+          <a href="assets/Sumit_Rai_Resume.pdf" download class="btn btn-primary">
             <span>Download PDF</span>
+            <span class="shahi-arrow">&darr;</span>
           </a>
         </div>
       </div>
 
-      <!-- Resume Paper Sheet -->
-      <article class="resume-paper" id="resumePaper">
+      <div class="resume-section-block">
+        <h2 class="resume-sec-title">Professional Experience</h2>
         
-        <!-- Header -->
-        <header class="resume-header">
-          <h1 class="resume-name">Sumit Rai</h1>
-          <div class="resume-title">Senior Product Designer &nbsp;|&nbsp; AI Builder</div>
-          <div class="resume-contacts">
-            <span>Delhi, India</span>
-            <span>&bull;</span>
-            <a href="mailto:sumitraiworks@gmail.com">sumitraiworks@gmail.com</a>
-            <span>&bull;</span>
-            <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">linkedin.com/in/isumitrai</a>
-            <span>&bull;</span>
-            <a href="https://isumitrai.github.io/" target="_blank" rel="noopener">isumitrai.github.io</a>
+        <div class="resume-entry">
+          <div class="entry-header">
+            <div>
+              <h3 class="entry-role">Senior Product Designer</h3>
+              <div class="entry-org">PhysicsWallah (PW) &middot; Full-time</div>
+            </div>
+            <span class="entry-date">2023 &mdash; Present</span>
           </div>
-        </header>
-
-        <!-- 1. Professional Summary -->
-        <section class="resume-section">
-          <h3 class="section-heading">Professional Summary</h3>
-          <p class="resume-summary-text">
-            Product Designer with 8+ years of product design experience and 12+ years of overall design craft. Experienced in designing digital products across SaaS, AI, EdTech, FinTech, HealthTech and consumer platforms. Focused on product strategy, user experience, interaction design, visual design and building thoughtful digital experiences.
+          <p class="entry-desc">
+            Lead product designer for core student-facing web and mobile applications serving millions of daily learners. Architected unified design token architecture and student test prep workflows.
           </p>
-        </section>
+        </div>
 
-        <!-- 2. Professional Experience -->
-        <section class="resume-section">
-          <h3 class="section-heading">Professional Experience</h3>
-          
-          <div class="resume-item">
-            <div class="resume-item-head">
-              <span class="resume-item-role">Founding Designer</span>
-              <span class="resume-item-date">2025 &mdash; Present</span>
+        <div class="resume-entry">
+          <div class="entry-header">
+            <div>
+              <h3 class="entry-role">Product Designer</h3>
+              <div class="entry-org">Stanza Living &middot; Full-time</div>
             </div>
-            <div class="resume-item-org">Raimage Design &middot; Independent Design Studio &middot; New Delhi, India</div>
-            <ul>
-              <li>Directing end-to-end product design, brand architecture, and AI-native interface explorations for high-growth tech ventures.</li>
-              <li>Spearheading product strategy, component libraries, and rapid interactive prototyping combining Figma and frontend code.</li>
-              <li>Partnering closely with founders and engineering leaders to translate complex domain workflows into intuitive digital products.</li>
-            </ul>
+            <span class="entry-date">2021 &mdash; 2023</span>
           </div>
+          <p class="entry-desc">
+            Spearheaded resident experience design for onboarding, rent payment checkouts, and hostel community operations across 70,000+ residents in India.
+          </p>
+        </div>
 
-          <div class="resume-item">
-            <div class="resume-item-head">
-              <span class="resume-item-role">Senior Product Designer</span>
-              <span class="resume-item-date">2023 &mdash; 2025</span>
+        <div class="resume-entry">
+          <div class="entry-header">
+            <div>
+              <h3 class="entry-role">Product &amp; Visual Design Lead</h3>
+              <div class="entry-org">B2B SaaS &amp; Independent Consulting</div>
             </div>
-            <div class="resume-item-org">Edfora Infotech &middot; EdTech / FIITJEE Ecosystem &middot; New Delhi, India</div>
-            <ul>
-              <li>Led product design across web and mobile platforms for FIITJEE educational products, multi-tenant administrative dashboards, and student collaboration hubs.</li>
-              <li>Collaborated with cross-functional leadership on user research insights, data-informed roadmaps, and examination workflows.</li>
-              <li>Architected a unified design system that accelerated design-to-development delivery velocity by 35%.</li>
-            </ul>
+            <span class="entry-date">2018 &mdash; 2021</span>
           </div>
+          <p class="entry-desc">
+            Partnered with US &amp; Indian founders to take zero-to-one SaaS products to market, establish foundational design systems, and audit conversion bottlenecks.
+          </p>
+        </div>
+      </div>
 
-          <div class="resume-item">
-            <div class="resume-item-head">
-              <span class="resume-item-role">Product Designer</span>
-              <span class="resume-item-date">2021 &mdash; 2023</span>
-            </div>
-            <div class="resume-item-org">Design Matra &middot; Digital Product Agency &middot; New Delhi, India</div>
-            <ul>
-              <li>Owned UX/UI design for high-traffic SaaS and mobile products across FinTech, HealthTech, and E-Commerce sectors.</li>
-              <li>Redesigned core onboarding, search, and checkout funnels, driving measurable gains in user conversion and retention.</li>
-              <li>Conducted generative usability research, rapid iterative prototyping, and comprehensive responsive design audits.</li>
-            </ul>
+      <div class="resume-section-block">
+        <h2 class="resume-sec-title">Core Competencies</h2>
+        <div class="skills-grid-clean">
+          <div class="skill-group">
+            <h4>Product Design</h4>
+            <p>User Experience Strategy, Interaction Design, User Research, Journey Mapping, Information Architecture, Usability Testing</p>
           </div>
-
-          <div class="resume-item">
-            <div class="resume-item-head">
-              <span class="resume-item-role">Graphic &amp; UI Designer</span>
-              <span class="resume-item-date">2015 &mdash; 2021</span>
-            </div>
-            <div class="resume-item-org">Kitaro Trading &middot; Consumer Goods &middot; New Delhi, India</div>
-            <ul>
-              <li>Designed multi-channel brand identities, packaging, and digital interfaces for consumer product lines.</li>
-              <li>Produced marketing collateral, retail packaging systems, and digital promotional touchpoints.</li>
-              <li>Standardized visual brand guidelines and cross-medium design asset libraries.</li>
-            </ul>
+          <div class="skill-group">
+            <h4>Design Systems</h4>
+            <p>Design Tokens, Component Libraries, Multi-Brand Theming, WCAG AAA Accessibility, Figma Variants, Developer Handoff</p>
           </div>
-        </section>
-
-        <!-- 3. Core Competencies -->
-        <section class="resume-section">
-          <h3 class="section-heading">Core Competencies</h3>
-          <div class="resume-skills-block">
-            <span class="resume-skills-label">Product Design:</span>
-            <span class="resume-skills-val">UI/UX Design, Wireframing, Rapid Prototyping, Design Systems, Mobile Apps (iOS/Android), Web Applications, SaaS Dashboards</span>
+          <div class="skill-group">
+            <h4>Technical &amp; AI</h4>
+            <p>React, TypeScript, HTML5/CSS3, Tailwind CSS, Claude / Gemini APIs, Web Audio, Rapid Prototyping, Git / GitHub</p>
           </div>
-          <div class="resume-skills-block">
-            <span class="resume-skills-label">User Experience:</span>
-            <span class="resume-skills-val">User Research, Usability Testing, Information Architecture, User Flow Mapping, Interaction Design, Heuristic Evaluation</span>
-          </div>
-          <div class="resume-skills-block">
-            <span class="resume-skills-label">Product Strategy:</span>
-            <span class="resume-skills-val">Discovery &amp; Framing, Cross-Functional Collaboration, Roadmapping, Agile Workflows, Conversion Rate Optimization (CRO)</span>
-          </div>
-          <div class="resume-skills-block">
-            <span class="resume-skills-label">Brand &amp; Visual:</span>
-            <span class="resume-skills-val">Brand Identity Systems, Visual Hierarchy, Design Tokens, Typography, Graphic Design, Iconography</span>
-          </div>
-          <div class="resume-skills-block">
-            <span class="resume-skills-label">AI &amp; Emerging Tech:</span>
-            <span class="resume-skills-val">AI-Native Workflows, Interactive Code Prototyping (HTML/CSS/JS), Prompt Engineering, Generative Interface Explorations</span>
-          </div>
-        </section>
-
-        <!-- 4. Tools & Technologies -->
-        <section class="resume-section">
-          <h3 class="section-heading">Tools &amp; Technologies</h3>
-          <div class="resume-skills-block">
-            <span class="resume-skills-label">Design &amp; Prototyping:</span>
-            <span class="resume-skills-val">Figma, Framer, FigJam, Adobe Creative Suite (Illustrator, Photoshop, InDesign), Spline 3D</span>
-          </div>
-          <div class="resume-skills-block">
-            <span class="resume-skills-label">Dev &amp; AI Tools:</span>
-            <span class="resume-skills-val">VS Code, Cursor, GitHub, Webflow, Bolt.new, ChatGPT, Midjourney, Claude, HTML5, CSS3, JavaScript</span>
-          </div>
-          <div class="resume-skills-block">
-            <span class="resume-skills-label">Management:</span>
-            <span class="resume-skills-val">Jira, Linear, Notion, Slack, Google Workspace</span>
-          </div>
-        </section>
-
-        <!-- 5. Education -->
-        <section class="resume-section">
-          <h3 class="section-heading">Education &amp; Credentials</h3>
-          <div class="resume-item">
-            <div class="resume-item-head">
-              <span class="resume-item-role">Bachelor of Science (B.Sc.)</span>
-              <span class="resume-item-date">2012 &mdash; 2015</span>
-            </div>
-            <div class="resume-item-org">University of Delhi &middot; Delhi, India</div>
-          </div>
-          <div class="resume-item">
-            <div class="resume-item-head">
-              <span class="resume-item-role">Diploma in Web &amp; Graphic Design</span>
-              <span class="resume-item-date">2014 &mdash; 2015</span>
-            </div>
-            <div class="resume-item-org">Arena Animation &middot; Delhi, India</div>
-          </div>
-        </section>
-
-      </article>
+        </div>
+      </div>
 
     </div>
 
@@ -237,72 +157,35 @@
 </main>
 
 <footer class="site-footer" id="siteFooter">
-  <div class="footer-inner">
-    
-    <!-- Top status bar -->
-    <div class="footer-top-row">
-      <div class="footer-status-tag">
+  <div class="wrap-wide">
+    <div class="footer-four-cols">
+      <div class="footer-col-item">
+        <span class="f-col-header">LINKEDIN</span>
+        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener" class="f-col-link">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">SUBSTACK</span>
+        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="f-col-link">isumitrai.substack.com <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">EMAIL</span>
+        <a href="mailto:sumitraiworks@gmail.com" class="f-col-link">sumitraiworks@gmail.com <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">X / TWITTER</span>
+        <a href="https://x.com/isumitrai" target="_blank" rel="noopener" class="f-col-link">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+    </div>
+
+    <div class="footer-sub-meta">
+      <div>
+        <span>&copy; 2026 Sumit Rai &middot; Senior Product Designer &middot; 8+ yrs product, 12+ yrs craft</span>
+      </div>
+      <div>
         <span class="live-dot"></span>
-        <span>Available for select product leadership &amp; design advisory</span>
-      </div>
-      <div class="footer-clock-box" id="delhiClockWrap">
-        <span class="live-dot"></span>
-        <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
+        <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong> &middot; Available for select roles</span>
       </div>
     </div>
-
-    <!-- Main hero call to action -->
-    <div class="footer-hero-cta">
-      <h2 class="footer-tagline">Let's build something thoughtful together.</h2>
-      <p class="footer-sublead">Always open to high-impact products, early-stage ventures, and ambitious design challenges.</p>
-      
-      <div class="footer-email-box">
-        <div class="footer-email-pill">
-          <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
-            <span class="email-text">sumitraiworks@gmail.com</span>
-            <span class="email-arrow">&nearr;</span>
-          </a>
-          <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address" title="Copy email address">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <span class="copy-toast">Copied!</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom navigation and meta -->
-    <div class="footer-bottom-nav">
-      <div class="footer-brand-side">
-        <span class="footer-mark">SR</span>
-        <span class="footer-name">Sumit Rai</span>
-        <span class="footer-sep">&middot;</span>
-        <span class="footer-exp-text">8+ years product design &middot; 12+ years design craft</span>
-      </div>
-
-      <div class="footer-links-group">
-        <div class="flinks-nav">
-          <a href="projects.html">Work <span class="nav-key">[W]</span></a>
-          <a href="about.html">About <span class="nav-key">[A]</span></a>
-          <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
-          <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
-          <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
-          <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
-        </div>
-
-        <div class="flinks-social">
-          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn <span class="shahi-arrow">&nearr;</span></a>
-          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X <span class="shahi-arrow">&nearr;</span></a>
-          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram <span class="shahi-arrow">&nearr;</span></a>
-          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF <span class="shahi-arrow">&darr;</span></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-credit-row">
-      <span>&copy; 2026 Sumit Rai. All rights reserved.</span>
-      <span>Designed with restraint &middot; Built for craft</span>
-    </div>
-
   </div>
 </footer>
 
@@ -316,306 +199,243 @@
     </div>
     <div class="cmd-list" id="cmdList">
       <a href="index.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span>Home</span>
-        </span>
+        <span class="item-left"><span>Home</span></span>
         <span class="cmd-shortcut">H</span>
       </a>
       <a href="projects.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <span>Selected Work (Projects)</span>
-        </span>
+        <span class="item-left"><span>Selected Work</span></span>
         <span class="cmd-shortcut">W</span>
       </a>
       <a href="about.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-          <span>About Sumit</span>
-        </span>
+        <span class="item-left"><span>About Sumit</span></span>
         <span class="cmd-shortcut">A</span>
       </a>
       <a href="resume.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          <span>Resume &amp; Credentials</span>
-        </span>
+        <span class="item-left"><span>Resume &amp; Credentials</span></span>
         <span class="cmd-shortcut">R</span>
       </a>
       <a href="resources.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
-          <span>Curated Resources (Books &amp; Tools)</span>
-        </span>
+        <span class="item-left"><span>Resources &amp; Gear</span></span>
         <span class="cmd-shortcut">B</span>
       </a>
       <a href="playground.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
-          <span>Playground (Raimage Lab)</span>
-        </span>
+        <span class="item-left"><span>Lab &amp; Shop</span></span>
         <span class="cmd-shortcut">P</span>
       </a>
       <a href="contact.html" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>Get in Touch (Contact Page)</span>
-        </span>
+        <span class="item-left"><span>Work with me</span></span>
         <span class="cmd-shortcut">C</span>
       </a>
+      <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="cmd-item">
+        <span class="item-left"><span>Substack Newsletter</span></span>
+        <span class="cmd-shortcut">SUB</span>
+      </a>
       <a href="assets/Sumit_Rai_Resume.pdf" download class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span>Download Resume PDF</span>
-        </span>
+        <span class="item-left"><span>Download Resume PDF</span></span>
         <span class="cmd-shortcut">PDF</span>
       </a>
-      <a href="mailto:sumitraiworks@gmail.com" class="cmd-item">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <span>Email Sumit (sumitraiworks@gmail.com)</span>
-        </span>
-        <span class="cmd-shortcut">@</span>
-      </a>
       <div class="cmd-item" id="cmdToggleTheme">
-        <span class="item-left">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
-          <span>Toggle Dark / Light Mode</span>
-        </span>
+        <span class="item-left"><span>Toggle Dark / Light Mode</span></span>
         <span class="cmd-shortcut">T</span>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Garden Note Reader Modal -->
+<div class="garden-modal" id="gardenModal" role="dialog" aria-modal="true" aria-label="Digital Garden Note">
+  <div class="garden-modal-box">
+    <button class="garden-modal-close" onclick="closeGardenNote()" aria-label="Close note">&times;</button>
+    <div id="gardenModalBody"></div>
+  </div>
+</div>
 <script>
 
-// ---- Global Audio, Clock, Theme & Command Palette Management ----
 (function(){
-  // 1. Web Audio Synthesizer Haptic Engine
-  const AudioEngine = (function(){
-    let ctx = null;
-    let enabled = localStorage.getItem('sr_sound') === 'true';
-
-    function init(){
-      if (!ctx && (window.AudioContext || window.webkitAudioContext)) {
-        ctx = new (window.AudioContext || window.webkitAudioContext)();
+  // Audio Feedback Engine
+  const AudioEngine = {
+    ctx: null,
+    enabled: true,
+    init() {
+      if (!this.ctx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) this.ctx = new AudioContext();
       }
-    }
-
-    function playTick(freq = 820, dur = 0.035, type = 'sine'){
-      if (!enabled) return;
+    },
+    playTick(freq = 900, dur = 0.02) {
+      if (!this.enabled) return;
       try {
-        init();
-        if (ctx.state === 'suspended') ctx.resume();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = type;
-        osc.frequency.setValueAtTime(freq, ctx.currentTime);
-        gain.gain.setValueAtTime(0.06, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+        this.init();
+        if (!this.ctx) return;
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+        gain.gain.setValueAtTime(0.025, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + dur);
         osc.connect(gain);
-        gain.connect(ctx.destination);
+        gain.connect(this.ctx.destination);
         osc.start();
-        osc.stop(ctx.currentTime + dur);
-      } catch(e) {}
+        osc.stop(this.ctx.currentTime + dur);
+      } catch(e){}
     }
+  };
 
-    function toggle(){
-      enabled = !enabled;
-      localStorage.setItem('sr_sound', enabled);
-      if (enabled) playTick(960, 0.05);
-      return enabled;
-    }
-
-    function isEnabled(){ return enabled; }
-
-    return { playTick, toggle, isEnabled };
-  })();
-
-  // Update Sound Button State
+  // Sound toggle button
   const soundBtn = document.getElementById('soundToggleBtn');
   const soundIcon = document.getElementById('soundIcon');
   const soundLabel = document.getElementById('soundLabel');
-  function updateSoundUI(){
-    const on = AudioEngine.isEnabled();
-    if (soundIcon) soundIcon.textContent = on ? '🔊' : '🔇';
-    if (soundLabel) soundLabel.textContent = on ? 'Sound' : 'Muted';
-    if (soundBtn) soundBtn.classList.toggle('active', on);
-  }
-  updateSoundUI();
   if (soundBtn) {
     soundBtn.addEventListener('click', function(){
-      AudioEngine.toggle();
-      updateSoundUI();
+      AudioEngine.enabled = !AudioEngine.enabled;
+      if (soundIcon) soundIcon.textContent = AudioEngine.enabled ? '🔊' : '🔇';
+      if (soundLabel) soundLabel.textContent = AudioEngine.enabled ? 'Sound' : 'Mute';
+      if (AudioEngine.enabled) AudioEngine.playTick(1000, 0.03);
     });
   }
 
-  // Play micro click on link / button clicks
-  document.addEventListener('click', function(e){
-    if (e.target.closest('a, button, .proj-card, .tool-tile, .resource-card, .pg-card-rich')) {
-      AudioEngine.playTick(780, 0.028);
+  // Theme Management
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlEl = document.documentElement;
+  const savedTheme = localStorage.getItem('folio_theme') || 'light';
+  htmlEl.setAttribute('data-theme', savedTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      AudioEngine.playTick(1200, 0.03);
+      const cur = htmlEl.getAttribute('data-theme') || 'light';
+      const nxt = cur === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', nxt);
+      localStorage.setItem('folio_theme', nxt);
+    });
+  }
+
+  // Mobile drawer toggle
+  const menuToggle = document.getElementById('navMenuToggle');
+  const drawer = document.getElementById('mobileNavDrawer');
+  if (menuToggle && drawer) {
+    menuToggle.addEventListener('click', () => {
+      AudioEngine.playTick(750, 0.03);
+      const open = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !open);
+      drawer.setAttribute('aria-hidden', open);
+      drawer.classList.toggle('active', !open);
+    });
+  }
+
+  // Real-time Delhi IST Clock
+  function updateDelhiClock() {
+    const el = document.getElementById('liveClockText');
+    if (!el) return;
+    try {
+      const now = new Date();
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+      el.textContent = now.toLocaleTimeString('en-US', options) + ' IST';
+    } catch(e) {
+      el.textContent = '17:30 IST';
     }
-  });
-
-  // 2. Real-time New Delhi (IST) Clock
-  function updateDelhiClock(){
-    const textEl = document.getElementById('liveClockText');
-    const now = new Date();
-    // New Delhi is UTC +5:30
-    const istOffset = 5.5 * 60 * 60 * 1000;
-    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-    const delhiDate = new Date(utc + istOffset);
-
-    let h = delhiDate.getHours();
-    const m = String(delhiDate.getMinutes()).padStart(2, '0');
-    const s = String(delhiDate.getSeconds()).padStart(2, '0');
-    const ampm = h >= 12 ? 'PM' : 'AM';
-    h = h % 12 || 12;
-
-    const formatted = `${h}:${m}:${s} ${ampm} IST`;
-    if (textEl) textEl.textContent = formatted;
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
 
-  // 3. Dark/Light Mode
-  const root = document.documentElement;
-  const themeToggle = document.getElementById('themeToggle');
-  const storedTheme = localStorage.getItem('sr_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  if (storedTheme === 'dark') root.setAttribute('data-theme', 'dark');
-
-  function toggleTheme(){
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    const next = isDark ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    localStorage.setItem('sr_theme', next);
-    AudioEngine.playTick(isDark ? 650 : 880, 0.04);
-  }
-  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
-
-  // 4. Scroll Header — add scrolled class for backdrop effect
-  const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', function(){
-    if (header) {
-      header.classList.toggle('nav-scrolled', window.scrollY > 40);
-    }
-  }, { passive: true });
-
-  // 5. Mobile Nav Toggle (hamburger)
-  const navMenuToggle = document.getElementById('navMenuToggle');
-  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
-  if (navMenuToggle && mobileNavDrawer) {
-    navMenuToggle.addEventListener('click', function(){
-      const isOpen = mobileNavDrawer.classList.toggle('open');
-      navMenuToggle.setAttribute('aria-expanded', isOpen);
-      mobileNavDrawer.setAttribute('aria-hidden', !isOpen);
-      navMenuToggle.classList.toggle('open', isOpen);
-    });
-    // Close drawer on nav link click
-    mobileNavDrawer.querySelectorAll('a').forEach(function(link){
-      link.addEventListener('click', function(){
-        mobileNavDrawer.classList.remove('open');
-        navMenuToggle.setAttribute('aria-expanded', 'false');
-        navMenuToggle.classList.remove('open');
-      });
-    });
-  }
-
-  // 6. Copy Email with Toast & Audio
-  const copyBtn = document.getElementById('copyEmailBtn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      navigator.clipboard.writeText('sumitraiworks@gmail.com').then(function(){
-        copyBtn.classList.add('copied');
-        AudioEngine.playTick(1020, 0.06);
-        setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
-      });
-    });
-  }
-
-  // 7. Command + K Palette
+  // Command + K Palette
   const cmdModal = document.getElementById('cmdModal');
-  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
   const cmdInput = document.getElementById('cmdInput');
-  const cmdList = document.getElementById('cmdList');
-  const cmdThemeBtn = document.getElementById('cmdToggleTheme');
+  const cmdTrigger = document.getElementById('cmdPaletteTrigger');
 
-  function openCmd(){
-    if (!cmdModal) return;
-    cmdModal.classList.add('active');
-    AudioEngine.playTick(720, 0.03);
-    if (cmdInput) {
-      cmdInput.value = '';
-      cmdInput.focus();
+  function openCmd() {
+    AudioEngine.playTick(950, 0.03);
+    if (cmdModal) {
+      cmdModal.classList.add('active');
+      if (cmdInput) {
+        cmdInput.value = '';
+        cmdInput.focus();
+      }
+      document.body.style.overflow = 'hidden';
     }
-    filterCmd('');
   }
 
-  function closeCmd(){
-    if (!cmdModal) return;
-    cmdModal.classList.remove('active');
+  function closeCmd() {
+    if (cmdModal) {
+      cmdModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   }
 
   if (cmdTrigger) cmdTrigger.addEventListener('click', openCmd);
   if (cmdModal) {
-    cmdModal.addEventListener('click', function(e){
+    cmdModal.addEventListener('click', (e) => {
       if (e.target === cmdModal) closeCmd();
     });
   }
 
-  if (cmdThemeBtn) {
-    cmdThemeBtn.addEventListener('click', function(){
-      toggleTheme();
-      closeCmd();
-    });
-  }
+  // Garden Modal Reader
+  window.openGardenNote = function(noteId) {
+    const note = (window.GARDEN_DATA || []).find(n => n.id === noteId);
+    if (!note) return;
+    const body = document.getElementById('gardenModalBody');
+    const modal = document.getElementById('gardenModal');
+    if (!body || !modal) return;
+    body.innerHTML = `
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+        <span class="garden-tag">${note.topic}</span>
+        <span class="garden-date">${note.date} &middot; ${note.read}</span>
+      </div>
+      <h2 style="font-size:24px; font-weight:700; letter-spacing:-0.025em; margin-bottom:20px; line-height:1.25; color:var(--ink);">${note.title}</h2>
+      <div style="font-size:15px; line-height:1.7; color:var(--ink-soft);">${note.content}</div>
+      <div style="margin-top:32px; padding-top:20px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <span style="font-size:12px; color:var(--ink-muted); font-family:var(--font-mono);">From Sumit Rai's Digital Garden</span>
+        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" style="font-size:13px; font-weight:600; color:var(--accent); text-decoration:none;">Read on Substack <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+    `;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    AudioEngine.playTick(880, 0.03);
+  };
 
-  function filterCmd(q){
-    if (!cmdList) return;
-    const items = cmdList.querySelectorAll('.cmd-item');
-    const query = q.trim().toLowerCase();
-    items.forEach(function(item){
-      const text = item.textContent.toLowerCase();
-      item.style.display = (!query || text.includes(query)) ? 'flex' : 'none';
-    });
-  }
+  window.closeGardenNote = function() {
+    const modal = document.getElementById('gardenModal');
+    if (modal) modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
 
-  if (cmdInput) {
-    cmdInput.addEventListener('input', function(e){
-      filterCmd(e.target.value);
-    });
-  }
-
-  // 8. Global Keyboard Shortcuts Navigation (inspired by shahimim.com)
+  // Keyboard Shortcuts Navigation
   document.addEventListener('keydown', function(e){
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) closeCmd();
+      else openCmd();
+      return;
+    }
+
+    if (e.key === 'Escape') {
+      const gModal = document.getElementById('gardenModal');
+      if (gModal && gModal.classList.contains('active')) {
+        closeGardenNote();
+        return;
+      }
       if (cmdModal && cmdModal.classList.contains('active')) {
         closeCmd();
-      } else {
-        openCmd();
+        return;
       }
-      return;
+      const curPage = document.body.dataset.page;
+      if (curPage && curPage !== 'index') {
+        AudioEngine.playTick(820, 0.03);
+        window.location.href = 'index.html';
+        return;
+      }
     }
 
-    if (cmdModal && cmdModal.classList.contains('active')) {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        closeCmd();
-      }
-      return;
-    }
-
-    // Do not trigger navigation when typing in inputs or holding modifier keys
     const tag = (e.target.tagName || '').toLowerCase();
-    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) {
-      return;
-    }
-    if (e.metaKey || e.ctrlKey || e.altKey) {
-      return;
-    }
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
 
     const key = e.key.toLowerCase();
     if (key === 'w') {
@@ -636,9 +456,12 @@
     } else if (key === 'c') {
       AudioEngine.playTick(820, 0.03);
       window.location.href = 'contact.html';
-    } else if (e.key === 'Escape') {
-      AudioEngine.playTick(820, 0.03);
-      window.location.href = 'index.html';
+    } else if (key === 't') {
+      AudioEngine.playTick(1200, 0.03);
+      const cur = htmlEl.getAttribute('data-theme') || 'light';
+      const nxt = cur === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', nxt);
+      localStorage.setItem('folio_theme', nxt);
     }
   });
 })();
