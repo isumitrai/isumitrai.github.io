@@ -4750,3 +4750,97 @@ button:hover .shahi-arrow,
     display: none !important;
   }
 }
+
+
+/* ============================================================
+   Tools Grid — Brand Logo Tiles (updated)
+   ============================================================ */
+
+.tools-grid-new {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+@media (max-width: 900px) {
+  .tools-grid-new { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 600px) {
+  .tools-grid-new { grid-template-columns: repeat(3, 1fr); }
+}
+
+.tool-tile-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-tile-new:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px -8px var(--accent-glow);
+}
+
+/* Logo container — always square, brand bg */
+.tool-logo-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.tool-tile-new:hover .tool-logo-wrap {
+  transform: scale(1.07);
+}
+
+/* CDN logo image */
+.tool-logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Monogram for AI tools / custom */
+.tool-mono {
+  font-family: var(--font-mono);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.tool-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.tool-sub {
+  font-size: 11px;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  margin-top: -4px;
+}
+
+/* Dark mode: invert white logos (GitHub, Notion etc.) */
+[data-theme="dark"] .tool-logo-img[src*="github"],
+[data-theme="dark"] .tool-logo-img[src*="notion"],
+[data-theme="dark"] .tool-logo-img[src*="cinema4d"] {
+  filter: invert(1);
+}

@@ -346,12 +346,93 @@ SETUP_ITEMS = [
 ]
 
 TOOLS = [
-    {"name": "Figma", "img": "./assets/src/tools_001.jpg"},
-    {"name": "Claude & Gemini", "img": "./assets/src/tools_002.jpg"},
-    {"name": "React & TypeScript", "img": "./assets/src/tools_003.jpg"},
-    {"name": "Cursor & VS Code", "img": "./assets/src/tools_004.jpg"},
-    {"name": "Linear & Git", "img": "./assets/src/tools_005.jpg"},
-    {"name": "Cinema 4D / 3D", "img": "./assets/src/tools_006.jpg"}
+    {
+        "name": "Figma",
+        "sub": "UI Design",
+        "slug": "figma",
+        "color": "#F24E1E",
+        "bg": "#FFF1EE"
+    },
+    {
+        "name": "Claude",
+        "sub": "AI Coding",
+        "slug": None,
+        "color": "#CC785C",
+        "bg": "#FDF3EF",
+        "mono": "Cl"
+    },
+    {
+        "name": "Gemini",
+        "sub": "AI Research",
+        "slug": None,
+        "color": "#4285F4",
+        "bg": "#EEF4FF",
+        "mono": "G•"
+    },
+    {
+        "name": "React",
+        "sub": "Frontend",
+        "slug": "react",
+        "color": "#61DAFB",
+        "bg": "#F0FAFE"
+    },
+    {
+        "name": "TypeScript",
+        "sub": "Language",
+        "slug": "typescript",
+        "color": "#3178C6",
+        "bg": "#EEF4FB"
+    },
+    {
+        "name": "VS Code",
+        "sub": "Editor",
+        "slug": "visualstudiocode",
+        "color": "#007ACC",
+        "bg": "#EEF7FF"
+    },
+    {
+        "name": "Cursor",
+        "sub": "AI Editor",
+        "slug": None,
+        "color": "#1A1A1A",
+        "bg": "#F5F5F5",
+        "mono": "Cu"
+    },
+    {
+        "name": "Linear",
+        "sub": "Planning",
+        "slug": "linear",
+        "color": "#5E6AD2",
+        "bg": "#F0F1FB"
+    },
+    {
+        "name": "Git & GitHub",
+        "sub": "Version Control",
+        "slug": "github",
+        "color": "#181717",
+        "bg": "#F5F5F5"
+    },
+    {
+        "name": "Cinema 4D",
+        "sub": "3D Design",
+        "slug": "cinema4d",
+        "color": "#011A6A",
+        "bg": "#EEF0F9"
+    },
+    {
+        "name": "Tailwind CSS",
+        "sub": "Styling",
+        "slug": "tailwindcss",
+        "color": "#06B6D4",
+        "bg": "#F0FBFC"
+    },
+    {
+        "name": "Notion",
+        "sub": "Docs & Notes",
+        "slug": "notion",
+        "color": "#000000",
+        "bg": "#F5F5F5"
+    }
 ]
 
 def get_head(title="Sumit Rai — Senior Product Designer | AI Builder", active_page="index"):
@@ -412,9 +493,9 @@ def get_nav(active_page):
     </div>
 
     <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
-      <a href="projects.html">Selected Work <span class="nav-key">[W]</span></a>
-      <a href="about.html">About Me <span class="nav-key">[A]</span></a>
-      <a href="resources.html">Resources &amp; Gear <span class="nav-key">[B]</span></a>
+      <a href="projects.html">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
       <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
     </nav>
 
@@ -878,10 +959,21 @@ def build_index():
 
     tools_html = ""
     for t in TOOLS:
+        if t.get("slug"):
+            # Use Simple Icons CDN logo
+            logo_html = f'<img src="https://cdn.simpleicons.org/{t["slug"]}" alt="{t["name"]} logo" loading="lazy" class="tool-logo-img" />'
+        else:
+            # Styled monogram for AI tools / tools without CDN entry
+            mono = t.get("mono", t["name"][:2])
+            logo_html = f'<span class="tool-mono" style="color:{t["color"]};">{mono}</span>'
+
         tools_html += f"""
-        <div class="tool-tile" title="{t['name']}">
-          <img src="{t['img']}" alt="{t['name']}" loading="lazy" />
+        <div class="tool-tile-new" title="{t['name']}">
+          <div class="tool-logo-wrap" style="background:{t['bg']};">
+            {logo_html}
+          </div>
           <span class="tool-name">{t['name']}</span>
+          <span class="tool-sub">{t['sub']}</span>
         </div>
 """
 
@@ -988,7 +1080,7 @@ def build_index():
           <p>My daily instruments for product strategy, UI design, generative prototyping, and code production.</p>
         </div>
       </div>
-      <div class="tools-grid-clean">
+      <div class="tools-grid-new">
         {tools_html}
       </div>
     </section>
