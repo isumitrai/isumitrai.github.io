@@ -544,8 +544,7 @@ footer_html = """
       </div>
       <div class="footer-col-item">
         <span class="f-col-header">SUBSTACK</span>
-        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="f-col-link">isumitrai.substack.com <span class="shahi-arrow">&nearr;</span></a>
-      </div>
+        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="f-col-link">isumitrai <span class="shahi-arrow">&nearr;</span></a>      </div>
       <div class="footer-col-item">
         <span class="f-col-header">EMAIL</span>
         <a href="mailto:sumitraiworks@gmail.com" class="f-col-link">sumitraiworks@gmail.com <span class="shahi-arrow">&nearr;</span></a>
@@ -604,10 +603,6 @@ footer_html = """
       <a href="contact.html" class="cmd-item">
         <span class="item-left"><span>Contact</span></span>
         <span class="cmd-shortcut">C</span>
-      </a>
-      <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="cmd-item">
-        <span class="item-left"><span>Substack Newsletter</span></span>
-        <span class="cmd-shortcut">SUB</span>
       </a>
       <a href="assets/Sumit_Rai_Resume.pdf" download class="cmd-item">
         <span class="item-left"><span>Download Resume PDF</span></span>
@@ -838,7 +833,6 @@ global_js = """
       <div style="font-size:15px; line-height:1.7; color:var(--ink-soft);">${note.content}</div>
       <div style="margin-top:32px; padding-top:20px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
         <span style="font-size:12px; color:var(--ink-muted); font-family:var(--font-mono);">From Sumit Rai's Digital Garden</span>
-        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" style="font-size:13px; font-weight:600; color:var(--accent); text-decoration:none;">Read on Substack <span class="shahi-arrow">&nearr;</span></a>
       </div>
     `;
     modal.classList.add('active');
@@ -1288,7 +1282,6 @@ def build_about():
         <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;">
           <a href="resume.html" class="btn btn-primary">Read Resume <span class="btn-key">[R]</span></a>
           <a href="resources.html" class="btn btn-secondary">Curated Resources <span class="btn-key">[B]</span></a>
-          <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="btn btn-secondary">Substack <span class="shahi-arrow">&nearr;</span></a>
         </div>
       </div>
 
@@ -1485,13 +1478,6 @@ def build_resources():
         Well-designed things worth owning, books worth reading, tools worth keeping, links worth saving. Curated by Sumit Rai.
       </p>
 
-      <!-- Substack callout -->
-      <div style="margin-top:16px;">
-        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;">
-          <span>Read Writing on Substack</span>
-          <span class="shahi-arrow">&nearr;</span>
-        </a>
-      </div>
     </div>
 
     <!-- Filter Buttons & Search -->
@@ -1745,136 +1731,167 @@ def build_playground():
     return get_head("Playground (Design & Shop) — Sumit Rai", "playground") + get_nav("playground") + content + footer_html + f"<script>\n{global_js}\n{pg_js}\n</script>\n</body>\n</html>"
 
 def build_contact():
-    content = f"""
+    content = """
 <main class="page-body">
   <div class="wrap-wide">
-    
-    <!-- HEADER -->
-    <div style="margin-bottom:48px;">
-      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
-        <span style="font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--accent);">[C]</span>
-        <h1 style="font-size:32px; font-weight:700; letter-spacing:-0.03em; margin:0; color:var(--ink);">Contact</h1>
-      </div>
-      <p style="font-size:15px; color:var(--ink-soft); max-width:600px; line-height:1.6; margin:0;">
-        Available for select product leadership, design advisory, and high-impact full-time roles worldwide.
-      </p>
-    </div>
 
-    <!-- 3-TIER COLLABORATION TIERS -->
-    <div class="work-tiers-list">
-      <div class="work-tier-card">
-        <div class="work-tier-grid">
-          <div class="work-tier-left">
-            <span style="font-family:var(--font-mono); font-size:11px; color:var(--ink-muted);">For Founders &amp; design leads</span>
-            <span class="work-tier-num">01</span>
-            <h3>Advisory &amp; coaching</h3>
-            <div class="work-tier-lead">A thinking partner for the hard calls.</div>
-            <p class="work-tier-sub">Product direction, design team structure, when to hire and when to automate with AI.</p>
-          </div>
-          <div class="work-tier-right">
-            <ul>
-              <li>Product direction and roadmap pressure-testing</li>
-              <li>Design team structure and hiring strategy</li>
-              <li>Design maturity and scalable token process coaching</li>
-            </ul>
-          </div>
-        </div>
-        <div class="work-tier-meta-row">
-          <div>
-            <div class="meta-label">FORMAT</div>
-            <div class="meta-val">Monthly retainer or per session</div>
-          </div>
-          <div>
-            <div class="meta-label">BEST FOR</div>
-            <div class="meta-val">Founders without a design background, design leads at Series A/B</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-tier-card">
-        <div class="work-tier-grid">
-          <div class="work-tier-left">
-            <span style="font-family:var(--font-mono); font-size:11px; color:var(--ink-muted);">For Designers</span>
-            <span class="work-tier-num">02</span>
-            <h3>Design mentorship</h3>
-            <div class="work-tier-lead">Focus on the right path for your career.</div>
-            <p class="work-tier-sub">Honest feedback, portfolio critiques, and a clear path forward for your design craft.</p>
-          </div>
-          <div class="work-tier-right">
-            <ul>
-              <li>Portfolio and case study deep-dives</li>
-              <li>Career positioning and narrative coaching</li>
-              <li>Interview preparation and presentation coaching</li>
-            </ul>
-          </div>
-        </div>
-        <div class="work-tier-meta-row">
-          <div>
-            <div class="meta-label">FORMAT</div>
-            <div class="meta-val">Bi-weekly or monthly 1:1 sessions</div>
-          </div>
-          <div>
-            <div class="meta-label">BEST FOR</div>
-            <div class="meta-val">Mid-level designers aiming for senior or staff, career pivoters</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-tier-card">
-        <div class="work-tier-grid">
-          <div class="work-tier-left">
-            <span style="font-family:var(--font-mono); font-size:11px; color:var(--ink-muted);">For Conferences &amp; teams</span>
-            <span class="work-tier-num">03</span>
-            <h3>Talks &amp; panels</h3>
-            <div class="work-tier-lead">Stories from the work, not slides about it.</div>
-            <p class="work-tier-sub">Product design, growth, and building with AI, told through real production casework.</p>
-          </div>
-          <div class="work-tier-right">
-            <ul>
-              <li>Conference talks and keynotes</li>
-              <li>Panels and fireside conversations</li>
-              <li>Internal team sessions and interactive workshops</li>
-            </ul>
-          </div>
-        </div>
-        <div class="work-tier-meta-row">
-          <div>
-            <div class="meta-label">FORMAT</div>
-            <div class="meta-val">Keynote, panel or internal workshop</div>
-          </div>
-          <div>
-            <div class="meta-label">BEST FOR</div>
-            <div class="meta-val">Design and product conferences, meetups, team offsites</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TICKET TEAR BANNER -->
-    <div class="tear-banner">
-      <div>
-        <h3 style="font-size:17px; font-weight:600; margin:0 0 4px; color:var(--ink);">Book a mentorship session or discuss advisory</h3>
-        <p style="font-size:13.5px; color:var(--ink-soft); margin:0;">Direct 1:1 sessions for design leads, founders and teams.</p>
-      </div>
-      <div style="display:flex; align-items:center; gap:16px;">
-        <span class="tear-line">TEAR HERE &bull; &bull; &bull;</span>
-        <a href="mailto:sumitraiworks@gmail.com?subject=Contact%20%26%20Collaboration%20Inquiry" class="btn btn-primary">
-          <span>Get in Touch</span>
+    <!-- HERO -->
+    <section class="contact-hero">
+      <div class="contact-hero-left">
+        <span class="eyebrow"><span class="dot"></span> Get in Touch</span>
+        <h1>Let's work<br>together.</h1>
+        <p class="contact-hero-sub">
+          I'm available for senior product design roles, design systems advisory,<br>
+          mentorship, and conference talks. The best work starts with a conversation.
+        </p>
+        <a href="mailto:sumitraiworks@gmail.com?subject=Hello%20Sumit"
+           class="contact-email-link">
+          sumitraiworks@gmail.com
           <span class="shahi-arrow">&nearr;</span>
         </a>
       </div>
-    </div>
 
-    <!-- SUBSTACK PROMPT -->
-    <div style="margin-top:40px; padding:24px; border:1px solid var(--line); border-radius:var(--radius-md); background:var(--surface); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
-      <div>
-        <h4 style="font-size:15px; font-weight:600; margin:0 0 4px; color:var(--ink);">Follow my writing on Substack</h4>
-        <p style="font-size:13px; color:var(--ink-soft); margin:0;">Weekly reflections on product design, AI interfaces, and studio craft.</p>
+      <!-- Quick links panel -->
+      <div class="contact-links-panel">
+        <div class="contact-link-row">
+          <span class="contact-link-label">LINKEDIN</span>
+          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener" class="contact-link-val">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+        </div>
+        <div class="contact-link-row">
+          <span class="contact-link-label">INSTAGRAM</span>
+          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener" class="contact-link-val">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+        </div>
+        <div class="contact-link-row">
+          <span class="contact-link-label">GITHUB</span>
+          <a href="https://github.com/isumitrai" target="_blank" rel="noopener" class="contact-link-val">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+        </div>
+        <div class="contact-link-row">
+          <span class="contact-link-label">X / TWITTER</span>
+          <a href="https://x.com/isumitrai" target="_blank" rel="noopener" class="contact-link-val">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+        </div>
+        <div class="contact-link-row">
+          <span class="contact-link-label">EMAIL</span>
+          <a href="mailto:sumitraiworks@gmail.com" class="contact-link-val">sumitraiworks@gmail.com <span class="shahi-arrow">&nearr;</span></a>
+        </div>
       </div>
-      <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="btn btn-secondary">
-        <span>isumitrai.substack.com</span>
-        <span class="shahi-arrow">&nearr;</span>
-      </a>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="contact-section-divider"></div>
+
+    <!-- WHAT I OFFER — 3 tiers -->
+    <section class="contact-tiers-section">
+      <div class="contact-tiers-header">
+        <span class="eyebrow"><span class="dot"></span> How I can help</span>
+        <h2>Three ways to work together.</h2>
+        <p>Mentorship books from the page; the rest starts with an email.</p>
+      </div>
+
+      <div class="work-tiers-list">
+
+        <div class="work-tier-card">
+          <div class="work-tier-grid">
+            <div class="work-tier-left">
+              <span class="work-tier-audience">For Founders &amp; design leads</span>
+              <span class="work-tier-num">01</span>
+              <h3>Advisory &amp; coaching</h3>
+              <div class="work-tier-lead">A thinking partner for the hard calls.</div>
+              <p class="work-tier-sub">Product direction, design team structure, when to hire and when to automate with AI.</p>
+            </div>
+            <div class="work-tier-right">
+              <ul>
+                <li>Product direction and roadmap pressure-testing</li>
+                <li>Design team structure and hiring strategy</li>
+                <li>Design maturity and scalable token process coaching</li>
+              </ul>
+            </div>
+          </div>
+          <div class="work-tier-meta-row">
+            <div>
+              <div class="meta-label">FORMAT</div>
+              <div class="meta-val">Monthly retainer or per session</div>
+            </div>
+            <div>
+              <div class="meta-label">BEST FOR</div>
+              <div class="meta-val">Founders without a design background, design leads at Series A/B</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-tier-card">
+          <div class="work-tier-grid">
+            <div class="work-tier-left">
+              <span class="work-tier-audience">For Designers</span>
+              <span class="work-tier-num">02</span>
+              <h3>Design mentorship</h3>
+              <div class="work-tier-lead">Focus on the right path for your career.</div>
+              <p class="work-tier-sub">Honest feedback, portfolio critiques, and a clear path forward for your design craft.</p>
+            </div>
+            <div class="work-tier-right">
+              <ul>
+                <li>Portfolio and case study deep-dives</li>
+                <li>Career positioning and narrative coaching</li>
+                <li>Interview preparation and presentation coaching</li>
+              </ul>
+            </div>
+          </div>
+          <div class="work-tier-meta-row">
+            <div>
+              <div class="meta-label">FORMAT</div>
+              <div class="meta-val">Bi-weekly or monthly 1:1 sessions</div>
+            </div>
+            <div>
+              <div class="meta-label">BEST FOR</div>
+              <div class="meta-val">Mid-level designers aiming for senior or staff, career pivoters</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-tier-card">
+          <div class="work-tier-grid">
+            <div class="work-tier-left">
+              <span class="work-tier-audience">For Conferences &amp; teams</span>
+              <span class="work-tier-num">03</span>
+              <h3>Talks &amp; panels</h3>
+              <div class="work-tier-lead">Stories from the work, not slides about it.</div>
+              <p class="work-tier-sub">Product design, growth, and building with AI, told through real production casework.</p>
+            </div>
+            <div class="work-tier-right">
+              <ul>
+                <li>Conference talks and keynotes</li>
+                <li>Panels and fireside conversations</li>
+                <li>Internal team sessions and interactive workshops</li>
+              </ul>
+            </div>
+          </div>
+          <div class="work-tier-meta-row">
+            <div>
+              <div class="meta-label">FORMAT</div>
+              <div class="meta-val">Keynote, panel or internal workshop</div>
+            </div>
+            <div>
+              <div class="meta-label">BEST FOR</div>
+              <div class="meta-val">Design and product conferences, meetups, team offsites</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TEAR TICKET -->
+    <div class="tear-banner">
+      <div>
+        <h3 style="font-size:17px; font-weight:600; margin:0 0 4px; color:var(--ink);">Book a session or start a conversation</h3>
+        <p style="font-size:13.5px; color:var(--ink-soft); margin:0;">Direct 1:1 for design leads, founders and teams. No gatekeeping.</p>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span class="tear-line">TEAR HERE &bull; &bull; &bull;</span>
+        <a href="mailto:sumitraiworks@gmail.com?subject=Let%27s%20Work%20Together" class="btn btn-primary">
+          <span>Send a message</span>
+          <span class="shahi-arrow">&nearr;</span>
+        </a>
+      </div>
     </div>
 
   </div>
