@@ -14,63 +14,28 @@
 </head>
 <body data-page="resources">
 
-<header class="nav-wrap" id="siteHeader">
-  <div class="nav-pill">
-    <div class="nav-logo-group">
-      
-      <a href="index.html" class="nav-back-pill" title="Back to Home [Esc]">
-        <span class="back-arrow">&larr;</span>
-        <span class="back-text">Back</span>
-        <span class="nav-key">[Esc]</span>
-      </a>
-      <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
-        <span class="sr-mark">SR</span>
-        <span>Sumit Rai</span>
-      </a>
-    </div>
+<header class="inner-page-header">
+  <div class="wrap-wide inner-header-row">
+    <a href="index.html" class="inner-back-btn" title="Back to Home [Esc]">
+      <span class="back-arrow">&larr;</span>
+      <span class="back-text">Back</span>
+      <span class="nav-key">[Esc]</span>
+    </a>
 
-    <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
-      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
-      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
-      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
-      <a href="resources.html" class="active">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="">Lab &amp; Shop <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="">Work with me <span class="nav-key">[C]</span></a>
-    </nav>
-
-    <div class="nav-right-actions">
+    <div class="inner-right-actions">
       <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
         <span id="soundIcon">🔊</span>
-        <span id="soundLabel" class="sound-label-text">Sound</span>
       </button>
       <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)" title="Quick Command Palette (Cmd+K)">
         <kbd>⌘K</kbd>
       </button>
-      <button class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+      <button class="theme-toggle-inline" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
     </div>
   </div>
-
-  <!-- Mobile nav drawer -->
-  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
-    <nav class="mobile-nav-links">
-      <a href="index.html" class="">Home <span class="nav-key">[Esc]</span></a>
-      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
-      <a href="about.html" class="">About <span class="nav-key">[A]</span></a>
-      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
-      <a href="resources.html" class="active">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="">Lab &amp; Shop <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="">Work with me <span class="nav-key">[C]</span></a>
-    </nav>
-  </div>
 </header>
-
-<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
-  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-</button>
 
 <main class="page-body">
   <div class="wrap-wide">
@@ -425,7 +390,37 @@
       </div>
       <div class="garden-list">
         
-        <div class="garden-item" onclick="openGardenNote('g-1')" role="button" tabindex="0" aria-label="Read The Illusion of Productivity">
+        <div class="garden-item" onclick="openGardenNote('g-1')" role="button" tabindex="0" aria-label="Read Is the design we practice worth saving?">
+          <div class="garden-left-meta">
+            <span class="garden-tag">Design Philosophy</span>
+            <span class="garden-date">26.05.26</span>
+          </div>
+          <div class="garden-main-body">
+            <h3 class="garden-title">Is the design we practice worth saving?</h3>
+            <p class="garden-snippet">Every think piece about restructuring design teams for AI starts with a false premise.</p>
+          </div>
+          <div class="garden-right-meta">
+            <span class="garden-read-time">6 min read</span>
+            <span class="shahi-arrow">&nearr;</span>
+          </div>
+        </div>
+
+        <div class="garden-item" onclick="openGardenNote('g-2')" role="button" tabindex="0" aria-label="Read Stop adding confetti to your product">
+          <div class="garden-left-meta">
+            <span class="garden-tag">Product Craft</span>
+            <span class="garden-date">12.10.25</span>
+          </div>
+          <div class="garden-main-body">
+            <h3 class="garden-title">Stop adding confetti to your product</h3>
+            <p class="garden-snippet">We talk about 'delight' a lot in product meetings, but most of the time, it means adding confetti, sounds, or cosmetic polish over broken fundamentals.</p>
+          </div>
+          <div class="garden-right-meta">
+            <span class="garden-read-time">8 min read</span>
+            <span class="shahi-arrow">&nearr;</span>
+          </div>
+        </div>
+
+        <div class="garden-item" onclick="openGardenNote('g-3')" role="button" tabindex="0" aria-label="Read The Illusion of Productivity">
           <div class="garden-left-meta">
             <span class="garden-tag">Product Strategy</span>
             <span class="garden-date">19.04.26</span>
@@ -440,7 +435,7 @@
           </div>
         </div>
 
-        <div class="garden-item" onclick="openGardenNote('g-2')" role="button" tabindex="0" aria-label="Read The Engagement Paradox">
+        <div class="garden-item" onclick="openGardenNote('g-4')" role="button" tabindex="0" aria-label="Read The Engagement Paradox">
           <div class="garden-left-meta">
             <span class="garden-tag">UX Ethics</span>
             <span class="garden-date">22.10.25</span>
@@ -455,22 +450,7 @@
           </div>
         </div>
 
-        <div class="garden-item" onclick="openGardenNote('g-3')" role="button" tabindex="0" aria-label="Read When Measuring Something Destroys It">
-          <div class="garden-left-meta">
-            <span class="garden-tag">UX Metrics</span>
-            <span class="garden-date">08.08.25</span>
-          </div>
-          <div class="garden-main-body">
-            <h3 class="garden-title">When Measuring Something Destroys It</h3>
-            <p class="garden-snippet">When a metric becomes a target, it ceases to be a good metric. Goodhart's Law in interfaces.</p>
-          </div>
-          <div class="garden-right-meta">
-            <span class="garden-read-time">4 min read</span>
-            <span class="shahi-arrow">&nearr;</span>
-          </div>
-        </div>
-
-        <div class="garden-item" onclick="openGardenNote('g-4')" role="button" tabindex="0" aria-label="Read Dogfooding: You Can't Outsource Empathy">
+        <div class="garden-item" onclick="openGardenNote('g-5')" role="button" tabindex="0" aria-label="Read Dogfooding: You Can't Outsource Empathy">
           <div class="garden-left-meta">
             <span class="garden-tag">Design Craft</span>
             <span class="garden-date">15.06.25</span>
@@ -485,7 +465,7 @@
           </div>
         </div>
 
-        <div class="garden-item" onclick="openGardenNote('g-5')" role="button" tabindex="0" aria-label="Read Interface Clarity Is Subtracted Decisions">
+        <div class="garden-item" onclick="openGardenNote('g-6')" role="button" tabindex="0" aria-label="Read Interface Clarity Is Subtracted Decisions">
           <div class="garden-left-meta">
             <span class="garden-tag">Systems</span>
             <span class="garden-date">12.04.25</span>
@@ -496,21 +476,6 @@
           </div>
           <div class="garden-right-meta">
             <span class="garden-read-time">4 min read</span>
-            <span class="shahi-arrow">&nearr;</span>
-          </div>
-        </div>
-
-        <div class="garden-item" onclick="openGardenNote('g-6')" role="button" tabindex="0" aria-label="Read Competitor Analysis: Baseline, Not North Star">
-          <div class="garden-left-meta">
-            <span class="garden-tag">Strategy</span>
-            <span class="garden-date">20.01.25</span>
-          </div>
-          <div class="garden-main-body">
-            <h3 class="garden-title">Competitor Analysis: Baseline, Not North Star</h3>
-            <p class="garden-snippet">Mimicry inherits competitors' unvalidated mistakes and structural technical debt.</p>
-          </div>
-          <div class="garden-right-meta">
-            <span class="garden-read-time">3 min read</span>
             <span class="shahi-arrow">&nearr;</span>
           </div>
         </div>
@@ -584,11 +549,11 @@
         <span class="cmd-shortcut">B</span>
       </a>
       <a href="playground.html" class="cmd-item">
-        <span class="item-left"><span>Lab &amp; Shop</span></span>
+        <span class="item-left"><span>Playground (Design &amp; Shop)</span></span>
         <span class="cmd-shortcut">P</span>
       </a>
       <a href="contact.html" class="cmd-item">
-        <span class="item-left"><span>Work with me</span></span>
+        <span class="item-left"><span>Contact</span></span>
         <span class="cmd-shortcut">C</span>
       </a>
       <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="cmd-item">
@@ -617,7 +582,6 @@
 <script>
 
 (function(){
-  // Audio Feedback Engine
   const AudioEngine = {
     ctx: null,
     enabled: true,
@@ -647,7 +611,6 @@
     }
   };
 
-  // Sound toggle button
   const soundBtn = document.getElementById('soundToggleBtn');
   const soundIcon = document.getElementById('soundIcon');
   const soundLabel = document.getElementById('soundLabel');
@@ -660,7 +623,6 @@
     });
   }
 
-  // Theme Management
   const themeToggle = document.getElementById('themeToggle');
   const htmlEl = document.documentElement;
   const savedTheme = localStorage.getItem('folio_theme') || 'light';
@@ -676,7 +638,6 @@
     });
   }
 
-  // Mobile drawer toggle
   const menuToggle = document.getElementById('navMenuToggle');
   const drawer = document.getElementById('mobileNavDrawer');
   if (menuToggle && drawer) {
@@ -689,7 +650,6 @@
     });
   }
 
-  // Real-time Delhi IST Clock
   function updateDelhiClock() {
     const el = document.getElementById('liveClockText');
     if (!el) return;
@@ -704,13 +664,12 @@
       };
       el.textContent = now.toLocaleTimeString('en-US', options) + ' IST';
     } catch(e) {
-      el.textContent = '17:30 IST';
+      el.textContent = '17:40 IST';
     }
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
 
-  // Command + K Palette
   const cmdModal = document.getElementById('cmdModal');
   const cmdInput = document.getElementById('cmdInput');
   const cmdTrigger = document.getElementById('cmdPaletteTrigger');
@@ -741,7 +700,6 @@
     });
   }
 
-  // Garden Modal Reader
   window.openGardenNote = function(noteId) {
     const note = (window.GARDEN_DATA || []).find(n => n.id === noteId);
     if (!note) return;
@@ -771,7 +729,6 @@
     document.body.style.overflow = '';
   };
 
-  // Keyboard Shortcuts Navigation
   document.addEventListener('keydown', function(e){
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
@@ -832,7 +789,7 @@
 })();
 
 
-  window.GARDEN_DATA = [{"id": "g-1", "title": "The Illusion of Productivity", "topic": "Product Strategy", "date": "19.04.26", "read": "5 min read", "hook": "I've been thinking about the tech industry lately. And why all of a sudden everyone is building.", "content": "<p>In high-growth tech teams, busyness is routinely conflated with progress. Velocity charts tick upward, PRs merge daily, and design files fill up with dozens of polished flows. Yet, month after month, customer churn remains stagnant and core activation metrics refuse to budge.</p><p>True product velocity is not measured in tickets closed or Figma frames completed. It is measured in the cycle time between an unvalidated assumption and a verified customer outcome. When teams optimize for output rather than outcome, they build complex software that solves imaginary problems at extraordinary speed.</p><p><strong>Principle:</strong> Before starting any feature sprint, ask: <em>If this succeeds, what specific human behavior changes tomorrow?</em> If you can't answer with precision, you are manufacturing the illusion of progress.</p>"}, {"id": "g-2", "title": "The Engagement Paradox", "topic": "UX Ethics", "date": "22.10.25", "read": "4 min read", "hook": "Separating efficiency from effectiveness in user interaction models.", "content": "<p>When a product team measures health exclusively through session duration and daily opens, the user experience invariably deteriorates. Notifications become urgent, red badges proliferate, and algorithmic feeds hijack dopamine loops.</p><p>The paradox is that while short-term metrics spike, long-term customer utility plummets. Great software respects human attention. It enables users to accomplish their core intent in minimal steps, then gracefully gets out of the way so they can return to their real lives.</p>"}, {"id": "g-3", "title": "When Measuring Something Destroys It", "topic": "UX Metrics", "date": "08.08.25", "read": "4 min read", "hook": "When a metric becomes a target, it ceases to be a good metric. Goodhart's Law in interfaces.", "content": "<p>Goodhart's Law states that when a metric becomes a target, it ceases to be a good metric. In product design, this manifests when conversion rates are prioritized over user trust.</p><p>Unsubscribe links hidden beneath grey-on-grey text, pre-checked opt-in boxes, and misleading dialog options may pump weekly numbers, but they permanently erode brand goodwill. The best teams optimize for sustainable trust rather than myopic quarterly spikes.</p>"}, {"id": "g-4", "title": "Dogfooding: You Can't Outsource Empathy", "topic": "Design Craft", "date": "15.06.25", "read": "3 min read", "hook": "User research shows what users say; using your own software shows where it actually hurts.", "content": "<p>User research interviews are invaluable, but they operate in controlled 45-minute stage plays. To understand software at an instinctual level, designers must live inside their own systems under genuine pressure.</p><p>Experience the exact edge cases, sluggish load states, and clunky form fields that real users endure every day. Empathy is not a persona slide; empathy is the acute frustration you feel when completing real workflows with your own creation.</p>"}, {"id": "g-5", "title": "Interface Clarity Is Subtracted Decisions", "topic": "Systems", "date": "12.04.25", "read": "4 min read", "hook": "Great software is not made of features added, but cognitive friction removed before the user notices.", "content": "<p>Every redundant configuration dropdown and modal toggle is an outsourced decision. It is the product team conceding: <em>'We couldn't decide what was best, so we passed the cognitive load onto you.'</em></p><p>Clarity comes from opinionated defaults, contextual deduction, and ruthless elimination of extraneous chrome. Make the interface feel intuitive by solving complexity internally rather than offloading it to the user.</p>"}, {"id": "g-6", "title": "Competitor Analysis: Baseline, Not North Star", "topic": "Strategy", "date": "20.01.25", "read": "3 min read", "hook": "Mimicry inherits competitors' unvalidated mistakes and structural technical debt.", "content": "<p>When kickoff boards consist solely of competitor screenshots, beware. Incumbent features were frequently shipped under tight deadlines years ago, unmeasured, and regretted by their creators.</p><p>Use competitor analysis only to calibrate baseline mental models and established terminology. Solve the problem itself from first principles: the genuine human tension and business mechanic.</p>"}];
+  window.GARDEN_DATA = [{"id": "g-1", "title": "Is the design we practice worth saving?", "topic": "Design Philosophy", "date": "26.05.26", "read": "6 min read", "hook": "Every think piece about restructuring design teams for AI starts with a false premise.", "content": "<p>Every think piece about restructuring design teams for AI starts with a false premise: that the value of a designer was in generating production variants. In reality, the craft of product design has always been about reduction, taste, and resolving human friction before a line of code is written.</p><p>As generative models make code and UI assets infinitely cheap, the scarcity shifts to judgment: knowing what <em>not</em> to build. The design we practice is worth saving only if we elevate from component assemblers to systems architects with a moral compass for human attention.</p>"}, {"id": "g-2", "title": "Stop adding confetti to your product", "topic": "Product Craft", "date": "12.10.25", "read": "8 min read", "hook": "We talk about 'delight' a lot in product meetings, but most of the time, it means adding confetti, sounds, or cosmetic polish over broken fundamentals.", "content": "<p>We talk about 'delight' a lot in product meetings, but most of the time, it means adding confetti animations, synthetic sounds, or celebratory illustrations over broken fundamentals.</p><p>Real delight in software is not a celebratory illustration after jumping through six confusing hurdles. Real delight is an application that loads instantaneously, remembers my context, anticipates my next move, and lets me finish my job in 15 seconds without making me think.</p><p><strong>Principle:</strong> Solve reliability, speed, and cognitive clarity first. Never use confetti to compensate for friction.</p>"}, {"id": "g-3", "title": "The Illusion of Productivity", "topic": "Product Strategy", "date": "19.04.26", "read": "5 min read", "hook": "I've been thinking about the tech industry lately. And why all of a sudden everyone is building.", "content": "<p>In high-growth tech teams, busyness is routinely conflated with progress. Velocity charts tick upward, PRs merge daily, and design files fill up with dozens of polished flows. Yet, month after month, customer churn remains stagnant.</p><p>True product velocity is measured in the cycle time between an unvalidated assumption and a verified customer outcome. When teams optimize for output rather than outcome, they build complex software that solves imaginary problems at extraordinary speed.</p>"}, {"id": "g-4", "title": "The Engagement Paradox", "topic": "UX Ethics", "date": "22.10.25", "read": "4 min read", "hook": "Separating efficiency from effectiveness in user interaction models.", "content": "<p>When a product team measures health exclusively through session duration and daily opens, the user experience invariably deteriorates. Notifications become urgent, red badges proliferate, and algorithmic feeds hijack attention.</p><p>Great software respects human attention. It enables users to accomplish their core intent in minimal steps, then gracefully gets out of the way so they can return to their real lives.</p>"}, {"id": "g-5", "title": "Dogfooding: You Can't Outsource Empathy", "topic": "Design Craft", "date": "15.06.25", "read": "3 min read", "hook": "User research shows what users say; using your own software shows where it actually hurts.", "content": "<p>To understand software at an instinctual level, designers must live inside their own systems under genuine pressure. Experience the exact latency, broken edge states, and clunky form fields that real users endure every day.</p>"}, {"id": "g-6", "title": "Interface Clarity Is Subtracted Decisions", "topic": "Systems", "date": "12.04.25", "read": "4 min read", "hook": "Great software is not made of features added, but cognitive friction removed before the user notices.", "content": "<p>Every redundant configuration dropdown and modal toggle is an outsourced decision. Make the interface feel intuitive by solving complexity internally rather than offloading it to the user.</p>"}];
 
   const tabBtns = document.querySelectorAll('#resFilterRow .filter-btn');
   const tabSetup = document.getElementById('tabSetup');

@@ -4078,3 +4078,301 @@ button:hover .shahi-arrow,
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   Inner Page Top Bar (Only Back button & utilities — No nav tabs)
+   ============================================================ */
+.inner-page-header {
+  width: 100%;
+  padding: 32px 0 24px;
+}
+
+.inner-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inner-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.inner-back-btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  transform: translateX(-3px);
+}
+
+[data-theme="dark"] .inner-back-btn:hover {
+  background: #E8E8E8;
+  color: #0A0A0A;
+  border-color: #E8E8E8;
+}
+
+.inner-back-btn .back-arrow {
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.inner-back-btn:hover .back-arrow {
+  transform: translateX(-3px);
+}
+
+.inner-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle-inline {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface-subtle);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-inline:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.theme-toggle-inline svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* ============================================================
+   Bento Box (Exact Match to User's Uploaded Screenshot)
+   ============================================================ */
+.shahi-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.shahi-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.shahi-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 16px 36px -12px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.shahi-card.span-full {
+  grid-column: span 2;
+}
+
+.shahi-card-label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+.shahi-card-key {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+}
+
+/* Card 1: Media Card */
+.shahi-media-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px 24px;
+  text-decoration: none;
+  border: 1px solid var(--line);
+}
+
+.shahi-media-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65) contrast(1.05);
+  transition: transform 0.4s ease;
+}
+
+.shahi-media-card:hover img {
+  transform: scale(1.04);
+}
+
+.shahi-media-pill {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+/* Card 2: Stacked Index Cards */
+.garden-card-stack {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 8px auto 0;
+  padding: 18px 22px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 4px -4px 0 -1px var(--surface), 4px -4px 0 0 var(--line), 8px -8px 0 -1px var(--surface), 8px -8px 0 0 var(--line);
+  transition: transform 0.2s ease;
+}
+
+.shahi-card:hover .garden-card-stack {
+  transform: translateY(-2px);
+}
+
+.garden-card-stack .stack-date {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-muted);
+}
+
+.garden-card-stack .stack-num {
+  float: right;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.garden-card-stack h4 {
+  font-size: 14.5px;
+  font-weight: 600;
+  margin: 8px 0 6px;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.garden-card-stack p {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Card 3: Writing card with confetti */
+.writing-card-flex {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 4px;
+}
+
+.writing-card-text h3 {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+}
+
+.writing-card-text p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+  line-height: 1.5;
+  max-width: 580px;
+}
+
+.writing-card-meta {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-muted);
+}
+
+/* Card 4: Contact / Work with me list */
+.contact-tier-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.contact-tier-preview div {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.contact-tier-preview div.highlight {
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Card 5: Book spines row */
+.book-spines-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  margin-top: 32px;
+  height: 54px;
+  padding-bottom: 2px;
+}
+
+.book-spine {
+  width: 14px;
+  border-radius: 2px 2px 0 0;
+  transition: transform 0.2s ease;
+}
+
+.shahi-card:hover .book-spine {
+  transform: translateY(-4px);
+}

@@ -1,146 +1,167 @@
 #!/usr/bin/env python3
 """
 Final Portfolio Generator for Sumit Rai
-Incorporates all user feedback & shahimim.com inspirations:
-1. Ultra-clean minimal 4-column footer (LINKEDIN, SUBSTACK, EMAIL, X) + New Delhi IST live clock.
-2. Added Substack link to https://isumitrai.substack.com/ across footer, Writing card, and resources.
-3. Bento Box Section matching Image 1:
-   - Digital Garden card with stacked index cards visual (The engagement paradox)
-   - Writing card with circular slit avatar & "The illusion of productivity" + Substack link
-   - Work with me card (Advisory & coaching, Design mentorship, Talks & panels)
-   - Resources card with colourful book spines row
-   - Raimage Studio Lab & Shop card
-4. Back button "← Back [Esc]" on all inner pages, hidden on homepage.
-5. Brand logo tiles section completely removed to eliminate visual clutter.
-6. Work With Me / Contact page matching Images 2 & 3:
-   - 01: Advisory & coaching
-   - 02: Design mentorship
-   - 03: Talks & panels
-   - Tear banner with dashed separator
-7. Resources page matching Image 4:
-   - Curated Books (12) with Amazon links
-   - My Setup & Gear (Herman Miller, Studio Display, AirPods Max, MX Master 3S, etc.)
-   - Digital Garden notes
-8. Playground connected as "Raimage Studio — Design Lab & Shop".
-9. Global .shahi-arrow hover effects with diagonal translation (translate(3px, -3px)) and orange pop.
-10. Consistent 8+ years product design and 12+ years total design craft.
+Addresses all user requests:
+1. Nav is "Contact" [C] (NOT "Work with me").
+2. "Design & Shop" is under Playground [P].
+3. On inner pages, NO top navigation is shown — ONLY the clean Back button is shown (matching shahimim.com).
+4. On Home page, Bento Box is placed at the bottom, matching the exact screenshot (media_1794226361464_3b0f65bc.jpg):
+   - Card 1: Media card with pill "Bootstrapping a startup" and key "W"
+   - Card 2: Digital garden with stacked index cards "Is the design we practice worth saving?" (0014, 26.05.26) and key "G"
+   - Card 3: Writing card with confetti drawing "Stop adding confetti to your product" (12.10.25 · 8 min read) and key "B"
+   - Card 4: Contact card with "Advisory & coaching", "Design mentorship", "Talks & panels" and key "C"
+   - Card 5: Resources card with colourful book spines row and key "R"
+5. Real works: EduManage, Quayo Basket, Musafir, Community.
+6. Real experience in reverse chronological order:
+   - Raimage Design (Founding Designer, 2025 — Present)
+   - Edfora Infotech (Senior Product Designer, 2023 — 2025)
+   - Design Matra (Product Designer, 2021 — 2023)
+   - Kitaro Trading (Graphic Designer, 2012 — 2021)
+7. Substack link to isumitrai.substack.com in 4-column minimal footer and writing areas.
 """
 
 import json
 
-# -------------------------------------------------------------
-# DATASETS
-# -------------------------------------------------------------
-
 PROJECTS = [
     {
-        "id": "proj-1",
-        "title": "PhysicsWallah (PW)",
-        "full_title": "PhysicsWallah — Scaled EdTech Platform & Design Architecture",
-        "category": "EdTech · SaaS & Mobile",
-        "year": "2023 — Present",
-        "tagline": "Architecting learning systems, test prep flows, and responsive web platforms for millions of active learners across India.",
-        "image": "./assets/proj_001.png",
-        "tags": ["Design Systems", "EdTech", "Web & Mobile App"],
-        "client": "PhysicsWallah (PW)",
+        "id": "edumanage",
+        "title": "EduManage",
+        "full_title": "EduManage — Smart Educational Management Dashboard",
+        "category": "SaaS Product · CMS",
+        "year": "2026",
+        "tagline": "A modern institution dashboard shaped around academic operations, content management, and day-to-day school workflows.",
+        "image": "./assets/proj_edumanage.png",
+        "tags": ["CMS", "Dashboard", "SaaS"],
+        "client": "EduManage Inc.",
+        "role": "Lead Product Designer",
+        "impact": "Structured operational cards and modular data views that help modern institutions scan information quickly and act with confidence."
+    },
+    {
+        "id": "quayo",
+        "title": "Quayo Basket",
+        "full_title": "Quayo Basket — Grocery App & Brand Identity System",
+        "category": "Grocery App · Branding",
+        "year": "2026",
+        "tagline": "A grocery mobile app paired with a brand identity system for a clearer, friendlier shopping and rapid checkout experience.",
+        "image": "./assets/proj_quayo.png",
+        "tags": ["Mobile App", "UI/UX", "Branding"],
+        "client": "Quayo Basket",
+        "role": "Product & Brand Designer",
+        "impact": "Recognizable retail feel across browsing, basket, and checkout moments supporting rapid product discovery and repeat ordering."
+    },
+    {
+        "id": "musafir",
+        "title": "Musafir",
+        "full_title": "Musafir — Travel Marketplace Landing Page Redesign",
+        "category": "Travel · Marketplace",
+        "year": "2026",
+        "tagline": "A travel marketplace landing page redesigned for stronger conversion paths, destination storytelling, and clearer decision-making.",
+        "image": "./assets/proj_musafir.png",
+        "tags": ["Travel", "Web Design", "Marketplace"],
+        "client": "Musafir Travel",
+        "role": "Lead UX / UI Designer",
+        "impact": "Helps visitors understand travel packages faster, comparing flight/hotel offers with minimal friction and higher booking intent."
+    },
+    {
+        "id": "community",
+        "title": "Community",
+        "full_title": "Community — Student Learning Hub & Engagement Platform",
+        "category": "Community Platform · EdTech",
+        "year": "2026",
+        "tagline": "A student learning hub built around peer growth, shared course resources, and platform-led learner engagement.",
+        "image": "./assets/proj_community.png",
+        "tags": ["EdTech", "Platform", "Community"],
+        "client": "Community EdTech",
         "role": "Senior Product Designer",
-        "impact": "Serves millions of daily active students; unified design tokens reduced engineering handoff time by 35%."
+        "impact": "Balances content discovery, peer collaboration groups, and a simple platform architecture that supports active daily student participation."
+    }
+]
+
+COMPANIES = [
+    {
+        "name": "Raimage Design",
+        "role": "Founding Designer",
+        "years": "2025 — Present",
+        "desc": "Directing visual design systems, AI-native interface explorations, hardware studies, and digital craft at Raimage Studio.",
+        "highlights": ["Studio Art Prints & Goods", "AI Developer HUD Prototypes", "Hardware Concepts"]
     },
     {
-        "id": "proj-2",
-        "title": "Stanza Living",
-        "full_title": "Stanza Living — Resident Experience & Community Living Platform",
-        "category": "PropTech · Consumer App",
-        "year": "2021 — 2023",
-        "tagline": "Designing resident onboarding, zero-friction rent payment flows, and hostel community operations for India's largest managed living network.",
-        "image": "./assets/proj_002.png",
-        "tags": ["FinTech", "PropTech", "Design Tokens"],
-        "client": "Stanza Living",
+        "name": "Edfora Infotech",
+        "role": "Senior Product Designer",
+        "years": "2023 — 2025",
+        "desc": "Led product design for scaled learning platforms, student assessment dashboards, and cross-platform design token architecture.",
+        "highlights": ["Design Tokens 2.0", "Core Student Assessments", "35% Faster Dev Handoff"]
+    },
+    {
+        "name": "Design Matra",
         "role": "Product Designer",
-        "impact": "Boosted on-time digital rent payments by 28%; reduced maintenance ticket resolution cycles across 70,000+ residents."
+        "years": "2021 — 2023",
+        "desc": "Shaped digital products, mobile applications, and B2B SaaS workflows from early discovery through production launch.",
+        "highlights": ["Zero-to-One MVPs", "Interactive Prototypes", "Modular UI Kits"]
     },
     {
-        "id": "proj-3",
-        "title": "Astra AI Assistant",
-        "full_title": "Astra AI — Multimodal Developer Copilot & Interface Architecture",
-        "category": "AI / Emerging Tech · Desktop & Web",
-        "year": "2024 — 2025",
-        "tagline": "Designing natural-language interface systems, streaming response states, and proactive coding suggestions for high-velocity software engineers.",
-        "image": "./assets/proj_003.png",
-        "tags": ["GenAI", "Developer Tools", "Interface Design"],
-        "client": "Astra Labs (Independent)",
-        "role": "Lead Product Designer & Prototype Engineer",
-        "impact": "Sub-50ms perceived latency via optimistic rendering; streamlined multimodal prompt architecture."
-    },
-    {
-        "id": "proj-4",
-        "title": "FinPulse Analytics",
-        "full_title": "FinPulse — Institutional Wealth & Portfolio Analytics Engine",
-        "category": "FinTech · Enterprise SaaS",
-        "year": "2022 — 2023",
-        "tagline": "Transforming dense financial data streams into actionable, modular dashboard cards and real-time portfolio rebalancing workflows.",
-        "image": "./assets/proj_004.png",
-        "tags": ["FinTech", "Enterprise SaaS", "Data Viz"],
-        "client": "FinPulse Capital",
-        "role": "Senior UX Consultant",
-        "impact": "Consolidated 8 disparate reporting systems into a single configurable command center with WCAG AAA accessibility."
+        "name": "Kitaro Trading",
+        "role": "Graphic Designer",
+        "years": "2012 — 2021",
+        "desc": "Mastered visual communication, typography, retail packaging, and commercial brand identity systems over 9 foundational years.",
+        "highlights": ["12+ Years Total Craft", "Brand Identity Systems", "Packaging Design"]
     }
 ]
 
 GARDEN_NOTES = [
     {
         "id": "g-1",
+        "title": "Is the design we practice worth saving?",
+        "topic": "Design Philosophy",
+        "date": "26.05.26",
+        "read": "6 min read",
+        "hook": "Every think piece about restructuring design teams for AI starts with a false premise.",
+        "content": "<p>Every think piece about restructuring design teams for AI starts with a false premise: that the value of a designer was in generating production variants. In reality, the craft of product design has always been about reduction, taste, and resolving human friction before a line of code is written.</p><p>As generative models make code and UI assets infinitely cheap, the scarcity shifts to judgment: knowing what <em>not</em> to build. The design we practice is worth saving only if we elevate from component assemblers to systems architects with a moral compass for human attention.</p>"
+    },
+    {
+        "id": "g-2",
+        "title": "Stop adding confetti to your product",
+        "topic": "Product Craft",
+        "date": "12.10.25",
+        "read": "8 min read",
+        "hook": "We talk about 'delight' a lot in product meetings, but most of the time, it means adding confetti, sounds, or cosmetic polish over broken fundamentals.",
+        "content": "<p>We talk about 'delight' a lot in product meetings, but most of the time, it means adding confetti animations, synthetic sounds, or celebratory illustrations over broken fundamentals.</p><p>Real delight in software is not a celebratory illustration after jumping through six confusing hurdles. Real delight is an application that loads instantaneously, remembers my context, anticipates my next move, and lets me finish my job in 15 seconds without making me think.</p><p><strong>Principle:</strong> Solve reliability, speed, and cognitive clarity first. Never use confetti to compensate for friction.</p>"
+    },
+    {
+        "id": "g-3",
         "title": "The Illusion of Productivity",
         "topic": "Product Strategy",
         "date": "19.04.26",
         "read": "5 min read",
         "hook": "I've been thinking about the tech industry lately. And why all of a sudden everyone is building.",
-        "content": "<p>In high-growth tech teams, busyness is routinely conflated with progress. Velocity charts tick upward, PRs merge daily, and design files fill up with dozens of polished flows. Yet, month after month, customer churn remains stagnant and core activation metrics refuse to budge.</p><p>True product velocity is not measured in tickets closed or Figma frames completed. It is measured in the cycle time between an unvalidated assumption and a verified customer outcome. When teams optimize for output rather than outcome, they build complex software that solves imaginary problems at extraordinary speed.</p><p><strong>Principle:</strong> Before starting any feature sprint, ask: <em>If this succeeds, what specific human behavior changes tomorrow?</em> If you can't answer with precision, you are manufacturing the illusion of progress.</p>"
+        "content": "<p>In high-growth tech teams, busyness is routinely conflated with progress. Velocity charts tick upward, PRs merge daily, and design files fill up with dozens of polished flows. Yet, month after month, customer churn remains stagnant.</p><p>True product velocity is measured in the cycle time between an unvalidated assumption and a verified customer outcome. When teams optimize for output rather than outcome, they build complex software that solves imaginary problems at extraordinary speed.</p>"
     },
     {
-        "id": "g-2",
+        "id": "g-4",
         "title": "The Engagement Paradox",
         "topic": "UX Ethics",
         "date": "22.10.25",
         "read": "4 min read",
         "hook": "Separating efficiency from effectiveness in user interaction models.",
-        "content": "<p>When a product team measures health exclusively through session duration and daily opens, the user experience invariably deteriorates. Notifications become urgent, red badges proliferate, and algorithmic feeds hijack dopamine loops.</p><p>The paradox is that while short-term metrics spike, long-term customer utility plummets. Great software respects human attention. It enables users to accomplish their core intent in minimal steps, then gracefully gets out of the way so they can return to their real lives.</p>"
+        "content": "<p>When a product team measures health exclusively through session duration and daily opens, the user experience invariably deteriorates. Notifications become urgent, red badges proliferate, and algorithmic feeds hijack attention.</p><p>Great software respects human attention. It enables users to accomplish their core intent in minimal steps, then gracefully gets out of the way so they can return to their real lives.</p>"
     },
     {
-        "id": "g-3",
-        "title": "When Measuring Something Destroys It",
-        "topic": "UX Metrics",
-        "date": "08.08.25",
-        "read": "4 min read",
-        "hook": "When a metric becomes a target, it ceases to be a good metric. Goodhart's Law in interfaces.",
-        "content": "<p>Goodhart's Law states that when a metric becomes a target, it ceases to be a good metric. In product design, this manifests when conversion rates are prioritized over user trust.</p><p>Unsubscribe links hidden beneath grey-on-grey text, pre-checked opt-in boxes, and misleading dialog options may pump weekly numbers, but they permanently erode brand goodwill. The best teams optimize for sustainable trust rather than myopic quarterly spikes.</p>"
-    },
-    {
-        "id": "g-4",
+        "id": "g-5",
         "title": "Dogfooding: You Can't Outsource Empathy",
         "topic": "Design Craft",
         "date": "15.06.25",
         "read": "3 min read",
         "hook": "User research shows what users say; using your own software shows where it actually hurts.",
-        "content": "<p>User research interviews are invaluable, but they operate in controlled 45-minute stage plays. To understand software at an instinctual level, designers must live inside their own systems under genuine pressure.</p><p>Experience the exact edge cases, sluggish load states, and clunky form fields that real users endure every day. Empathy is not a persona slide; empathy is the acute frustration you feel when completing real workflows with your own creation.</p>"
+        "content": "<p>To understand software at an instinctual level, designers must live inside their own systems under genuine pressure. Experience the exact latency, broken edge states, and clunky form fields that real users endure every day.</p>"
     },
     {
-        "id": "g-5",
+        "id": "g-6",
         "title": "Interface Clarity Is Subtracted Decisions",
         "topic": "Systems",
         "date": "12.04.25",
         "read": "4 min read",
         "hook": "Great software is not made of features added, but cognitive friction removed before the user notices.",
-        "content": "<p>Every redundant configuration dropdown and modal toggle is an outsourced decision. It is the product team conceding: <em>'We couldn't decide what was best, so we passed the cognitive load onto you.'</em></p><p>Clarity comes from opinionated defaults, contextual deduction, and ruthless elimination of extraneous chrome. Make the interface feel intuitive by solving complexity internally rather than offloading it to the user.</p>"
-    },
-    {
-        "id": "g-6",
-        "title": "Competitor Analysis: Baseline, Not North Star",
-        "topic": "Strategy",
-        "date": "20.01.25",
-        "read": "3 min read",
-        "hook": "Mimicry inherits competitors' unvalidated mistakes and structural technical debt.",
-        "content": "<p>When kickoff boards consist solely of competitor screenshots, beware. Incumbent features were frequently shipped under tight deadlines years ago, unmeasured, and regretted by their creators.</p><p>Use competitor analysis only to calibrate baseline mental models and established terminology. Solve the problem itself from first principles: the genuine human tension and business mechanic.</p>"
+        "content": "<p>Every redundant configuration dropdown and modal toggle is an outsourced decision. Make the interface feel intuitive by solving complexity internally rather than offloading it to the user.</p>"
     }
 ]
 
@@ -333,55 +354,6 @@ TOOLS = [
     {"name": "Cinema 4D / 3D", "img": "./assets/src/tools_006.jpg"}
 ]
 
-WORK_TIERS = [
-    {
-        "num": "01",
-        "audience": "For Founders & design leads",
-        "title": "Advisory & coaching",
-        "lead": "A thinking partner for the hard calls.",
-        "desc": "Product direction, design team structure, when to hire and when to automate with AI.",
-        "bullets": [
-            "Product direction and roadmap pressure-testing",
-            "Design team structure and hiring strategy",
-            "Design maturity and scalable token process coaching"
-        ],
-        "format": "Monthly retainer or per session",
-        "best_for": "Founders without a design background, design leads at Series A/B"
-    },
-    {
-        "num": "02",
-        "audience": "For Designers",
-        "title": "Design mentorship",
-        "lead": "Focus on the right path for your career.",
-        "desc": "Honest feedback, portfolio critiques, and a clear path forward for your design craft.",
-        "bullets": [
-            "Portfolio and case study deep-dives",
-            "Career positioning and narrative coaching",
-            "Interview preparation and design leadership coaching"
-        ],
-        "format": "Bi-weekly or monthly 1:1 sessions",
-        "best_for": "Mid-level designers aiming for senior or staff, career pivoters"
-    },
-    {
-        "num": "03",
-        "audience": "For Conferences & teams",
-        "title": "Talks & panels",
-        "lead": "Stories from the work, not slides about it.",
-        "desc": "Product design, growth, and building with AI, told through real production casework.",
-        "bullets": [
-            "Conference talks and keynotes",
-            "Panels and fireside conversations",
-            "Internal team sessions and interactive design workshops"
-        ],
-        "format": "Keynote, panel or internal workshop",
-        "best_for": "Design and product conferences, meetups, team offsites"
-    }
-]
-
-# -------------------------------------------------------------
-# SHARED LAYOUT & NAVIGATION
-# -------------------------------------------------------------
-
 def get_head(title="Sumit Rai — Senior Product Designer | AI Builder", active_page="index"):
     return f"""<!DOCTYPE html>
 <html lang="en" data-theme="light">
@@ -401,20 +373,38 @@ def get_head(title="Sumit Rai — Senior Product Designer | AI Builder", active_
 """
 
 def get_nav(active_page):
-    back_btn_html = ""
+    # ON INNER PAGES: NO top navigation tabs! ONLY Back button!
     if active_page != "index":
-        back_btn_html = """
-      <a href="index.html" class="nav-back-pill" title="Back to Home [Esc]">
-        <span class="back-arrow">&larr;</span>
-        <span class="back-text">Back</span>
-        <span class="nav-key">[Esc]</span>
-      </a>"""
+        return f"""
+<header class="inner-page-header">
+  <div class="wrap-wide inner-header-row">
+    <a href="index.html" class="inner-back-btn" title="Back to Home [Esc]">
+      <span class="back-arrow">&larr;</span>
+      <span class="back-text">Back</span>
+      <span class="nav-key">[Esc]</span>
+    </a>
 
+    <div class="inner-right-actions">
+      <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
+        <span id="soundIcon">🔊</span>
+      </button>
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)" title="Quick Command Palette (Cmd+K)">
+        <kbd>⌘K</kbd>
+      </button>
+      <button class="theme-toggle-inline" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+"""
+
+    # ON HOMEPAGE: Clean top nav with exact tabs (Contact [C] & Playground [P])
     return f"""
 <header class="nav-wrap" id="siteHeader">
   <div class="nav-pill">
     <div class="nav-logo-group">
-      {back_btn_html}
       <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
         <span class="sr-mark">SR</span>
         <span>Sumit Rai</span>
@@ -422,12 +412,12 @@ def get_nav(active_page):
     </div>
 
     <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
-      <a href="projects.html" class="{'active' if active_page == 'projects' else ''}">Work <span class="nav-key">[W]</span></a>
-      <a href="about.html" class="{'active' if active_page == 'about' else ''}">About <span class="nav-key">[A]</span></a>
-      <a href="resume.html" class="{'active' if active_page == 'resume' else ''}">Resume <span class="nav-key">[R]</span></a>
-      <a href="resources.html" class="{'active' if active_page == 'resources' else ''}">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="{'active' if active_page == 'playground' else ''}">Lab &amp; Shop <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="{'active' if active_page == 'contact' else ''}">Work with me <span class="nav-key">[C]</span></a>
+      <a href="projects.html">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
     </nav>
 
     <div class="nav-right-actions">
@@ -448,13 +438,13 @@ def get_nav(active_page):
   <!-- Mobile nav drawer -->
   <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
     <nav class="mobile-nav-links">
-      <a href="index.html" class="{'active' if active_page == 'index' else ''}">Home <span class="nav-key">[Esc]</span></a>
-      <a href="projects.html" class="{'active' if active_page == 'projects' else ''}">Work <span class="nav-key">[W]</span></a>
-      <a href="about.html" class="{'active' if active_page == 'about' else ''}">About <span class="nav-key">[A]</span></a>
-      <a href="resume.html" class="{'active' if active_page == 'resume' else ''}">Resume <span class="nav-key">[R]</span></a>
-      <a href="resources.html" class="{'active' if active_page == 'resources' else ''}">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="{'active' if active_page == 'playground' else ''}">Lab &amp; Shop <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="{'active' if active_page == 'contact' else ''}">Work with me <span class="nav-key">[C]</span></a>
+      <a href="index.html" class="active">Home <span class="nav-key">[Esc]</span></a>
+      <a href="projects.html">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
     </nav>
   </div>
 </header>
@@ -465,7 +455,6 @@ def get_nav(active_page):
 </button>
 """
 
-# Ultra-clean 4-column minimal footer matching Image 3 from shahimim.com
 footer_html = """
 <footer class="site-footer" id="siteFooter">
   <div class="wrap-wide">
@@ -530,11 +519,11 @@ footer_html = """
         <span class="cmd-shortcut">B</span>
       </a>
       <a href="playground.html" class="cmd-item">
-        <span class="item-left"><span>Lab &amp; Shop</span></span>
+        <span class="item-left"><span>Playground (Design &amp; Shop)</span></span>
         <span class="cmd-shortcut">P</span>
       </a>
       <a href="contact.html" class="cmd-item">
-        <span class="item-left"><span>Work with me</span></span>
+        <span class="item-left"><span>Contact</span></span>
         <span class="cmd-shortcut">C</span>
       </a>
       <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="cmd-item">
@@ -564,7 +553,6 @@ footer_html = """
 
 global_js = """
 (function(){
-  // Audio Feedback Engine
   const AudioEngine = {
     ctx: null,
     enabled: true,
@@ -594,7 +582,6 @@ global_js = """
     }
   };
 
-  // Sound toggle button
   const soundBtn = document.getElementById('soundToggleBtn');
   const soundIcon = document.getElementById('soundIcon');
   const soundLabel = document.getElementById('soundLabel');
@@ -607,7 +594,6 @@ global_js = """
     });
   }
 
-  // Theme Management
   const themeToggle = document.getElementById('themeToggle');
   const htmlEl = document.documentElement;
   const savedTheme = localStorage.getItem('folio_theme') || 'light';
@@ -623,7 +609,6 @@ global_js = """
     });
   }
 
-  // Mobile drawer toggle
   const menuToggle = document.getElementById('navMenuToggle');
   const drawer = document.getElementById('mobileNavDrawer');
   if (menuToggle && drawer) {
@@ -636,7 +621,6 @@ global_js = """
     });
   }
 
-  // Real-time Delhi IST Clock
   function updateDelhiClock() {
     const el = document.getElementById('liveClockText');
     if (!el) return;
@@ -651,13 +635,12 @@ global_js = """
       };
       el.textContent = now.toLocaleTimeString('en-US', options) + ' IST';
     } catch(e) {
-      el.textContent = '17:30 IST';
+      el.textContent = '17:40 IST';
     }
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
 
-  // Command + K Palette
   const cmdModal = document.getElementById('cmdModal');
   const cmdInput = document.getElementById('cmdInput');
   const cmdTrigger = document.getElementById('cmdPaletteTrigger');
@@ -688,7 +671,6 @@ global_js = """
     });
   }
 
-  // Garden Modal Reader
   window.openGardenNote = function(noteId) {
     const note = (window.GARDEN_DATA || []).find(n => n.id === noteId);
     if (!note) return;
@@ -718,7 +700,6 @@ global_js = """
     document.body.style.overflow = '';
   };
 
-  // Keyboard Shortcuts Navigation
   document.addEventListener('keydown', function(e){
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
@@ -779,10 +760,6 @@ global_js = """
 })();
 """
 
-# -------------------------------------------------------------
-# BUILDERS FOR ALL 7 PAGES
-# -------------------------------------------------------------
-
 def build_index():
     projects_cards_html = ""
     for p in PROJECTS:
@@ -807,6 +784,25 @@ def build_index():
           </div>
         </div>
       </article>
+"""
+
+    exp_timeline_html = ""
+    for c in COMPANIES:
+        highlights_html = " ".join([f'<span class="metric-pill">{h}</span>' for h in c['highlights']])
+        exp_timeline_html += f"""
+        <div class="exp-flat-item">
+          <div class="exp-top">
+            <div>
+              <span class="exp-company">{c['name']}</span>
+              <div class="exp-role">{c['role']}</div>
+            </div>
+            <span class="exp-date">{c['years']}</span>
+          </div>
+          <p class="exp-desc">{c['desc']}</p>
+          <div class="exp-metrics">
+            {highlights_html}
+          </div>
+        </div>
 """
 
     tools_html = ""
@@ -843,7 +839,7 @@ def build_index():
         <a href="#work" class="btn btn-primary">Selected Work <span class="btn-key">[W]</span></a>
         <a href="about.html" class="btn btn-secondary">About Me <span class="btn-key">[A]</span></a>
         <a href="resources.html" class="btn btn-secondary">Resources &amp; Gear <span class="btn-key">[B]</span></a>
-        <a href="contact.html" class="btn btn-secondary">Work with me <span class="btn-key">[C]</span></a>
+        <a href="contact.html" class="btn btn-secondary">Contact <span class="btn-key">[C]</span></a>
       </div>
     </section>
 
@@ -867,113 +863,7 @@ def build_index():
       </div>
     </section>
 
-    <!-- SECTION 03 — BENTO HIGHLIGHTS (Exact match to shahimim.com Image 1) -->
-    <section class="bento-section" id="bento">
-      <div class="section-header-row">
-        <div class="section-title-wrap">
-          <span class="eyebrow"><span class="dot"></span> Highlights</span>
-          <h2>Explore &mdash; Garden, Craft &amp; Work</h2>
-          <p>A structured glimpse into ongoing thoughts, curated gear, and design consulting.</p>
-        </div>
-        <a href="resources.html" class="section-header-link">All Resources <span class="shahi-arrow">&nearr;</span></a>
-      </div>
-
-      <div class="shahi-bento-grid">
-        <!-- Card 1: Raimage Lab / Bootstrapping (Top Left) -->
-        <a href="playground.html" class="shahi-card" style="background:#111; color:#fff;" aria-label="Raimage Studio Lab &amp; Shop">
-          <div class="shahi-card-header">
-            <span class="shahi-card-label" style="color:#aaa;">Raimage Lab</span>
-            <span class="shahi-arrow" style="color:#fff;">&nearr;</span>
-          </div>
-          <div style="margin-top:auto;">
-            <span class="bento-badge" style="background:rgba(255,255,255,0.15); color:#fff; border:none; margin-bottom:8px;">Bootstrapping &middot; Lab &amp; Shop</span>
-            <h3 style="font-size:18px; font-weight:600; color:#fff; margin:4px 0 0;">Interactive UI &amp; Hardware Explorations</h3>
-          </div>
-          <span class="shahi-card-key" style="color:#777;">P</span>
-        </a>
-
-        <!-- Card 2: Digital Garden (Top Right, Stacked Cards visual) -->
-        <div class="shahi-card" onclick="window.location.href='resources.html#garden'" role="button" tabindex="0" style="cursor:pointer;" aria-label="Digital Garden">
-          <div class="shahi-card-header">
-            <span class="shahi-card-label">Digital garden</span>
-            <span class="shahi-arrow">&nearr;</span>
-          </div>
-          <div class="garden-card-stack">
-            <div>
-              <span class="stack-date">22.10.25</span>
-              <span class="stack-num">0016</span>
-            </div>
-            <h4>The engagement paradox</h4>
-            <p>Separating efficiency from effectiveness.</p>
-          </div>
-          <span class="shahi-card-key">G</span>
-        </div>
-
-        <!-- Card 3: Writing / Essay with circular slit portrait (Middle, Span Full) -->
-        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="shahi-card span-full" aria-label="Featured Essay on Substack">
-          <div class="shahi-card-header">
-            <span class="shahi-card-label">Writing &middot; Substack</span>
-            <span class="shahi-arrow">&nearr;</span>
-          </div>
-          <div class="writing-card-body">
-            <div class="slit-avatar-wrap">
-              <img src="./assets/avatar.jpg" alt="Sumit Rai portrait with vertical slit stripes" />
-            </div>
-            <div>
-              <h3 style="font-size:20px; font-weight:600; color:var(--ink); margin:0 0 6px;">The illusion of productivity</h3>
-              <p style="font-size:14px; color:var(--ink-soft); margin:0 0 8px; line-height:1.5;">
-                I've been thinking about the tech industry lately. And why all of a sudden everyone is building.
-              </p>
-              <div style="font-family:var(--font-mono); font-size:12px; color:var(--ink-muted);">
-                <span>19.04.26 &middot; 5 min read &middot; Read on Substack</span>
-              </div>
-            </div>
-          </div>
-          <span class="shahi-card-key">B</span>
-        </a>
-
-        <!-- Card 4: Work with me (Bottom Left) -->
-        <a href="contact.html" class="shahi-card" aria-label="Work with Sumit Rai">
-          <div class="shahi-card-header">
-            <span class="shahi-card-label">Work with me</span>
-            <span class="shahi-arrow">&nearr;</span>
-          </div>
-          <div>
-            <div style="font-size:13.5px; color:var(--ink-soft); margin-bottom:4px;">Advisory &amp; coaching</div>
-            <div style="font-size:16.5px; font-weight:600; color:var(--ink); margin-bottom:4px;">Design mentorship</div>
-            <div style="font-size:13.5px; color:var(--ink-soft);">Talks &amp; panels</div>
-          </div>
-          <span class="shahi-card-key">S</span>
-        </a>
-
-        <!-- Card 5: Resources (Bottom Right, colourful book spines) -->
-        <a href="resources.html" class="shahi-card" aria-label="Curated Resources &amp; Books">
-          <div class="shahi-card-header">
-            <span class="shahi-card-label">Resources</span>
-            <span class="shahi-arrow">&nearr;</span>
-          </div>
-          <div>
-            <p style="font-size:13px; color:var(--ink-soft); margin:0;">Books worth reading, tools worth keeping.</p>
-            <div class="book-spines-row">
-              <div class="book-spine" style="height:36px; background:#D9381E;"></div>
-              <div class="book-spine" style="height:48px; background:#E5DFD3; border:1px solid #ccc;"></div>
-              <div class="book-spine" style="height:42px; background:#4B5842;"></div>
-              <div class="book-spine" style="height:52px; background:#1C352D;"></div>
-              <div class="book-spine" style="height:38px; background:#D0B084;"></div>
-              <div class="book-spine" style="height:46px; background:#E89635;"></div>
-              <div class="book-spine" style="height:40px; background:#F4C430;"></div>
-              <div class="book-spine" style="height:50px; background:#E5DFD3; border:1px solid #ccc;"></div>
-              <div class="book-spine" style="height:44px; background:#C9372C;"></div>
-              <div class="book-spine" style="height:38px; background:#BAC7A7;"></div>
-              <div class="book-spine" style="height:48px; background:#889E73;"></div>
-            </div>
-          </div>
-          <span class="shahi-card-key">R</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- SECTION 04 — MY APPROACH -->
+    <!-- SECTION 03 — MY APPROACH -->
     <section class="approach-section">
       <div class="approach-quote-box">
         <span class="eyebrow"><span class="dot"></span> Design Philosophy</span>
@@ -1002,75 +892,23 @@ def build_index():
       </div>
     </section>
 
-    <!-- SECTION 05 — SELECTED EXPERIENCE (NO BRAND LOGO CLUTTER) -->
+    <!-- SECTION 04 — SELECTED EXPERIENCE (REVERSE CHRONOLOGICAL ORDER) -->
     <section class="experience-section">
       <div class="section-header-row">
         <div class="section-title-wrap">
           <span class="eyebrow"><span class="dot"></span> Career Path</span>
           <h2>Selected Experience</h2>
-          <p>Proven track record of designing, shipping, and scaling products across key tech companies.</p>
+          <p>Proven track record of designing, shipping, and scaling products across key tech companies (latest first).</p>
         </div>
         <a href="resume.html" class="section-header-link">View Full Resume <span class="btn-key">[R]</span> <span class="shahi-arrow">&nearr;</span></a>
       </div>
 
       <div class="timeline-clean">
-        <div class="exp-flat-item">
-          <div class="exp-top">
-            <div>
-              <span class="exp-company">PhysicsWallah (PW)</span>
-              <div class="exp-role">Senior Product Designer &middot; Core Apps &amp; Learning</div>
-            </div>
-            <span class="exp-date">2023 &mdash; Present</span>
-          </div>
-          <p class="exp-desc">
-            Leading end-to-end UX for test prep, student analytics, and responsive learning interfaces serving millions of learners. Architected unified design token architecture reducing production handoff overhead.
-          </p>
-          <div class="exp-metrics">
-            <span class="metric-pill">4.8★ App Store Rating</span>
-            <span class="metric-pill">Millions of Daily Learners</span>
-            <span class="metric-pill">Design Tokens 2.0</span>
-          </div>
-        </div>
-
-        <div class="exp-flat-item">
-          <div class="exp-top">
-            <div>
-              <span class="exp-company">Stanza Living</span>
-              <div class="exp-role">Product Designer &middot; Consumer Resident Apps</div>
-            </div>
-            <span class="exp-date">2021 &mdash; 2023</span>
-          </div>
-          <p class="exp-desc">
-            Designed onboarding, payment flows, and community operations for India's largest managed living network. Streamlined rent payment flows and maintenance ticket experiences.
-          </p>
-          <div class="exp-metrics">
-            <span class="metric-pill">70,000+ Active Residents</span>
-            <span class="metric-pill">+28% Faster Rent Checkout</span>
-            <span class="metric-pill">Self-Service Portal</span>
-          </div>
-        </div>
-
-        <div class="exp-flat-item">
-          <div class="exp-top">
-            <div>
-              <span class="exp-company">B2B SaaS &amp; Consulting</span>
-              <div class="exp-role">Product &amp; Visual Design Lead</div>
-            </div>
-            <span class="exp-date">2018 &mdash; 2021</span>
-          </div>
-          <p class="exp-desc">
-            Partnered with US &amp; Indian founders to launch MVPs, audit UX bottlenecks, and establish zero-to-one brand identity and product architectures.
-          </p>
-          <div class="exp-metrics">
-            <span class="metric-pill">10+ Startups Launched</span>
-            <span class="metric-pill">Series A Pitch Decks</span>
-            <span class="metric-pill">Zero-to-One Systems</span>
-          </div>
-        </div>
+        {exp_timeline_html}
       </div>
     </section>
 
-    <!-- SECTION 06 — SOFTWARE & DESIGN STACK -->
+    <!-- SECTION 05 — SOFTWARE & DESIGN STACK -->
     <section class="tools-section">
       <div class="section-header-row">
         <div class="section-title-wrap">
@@ -1084,14 +922,85 @@ def build_index():
       </div>
     </section>
 
-    <!-- SECTION 07 — CONTACT CTA -->
-    <section class="contact-cta-section">
-      <span class="eyebrow"><span class="dot"></span> Work with me</span>
-      <h2>Let's build thoughtful products together.</h2>
-      <p>Available for senior product design consulting, design systems advisory, and full-time opportunities.</p>
-      <div class="cta-btns">
-        <a href="contact.html" class="btn btn-primary">Work with me <span class="btn-key">[C]</span> <span class="shahi-arrow">&nearr;</span></a>
-        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="btn btn-secondary">Read on Substack <span class="shahi-arrow">&nearr;</span></a>
+    <!-- SECTION 06 — BENTO BOX AT BOTTOM (Exact Match to User's Uploaded Screenshot) -->
+    <section class="bento-section" id="bento" style="padding-top:40px; border-top:1px solid var(--line);">
+      <div class="shahi-bento-grid">
+        <!-- Card 1: Media Card with pill (Top Left) -->
+        <a href="playground.html" class="shahi-media-card" aria-label="Bootstrapping Raimage Lab">
+          <img src="./assets/pg_002.jpg" alt="Bootstrapping a startup" loading="lazy" />
+          <span class="shahi-media-pill">Bootstrapping a startup</span>
+          <span class="shahi-card-key" style="color:#FFF;">W</span>
+        </a>
+
+        <!-- Card 2: Digital Garden with stacked index cards (Top Right) -->
+        <div class="shahi-card" onclick="window.location.href='resources.html#garden'" role="button" tabindex="0" style="cursor:pointer;" aria-label="Digital Garden">
+          <span class="shahi-card-label">Digital garden</span>
+          <div class="garden-card-stack">
+            <div>
+              <span class="stack-date">26.05.26</span>
+              <span class="stack-num">0014</span>
+            </div>
+            <h4>Is the design we practice worth saving?</h4>
+            <p>Every think piece about restructuring design teams for AI starts with a false premise.</p>
+          </div>
+          <span class="shahi-card-key">G</span>
+        </div>
+
+        <!-- Card 3: Writing card with confetti line drawing (Middle, Span Full) -->
+        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="shahi-card span-full" aria-label="Featured Essay on Substack">
+          <span class="shahi-card-label">Writing</span>
+          <div class="writing-card-flex">
+            <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--ink-soft); flex-shrink:0;">
+              <path d="M14 50 L28 42 L22 36 Z" fill="var(--surface-subtle)" stroke="currentColor"/>
+              <line x1="14" y1="50" x2="8" y2="56" stroke-dasharray="2 2"/>
+              <path d="M28 38 C34 30, 40 32, 48 20"/>
+              <path d="M24 34 C30 24, 38 22, 44 12"/>
+              <path d="M30 42 C38 40, 44 44, 54 36"/>
+              <circle cx="50" cy="16" r="1.5" fill="currentColor"/>
+              <circle cx="56" cy="26" r="1.5" fill="currentColor"/>
+              <circle cx="40" cy="10" r="1.5" fill="currentColor"/>
+            </svg>
+            <div class="writing-card-text">
+              <h3>Stop adding confetti to your product</h3>
+              <p>We talk about &ldquo;delight&rdquo; a lot in product meetings, but most of the time, it means adding confetti, sounds, or cosmetic polish over broken fundamentals.</p>
+              <div class="writing-card-meta">12.10.25 &middot; 8 min read &middot; Read on Substack <span class="shahi-arrow">&nearr;</span></div>
+            </div>
+          </div>
+          <span class="shahi-card-key">B</span>
+        </a>
+
+        <!-- Card 4: Contact (Bottom Left) -->
+        <a href="contact.html" class="shahi-card" aria-label="Contact Sumit Rai">
+          <span class="shahi-card-label">Contact</span>
+          <div class="contact-tier-preview">
+            <div>Advisory &amp; coaching</div>
+            <div class="highlight">Design mentorship</div>
+            <div>Talks &amp; panels</div>
+          </div>
+          <span class="shahi-card-key">C</span>
+        </a>
+
+        <!-- Card 5: Resources with colourful book spines (Bottom Right) -->
+        <a href="resources.html" class="shahi-card" aria-label="Resources &amp; Gear">
+          <span class="shahi-card-label">Resources</span>
+          <div>
+            <p style="font-size:13px; color:var(--ink-soft); margin:0;">Books worth reading, tools worth keeping.</p>
+            <div class="book-spines-row">
+              <div class="book-spine" style="height:36px; background:#D9381E;"></div>
+              <div class="book-spine" style="height:48px; background:#E5DFD3; border:1px solid #ccc;"></div>
+              <div class="book-spine" style="height:42px; background:#4B5842;"></div>
+              <div class="book-spine" style="height:52px; background:#1C352D;"></div>
+              <div class="book-spine" style="height:38px; background:#D0B084;"></div>
+              <div class="book-spine" style="height:46px; background:#E89635;"></div>
+              <div class="book-spine" style="height:40px; background:#F4C430;"></div>
+              <div class="book-spine" style="height:50px; background:#E5DFD3; border:1px solid #ccc;"></div>
+              <div class="book-spine" style="height:44px; background:#C9372C;"></div>
+              <div class="book-spine" style="height:38px; background:#BAC7A7;"></div>
+              <div class="book-spine" style="height:48px; background:#889E73;"></div>
+            </div>
+          </div>
+          <span class="shahi-card-key">R</span>
+        </a>
       </div>
     </section>
 
@@ -1158,7 +1067,7 @@ def build_projects():
       <h2>Have a project in mind?</h2>
       <p>I partner with ambitious teams to turn complex ideas into refined, scalable digital products.</p>
       <div class="cta-btns">
-        <a href="contact.html" class="btn btn-primary">Work with me <span class="btn-key">[C]</span> <span class="shahi-arrow">&nearr;</span></a>
+        <a href="contact.html" class="btn btn-primary">Contact Sumit <span class="btn-key">[C]</span> <span class="shahi-arrow">&nearr;</span></a>
         <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Sumit</a>
       </div>
     </section>
@@ -1182,7 +1091,7 @@ def build_about():
           I'm a product designer, creative thinker and builder interested in how design and technology shape the things we experience every day.
         </p>
         <p>
-          Over the past 12+ years, I've journeyed from crafting brand identities and marketing collateral to architecting complex enterprise SaaS, EdTech ecosystems, and AI-native products with 8+ years dedicated to digital product design. I believe the best products balance strategic clarity with rigorous visual craftsmanship.
+          Over the past 12+ years, I've journeyed from mastering visual communication, typography, and packaging at Kitaro Trading to architecting digital products at Design Matra, Edfora Infotech, and founding Raimage Design. With 8+ years dedicated to digital product design, I balance strategic clarity with rigorous visual craftsmanship.
         </p>
         <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;">
           <a href="resume.html" class="btn btn-primary">Read Resume <span class="btn-key">[R]</span></a>
@@ -1201,10 +1110,10 @@ def build_about():
       <span class="eyebrow"><span class="dot"></span> Chapter 01</span>
       <h2>My Design Journey</h2>
       <p>
-        My journey into design began in 2014, immersing myself in visual hierarchy, brand consistency, and graphic design across diverse physical and digital mediums. As digital interfaces evolved, I naturally transitioned into UI/UX and product design.
+        My journey into design began in 2012, immersing myself in visual hierarchy, typography, packaging, and commercial brand identity systems at Kitaro Trading. As digital interfaces evolved, I transitioned into UI/UX and product design at Design Matra and Edfora Infotech.
       </p>
       <p>
-        Over the last 8+ years, I have led end-to-end design for high-scale platforms like PhysicsWallah (PW) and Stanza Living, creating intuitive experiences for millions of active learners and residents.
+        Over the last 8+ years, I have led end-to-end design for SaaS platforms, student learning hubs, and community products, creating intuitive experiences for thousands of active users worldwide.
       </p>
     </section>
 
@@ -1213,7 +1122,7 @@ def build_about():
       <span class="eyebrow"><span class="dot"></span> Chapter 02</span>
       <h2>Design Philosophy &amp; Mindset</h2>
       <p>
-        I believe that the best design starts with understanding. Before pushing pixels, I focus on identifying the core human tension, understanding the business model, and identifying points of systemic friction.
+        I believe that the best design starts with understanding. Before pushing pixels, I focus on identifying the core human tension, understanding the business model, and eliminating points of friction.
       </p>
       <div class="approach-grid" style="margin-top:24px;">
         <div class="approach-card">
@@ -1239,7 +1148,7 @@ def build_about():
       <h2>Interested in collaborating?</h2>
       <p>I'm always open to discussing senior product design roles, design systems advisory, or creative tech.</p>
       <div class="cta-btns">
-        <a href="contact.html" class="btn btn-primary">Work with me <span class="btn-key">[C]</span> <span class="shahi-arrow">&nearr;</span></a>
+        <a href="contact.html" class="btn btn-primary">Contact Sumit <span class="btn-key">[C]</span> <span class="shahi-arrow">&nearr;</span></a>
         <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Send Email</a>
       </div>
     </section>
@@ -1250,6 +1159,21 @@ def build_about():
     return get_head("About — Sumit Rai", "about") + get_nav("about") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
 
 def build_resume():
+    exp_entries_html = ""
+    for c in COMPANIES:
+        exp_entries_html += f"""
+        <div class="resume-entry">
+          <div class="entry-header">
+            <div>
+              <h3 class="entry-role">{c['role']}</h3>
+              <div class="entry-org">{c['name']} &middot; Full-time</div>
+            </div>
+            <span class="entry-date">{c['years']}</span>
+          </div>
+          <p class="entry-desc">{c['desc']}</p>
+        </div>
+"""
+
     content = f"""
 <main class="page-body">
   <div class="wrap-wide">
@@ -1270,46 +1194,8 @@ def build_resume():
       </div>
 
       <div class="resume-section-block">
-        <h2 class="resume-sec-title">Professional Experience</h2>
-        
-        <div class="resume-entry">
-          <div class="entry-header">
-            <div>
-              <h3 class="entry-role">Senior Product Designer</h3>
-              <div class="entry-org">PhysicsWallah (PW) &middot; Full-time</div>
-            </div>
-            <span class="entry-date">2023 &mdash; Present</span>
-          </div>
-          <p class="entry-desc">
-            Lead product designer for core student-facing web and mobile applications serving millions of daily learners. Architected unified design token architecture and student test prep workflows.
-          </p>
-        </div>
-
-        <div class="resume-entry">
-          <div class="entry-header">
-            <div>
-              <h3 class="entry-role">Product Designer</h3>
-              <div class="entry-org">Stanza Living &middot; Full-time</div>
-            </div>
-            <span class="entry-date">2021 &mdash; 2023</span>
-          </div>
-          <p class="entry-desc">
-            Spearheaded resident experience design for onboarding, rent payment checkouts, and hostel community operations across 70,000+ residents in India.
-          </p>
-        </div>
-
-        <div class="resume-entry">
-          <div class="entry-header">
-            <div>
-              <h3 class="entry-role">Product &amp; Visual Design Lead</h3>
-              <div class="entry-org">B2B SaaS &amp; Independent Consulting</div>
-            </div>
-            <span class="entry-date">2018 &mdash; 2021</span>
-          </div>
-          <p class="entry-desc">
-            Partnered with US &amp; Indian founders to take zero-to-one SaaS products to market, establish foundational design systems, and audit conversion bottlenecks.
-          </p>
-        </div>
+        <h2 class="resume-sec-title">Professional Experience (Latest First)</h2>
+        {exp_entries_html}
       </div>
 
       <div class="resume-section-block">
@@ -1604,7 +1490,7 @@ def build_playground():
     
     <div class="pg-hero-block">
       <span class="eyebrow"><span class="dot"></span> Raimage Design Studio</span>
-      <h1>Design Lab &amp; Shop</h1>
+      <h1>Playground &mdash; Design &amp; Shop</h1>
       <p>
         Uncommissioned software experiments, industrial hardware concepts, and limited edition fine art prints from Raimage Design Studio.
       </p>
@@ -1637,7 +1523,7 @@ def build_playground():
           <span>Inquire / Shop Editions</span>
           <span class="shahi-arrow">&nearr;</span>
         </a>
-        <a href="contact.html" class="btn btn-secondary">Commission Custom Work <span class="btn-key">[C]</span></a>
+        <a href="contact.html" class="btn btn-secondary">Contact Sumit <span class="btn-key">[C]</span></a>
       </div>
     </div>
 
@@ -1665,71 +1551,124 @@ def build_playground():
     });
   });
 """
-    return get_head("Playground (Lab & Shop) — Sumit Rai", "playground") + get_nav("playground") + content + footer_html + f"<script>\n{global_js}\n{pg_js}\n</script>\n</body>\n</html>"
+    return get_head("Playground (Design & Shop) — Sumit Rai", "playground") + get_nav("playground") + content + footer_html + f"<script>\n{global_js}\n{pg_js}\n</script>\n</body>\n</html>"
 
 def build_contact():
-    tiers_html = ""
-    for t in WORK_TIERS:
-        bullets_html = "".join([f"<li>{b}</li>" for b in t["bullets"]])
-        tiers_html += f"""
+    content = f"""
+<main class="page-body">
+  <div class="wrap-wide">
+    
+    <!-- HEADER -->
+    <div style="margin-bottom:48px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+        <span style="font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--accent);">[C]</span>
+        <h1 style="font-size:32px; font-weight:700; letter-spacing:-0.03em; margin:0; color:var(--ink);">Contact</h1>
+      </div>
+      <p style="font-size:15px; color:var(--ink-soft); max-width:600px; line-height:1.6; margin:0;">
+        Available for select product leadership, design advisory, and high-impact full-time roles worldwide.
+      </p>
+    </div>
+
+    <!-- 3-TIER COLLABORATION TIERS -->
+    <div class="work-tiers-list">
       <div class="work-tier-card">
         <div class="work-tier-grid">
           <div class="work-tier-left">
-            <span style="font-family:var(--font-mono); font-size:11px; color:var(--ink-muted);">{t['audience']}</span>
-            <span class="work-tier-num">{t['num']}</span>
-            <h3>{t['title']}</h3>
-            <div class="work-tier-lead">{t['lead']}</div>
-            <p class="work-tier-sub">{t['desc']}</p>
+            <span style="font-family:var(--font-mono); font-size:11px; color:var(--ink-muted);">For Founders &amp; design leads</span>
+            <span class="work-tier-num">01</span>
+            <h3>Advisory &amp; coaching</h3>
+            <div class="work-tier-lead">A thinking partner for the hard calls.</div>
+            <p class="work-tier-sub">Product direction, design team structure, when to hire and when to automate with AI.</p>
           </div>
           <div class="work-tier-right">
             <ul>
-              {bullets_html}
+              <li>Product direction and roadmap pressure-testing</li>
+              <li>Design team structure and hiring strategy</li>
+              <li>Design maturity and scalable token process coaching</li>
             </ul>
           </div>
         </div>
         <div class="work-tier-meta-row">
           <div>
             <div class="meta-label">FORMAT</div>
-            <div class="meta-val">{t['format']}</div>
+            <div class="meta-val">Monthly retainer or per session</div>
           </div>
           <div>
             <div class="meta-label">BEST FOR</div>
-            <div class="meta-val">{t['best_for']}</div>
+            <div class="meta-val">Founders without a design background, design leads at Series A/B</div>
           </div>
         </div>
       </div>
-"""
 
-    content = f"""
-<main class="page-body">
-  <div class="wrap-wide">
-    
-    <!-- HEADER (Matching Images 2 & 3) -->
-    <div style="margin-bottom:48px;">
-      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
-        <span style="font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--accent);">[S]</span>
-        <h1 style="font-size:32px; font-weight:700; letter-spacing:-0.03em; margin:0; color:var(--ink);">Work with me</h1>
+      <div class="work-tier-card">
+        <div class="work-tier-grid">
+          <div class="work-tier-left">
+            <span style="font-family:var(--font-mono); font-size:11px; color:var(--ink-muted);">For Designers</span>
+            <span class="work-tier-num">02</span>
+            <h3>Design mentorship</h3>
+            <div class="work-tier-lead">Focus on the right path for your career.</div>
+            <p class="work-tier-sub">Honest feedback, portfolio critiques, and a clear path forward for your design craft.</p>
+          </div>
+          <div class="work-tier-right">
+            <ul>
+              <li>Portfolio and case study deep-dives</li>
+              <li>Career positioning and narrative coaching</li>
+              <li>Interview preparation and presentation coaching</li>
+            </ul>
+          </div>
+        </div>
+        <div class="work-tier-meta-row">
+          <div>
+            <div class="meta-label">FORMAT</div>
+            <div class="meta-val">Bi-weekly or monthly 1:1 sessions</div>
+          </div>
+          <div>
+            <div class="meta-label">BEST FOR</div>
+            <div class="meta-val">Mid-level designers aiming for senior or staff, career pivoters</div>
+          </div>
+        </div>
       </div>
-      <p style="font-size:15px; color:var(--ink-soft); max-width:600px; line-height:1.6; margin:0;">
-        Three ways to work together. Mentorship books from the page; the rest start with an email.
-      </p>
+
+      <div class="work-tier-card">
+        <div class="work-tier-grid">
+          <div class="work-tier-left">
+            <span style="font-family:var(--font-mono); font-size:11px; color:var(--ink-muted);">For Conferences &amp; teams</span>
+            <span class="work-tier-num">03</span>
+            <h3>Talks &amp; panels</h3>
+            <div class="work-tier-lead">Stories from the work, not slides about it.</div>
+            <p class="work-tier-sub">Product design, growth, and building with AI, told through real production casework.</p>
+          </div>
+          <div class="work-tier-right">
+            <ul>
+              <li>Conference talks and keynotes</li>
+              <li>Panels and fireside conversations</li>
+              <li>Internal team sessions and interactive workshops</li>
+            </ul>
+          </div>
+        </div>
+        <div class="work-tier-meta-row">
+          <div>
+            <div class="meta-label">FORMAT</div>
+            <div class="meta-val">Keynote, panel or internal workshop</div>
+          </div>
+          <div>
+            <div class="meta-label">BEST FOR</div>
+            <div class="meta-val">Design and product conferences, meetups, team offsites</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- 3-TIER OFFERINGS (Matching Images 2 & 3) -->
-    <div class="work-tiers-list">
-      {tiers_html}
-    </div>
-
-    <!-- TICKET TEAR BANNER (Matching Image 3) -->
+    <!-- TICKET TEAR BANNER -->
     <div class="tear-banner">
       <div>
         <h3 style="font-size:17px; font-weight:600; margin:0 0 4px; color:var(--ink);">Book a mentorship session or discuss advisory</h3>
-        <p style="font-size:13.5px; color:var(--ink-soft); margin:0;">Direct 1:1 sessions for design leads and founders.</p>
+        <p style="font-size:13.5px; color:var(--ink-soft); margin:0;">Direct 1:1 sessions for design leads, founders and teams.</p>
       </div>
       <div style="display:flex; align-items:center; gap:16px;">
         <span class="tear-line">TEAR HERE &bull; &bull; &bull;</span>
-        <a href="mailto:sumitraiworks@gmail.com?subject=Work%20With%20Me%20Inquiry" class="btn btn-primary">
-          <span>Book Session</span>
+        <a href="mailto:sumitraiworks@gmail.com?subject=Contact%20%26%20Collaboration%20Inquiry" class="btn btn-primary">
+          <span>Get in Touch</span>
           <span class="shahi-arrow">&nearr;</span>
         </a>
       </div>
@@ -1750,7 +1689,7 @@ def build_contact():
   </div>
 </main>
 """
-    return get_head("Work with me — Sumit Rai", "contact") + get_nav("contact") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
+    return get_head("Contact — Sumit Rai", "contact") + get_nav("contact") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
 
 def main():
     pages = [

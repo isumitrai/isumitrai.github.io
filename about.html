@@ -14,63 +14,28 @@
 </head>
 <body data-page="about">
 
-<header class="nav-wrap" id="siteHeader">
-  <div class="nav-pill">
-    <div class="nav-logo-group">
-      
-      <a href="index.html" class="nav-back-pill" title="Back to Home [Esc]">
-        <span class="back-arrow">&larr;</span>
-        <span class="back-text">Back</span>
-        <span class="nav-key">[Esc]</span>
-      </a>
-      <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
-        <span class="sr-mark">SR</span>
-        <span>Sumit Rai</span>
-      </a>
-    </div>
+<header class="inner-page-header">
+  <div class="wrap-wide inner-header-row">
+    <a href="index.html" class="inner-back-btn" title="Back to Home [Esc]">
+      <span class="back-arrow">&larr;</span>
+      <span class="back-text">Back</span>
+      <span class="nav-key">[Esc]</span>
+    </a>
 
-    <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
-      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
-      <a href="about.html" class="active">About <span class="nav-key">[A]</span></a>
-      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
-      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="">Lab &amp; Shop <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="">Work with me <span class="nav-key">[C]</span></a>
-    </nav>
-
-    <div class="nav-right-actions">
+    <div class="inner-right-actions">
       <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
         <span id="soundIcon">🔊</span>
-        <span id="soundLabel" class="sound-label-text">Sound</span>
       </button>
       <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)" title="Quick Command Palette (Cmd+K)">
         <kbd>⌘K</kbd>
       </button>
-      <button class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+      <button class="theme-toggle-inline" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
     </div>
   </div>
-
-  <!-- Mobile nav drawer -->
-  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
-    <nav class="mobile-nav-links">
-      <a href="index.html" class="">Home <span class="nav-key">[Esc]</span></a>
-      <a href="projects.html" class="">Work <span class="nav-key">[W]</span></a>
-      <a href="about.html" class="active">About <span class="nav-key">[A]</span></a>
-      <a href="resume.html" class="">Resume <span class="nav-key">[R]</span></a>
-      <a href="resources.html" class="">Resources <span class="nav-key">[B]</span></a>
-      <a href="playground.html" class="">Lab &amp; Shop <span class="nav-key">[P]</span></a>
-      <a href="contact.html" class="">Work with me <span class="nav-key">[C]</span></a>
-    </nav>
-  </div>
 </header>
-
-<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
-  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-</button>
 
 <main class="page-body">
   <div class="wrap-wide">
@@ -84,7 +49,7 @@
           I'm a product designer, creative thinker and builder interested in how design and technology shape the things we experience every day.
         </p>
         <p>
-          Over the past 12+ years, I've journeyed from crafting brand identities and marketing collateral to architecting complex enterprise SaaS, EdTech ecosystems, and AI-native products with 8+ years dedicated to digital product design. I believe the best products balance strategic clarity with rigorous visual craftsmanship.
+          Over the past 12+ years, I've journeyed from mastering visual communication, typography, and packaging at Kitaro Trading to architecting digital products at Design Matra, Edfora Infotech, and founding Raimage Design. With 8+ years dedicated to digital product design, I balance strategic clarity with rigorous visual craftsmanship.
         </p>
         <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;">
           <a href="resume.html" class="btn btn-primary">Read Resume <span class="btn-key">[R]</span></a>
@@ -103,10 +68,10 @@
       <span class="eyebrow"><span class="dot"></span> Chapter 01</span>
       <h2>My Design Journey</h2>
       <p>
-        My journey into design began in 2014, immersing myself in visual hierarchy, brand consistency, and graphic design across diverse physical and digital mediums. As digital interfaces evolved, I naturally transitioned into UI/UX and product design.
+        My journey into design began in 2012, immersing myself in visual hierarchy, typography, packaging, and commercial brand identity systems at Kitaro Trading. As digital interfaces evolved, I transitioned into UI/UX and product design at Design Matra and Edfora Infotech.
       </p>
       <p>
-        Over the last 8+ years, I have led end-to-end design for high-scale platforms like PhysicsWallah (PW) and Stanza Living, creating intuitive experiences for millions of active learners and residents.
+        Over the last 8+ years, I have led end-to-end design for SaaS platforms, student learning hubs, and community products, creating intuitive experiences for thousands of active users worldwide.
       </p>
     </section>
 
@@ -115,7 +80,7 @@
       <span class="eyebrow"><span class="dot"></span> Chapter 02</span>
       <h2>Design Philosophy &amp; Mindset</h2>
       <p>
-        I believe that the best design starts with understanding. Before pushing pixels, I focus on identifying the core human tension, understanding the business model, and identifying points of systemic friction.
+        I believe that the best design starts with understanding. Before pushing pixels, I focus on identifying the core human tension, understanding the business model, and eliminating points of friction.
       </p>
       <div class="approach-grid" style="margin-top:24px;">
         <div class="approach-card">
@@ -141,7 +106,7 @@
       <h2>Interested in collaborating?</h2>
       <p>I'm always open to discussing senior product design roles, design systems advisory, or creative tech.</p>
       <div class="cta-btns">
-        <a href="contact.html" class="btn btn-primary">Work with me <span class="btn-key">[C]</span> <span class="shahi-arrow">&nearr;</span></a>
+        <a href="contact.html" class="btn btn-primary">Contact Sumit <span class="btn-key">[C]</span> <span class="shahi-arrow">&nearr;</span></a>
         <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Send Email</a>
       </div>
     </section>
@@ -212,11 +177,11 @@
         <span class="cmd-shortcut">B</span>
       </a>
       <a href="playground.html" class="cmd-item">
-        <span class="item-left"><span>Lab &amp; Shop</span></span>
+        <span class="item-left"><span>Playground (Design &amp; Shop)</span></span>
         <span class="cmd-shortcut">P</span>
       </a>
       <a href="contact.html" class="cmd-item">
-        <span class="item-left"><span>Work with me</span></span>
+        <span class="item-left"><span>Contact</span></span>
         <span class="cmd-shortcut">C</span>
       </a>
       <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="cmd-item">
@@ -245,7 +210,6 @@
 <script>
 
 (function(){
-  // Audio Feedback Engine
   const AudioEngine = {
     ctx: null,
     enabled: true,
@@ -275,7 +239,6 @@
     }
   };
 
-  // Sound toggle button
   const soundBtn = document.getElementById('soundToggleBtn');
   const soundIcon = document.getElementById('soundIcon');
   const soundLabel = document.getElementById('soundLabel');
@@ -288,7 +251,6 @@
     });
   }
 
-  // Theme Management
   const themeToggle = document.getElementById('themeToggle');
   const htmlEl = document.documentElement;
   const savedTheme = localStorage.getItem('folio_theme') || 'light';
@@ -304,7 +266,6 @@
     });
   }
 
-  // Mobile drawer toggle
   const menuToggle = document.getElementById('navMenuToggle');
   const drawer = document.getElementById('mobileNavDrawer');
   if (menuToggle && drawer) {
@@ -317,7 +278,6 @@
     });
   }
 
-  // Real-time Delhi IST Clock
   function updateDelhiClock() {
     const el = document.getElementById('liveClockText');
     if (!el) return;
@@ -332,13 +292,12 @@
       };
       el.textContent = now.toLocaleTimeString('en-US', options) + ' IST';
     } catch(e) {
-      el.textContent = '17:30 IST';
+      el.textContent = '17:40 IST';
     }
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
 
-  // Command + K Palette
   const cmdModal = document.getElementById('cmdModal');
   const cmdInput = document.getElementById('cmdInput');
   const cmdTrigger = document.getElementById('cmdPaletteTrigger');
@@ -369,7 +328,6 @@
     });
   }
 
-  // Garden Modal Reader
   window.openGardenNote = function(noteId) {
     const note = (window.GARDEN_DATA || []).find(n => n.id === noteId);
     if (!note) return;
@@ -399,7 +357,6 @@
     document.body.style.overflow = '';
   };
 
-  // Keyboard Shortcuts Navigation
   document.addEventListener('keydown', function(e){
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
