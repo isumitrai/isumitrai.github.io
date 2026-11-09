@@ -4376,3 +4376,295 @@ button:hover .shahi-arrow,
 .shahi-card:hover .book-spine {
   transform: translateY(-4px);
 }
+
+
+/* ============================================================
+   Editorial Project Cards (Projects Page — numbered tier style)
+   ============================================================ */
+
+.editorial-page-hero {
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.editorial-proj-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.editorial-proj-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 48px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.editorial-proj-card:hover {
+  background: var(--surface-subtle);
+  margin: 0 -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: var(--radius-md);
+  border-bottom-color: transparent;
+}
+
+.editorial-proj-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.editorial-proj-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
+.editorial-proj-title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 8px 0 10px;
+  line-height: 1.2;
+}
+
+.editorial-proj-lead {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.editorial-proj-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.editorial-proj-preview {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface-subtle);
+  border: 1px solid var(--line);
+}
+
+.editorial-proj-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.editorial-proj-card:hover .editorial-proj-preview img {
+  transform: scale(1.03);
+}
+
+.editorial-proj-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.editorial-proj-bullets li {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.editorial-proj-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 11px;
+  top: 2px;
+}
+
+.editorial-proj-meta-row {
+  grid-column: span 2;
+  display: flex;
+  gap: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  margin-top: 8px;
+}
+
+.editorial-proj-meta-row .meta-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.editorial-proj-meta-row .meta-val {
+  font-size: 13px;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ============================================================
+   Editorial Experience Cards (About Page — numbered timeline)
+   ============================================================ */
+
+.editorial-exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.editorial-exp-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.editorial-exp-card:hover {
+  background: var(--surface-subtle);
+  margin: 0 -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: var(--radius-md);
+  border-bottom-color: transparent;
+}
+
+.editorial-exp-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.editorial-exp-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  position: absolute;
+  top: 36px;
+  right: 0;
+}
+
+.editorial-exp-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 8px 0 6px;
+  line-height: 1.2;
+}
+
+.editorial-exp-lead {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.editorial-exp-sub {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 380px;
+}
+
+.editorial-exp-right {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 36px;
+}
+
+.editorial-exp-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.editorial-exp-bullets li {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.editorial-exp-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 11px;
+  top: 2px;
+}
+
+/* ============================================================
+   Responsive: stack editorial cards on mobile
+   ============================================================ */
+@media (max-width: 700px) {
+  .editorial-proj-card,
+  .editorial-exp-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .editorial-proj-num,
+  .editorial-exp-num {
+    position: static;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+
+  .editorial-proj-meta-row {
+    grid-column: span 1;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .editorial-exp-right {
+    padding-top: 0;
+  }
+
+  .editorial-proj-card:hover,
+  .editorial-exp-card:hover {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

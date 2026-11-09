@@ -1013,36 +1013,38 @@ def build_index():
     return get_head("Sumit Rai — Senior Product Designer | AI Builder", "index") + get_nav("index") + content + footer_html + f"<script>\n{global_js}\n{index_js}\n</script>\n</body>\n</html>"
 
 def build_projects():
+    # Build editorial numbered project cards (inspired by reference screenshot tier layout)
+    num_labels = ["01", "02", "03", "04", "05", "06"]
     cards_html = ""
-    for p in PROJECTS:
+    for i, p in enumerate(PROJECTS):
+        num = num_labels[i] if i < len(num_labels) else f"0{i+1}"
+        tags_html = " ".join([f'<span class="proj-tag">{t}</span>' for t in p['tags']])
         cards_html += f"""
-      <article class="proj-case-card" id="{p['id']}">
-        <div class="proj-case-img">
-          <img src="{p['image']}" alt="{p['full_title']}" loading="lazy" />
+      <article class="editorial-proj-card" id="{p['id']}">
+        <div class="editorial-proj-left">
+          <span class="editorial-proj-label">{p['category']}</span>
+          <span class="editorial-proj-num">{num}</span>
+          <h2 class="editorial-proj-title">{p['title']}</h2>
+          <div class="editorial-proj-lead">{p['tagline']}</div>
         </div>
-        <div class="proj-case-body">
-          <div class="proj-meta">
-            <span class="proj-category">{p['category']}</span>
-            <span class="proj-year">{p['year']}</span>
+        <div class="editorial-proj-right">
+          <div class="editorial-proj-preview">
+            <img src="{p['image']}" alt="{p['full_title']}" loading="lazy" />
           </div>
-          <h2>{p['title']}</h2>
-          <p class="proj-case-tagline">{p['tagline']}</p>
-          <div class="proj-case-details">
-            <div class="detail-item">
-              <span class="detail-lbl">Client</span>
-              <span class="detail-val">{p['client']}</span>
-            </div>
-            <div class="detail-item">
-              <span class="detail-lbl">Role</span>
-              <span class="detail-val">{p['role']}</span>
-            </div>
-            <div class="detail-item">
-              <span class="detail-lbl">Impact</span>
-              <span class="detail-val">{p['impact']}</span>
-            </div>
+          <ul class="editorial-proj-bullets">
+            <li>{p['role']}</li>
+            <li>{p['client']}</li>
+            <li>{p['impact'][:72]}{'…' if len(p['impact']) > 72 else ''}</li>
+          </ul>
+        </div>
+        <div class="editorial-proj-meta-row">
+          <div>
+            <div class="meta-label">TAGS</div>
+            <div class="meta-val">{tags_html}</div>
           </div>
-          <div class="proj-tech-tags" style="margin-top:16px;">
-            {' '.join([f'<span class="proj-tag">{t}</span>' for t in p['tags']])}
+          <div>
+            <div class="meta-label">YEAR</div>
+            <div class="meta-val">{p['year']}</div>
           </div>
         </div>
       </article>
@@ -1051,14 +1053,18 @@ def build_projects():
     content = f"""
 <main class="page-body">
   <div class="wrap-wide">
-    
-    <div class="page-header-block">
-      <span class="eyebrow"><span class="dot"></span> Selected Work</span>
-      <h1>Products &amp; Case Studies</h1>
-      <p>A curated selection of digital products, design systems, and software shaped over 8+ years in product design.</p>
+
+    <div class="editorial-page-hero">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+        <span style="font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--accent);">[W]</span>
+        <h1 style="font-size:34px; font-weight:700; letter-spacing:-0.03em; margin:0; color:var(--ink);">Selected Work</h1>
+      </div>
+      <p style="font-size:15px; color:var(--ink-soft); max-width:580px; line-height:1.65; margin:0;">
+        Digital products, design systems, and software shaped over 8+ years — from zero-to-one SaaS to scaled EdTech platforms.
+      </p>
     </div>
 
-    <div class="projects-case-list">
+    <div class="editorial-proj-list">
       {cards_html}
     </div>
 
@@ -1078,10 +1084,33 @@ def build_projects():
     return get_head("Selected Work — Sumit Rai", "projects") + get_nav("projects") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
 
 def build_about():
+    # Build experience as numbered editorial cards (like reference screenshot)
+    exp_nums = ["01", "02", "03", "04"]
+    exp_cards_html = ""
+    for i, c in enumerate(COMPANIES):
+        num = exp_nums[i] if i < len(exp_nums) else f"0{i+1}"
+        highlights_html = "".join([f'<li>{h}</li>' for h in c['highlights']])
+        exp_cards_html += f"""
+      <div class="editorial-exp-card">
+        <div class="editorial-exp-left">
+          <span class="editorial-exp-label">{c['years']}</span>
+          <span class="editorial-exp-num">{num}</span>
+          <h3 class="editorial-exp-title">{c['role']}</h3>
+          <div class="editorial-exp-lead">{c['name']}</div>
+          <p class="editorial-exp-sub">{c['desc']}</p>
+        </div>
+        <div class="editorial-exp-right">
+          <ul class="editorial-exp-bullets">
+            {highlights_html}
+          </ul>
+        </div>
+      </div>
+"""
+
     content = f"""
 <main class="page-body">
   <div class="wrap-wide">
-    
+
     <!-- 01 — INTRODUCTION -->
     <section class="about-hero-grid">
       <div class="about-hero-copy">
@@ -1105,22 +1134,21 @@ def build_about():
       </div>
     </section>
 
-    <!-- 02 — MY DESIGN JOURNEY -->
-    <section class="about-editorial-block">
-      <span class="eyebrow"><span class="dot"></span> Chapter 01</span>
-      <h2>My Design Journey</h2>
-      <p>
-        My journey into design began in 2012, immersing myself in visual hierarchy, typography, packaging, and commercial brand identity systems at Kitaro Trading. As digital interfaces evolved, I transitioned into UI/UX and product design at Design Matra and Edfora Infotech.
-      </p>
-      <p>
-        Over the last 8+ years, I have led end-to-end design for SaaS platforms, student learning hubs, and community products, creating intuitive experiences for thousands of active users worldwide.
-      </p>
+    <!-- 02 — EXPERIENCE (Editorial numbered cards) -->
+    <section style="margin-top:72px; padding-top:48px; border-top:1px solid var(--line);">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:40px;">
+        <span style="font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--accent);">[A]</span>
+        <h2 style="font-size:28px; font-weight:700; letter-spacing:-0.025em; margin:0; color:var(--ink);">Experience</h2>
+      </div>
+      <div class="editorial-exp-list">
+        {exp_cards_html}
+      </div>
     </section>
 
-    <!-- 03 — HOW I WORK -->
-    <section class="about-editorial-block">
-      <span class="eyebrow"><span class="dot"></span> Chapter 02</span>
-      <h2>Design Philosophy &amp; Mindset</h2>
+    <!-- 03 — DESIGN PHILOSOPHY -->
+    <section class="about-editorial-block" style="margin-top:64px; padding-top:48px; border-top:1px solid var(--line);">
+      <span class="eyebrow"><span class="dot"></span> Design Philosophy</span>
+      <h2>How I Work</h2>
       <p>
         I believe that the best design starts with understanding. Before pushing pixels, I focus on identifying the core human tension, understanding the business model, and eliminating points of friction.
       </p>
