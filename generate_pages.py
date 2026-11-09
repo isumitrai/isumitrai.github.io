@@ -86,8 +86,8 @@ pages = {
           <span class="dot"></span>
           <span class="chip-text mono" id="chipText">Currently designing at <strong>Raimage Design</strong> · New Delhi, India</span>
         </div>
-        <p class="eyebrow">Senior Product Designer &amp; AI Builder</p>
-        <h1>I'm Sumit Rai, a product designer creating <span class="accent">clear, trustworthy</span> digital experiences with purpose.</h1>
+        <p class="eyebrow">Senior Product Designer</p>
+        <h1>I'm Sumit Rai, a multidisciplinary <span class="accent">product designer</span> exploring better ways to design, build, and ship digital products.</h1>
         <div class="cta-row">
           <a href="resume.html" class="clay-btn primary">View Resume</a>
           <a href="mailto:sumitraiworks@gmail.com" class="clay-btn">Send Email</a>
@@ -96,7 +96,68 @@ pages = {
 
       <div style="display:flex;align-items:center;margin:48px 0 16px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:8px;"></span><h2 style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);font-weight:500;margin:0;">Selected Works</h2></div>
       <div class="proj-grid" id="projectGrid"></div>
-      <!-- HOME_WHATIDO -->
+    <!-- BRANDS -->
+    <section class="home-section brands-section">
+      <div class="section-label-row">
+        <span class="dot-accent"></span>
+        <span class="seclabel">Brands I've Worked With</span>
+      </div>
+      <div class="brands-grid">
+        <!-- Row 1 -->
+        <div class="brand-cell"><img src="./assets/src/Brand 01.jpg" alt="MakeMyTrip" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 02.jpg" alt="FIITJEE" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 03.jpg" alt="JADE" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 04.jpg" alt="Holy Basti" loading="lazy" /></div>
+        <!-- Row 2 -->
+        <div class="brand-cell"><img src="./assets/src/Brand 05.jpg" alt="Modicare" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 06.jpg" alt="ToHelp" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 07.jpg" alt="Allied Digital" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 08.jpg" alt="Mamily" loading="lazy" /></div>
+        <!-- Row 3 -->
+        <div class="brand-cell"><img src="./assets/src/Brand 09.jpg" alt="QUANT LEGALTECH" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 10.jpg" alt="NAVTECH" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 11.jpg" alt="BJP" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 12.jpg" alt="Fantasy World" loading="lazy" /></div>
+        <!-- Row 4 -->
+        <div class="brand-cell"><img src="./assets/src/Brand 13.jpg" alt="Young" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 14.jpg" alt="Quayo Basket" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 15.jpg" alt="FLUID" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 16.jpg" alt="maxima" loading="lazy" /></div>
+        <!-- Row 5 -->
+        <div class="brand-cell"><img src="./assets/src/Brand 17.jpg" alt="Prans" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 18.jpg" alt="SONATA" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 19.jpg" alt="Gecko Bold" loading="lazy" /></div>
+        <div class="brand-cell"><img src="./assets/src/Brand 20.jpg" alt="KidKidz" loading="lazy" /></div>
+      </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section class="home-section tools-section">
+      <div class="section-label-row">
+        <span class="dot-accent"></span>
+        <span class="seclabel">Tools I use to think, design, and build.</span>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-chip" title="Figma"><svg viewBox="0 0 38 57" width="22" height="22" fill="none"><path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 0 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 0 0 0-19H19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/><path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/></svg></div>
+        <div class="tool-chip" title="Framer"><svg viewBox="0 0 14 21" width="20" height="20" fill="currentColor"><path d="M0 0h14v7H7L0 0zm0 7h7l7 7H7v7L0 14V7z"/></svg></div>
+        <div class="tool-chip" title="Webflow"><svg viewBox="0 0 128 128" width="22" height="22" fill="#4353FF"><path d="M94.5 38.1c-6.9 0-13.1 3.4-16.9 8.7-2.4-5.5-7.9-9.4-14.3-9.4-5.2 0-9.8 2.4-12.9 6.2V38.7H33.5v50.6h17V66.7c0-5.2 4.2-9.4 9.4-9.4s9.4 4.2 9.4 9.4v22.6h17V66.7c0-5.2 4.2-9.4 9.4-9.4s9.4 4.2 9.4 9.4v22.6h17V63.5c0-14-11.3-25.4-25.2-25.4z"/></svg></div>
+        <div class="tool-chip" title="Arc Browser"><svg viewBox="0 0 100 100" width="20" height="20" fill="none"><circle cx="50" cy="50" r="48" stroke="#FF4F00" stroke-width="4"/><path d="M30 70 Q50 30 70 70" stroke="#FF4F00" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div>
+        <div class="tool-chip" title="VS Code"><svg viewBox="0 0 32 32" width="20" height="20" fill="none"><path d="M28.5 4.5l-8.5 8-8.5-8-7.5 4 8 8-8 8 7.5 4 8.5-8 8.5 8 3.5-2v-22z" fill="#0078D7"/></svg></div>
+        <div class="tool-chip" title="Cursor"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-7 2-4 7L5 3z"/></svg></div>
+        <div class="tool-chip" title="Spline 3D"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(-30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(30 12 12)"/></svg></div>
+        <div class="tool-chip" title="Midjourney"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20L12 4l8 16"/><path d="M7 14h10"/></svg></div>
+        <div class="tool-chip" title="Notion"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></div>
+        <div class="tool-chip" title="ChatGPT"><svg viewBox="0 0 41 41" width="20" height="20" fill="currentColor"><path d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835 9.964 9.964 0 0 0-6.505-3.49 10.079 10.079 0 0 0-10.47 4.93 9.967 9.967 0 0 0-6.659 4.712 10.08 10.08 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 6.504 3.49 10.08 10.08 0 0 0 10.475-4.930 9.967 9.967 0 0 0 6.66-4.712 10.079 10.079 0 0 0-1.243-11.818zm-22.023 7.278a6.85 6.85 0 0 1-4.487-1.672l.22-.125 7.45-4.3a1.221 1.221 0 0 0 .617-1.063V9.503l3.15 1.818a.112.112 0 0 1 .063.088v8.7a6.876 6.876 0 0 1-6.013 6.039zm-12.867-6.303a6.845 6.845 0 0 1-.82-4.6l.22.131 7.45 4.3a1.22 1.22 0 0 0 1.233 0l9.097-5.252v3.638a.116.116 0 0 1-.046.1l-7.527 4.348a6.876 6.876 0 0 1-9.607-2.665zm-1.041-15.23a6.843 6.843 0 0 1 3.57-3.008v8.802a1.22 1.22 0 0 0 .616 1.062l9.073 5.239-3.15 1.818a.111.111 0 0 1-.108.013L3.574 11.056a6.875 6.875 0 0 1-.972-8.441zm25.889 5.91l-9.098-5.252 3.15-1.818a.113.113 0 0 1 .108-.013l7.528 4.347a6.872 6.872 0 0 1-1.064 12.413v-8.802a1.221 1.221 0 0 0-.624-1.075zm3.133-4.622l-.22-.131-7.45-4.3a1.22 1.22 0 0 0-1.233 0L12.73 14.622V10.985a.115.115 0 0 1 .046-.1l7.527-4.342a6.873 6.873 0 0 1 10.21 7.117zm-19.741 6.49l-3.15-1.818a.111.111 0 0 1-.063-.088v-8.7a6.872 6.872 0 0 1 11.278-5.282l-.22.125-7.45 4.3a1.221 1.221 0 0 0-.617 1.063V19.17a.115.115 0 0 1-.022.043zm1.71-3.69l4.048-2.336 4.048 2.336v4.672l-4.048 2.337-4.048-2.337V16.703z"/></svg></div>
+        <div class="tool-chip" title="Bolt.new"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="tool-chip" title="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></div>
+        <div class="tool-chip" title="Adobe Illustrator"><svg viewBox="0 0 24 24" width="20" height="20" fill="#FF9A00"><path d="M7.045 0h9.91C20.4 0 24 3.6 24 8.045v7.91C24 20.4 20.4 24 15.955 24h-9.91C2.1 24 0 21.9 0 15.955v-7.91C0 3.6 2.1 0 7.045 0zm5.098 6.02L9.58 13.33h1.72l.566-1.602h2.812l.565 1.602H17L14.427 6.02H12.14zm1.286 2.14l.955 2.726h-1.91l.955-2.726zm-7.44-.957c.467 0 .814.135 1.04.404.227.27.34.664.34 1.183 0 .533-.126.95-.378 1.25-.252.3-.617.45-1.092.45H5.25V7.2h.74zm-.123 2.4c.28 0 .49-.09.628-.272.138-.18.207-.454.207-.822 0-.335-.06-.582-.18-.74-.12-.16-.31-.24-.564-.24h-.308v2.074h.217z"/></svg></div>
+        <div class="tool-chip" title="Adobe Photoshop"><svg viewBox="0 0 24 24" width="20" height="20" fill="#31A8FF"><path d="M7.045 0h9.91C20.4 0 24 3.6 24 8.045v7.91C24 20.4 20.4 24 15.955 24h-9.91C2.1 24 0 21.9 0 15.955v-7.91C0 3.6 2.1 0 7.045 0zm2.49 6.14H7.44V17.1H9.1v-4.185c.185.015.45.022.797.022.836 0 1.49-.22 1.963-.664.473-.445.71-1.063.71-1.856 0-.763-.22-1.358-.664-1.783-.44-.425-1.11-.64-2.01-.64-.6 0-1.13.05-1.362.106zm.09 1.41c.122-.023.31-.034.564-.034.79 0 1.185.382 1.185 1.148 0 .822-.42 1.233-1.258 1.233-.232 0-.41-.01-.49-.034V7.55zm6.9-1.53c-.834 0-1.514.283-2.044.848-.528.565-.793 1.304-.793 2.217 0 .85.257 1.54.77 2.065.514.525 1.196.788 2.047.788.854 0 1.546-.27 2.076-.81.53-.54.795-1.25.795-2.13 0-.884-.267-1.594-.8-2.13-.533-.536-1.22-.847-2.05-.847zm.02 1.384c.43 0 .756.166.977.498.22.33.33.805.33 1.422 0 .618-.112 1.086-.336 1.406-.224.32-.55.48-.977.48-.42 0-.742-.162-.965-.487-.223-.325-.334-.8-.334-1.422 0-.616.11-1.087.332-1.41.222-.325.543-.487.972-.487z"/></svg></div>
+        <div class="tool-chip" title="Adobe InDesign"><svg viewBox="0 0 24 24" width="20" height="20" fill="#EE3D8F"><path d="M7.045 0h9.91C20.4 0 24 3.6 24 8.045v7.91C24 20.4 20.4 24 15.955 24h-9.91C2.1 24 0 21.9 0 15.955v-7.91C0 3.6 2.1 0 7.045 0zM9 6H7.44v11h1.56V6zm5.7 0h-1.55v4.49a3.2 3.2 0 0 0-.7-.07c-1.8 0-3.2 1.4-3.2 3.2S10.65 17 12.45 17a3.08 3.08 0 0 0 2.8-1.72V17H16.7V6h-2zm-2.25 9.6c-.93 0-1.65-.73-1.65-1.87 0-1.14.72-1.87 1.65-1.87.28 0 .55.08.8.23V15c-.25.4-.63.6-1.08.6h.28z"/></svg></div>
+        <div class="tool-chip" title="Slack"><svg viewBox="0 0 24 24" width="20" height="20" fill="#4A154B"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zm2.521-10.123a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg></div>
+        <div class="tool-chip" title="Jira"><svg viewBox="0 0 24 24" width="20" height="20" fill="#0052CC"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.004-1.005zm5.723-5.756H5.757a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.762a1.005 1.005 0 0 0-1.022-1.005zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24.019 12.49V1.005A1.005 1.005 0 0 0 23.013 0z"/></svg></div>
+      </div>
+    </section>
+
     </div>
 
     <div id="caseStudyView" class="case-view" hidden>

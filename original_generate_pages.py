@@ -1,0 +1,563 @@
+import os
+
+footer = """
+<footer>
+  <div class="footer-inner">
+    <div class="footer-badge-wrap">
+      <div class="footer-status-pill">
+        <span class="dot"></span>
+        <span class="mono">OPEN TO FREELANCE &amp; PRODUCT COLLABORATIONS</span>
+      </div>
+    </div>
+    
+    <h2 class="footer-tagline">
+      Let's build something together.
+    </h2>
+
+    <div class="footer-email-box">
+      <div class="footer-email-pill">
+        <a class="pill-left" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sumitraiworks@gmail.com&amp;su=Hello%20Sumit" target="_blank" rel="noopener" title="Open in Gmail">
+          <span class="pill-icon-chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 6l-10 7L2 6"/></svg>
+          </span>
+          <span class="email-text">sumitraiworks@gmail.com</span>
+        </a>
+        <button class="pill-icon-chip copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span class="copy-toast">Copied!</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer-row-simple">
+      <div class="flinks">
+        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">INSTAGRAM</a>
+        <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
+        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LINKEDIN</a>
+      </div>
+    </div>
+  </div>
+</footer>
+"""
+
+head_start = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sumit Rai — Product Designer</title>
+<meta name="description" content="Sumit Rai — Senior Product Designer & AI Builder. Case studies, about, resume, playground." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+"""
+
+def get_header(active_page):
+    return f"""
+<header class="nav-wrap" id="siteHeader">
+  <div class="nav-pill">
+    <a href="index.html" class="logo nav-logo">Sumit Rai</a>
+    <nav class="nav-tabs">
+      <a href="projects.html" class="{'active' if active_page in ['projects', 'index'] else ''}">Projects</a>
+      <a href="about.html" class="{'active' if active_page == 'about' else ''}">About</a>
+      <a href="resume.html" class="{'active' if active_page == 'resume' else ''}">Resume</a>
+      <a href="playground.html" class="{'active' if active_page == 'playground' else ''}">Playground</a>
+    </nav>
+  </div>
+</header>
+
+<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode">
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+</button>
+"""
+
+pages = {
+    "projects": {
+        "content": """
+<main class="page-body">
+  <div class="wrap-wide">
+    <div id="projectsListView">
+      <div class="hero">
+        <div class="clay-sm current-chip" id="statusChip">
+          <span class="dot"></span>
+          <span class="chip-text mono" id="chipText">Currently designing at <strong>Raimage Design</strong> · New Delhi, India</span>
+        </div>
+        <p class="eyebrow">Senior Product Designer &amp; AI Builder</p>
+        <h1>I'm Sumit Rai, a product designer creating <span class="accent">clear, trustworthy</span> digital experiences with purpose.</h1>
+        <div class="cta-row">
+          <a href="resume.html" class="clay-btn primary">View Resume</a>
+          <a href="mailto:sumitraiworks@gmail.com" class="clay-btn">Send Email</a>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;margin:48px 0 16px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:8px;"></span><h2 style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);font-weight:500;margin:0;">Selected Works</h2></div>
+      <div class="proj-grid" id="projectGrid"></div>
+      <!-- HOME_WHATIDO -->
+    </div>
+
+    <div id="caseStudyView" class="case-view" hidden>
+      <div class="case-top-actions">
+        <button class="case-pill-btn" id="backToProjects">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back
+        </button>
+      </div>
+      <div id="caseStudyBody"></div>
+    </div>
+  </div>
+</main>
+""",
+        "js": """
+  const projects = [
+    {
+      id: "edumanage",
+      tag: "SaaS Product · CMS",
+      title: "EduManage - Smart educational management dashboard",
+      summary: "A modern institution dashboard shaped around academic operations, content management, and day-to-day school workflows.",
+      metric: "Dashboard",
+      year: "2026",
+      tech: ["CMS", "Dashboard", "SaaS"],
+      image: "./assets/proj_edumanage.png",
+      sections: [
+        { id:"overview", h:"Overview", body:"EduManage is a smart educational management dashboard for modern institutions, designed to bring core academic and administrative tasks into one clear workspace." },
+        { id:"focus", h:"Focus", body:"The work centers on CMS patterns, dashboard clarity, and SaaS usability for teams that need to scan information quickly and act with confidence." },
+        { id:"direction", h:"Design Direction", body:"The interface uses structured cards, visible hierarchy, and operational views that help institutions move from fragmented workflows to a more organized management system." },
+      ]
+    },
+    {
+      id: "quayo",
+      tag: "Grocery App Design · Branding",
+      title: "Quayo Basket - Grocery app and brand identity",
+      summary: "A grocery mobile app paired with a brand identity system for a clearer, friendlier shopping experience.",
+      metric: "Mobile App",
+      year: "2026",
+      tech: ["Mobile App", "UI/UX", "Branding"],
+      image: "./assets/proj_quayo.png",
+      sections: [
+        { id:"overview", h:"Overview", body:"Quayo Basket combines grocery app design with a brand identity system, giving the product a recognizable retail feel across browsing, basket, and checkout moments." },
+        { id:"focus", h:"Focus", body:"The selected work highlights mobile UI/UX, grocery shopping flows, and branding decisions that support quick product discovery and repeat ordering." },
+        { id:"direction", h:"Design Direction", body:"The design language leans into clear product presentation, simple navigation, and a visual identity that can stretch from app screens to customer-facing brand touchpoints." },
+      ]
+    },
+    {
+      id: "musafir",
+      tag: "Landing Page · Travel",
+      title: "Musafir - Landing page redesign",
+      summary: "A travel marketplace landing page redesigned for stronger conversion paths and clearer decision-making.",
+      metric: "Web Design",
+      year: "2026",
+      tech: ["Travel", "Web Design", "Marketplace"],
+      image: "./assets/proj_musafir.png",
+      sections: [
+        { id:"overview", h:"Overview", body:"Musafir is a travel landing page redesign focused on helping visitors understand the offer faster and move into the marketplace journey with less friction." },
+        { id:"focus", h:"Focus", body:"The work combines travel storytelling, web design, and marketplace conversion patterns across the first impression, offer framing, and call-to-action areas." },
+        { id:"direction", h:"Design Direction", body:"The page prioritizes direct messaging, destination-led visual cues, and clearer conversion paths for visitors comparing travel options." },
+      ]
+    },
+    {
+      id: "community",
+      tag: "Community Platform · EdTech",
+      title: "Community - Student learning hub",
+      summary: "A student learning hub designed to support growth through community, resources, and platform-led engagement.",
+      metric: "Platform",
+      year: "2026",
+      tech: ["EdTech", "Platform", "Community"],
+      image: "./assets/proj_community.png",
+      sections: [
+        { id:"overview", h:"Overview", body:"Community is a student learning hub built around growth, shared learning, and easier access to the resources students need to stay engaged." },
+        { id:"focus", h:"Focus", body:"The selected work highlights EdTech platform design, community workflows, and learner-facing structures that make participation feel more approachable." },
+        { id:"direction", h:"Design Direction", body:"The product direction balances content discovery, peer connection, and a simple platform architecture that can support ongoing student activity." },
+      ]
+    },
+  ];
+
+  const caseIconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-11 11"/></svg>`;
+
+  const grid = document.getElementById('projectGrid');
+  if (grid) {
+    projects.forEach((p) => {
+      const card = document.createElement('button');
+      card.className = 'proj-card';
+      card.innerHTML = `
+        <div class="proj-image">
+          ${p.image
+            ? `<img src="${p.image}" alt="${p.title}" loading="lazy" />`
+            : `<div class="img-fallback">${caseIconSvg}</div>`
+          }
+        </div>
+        <div class="proj-body">
+          <div class="proj-eyebrow">${p.tag.split(' · ')[0]}</div>
+          <h3>${p.title}</h3>
+          <div class="tech-row">
+            ${p.tech.slice(0,3).map(t => `<span class="tech-chip">${t}</span>`).join('')}
+          </div>
+        </div>
+      `;
+      card.addEventListener('click', () => openCaseStudy(p));
+      grid.appendChild(card);
+    });
+  }
+
+  const listView = document.getElementById('projectsListView');
+  const caseView = document.getElementById('caseStudyView');
+  const caseBody = document.getElementById('caseStudyBody');
+  const backBtn = document.getElementById('backToProjects');
+
+  function openCaseStudy(project){
+    const idx = projects.findIndex(p => p.id === project.id);
+    const prev = projects[(idx - 1 + projects.length) % projects.length];
+    const next = projects[(idx + 1) % projects.length];
+
+    caseBody.innerHTML = `
+      <div class="case-header-chip mono">
+        <span class="dot"></span> Selected Works &nbsp;&middot;&nbsp; ${project.tag.split(' · ')[0]} &nbsp;&middot;&nbsp; ${project.year}
+      </div>
+      <div class="case-head">
+        <h2>${project.title}</h2>
+        <p class="summary">${project.summary}</p>
+      </div>
+      <div class="case-image clay">
+        ${project.image ? `<img src="${project.image}" alt="${project.title}" />` : caseIconSvg}
+      </div>
+      <div class="case-sections-grid">
+        ${project.sections.map(sec => `
+          <div class="case-section-card clay-sm">
+            <h3>${sec.h}</h3>
+            <p>${sec.body}</p>
+          </div>
+        `).join('')}
+      </div>
+      <div class="case-nav">
+        <button class="case-nav-btn prev clay-sm" data-nav="${prev.id}">
+          <span class="nav-label">← Previous Project</span>
+          <span class="nav-title">${prev.title}</span>
+        </button>
+        <button class="case-nav-btn next clay-sm" data-nav="${next.id}">
+          <span class="nav-label">Next Project →</span>
+          <span class="nav-title">${next.title}</span>
+        </button>
+      </div>
+    `;
+
+    caseBody.querySelectorAll('[data-nav]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = projects.find(p => p.id === btn.dataset.nav);
+        openCaseStudy(target);
+      });
+    });
+
+    listView.hidden = true;
+    caseView.hidden = false;
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function closeCaseStudy(){
+    caseView.hidden = true;
+    listView.hidden = false;
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  if (backBtn) {
+    backBtn.addEventListener('click', closeCaseStudy);
+  }
+"""
+    },
+    "about": {
+        "content": """
+<main class="page-body">
+  <div class="wrap-wide">
+    <div class="about-hero">
+      <div>
+        <span class="eyebrow about-eyebrow">Senior Product Designer &amp; AI Builder</span>
+        <h1>12+ years. 7 industries.<br>One design mindset.</h1>
+        <p>I go from research to shipped product — across EdTech, FinTech, HealthTech, and consumer apps. Lately I spend as much time in code as in Figma, building AI-native interfaces end-to-end.</p>
+        <div class="about-cta-row">
+          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener" class="clay-btn primary">LinkedIn ↗</a>
+          <a href="mailto:sumitraiworks@gmail.com" class="clay-btn">Send Email</a>
+        </div>
+      </div>
+      <div class="about-photo-wrap">
+        <div class="about-photo">
+          <img src="./assets/AVATAR.png" alt="Sumit Rai portrait" />
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <div class="stat-num">12+</div>
+        <div class="stat-label">Years Experience</div>
+        <div class="stat-sub">Product &amp; Systems Leadership</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Projects Shipped</div>
+        <div class="stat-sub">Web, Mobile &amp; AI Products</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Industries</div>
+        <div class="stat-sub">FinTech, EdTech, SaaS, Health &amp; More</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Core Disciplines</div>
+        <div class="stat-sub">Brand, UI/UX &amp; Motion</div>
+      </div>
+    </div>
+
+    <div class="worklogos" style="margin-top:52px;">
+      <div class="section-label" style="display:flex;align-items:center;gap:8px;margin-bottom:26px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);">I have worked at</span></div>
+      <div class="work-row" id="workRow"></div>
+    </div>
+
+    <div class="beyond-wrap">
+      <div class="section-label">
+        <span class="dot"></span>
+        <span>Beyond the pixel</span>
+      </div>
+      <div class="beyond-gallery" aria-label="Beyond the pixel photo reel">
+        <div class="beyond-track">
+          <figure class="photo-card"><img src="./assets/IMG_01.png" alt="Beyond the pixel moment 01" /></figure>
+          <figure class="photo-card"><img src="./assets/IMG_03.jpg" alt="Beyond the pixel moment 03" /></figure>
+          <figure class="photo-card"><img src="./assets/IMG_04.jpg" alt="Beyond the pixel moment 04" /></figure>
+          <figure class="photo-card"><img src="./assets/IMG_06.jpg" alt="Beyond the pixel moment 06" /></figure>
+          <figure class="photo-card"><img src="./assets/IMG_07.jpg" alt="Beyond the pixel moment 07" /></figure>
+          <figure class="photo-card"><img src="./assets/IMG_08.jpg" alt="Beyond the pixel moment 08" /></figure>
+          <!-- Duplicated set for seamless loop -->
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_01.png" alt="" /></figure>
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_03.jpg" alt="" /></figure>
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_04.jpg" alt="" /></figure>
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_06.jpg" alt="" /></figure>
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_07.jpg" alt="" /></figure>
+          <figure class="photo-card" aria-hidden="true"><img src="./assets/IMG_08.jpg" alt="" /></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+""",
+        "js": """
+  const companies = [
+    { name:"Raimage Design", role:"Founding Designer", years:"2025 — Now" },
+    { name:"Edfora Infotech", role:"Senior Product Designer", years:"2023 — 2025" },
+    { name:"Design Matra", role:"Product Designer", years:"2021 — 2023" },
+    { name:"Kitaro Trading", role:"Graphic Designer", years:"2012 — 2021" },
+  ];
+
+  const workRow = document.getElementById('workRow');
+  if (workRow) {
+    companies.forEach((c) => {
+      const item = document.createElement('div');
+      item.className = 'work-item clay-sm';
+      item.innerHTML = `
+        <div class="work-company">${c.name}</div>
+        <div class="work-role">${c.role}</div>
+        <div class="work-year mono">${c.years}</div>
+      `;
+      workRow.appendChild(item);
+    });
+  }
+"""
+    },
+    "resume": {
+        "content": """
+<main class="page-body">
+  <div class="wrap">
+    <div class="resume-page-wrap">
+      <p class="eyebrow">Resume</p>
+
+      <div class="resume-a4">
+        <div class="r-role-line">Product Design</div>
+        <h2>Sumit Rai</h2>
+        <div class="r-contact">Delhi, India · hello@sumitrai.design · linkedin.com/in/isumitrai</div>
+
+        <h4>Experience</h4>
+        <div class="a4-role">
+          <div class="role-head"><span>Founding Designer</span><span>2025 — Now</span></div>
+          <div class="role-org">Raimage Design</div>
+          <p>Designing digital experiences with purpose, focusing on clarity, trust, and AI-native interfaces.</p>
+        </div>
+        <div class="a4-role">
+          <div class="role-head"><span>Senior Product Designer</span><span>2023 — 2025</span></div>
+          <div class="role-org">Edfora Infotech</div>
+          <p>Leading end-to-end product design across web and mobile, partnering with engineering and research from discovery through launch.</p>
+        </div>
+        <div class="a4-role">
+          <div class="role-head"><span>Product Designer</span><span>2021 — 2023</span></div>
+          <div class="role-org">Design Matra</div>
+          <p>Owned core flows for onboarding, checkout, and account management, iterating with PM and engineering on a monthly cadence.</p>
+        </div>
+        <div class="a4-role">
+          <div class="role-head"><span>Graphic Designer</span><span>2012 — 2021</span></div>
+          <div class="role-org">Kitaro Trading</div>
+          <p>Designed interfaces across web and mobile platforms and built the team's early design system.</p>
+        </div>
+
+        <h4>Skills</h4>
+        <div class="a4-skills">
+          <span>Product Design</span><span>UX Research</span><span>Design Systems</span><span>Prototyping</span><span>Figma</span><span>AI Tools</span>
+        </div>
+      </div>
+
+      <div class="download-gate">
+        <p>Enter your email to get the download link.</p>
+        <form class="download-form" id="resumeForm">
+          <input type="email" id="resumeEmail" placeholder="you@email.com" required />
+          <button type="submit" class="clay-btn primary">Send link</button>
+        </form>
+        <a href="./assets/Sumit_Rai_Resume.pdf" class="clay-btn primary" id="resumeDownload" download>Download PDF</a>
+      </div>
+    </div>
+  </div>
+</main>
+""",
+        "js": """
+  const resumeForm = document.getElementById('resumeForm');
+  const resumeDownload = document.getElementById('resumeDownload');
+  if(resumeForm){
+    resumeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      resumeForm.hidden = true;
+      resumeDownload.classList.add('show');
+    });
+  }
+"""
+    },
+    "playground": {
+        "content": """
+<main class="page-body">
+  <div class="wrap-wide">
+    <div class="hero" style="padding-top:40px;">
+      <p class="eyebrow">Playground</p>
+      <h1 style="font-size:2.2rem;">Experiments &amp; UI shots</h1>
+      <p>Visual explorations, UI experiments, and creative side concepts built outside production briefs.</p>
+    </div>
+    <div class="pg-grid" id="playgroundGrid"></div>
+  </div>
+</main>
+""",
+        "js": """
+  const playgroundItems = [
+    { title:"Koolkidz Watches Design", image:"./assets/pg_001.jpg" },
+    { title:"Stacklet AI Dev Projects", image:"./assets/pg_002.jpg" },
+    { title:"Chhota Bheem Branding", image:"./assets/pg_003.jpg" },
+    { title:"Radio Concept", image:"./assets/pg_004.jpg" },
+  ];
+  const caseIconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-11 11"/></svg>`;
+
+  const pgGrid = document.getElementById('playgroundGrid');
+  if (pgGrid) {
+    playgroundItems.forEach((item) => {
+      const card = document.createElement('div');
+      card.className = 'proj-card pg-card';
+      card.innerHTML = `
+        <div class="proj-image">
+          ${item.image ? `<img src="${item.image}" alt="${item.title}" loading="lazy" />` : `<div class="img-fallback">${caseIconSvg}</div>`}
+        </div>
+        <div class="proj-body">
+          <h3>${item.title}</h3>
+        </div>
+      `;
+      pgGrid.appendChild(card);
+    });
+  }
+"""
+    }
+}
+
+pages["index"] = pages["projects"]
+
+global_js = """
+// ---- Scroll-hide header ----
+(function(){
+  const header = document.getElementById('siteHeader');
+  let lastY = 0, ticking = false;
+  const THRESHOLD = 80;
+
+  function onScroll(){
+    const y = window.scrollY;
+    if (header) {
+      if (y > lastY && y > THRESHOLD) {
+        header.classList.add('nav-hidden');
+      } else {
+        header.classList.remove('nav-hidden');
+      }
+    }
+    lastY = y;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function(){
+    if (!ticking){ requestAnimationFrame(onScroll); ticking = true; }
+  }, {passive:true});
+})();
+
+// ---- Animated status chip ----
+(function(){
+  const chipText = document.getElementById('chipText');
+  if (!chipText) return;
+  const lines = [
+    'Currently designing at <strong>Raimage Design</strong> \u00b7 New Delhi, India',
+    'Open to freelance &amp; product collaborations',
+    '12+ years · 7 industries · One design mindset',
+    'Building AI-native interfaces end-to-end',
+  ];
+  let idx = 0;
+  function cycle(){
+    chipText.style.opacity = '0';
+    chipText.style.transform = 'translateY(6px)';
+    setTimeout(()=>{
+      idx = (idx + 1) % lines.length;
+      chipText.innerHTML = lines[idx];
+      chipText.style.opacity = '1';
+      chipText.style.transform = 'translateY(0)';
+    }, 320);
+  }
+  setInterval(cycle, 3400);
+})();
+
+// ---- Dark / Light theme toggle ----
+(function(){
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  const root = document.documentElement;
+  const stored = localStorage.getItem('theme');
+  if (stored === 'dark') root.setAttribute('data-theme','dark');
+
+  btn.addEventListener('click', ()=>{
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  });
+})();
+
+// ---- Copy Email Clipboard ----
+(function(){
+  const copyBtn = document.getElementById('copyEmailBtn');
+  if (!copyBtn) return;
+  copyBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText('sumitraiworks@gmail.com').then(() => {
+      copyBtn.classList.add('copied');
+      setTimeout(() => copyBtn.classList.remove('copied'), 2200);
+    });
+  });
+})();
+"""
+
+for page_name, data in pages.items():
+    file_path = f"{page_name}.html"
+    home_whatido = ""
+    page_content = data["content"].replace("      <!-- HOME_WHATIDO -->", home_whatido)
+    
+    content = head_start + get_header(page_name) + page_content + footer + "\n<script>\n" + data['js'] + global_js + "\n</script>\n</body>\n</html>\n"
+    
+    with open(file_path, "w") as f:
+        f.write(content)
+    print(f"Generated {file_path}")
