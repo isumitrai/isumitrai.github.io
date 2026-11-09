@@ -70,7 +70,7 @@ def create_resume_pdf(filename="assets/Sumit_Rai_Resume.pdf"):
     stream_lines.append("ET")
     
     summary_lines = [
-        "Product Designer with 7+ years of product design experience since 2019 and 10+ years of overall design experience.",
+        "Product Designer with 8+ years of product design experience and 12+ years of overall design craft.",
         "Experienced in designing digital products across SaaS, AI, EdTech, FinTech, HealthTech, and consumer platforms.",
         "Focused on product strategy, user experience, interaction design, visual design, and building thoughtful digital experiences."
     ]
