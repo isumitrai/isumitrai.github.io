@@ -1,23 +1,24 @@
 #!/usr/bin/env python3
 """
-Master Page Generator for Sumit Rai Portfolio V2 — Enhanced Edition
-Fulfills all updated user requirements:
-1. Typography from ref Debi portfolio: Plus Jakarta Sans (Headings) + Inter (Body/UI) + Space Mono (Micro-copy)
-2. Debi-style nickname treatment on main page: "Hi, I'm Sumit Rai (most people call me Sumi or Sumo)"
-3. Toolkit & Environment: Uses images tools01.jpg through tools18.jpg from assets/src/
-4. Client & Brand Partners: Clean unbordered layout, equalized logo sizes, uniform grayscale, NO color inversion in dark mode!
-5. Playground: Enhanced with Raimage Design studio lab styling (fine art prints, tools & UI concepts, industrial & 3D)
-6. Dedicated Contact Page (contact.html) + Surprise features:
-   - Live New Delhi, India local time clock widget (real-time updating)
-   - Interactive intent pill selector with auto-drafting email
-   - Pure Web Audio synthetic haptic sound engine (toggleable via header pill)
+Master Page Generator for Sumit Rai Portfolio — Enhanced Edition
+Fulfills all requirements:
+1. Ultra-clean typography, generous whitespace, inspired by shahimim.com + modern product design.
+2. Experience: 8+ years in product design and 12+ years total design craft.
+3. Signature pop color: Electric International Orange (#FF5500 / #FF661A).
+4. Uniform Navigation: Logo, Work [W], About [A], Resume [R], Resources [B], Playground [P], Contact [C].
+5. Uniform Audited Footer: Live status dot, New Delhi IST clock, direct email with copy toast, quick links, credits.
+6. New Dedicated Curated Resources Page (resources.html) with customizable Amazon links.
+7. Clean Homepage: Zero divider duplicity, independent Brands and Tools sections.
+8. Global Keyboard Navigation: W, A, R, B, P, C, Esc.
 """
 
 import os
 import json
 import html
 
+# -------------------------------------------------------------
 # Projects Database with structured case studies
+# -------------------------------------------------------------
 PROJECTS = [
     {
         "id": "edumanage",
@@ -101,7 +102,9 @@ PROJECTS = [
     }
 ]
 
+# -------------------------------------------------------------
 # Client Brands List
+# -------------------------------------------------------------
 BRANDS = [
     {"name": "MakeMyTrip", "img": "./assets/src/brands01.jpg"},
     {"name": "FIITJEE", "img": "./assets/src/brands02.jpg"},
@@ -125,7 +128,9 @@ BRANDS = [
     {"name": "KidKidz", "img": "./assets/src/brands20.jpg"}
 ]
 
+# -------------------------------------------------------------
 # 18 Real Tool Images (assets/src/tools01.jpg to tools18.jpg)
+# -------------------------------------------------------------
 TOOLS = [
     {"name": "Figma", "img": "./assets/src/tools01.jpg"},
     {"name": "Framer", "img": "./assets/src/tools02.jpg"},
@@ -147,6 +152,136 @@ TOOLS = [
     {"name": "Linear", "img": "./assets/src/tools18.jpg"}
 ]
 
+# -------------------------------------------------------------
+# Curated Resources List (Books, Systems & Design Architecture)
+# Update with your own Amazon referral/affiliate links anytime!
+# -------------------------------------------------------------
+RESOURCES = [
+    {
+        "id": "res-1",
+        "title": "Refactoring UI",
+        "author": "Adam Wathan & Steve Schoger",
+        "category": "Design Craft",
+        "format": "Digital & Hardcover",
+        "desc": "The most pragmatic guide to designing clean, high-conversion interfaces from a developer and designer perspective.",
+        "takeaway": "Design with visual hierarchy and intentional spacing before decorative chrome.",
+        "link": "https://www.amazon.com/dp/B08M3S6W8R"
+    },
+    {
+        "id": "res-2",
+        "title": "The Design of Everyday Things",
+        "author": "Don Norman",
+        "category": "Product Strategy",
+        "format": "Classic Hardcover",
+        "desc": "The definitive bible on cognitive ergonomics, affordances, signifiers, and designing products that humans intuitively understand.",
+        "takeaway": "When users fail, it is not user error — it is faulty interface design.",
+        "link": "https://www.amazon.com/dp/0465050654"
+    },
+    {
+        "id": "res-3",
+        "title": "The Elements of Typographic Style",
+        "author": "Robert Bringhurst",
+        "category": "Design Craft",
+        "format": "Reference Book",
+        "desc": "Widely revered as the definitive text on typographic craft, rhythm, proportional scales, and the architecture of the printed page.",
+        "takeaway": "Typography exists to honor content and guide human comprehension.",
+        "link": "https://www.amazon.com/dp/0881792128"
+    },
+    {
+        "id": "res-4",
+        "title": "A Philosophy of Software Design",
+        "author": "John Ousterhout",
+        "category": "Systems & Tech",
+        "format": "Technical Book",
+        "desc": "A masterclass on managing system complexity, modular interfaces, and why shallow modules ruin systems.",
+        "takeaway": "Modules should be deep: simple interfaces hiding profound internal power.",
+        "link": "https://www.amazon.com/dp/1732102201"
+    },
+    {
+        "id": "res-5",
+        "title": "Universal Principles of Design",
+        "author": "William Lidwell, Kritina Holden, Jill Butler",
+        "category": "Design Craft",
+        "format": "Visual Reference",
+        "desc": "An authoritative encyclopedia of 125 cognitive, perceptual, and structural laws governing human interaction.",
+        "takeaway": "Master Fitts' Law, Hick's Law, and progressive disclosure to reduce cognitive load.",
+        "link": "https://www.amazon.com/dp/1592535879"
+    },
+    {
+        "id": "res-6",
+        "title": "Shape Up: Stop Running in Circles and Ship Work That Matters",
+        "author": "Ryan Singer (Basecamp)",
+        "category": "Product Strategy",
+        "format": "Product Methodology",
+        "desc": "A revolutionary framework for product teams: fixed time, variable scope, 6-week cycles, and building with shaped appetites.",
+        "takeaway": "Never start building until problems are shaped with clear boundaries.",
+        "link": "https://www.amazon.com/dp/B081N4R3G9"
+    },
+    {
+        "id": "res-7",
+        "title": "Inspired: How to Create Tech Products Customers Love",
+        "author": "Marty Cagan",
+        "category": "Product Strategy",
+        "format": "Management Guide",
+        "desc": "The gold standard for product discovery, continuous customer validation, and building empowered product teams.",
+        "takeaway": "Validate value, usability, feasibility, and viability before writing code.",
+        "link": "https://www.amazon.com/dp/1119387507"
+    },
+    {
+        "id": "res-8",
+        "title": "Designing Data-Intensive Applications",
+        "author": "Martin Kleppmann",
+        "category": "Systems & Tech",
+        "format": "Engineering Architecture",
+        "desc": "The definitive exploration of storage engines, distributed consensus, data models, and scalable systems reliability.",
+        "takeaway": "A designer who understands backend latency and data models designs 10x better products.",
+        "link": "https://www.amazon.com/dp/1449373321"
+    },
+    {
+        "id": "res-9",
+        "title": "Grid Systems in Graphic Design",
+        "author": "Josef Müller-Brockmann",
+        "category": "Design Craft",
+        "format": "Classic Monograph",
+        "desc": "The Swiss design masterwork outlining mathematical grid systems for layout, typography, and architectural coherence.",
+        "takeaway": "The grid is a structural aid, not a straightjacket — it creates rhythm and order.",
+        "link": "https://www.amazon.com/dp/3721201450"
+    },
+    {
+        "id": "res-10",
+        "title": "Show Your Work!",
+        "author": "Austin Kleon",
+        "category": "Mindset & Craft",
+        "format": "Illustrated Essay",
+        "desc": "A punchy guide to working in public, building a digital garden, and sharing your creative process openly.",
+        "takeaway": "Become a documentarian of what you do every day; generosity builds lasting influence.",
+        "link": "https://www.amazon.com/dp/076117897X"
+    },
+    {
+        "id": "res-11",
+        "title": "A Pattern Language",
+        "author": "Christopher Alexander",
+        "category": "Systems & Tech",
+        "format": "Architectural Classic",
+        "desc": "The seminal architectural philosophy that directly inspired object-oriented programming, design systems, and modular components.",
+        "takeaway": "Reusable patterns solve recurring spatial and informational tensions.",
+        "link": "https://www.amazon.com/dp/0195019199"
+    },
+    {
+        "id": "res-12",
+        "title": "Creativity, Inc.",
+        "author": "Ed Catmull & Amy Wallace",
+        "category": "Mindset & Craft",
+        "format": "Hardcover Memoir",
+        "desc": "The Pixar co-founder's masterclass on creative culture, candid feedback (Braintrust), and protecting early fragile ideas.",
+        "takeaway": "Early drafts are never great; psychological safety allows teams to turn raw ideas into masterpieces.",
+        "link": "https://www.amazon.com/dp/0812993015"
+    }
+]
+
+# -------------------------------------------------------------
+# Common Head, Nav, Footer, and Global JS
+# -------------------------------------------------------------
 def get_head(title="Sumit Rai — Senior Product Designer | AI Builder", active_page="index"):
     return f"""<!doctype html>
 <html lang="en">
@@ -154,11 +289,11 @@ def get_head(title="Sumit Rai — Senior Product Designer | AI Builder", active_
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
-  <meta name="description" content="Sumit Rai (Sumi) — Senior Product Designer &amp; AI Builder with 7+ years of product design and 10+ years of overall design experience across SaaS, AI, EdTech, FinTech, and consumer platforms." />
+  <meta name="description" content="Sumit Rai — Senior Product Designer &amp; AI Builder with 8+ years of product design and 12+ years of overall design craft across SaaS, AI, EdTech, FinTech, and consumer platforms." />
   <meta name="author" content="Sumit Rai" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -169,26 +304,27 @@ def get_nav(active_page):
 <header class="nav-wrap" id="siteHeader">
   <div class="nav-pill">
     <div class="nav-logo-group">
-      <a href="index.html" class="nav-logo" title="Sumit Rai">
+      <a href="index.html" class="nav-logo" title="Sumit Rai — Homepage">
         <span class="sr-mark">SR</span>
         <span>Sumit Rai</span>
       </a>
     </div>
 
     <nav class="nav-tabs" id="navTabs" aria-label="Main Navigation">
-      <a href="projects.html" class="{'active' if active_page in ['projects'] else ''}">Work</a>
-      <a href="about.html" class="{'active' if active_page == 'about' else ''}">About</a>
-      <a href="resume.html" class="{'active' if active_page == 'resume' else ''}">Resume</a>
-      <a href="playground.html" class="{'active' if active_page == 'playground' else ''}">Playground</a>
-      <a href="contact.html" class="{'active' if active_page == 'contact' else ''}">Contact</a>
+      <a href="projects.html" class="{'active' if active_page == 'projects' else ''}">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="{'active' if active_page == 'about' else ''}">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="{'active' if active_page == 'resume' else ''}">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="{'active' if active_page == 'resources' else ''}">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="{'active' if active_page == 'playground' else ''}">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="{'active' if active_page == 'contact' else ''}">Contact <span class="nav-key">[C]</span></a>
     </nav>
 
     <div class="nav-right-actions">
-      <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds">
+      <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
         <span id="soundIcon">🔊</span>
         <span id="soundLabel" class="sound-label-text">Sound</span>
       </button>
-      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)">
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)" title="Quick Command Palette (Cmd+K)">
         <kbd>⌘K</kbd>
       </button>
       <button class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -201,58 +337,91 @@ def get_nav(active_page):
   <!-- Mobile nav drawer -->
   <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
     <nav class="mobile-nav-links">
-      <a href="index.html" class="{'active' if active_page == 'index' else ''}">Home</a>
-      <a href="projects.html" class="{'active' if active_page in ['projects'] else ''}">Work</a>
-      <a href="about.html" class="{'active' if active_page == 'about' else ''}">About</a>
-      <a href="resume.html" class="{'active' if active_page == 'resume' else ''}">Resume</a>
-      <a href="playground.html" class="{'active' if active_page == 'playground' else ''}">Playground</a>
-      <a href="contact.html" class="{'active' if active_page == 'contact' else ''}">Contact</a>
+      <a href="index.html" class="{'active' if active_page == 'index' else ''}">Home <span class="nav-key">[Esc]</span></a>
+      <a href="projects.html" class="{'active' if active_page == 'projects' else ''}">Work <span class="nav-key">[W]</span></a>
+      <a href="about.html" class="{'active' if active_page == 'about' else ''}">About <span class="nav-key">[A]</span></a>
+      <a href="resume.html" class="{'active' if active_page == 'resume' else ''}">Resume <span class="nav-key">[R]</span></a>
+      <a href="resources.html" class="{'active' if active_page == 'resources' else ''}">Resources <span class="nav-key">[B]</span></a>
+      <a href="playground.html" class="{'active' if active_page == 'playground' else ''}">Playground <span class="nav-key">[P]</span></a>
+      <a href="contact.html" class="{'active' if active_page == 'contact' else ''}">Contact <span class="nav-key">[C]</span></a>
     </nav>
   </div>
 </header>
 
-<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode">
+<button class="theme-toggle-floating" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
   <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
   <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
 </button>
 """
 
 footer_html = """
-<footer>
+<footer class="site-footer" id="siteFooter">
   <div class="footer-inner">
-    <div class="footer-status-pill">
-      <span class="dot"></span>
-      <span>Open to Freelance &amp; Product Collaborations</span>
-    </div>
-
-    <h2 class="footer-tagline">
-      Let's build something together.
-    </h2>
-
-    <div class="footer-email-box">
-      <div class="footer-email-pill">
-        <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
-          <span class="email-text">sumitraiworks@gmail.com</span>
-        </a>
-        <button class="copy-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email address">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span class="copy-toast">Copied!</span>
-        </button>
+    
+    <!-- Top status bar -->
+    <div class="footer-top-row">
+      <div class="footer-status-tag">
+        <span class="live-dot"></span>
+        <span>Available for select product leadership &amp; design advisory</span>
       </div>
-    </div>
-
-    <div class="footer-bottom-row">
       <div class="footer-clock-box" id="delhiClockWrap">
         <span class="live-dot"></span>
         <span>New Delhi, India &middot; <strong id="liveClockText">--:-- -- IST</strong></span>
       </div>
-      <div class="flinks">
-        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X</a>
-        <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram</a>
-        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Main hero call to action -->
+    <div class="footer-hero-cta">
+      <h2 class="footer-tagline">Let's build something thoughtful together.</h2>
+      <p class="footer-sublead">Always open to high-impact products, early-stage ventures, and ambitious design challenges.</p>
+      
+      <div class="footer-email-box">
+        <div class="footer-email-pill">
+          <a class="pill-left" href="mailto:sumitraiworks@gmail.com" title="Send email to Sumit Rai">
+            <span class="email-text">sumitraiworks@gmail.com</span>
+            <span class="email-arrow">&nearr;</span>
+          </a>
+          <button class="copy-btn" id="copyEmailBtn" aria-label="Copy email address" title="Copy email address">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="copy-toast">Copied!</span>
+          </button>
+        </div>
       </div>
     </div>
+
+    <!-- Bottom navigation and meta -->
+    <div class="footer-bottom-nav">
+      <div class="footer-brand-side">
+        <span class="footer-mark">SR</span>
+        <span class="footer-name">Sumit Rai</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-exp-text">8+ years product design &middot; 12+ years design craft</span>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="flinks-nav">
+          <a href="projects.html">Work <span class="nav-key">[W]</span></a>
+          <a href="about.html">About <span class="nav-key">[A]</span></a>
+          <a href="resume.html">Resume <span class="nav-key">[R]</span></a>
+          <a href="resources.html">Resources <span class="nav-key">[B]</span></a>
+          <a href="playground.html">Playground <span class="nav-key">[P]</span></a>
+          <a href="contact.html">Contact <span class="nav-key">[C]</span></a>
+        </div>
+
+        <div class="flinks-social">
+          <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener">LinkedIn &nearr;</a>
+          <a href="https://x.com/isumitrai" target="_blank" rel="noopener">X &nearr;</a>
+          <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener">Instagram &nearr;</a>
+          <a href="assets/Sumit_Rai_Resume.pdf" download>Resume PDF &darr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-credit-row">
+      <span>&copy; 2026 Sumit Rai. All rights reserved.</span>
+      <span>Designed with restraint &middot; Built for craft</span>
+    </div>
+
   </div>
 </footer>
 
@@ -292,6 +461,13 @@ footer_html = """
           <span>Resume &amp; Credentials</span>
         </span>
         <span class="cmd-shortcut">R</span>
+      </a>
+      <a href="resources.html" class="cmd-item">
+        <span class="item-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+          <span>Curated Resources (Books &amp; Tools)</span>
+        </span>
+        <span class="cmd-shortcut">B</span>
       </a>
       <a href="playground.html" class="cmd-item">
         <span class="item-left">
@@ -397,7 +573,7 @@ global_js = """
 
   // Play micro click on link / button clicks
   document.addEventListener('click', function(e){
-    if (e.target.closest('a, button, .proj-card, .tool-tile, .pg-card-rich')) {
+    if (e.target.closest('a, button, .proj-card, .tool-tile, .resource-card, .pg-card-rich')) {
       AudioEngine.playTick(780, 0.028);
     }
   });
@@ -405,7 +581,6 @@ global_js = """
   // 2. Real-time New Delhi (IST) Clock
   function updateDelhiClock(){
     const textEl = document.getElementById('liveClockText');
-    const pageVal = document.getElementById('delhiLiveClockVal');
     const now = new Date();
     // New Delhi is UTC +5:30
     const istOffset = 5.5 * 60 * 60 * 1000;
@@ -420,7 +595,6 @@ global_js = """
 
     const formatted = `${h}:${m}:${s} ${ampm} IST`;
     if (textEl) textEl.textContent = formatted;
-    if (pageVal) pageVal.textContent = formatted;
   }
   setInterval(updateDelhiClock, 1000);
   updateDelhiClock();
@@ -440,7 +614,7 @@ global_js = """
   }
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 
-  // 4. Scroll Header — add scrolled class for backdrop effect (always visible)
+  // 4. Scroll Header — add scrolled class for backdrop effect
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', function(){
     if (header) {
@@ -448,7 +622,7 @@ global_js = """
     }
   }, { passive: true });
 
-  // 4b. Mobile Nav Toggle (hamburger)
+  // 5. Mobile Nav Toggle (hamburger)
   const navMenuToggle = document.getElementById('navMenuToggle');
   const mobileNavDrawer = document.getElementById('mobileNavDrawer');
   if (navMenuToggle && mobileNavDrawer) {
@@ -468,7 +642,7 @@ global_js = """
     });
   }
 
-  // 5. Copy Email
+  // 6. Copy Email with Toast & Audio
   const copyBtn = document.getElementById('copyEmailBtn');
   if (copyBtn) {
     copyBtn.addEventListener('click', function(e){
@@ -478,19 +652,6 @@ global_js = """
         AudioEngine.playTick(1020, 0.06);
         setTimeout(function(){ copyBtn.classList.remove('copied'); }, 2000);
       });
-    });
-  }
-
-  // 6. Interactive Nickname Cycle (Debi Style)
-  const nickBtn = document.getElementById('nicknameToggle');
-  if (nickBtn) {
-    const nicks = ['Sumi', 'Sumo'];
-    let idx = 0;
-    nickBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      idx = (idx + 1) % nicks.length;
-      nickBtn.textContent = nicks[idx];
-      AudioEngine.playTick(880 + (idx * 120), 0.04);
     });
   }
 
@@ -524,19 +685,6 @@ global_js = """
     });
   }
 
-  document.addEventListener('keydown', function(e){
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      if (cmdModal && cmdModal.classList.contains('active')) {
-        closeCmd();
-      } else {
-        openCmd();
-      }
-    } else if (e.key === 'Escape' && cmdModal && cmdModal.classList.contains('active')) {
-      closeCmd();
-    }
-  });
-
   if (cmdThemeBtn) {
     cmdThemeBtn.addEventListener('click', function(){
       toggleTheme();
@@ -559,6 +707,60 @@ global_js = """
       filterCmd(e.target.value);
     });
   }
+
+  // 8. Global Keyboard Shortcuts Navigation (inspired by shahimim.com)
+  document.addEventListener('keydown', function(e){
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('active')) {
+        closeCmd();
+      } else {
+        openCmd();
+      }
+      return;
+    }
+
+    if (cmdModal && cmdModal.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeCmd();
+      }
+      return;
+    }
+
+    // Do not trigger navigation when typing in inputs or holding modifier keys
+    const tag = (e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) {
+      return;
+    }
+    if (e.metaKey || e.ctrlKey || e.altKey) {
+      return;
+    }
+
+    const key = e.key.toLowerCase();
+    if (key === 'w') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'projects.html';
+    } else if (key === 'a') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'about.html';
+    } else if (key === 'r') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resume.html';
+    } else if (key === 'b') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'resources.html';
+    } else if (key === 'p') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'playground.html';
+    } else if (key === 'c') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'contact.html';
+    } else if (e.key === 'Escape') {
+      AudioEngine.playTick(820, 0.03);
+      window.location.href = 'index.html';
+    }
+  });
 })();
 """
 
@@ -581,7 +783,7 @@ def build_index():
           <h3 class="proj-title">{p['title']}</h3>
           <p class="proj-desc">{p['tagline']}</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">Case Study</span>
+            <span class="proj-view-link">View Case Study &rarr;</span>
             <div class="proj-tech-tags">
               <span class="proj-tag">{p['tags'][0]}</span>
               <span class="proj-tag">{p['tags'][1]}</span>
@@ -591,7 +793,6 @@ def build_index():
       </article>
 """
 
-    # Requirement 4: Clean, unbordered, equalized grayscale logos (NO COLOR INVERT IN DARK MODE)
     brands_html = ""
     for b in BRANDS:
         brands_html += f"""
@@ -600,7 +801,6 @@ def build_index():
         </div>
 """
 
-    # Requirement 3: 18 tool images from assets/src/tools01.jpg to tools18.jpg
     tools_html = ""
     for t in TOOLS:
         tools_html += f"""
@@ -622,19 +822,20 @@ def build_index():
       </div>
 
       <h1 class="hero-greeting">
-        Hi, I'm Sumit Rai.
+        Sumit Rai
       </h1>
 
-      <p class="hero-statement">I design products, build experiences<br>and explore what's next.</p>
+      <p class="hero-statement">Product Designer &amp; AI Builder</p>
       
       <p class="hero-description">
-        Senior Product Designer and AI Builder — exploring the intersection of design, technology and thoughtful product experiences.
+        I design products, build experiences and explore what's next. Senior Product Designer with 8+ years crafting digital products across SaaS, AI, EdTech, and consumer platforms.
       </p>
 
       <div class="cta-row">
-        <a href="#work" class="btn btn-primary">View My Work</a>
-        <a href="about.html" class="btn btn-secondary">About Me</a>
-        <a href="contact.html" class="btn btn-ghost">Get in Touch</a>
+        <a href="#work" class="btn btn-primary">Selected Work <span class="btn-key">[W]</span></a>
+        <a href="about.html" class="btn btn-secondary">About Me <span class="btn-key">[A]</span></a>
+        <a href="resources.html" class="btn btn-secondary">Curated Resources <span class="btn-key">[B]</span></a>
+        <a href="contact.html" class="btn btn-secondary">Get in Touch <span class="btn-key">[C]</span></a>
       </div>
     </section>
 
@@ -646,7 +847,7 @@ def build_index():
           <h2>Work I'm Proud Of</h2>
           <p>Selected digital products shaped across SaaS, EdTech, mobile apps, and marketplace platforms.</p>
         </div>
-        <a href="projects.html" class="section-header-link">All Work</a>
+        <a href="projects.html" class="section-header-link">All Work &rarr;</a>
       </div>
 
       <div class="proj-grid">
@@ -654,7 +855,7 @@ def build_index():
       </div>
 
       <div class="see-all-wrap">
-        <a href="projects.html" class="btn btn-secondary">All Work</a>
+        <a href="projects.html" class="btn btn-secondary">See All Work <span class="btn-key">[W]</span> &rarr;</a>
       </div>
     </section>
 
@@ -662,7 +863,7 @@ def build_index():
     <section class="approach-section">
       <div class="approach-quote-box">
         <span class="eyebrow"><span class="dot"></span> Design Philosophy</span>
-        <h2>Good design starts with understanding.</h2>
+        <h2>&ldquo;Good design starts with understanding.&rdquo;</h2>
         <p class="approach-lead">
           I explore the problem, question assumptions, connect ideas and turn them into experiences that make sense for people and businesses.
         </p>
@@ -680,7 +881,7 @@ def build_index():
           <p>Connect complex system architecture with human interaction, validating hypotheses with rapid prototypes.</p>
         </div>
         <div class="approach-card">
-          <span class="approach-num">03 / DELIVER</span>
+          <span class="approach-num">03 / SHIP</span>
           <h3>Ship with Purpose</h3>
           <p>Build scalable design systems, partner tightly with engineering, and iterate toward measurable business clarity.</p>
         </div>
@@ -692,28 +893,28 @@ def build_index():
       <div class="about-preview-grid">
         <div class="about-preview-content">
           <span class="eyebrow"><span class="dot"></span> Background &amp; Mindset</span>
-          <h2>Designing thoughtful digital experiences since 2015.</h2>
+          <h2>Designing thoughtful digital experiences since 2014.</h2>
           <p>
-            I'm a designer and product thinker with 7+ years dedicated to digital product design since 2019, and 10+ years of overall design craft spanning branding, interfaces, and systems.
+            I'm a designer and product thinker with 8+ years dedicated to digital product design and 12+ years of overall design craft spanning branding, interfaces, and systems.
           </p>
           <p>
             My work spans SaaS, AI, EdTech, FinTech, HealthTech, and consumer platforms. Lately, I explore how AI and emerging technologies reshape human-computer interfaces, bridging design strategy with functional code.
           </p>
           <div style="margin-top:24px;">
-            <a href="about.html" class="btn btn-secondary">About Me</a>
+            <a href="about.html" class="btn btn-secondary">More About Me <span class="btn-key">[A]</span> &rarr;</a>
           </div>
         </div>
 
         <div class="about-stats-grid">
           <div class="stat-box">
-            <span class="stat-number">7+</span>
+            <span class="stat-number">8+</span>
             <span class="stat-label">Years in Product</span>
-            <span class="stat-desc">Dedicated product design since 2019</span>
+            <span class="stat-desc">Dedicated digital product design</span>
           </div>
           <div class="stat-box">
-            <span class="stat-number">10+</span>
+            <span class="stat-number">12+</span>
             <span class="stat-label">Years Total Craft</span>
-            <span class="stat-desc">Visual, brand &amp; UI experience since 2015</span>
+            <span class="stat-desc">Visual, brand, systems &amp; UI craft</span>
           </div>
           <div class="stat-box">
             <span class="stat-number">6+</span>
@@ -729,7 +930,7 @@ def build_index():
       </div>
     </section>
 
-    <!-- SECTION 05 — SELECTED EXPERIENCE / JOURNEY -->
+    <!-- SECTION 05 — SELECTED EXPERIENCE -->
     <section class="experience-section">
       <div class="section-header-row">
         <div class="section-title-wrap">
@@ -737,7 +938,7 @@ def build_index():
           <h2>Selected Experience</h2>
           <p>Roles and founding product work across high-impact design studios and tech teams.</p>
         </div>
-        <a href="resume.html" class="section-header-link">Full Resume</a>
+        <a href="resume.html" class="section-header-link">View Full Resume <span class="btn-key">[R]</span> &rarr;</a>
       </div>
 
       <div class="timeline-list">
@@ -785,52 +986,58 @@ def build_index():
           <div class="timeline-period">2015 &mdash; 2021</div>
         </div>
       </div>
+    </section>
 
-      <!-- REQUIREMENT 4: CLIENT BRANDS (CLEAN, EQUAL SIZE, MONOCHROME, NO INVERT IN DARK) -->
-      <div class="brands-wrap">
-        <div class="section-header-row" style="margin-bottom:16px;">
-          <div class="section-title-wrap">
-            <span class="eyebrow"><span class="dot"></span> Client &amp; Brand Partners</span>
-            <h3 style="font-size:1.35rem;">Brands I've Helped Shape</h3>
-          </div>
+    <!-- SECTION 06 — BRANDS SECTION (CLEAN INDEPENDENT CONTAINER, ZERO DUPLICATE BORDERS) -->
+    <section class="brands-section">
+      <div class="section-header-row">
+        <div class="section-title-wrap">
+          <span class="eyebrow"><span class="dot"></span> Client &amp; Brand Partners</span>
+          <h2>Brands I've Helped Shape</h2>
+          <p>Selected ventures, institutions, and brand ecosystems shaped across product and visual design.</p>
         </div>
+      </div>
+      <div class="brands-wrap">
         <div class="brands-grid-clean">
           {brands_html}
         </div>
       </div>
+    </section>
 
-      <!-- REQUIREMENT 3: TOOLKIT & ENVIRONMENT WITH IMAGES (tools01 to tools18) -->
-      <div class="tools-wrap">
-        <div class="section-header-row" style="margin-bottom:16px;">
-          <div class="section-title-wrap">
-            <span class="eyebrow"><span class="dot"></span> Toolkit &amp; Environment</span>
-            <h3 style="font-size:1.35rem;">Tools I Use to Think, Design &amp; Build</h3>
-          </div>
+    <!-- SECTION 07 — TOOLKIT & ENVIRONMENT -->
+    <section class="tools-section">
+      <div class="section-header-row">
+        <div class="section-title-wrap">
+          <span class="eyebrow"><span class="dot"></span> Toolkit &amp; Environment</span>
+          <h2>Tools I Use to Think, Design &amp; Build</h2>
+          <p>Everyday software, platforms, and AI workflows powering high-velocity product delivery.</p>
         </div>
+      </div>
+      <div class="tools-wrap">
         <div class="tools-grid-img">
           {tools_html}
         </div>
       </div>
     </section>
 
-    <!-- SECTION 06 — CONTACT CTA -->
+    <!-- SECTION 08 — CONTACT CTA -->
     <section class="contact-cta-section">
-      <span class="eyebrow"><span class="dot"></span> Contact</span>
+      <span class="eyebrow"><span class="dot"></span> Let's Connect</span>
       <h2>Have something interesting in mind?</h2>
       <p>I'm always open to meaningful conversations, interesting ideas and opportunities to build something thoughtful.</p>
       <div class="cta-btns">
-        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-        <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Me</a>
+        <a href="contact.html" class="btn btn-primary">Get in Touch <span class="btn-key">[C]</span> &rarr;</a>
+        <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Sumit</a>
       </div>
     </section>
 
   </div>
 </main>
 """
-    return get_head("Sumit Rai (Sumi) — Senior Product Designer | AI Builder", "index") + get_nav("index") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
+    return get_head("Sumit Rai — Senior Product Designer | AI Builder", "index") + get_nav("index") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
 
 # -------------------------------------------------------------
-# PAGE 2: PROJECTS.HTML (WORK ARCHIVE & INTERACTIVE CASE STUDIES)
+# PAGE 2: PROJECTS.HTML (CASE STUDIES ARCHIVE & DETAILS)
 # -------------------------------------------------------------
 def build_projects():
     projects_json = json.dumps(PROJECTS)
@@ -850,7 +1057,7 @@ def build_projects():
           <h3 class="proj-title">{p['title']}</h3>
           <p class="proj-desc">{p['tagline']}</p>
           <div class="proj-link-row">
-            <span class="proj-view-link">Case Study</span>
+            <span class="proj-view-link">Case Study &rarr;</span>
             <div class="proj-tech-tags">
               <span class="proj-tag">{p['tags'][0]}</span>
               <span class="proj-tag">{p['tags'][1]}</span>
@@ -898,9 +1105,81 @@ def build_projects():
         <span class="tag-chip" id="caseCategoryChip">SaaS Product</span>
       </div>
 
-      <div id="caseStudyContent">
-        <!-- Rendered dynamically -->
+      <!-- Meta Card -->
+      <article class="case-meta-card">
+        <div class="case-title-row">
+          <h1 id="caseTitle">EduManage</h1>
+          <p class="case-tagline" id="caseTagline">A modern institution dashboard shaped around academic operations.</p>
+        </div>
+        <div class="case-meta-grid">
+          <div class="case-meta-item">
+            <span class="label">Role</span>
+            <span class="val" id="caseRole">Senior Product Designer</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Timeline</span>
+            <span class="val" id="caseTimeline">2024 — 2026</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Focus</span>
+            <span class="val" id="caseFocus">SaaS Dashboard · CMS</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Impact</span>
+            <span class="val" id="caseImpact">High-clarity workflows</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Hero Visual -->
+      <div class="case-hero-image">
+        <img id="caseHeroImg" src="./assets/proj_edumanage.png" alt="Case Study hero" />
       </div>
+
+      <!-- Editorial Narrative Flow -->
+      <div class="case-body-flow">
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> The Overview</h3>
+          <p id="caseOverviewText">Enterprise-grade institution management dashboard engineered for operational clarity.</p>
+        </div>
+
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> The Challenge</h3>
+          <p id="caseChallengeText">Educational institutions traditionally rely on disconnected legacy tools and disparate spreadsheets.</p>
+        </div>
+
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> My Role &amp; Responsibilities</h3>
+          <p id="caseRoleText">I directed end-to-end user research, information architecture, design systems, and clickable prototypes.</p>
+        </div>
+
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> Approach &amp; Process</h3>
+          <p id="caseApproachText">I mapped administrative user journeys to uncover recurring bottlenecks and structured role-based modular layouts.</p>
+        </div>
+
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> The Solution</h3>
+          <p id="caseSolutionText">Delivered an actionable multi-tenant dashboard with automated telemetry and multi-tiered permission management.</p>
+        </div>
+
+        <div class="case-section-box">
+          <h3><span class="sec-dot"></span> Outcomes &amp; Impact</h3>
+          <p id="caseOutcomeText">Significantly reduced task completion times and established a unified design system adopted across portals.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Prev / Next Nav -->
+      <nav class="case-nav" aria-label="Case Study Navigation">
+        <button class="case-nav-btn prev" id="prevCaseBtn">
+          <span class="nav-eyebrow">&larr; Previous Project</span>
+          <span class="nav-proj-name" id="prevCaseTitle">Community</span>
+        </button>
+        <button class="case-nav-btn next" id="nextCaseBtn">
+          <span class="nav-eyebrow">Next Project &rarr;</span>
+          <span class="nav-proj-name" id="nextCaseTitle">Quayo Basket</span>
+        </button>
+      </nav>
     </div>
 
   </div>
@@ -909,172 +1188,80 @@ def build_projects():
 
     projects_page_js = f"""
   const allProjects = {projects_json};
-
-  const archiveGrid = document.getElementById('projectsArchiveGrid');
-  const filterTabs = document.getElementById('projectFilterTabs');
   const listView = document.getElementById('projectsListView');
   const caseView = document.getElementById('caseStudyView');
-  const caseContent = document.getElementById('caseStudyContent');
   const backBtn = document.getElementById('backToProjectsBtn');
-  const categoryChip = document.getElementById('caseCategoryChip');
+  const filterTabs = document.querySelectorAll('#projectFilterTabs .filter-btn');
 
-  function renderProjects(filter = 'all') {{
-    if (!archiveGrid) return;
-    archiveGrid.innerHTML = '';
-    const filtered = allProjects.filter(p => {{
-      if (filter === 'all') return true;
-      if (filter === 'saas') return p.tags.includes('SaaS') || p.tags.includes('CMS');
-      if (filter === 'mobile') return p.tags.includes('Mobile App');
-      if (filter === 'web') return p.tags.includes('Web Design') || p.tags.includes('Marketplace');
-      if (filter === 'edtech') return p.tags.includes('EdTech');
-      return true;
-    }});
-
-    filtered.forEach(p => {{
-      const card = document.createElement('article');
-      card.className = 'proj-card';
-      card.setAttribute('role', 'button');
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('aria-label', 'Open case study for ' + p.title);
-      card.innerHTML = `
-        <div class="proj-image">
-          <img src="${{p.image}}" alt="${{p.full_title}}" loading="lazy" />
-        </div>
-        <div class="proj-body">
-          <div class="proj-meta">
-            <span class="proj-category">${{p.category}}</span>
-            <span class="proj-year">${{p.year}}</span>
-          </div>
-          <h3 class="proj-title">${{p.title}}</h3>
-          <p class="proj-desc">${{p.tagline}}</p>
-          <div class="proj-link-row">
-            <span class="proj-view-link">Case Study</span>
-            <div class="proj-tech-tags">
-              <span class="proj-tag">${{p.tags[0]}}</span>
-              <span class="proj-tag">${{p.tags[1]}}</span>
-            </div>
-          </div>
-        </div>
-      `;
-      card.addEventListener('click', () => openCaseStudy(p.id));
-      card.addEventListener('keydown', (e) => {{ if (e.key === 'Enter') openCaseStudy(p.id); }});
-      archiveGrid.appendChild(card);
-    }});
-  }}
-
-  if (filterTabs) {{
-    filterTabs.addEventListener('click', (e) => {{
-      const btn = e.target.closest('.filter-btn');
-      if (!btn) return;
-      filterTabs.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  // Filter functionality
+  filterTabs.forEach(btn => {{
+    btn.addEventListener('click', () => {{
+      filterTabs.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      renderProjects(btn.dataset.filter);
+      const cat = btn.dataset.filter;
+      const cards = document.querySelectorAll('#projectsArchiveGrid .proj-card');
+      
+      cards.forEach((card, idx) => {{
+        const p = allProjects[idx];
+        if (cat === 'all') {{
+          card.style.display = 'flex';
+        }} else if (cat === 'saas' && p.category.toLowerCase().includes('saas')) {{
+          card.style.display = 'flex';
+        }} else if (cat === 'mobile' && p.category.toLowerCase().includes('grocery')) {{
+          card.style.display = 'flex';
+        }} else if (cat === 'web' && p.category.toLowerCase().includes('web')) {{
+          card.style.display = 'flex';
+        }} else if (cat === 'edtech' && p.category.toLowerCase().includes('edtech')) {{
+          card.style.display = 'flex';
+        }} else {{
+          card.style.display = 'none';
+        }}
+      }});
     }});
-  }}
+  }});
 
+  // Open Case Study Details
   function openCaseStudy(projId) {{
-    const project = allProjects.find(p => p.id === projId);
-    if (!project) return;
+    const pIndex = allProjects.findIndex(item => item.id === projId);
+    if (pIndex === -1) return;
+    const p = allProjects[pIndex];
 
-    const idx = allProjects.findIndex(p => p.id === projId);
-    const prev = allProjects[(idx - 1 + allProjects.length) % allProjects.length];
-    const next = allProjects[(idx + 1) % allProjects.length];
+    document.getElementById('caseTitle').textContent = p.title;
+    document.getElementById('caseTagline').textContent = p.tagline;
+    document.getElementById('caseCategoryChip').textContent = p.category;
+    document.getElementById('caseRole').textContent = p.role;
+    document.getElementById('caseTimeline').textContent = p.timeline;
+    document.getElementById('caseFocus').textContent = p.focus_areas;
+    document.getElementById('caseImpact').textContent = p.in_short;
+    document.getElementById('caseHeroImg').src = p.image;
+    document.getElementById('caseHeroImg').alt = p.full_title;
 
-    if (categoryChip) categoryChip.textContent = project.category;
+    document.getElementById('caseOverviewText').textContent = p.overview;
+    document.getElementById('caseChallengeText').textContent = p.challenge;
+    document.getElementById('caseRoleText').textContent = p.my_role;
+    document.getElementById('caseApproachText').textContent = p.approach;
+    document.getElementById('caseSolutionText').textContent = p.solution;
+    document.getElementById('caseOutcomeText').textContent = p.outcome;
 
-    caseContent.innerHTML = `
-      <!-- COMPACT INFO BLOCK -->
-      <div class="case-meta-card">
-        <div class="case-title-row">
-          <span class="eyebrow"><span class="dot"></span> Case Study</span>
-          <h1>${{project.full_title}}</h1>
-        </div>
-        <p class="case-tagline">${{project.tagline}}</p>
-        
-        <div class="case-meta-grid">
-          <div class="case-meta-item">
-            <div class="label">My Role</div>
-            <div class="val">${{project.role}}</div>
-          </div>
-          <div class="case-meta-item">
-            <div class="label">Focus Areas</div>
-            <div class="val">${{project.focus_areas}}</div>
-          </div>
-          <div class="case-meta-item">
-            <div class="label">Timeline</div>
-            <div class="val">${{project.timeline}}</div>
-          </div>
-          <div class="case-meta-item">
-            <div class="label">In Short</div>
-            <div class="val">${{project.in_short}}</div>
-          </div>
-        </div>
-      </div>
+    // Prev / Next setup
+    const prevIndex = (pIndex - 1 + allProjects.length) % allProjects.length;
+    const nextIndex = (pIndex + 1) % allProjects.length;
 
-      <!-- HERO IMAGE PREVIEW -->
-      <div class="case-hero-image">
-        <img src="${{project.image}}" alt="${{project.full_title}} hero preview" />
-      </div>
+    const prevP = allProjects[prevIndex];
+    const nextP = allProjects[nextIndex];
 
-      <!-- STRUCTURED CASE STUDY SECTIONS -->
-      <div class="case-body-flow">
-        
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 01 &mdash; Project Overview</h3>
-          <p>${{project.overview}}</p>
-        </div>
+    const prevBtn = document.getElementById('prevCaseBtn');
+    const nextBtn = document.getElementById('nextCaseBtn');
 
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 02 &mdash; The Challenge</h3>
-          <p>${{project.challenge}}</p>
-        </div>
+    document.getElementById('prevCaseTitle').textContent = prevP.title;
+    document.getElementById('nextCaseTitle').textContent = nextP.title;
 
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 03 &mdash; My Role &amp; Responsibilities</h3>
-          <p>${{project.my_role}}</p>
-        </div>
-
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 04 &mdash; My Approach &amp; Process</h3>
-          <p>${{project.approach}}</p>
-        </div>
-
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 05 &mdash; The Solution</h3>
-          <p>${{project.solution}}</p>
-        </div>
-
-        <div class="case-section-box">
-          <h3><span class="sec-dot"></span> 06 &mdash; Outcome &amp; Impact</h3>
-          <p>${{project.outcome}}</p>
-        </div>
-
-        <div class="case-section-box" style="background:var(--surface-subtle); border-color:rgba(224,99,30,0.25);">
-          <h3><span class="sec-dot"></span> 07 &mdash; In Short</h3>
-          <p style="font-weight:600; color:var(--ink);">${{project.in_short}}</p>
-        </div>
-
-      </div>
-
-      <!-- PREV / NEXT NAVIGATION -->
-      <div class="case-nav">
-        <button class="case-nav-btn prev" id="prevCaseBtn">
-          <span class="nav-eyebrow">Previous</span>
-          <span class="nav-proj-name">${{prev.title}}</span>
-        </button>
-        <button class="case-nav-btn next" id="nextCaseBtn">
-          <span class="nav-eyebrow">Next</span>
-          <span class="nav-proj-name">${{next.title}}</span>
-        </button>
-      </div>
-    `;
-
-    document.getElementById('prevCaseBtn').addEventListener('click', () => openCaseStudy(prev.id));
-    document.getElementById('nextCaseBtn').addEventListener('click', () => openCaseStudy(next.id));
+    prevBtn.onclick = () => openCaseStudy(prevP.id);
+    nextBtn.onclick = () => openCaseStudy(nextP.id);
 
     listView.hidden = true;
     caseView.hidden = false;
-    window.location.hash = project.id;
+    window.location.hash = projId;
     window.scrollTo({{ top: 0, behavior: 'smooth' }});
   }}
 
@@ -1114,11 +1301,12 @@ def build_about():
           I'm a product designer, creative thinker and builder interested in how design and technology shape the things we experience every day.
         </p>
         <p>
-          Over the past decade, I've journeyed from crafting brand identities and marketing collateral to architecting complex enterprise SaaS, EdTech ecosystems, and AI-native products. I believe the best products balance strategic clarity with rigorous visual craftsmanship.
+          Over the past 12+ years, I've journeyed from crafting brand identities and marketing collateral to architecting complex enterprise SaaS, EdTech ecosystems, and AI-native products with 8+ years dedicated to digital product design. I believe the best products balance strategic clarity with rigorous visual craftsmanship.
         </p>
         <div style="display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;">
-          <a href="resume.html" class="btn btn-primary">Read Resume</a>
-          <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+          <a href="resume.html" class="btn btn-primary">Read Resume <span class="btn-key">[R]</span></a>
+          <a href="resources.html" class="btn btn-secondary">Curated Resources <span class="btn-key">[B]</span></a>
+          <a href="contact.html" class="btn btn-secondary">Get in Touch <span class="btn-key">[C]</span></a>
         </div>
       </div>
 
@@ -1132,10 +1320,10 @@ def build_about():
       <span class="eyebrow"><span class="dot"></span> Chapter 01</span>
       <h2>My Design Journey</h2>
       <p>
-        My journey into design began in 2015 at Kitaro Trading, where I immersed myself in the fundamentals of visual hierarchy, brand consistency, and graphic design across diverse physical and digital consumer touchpoints. Working across real-world commercial constraints taught me that design is never purely aesthetic &mdash; it must communicate clearly and drive action.
+        My journey into design began in 2014, immersing myself in visual hierarchy, brand consistency, and graphic design across diverse physical and digital consumer touchpoints. Working across real-world commercial constraints taught me that design is never purely aesthetic &mdash; it must communicate clearly and drive action.
       </p>
       <p>
-        In 2019, my focus shifted decisively toward digital product design. At Design Matra, I took ownership of complex user journeys across FinTech, HealthTech, and E-Commerce products, tackling onboarding friction, checkout drop-offs, and multi-platform consistency.
+        In 2018–2019, my focus shifted decisively toward digital product design. At Design Matra, I took ownership of complex user journeys across FinTech, HealthTech, and E-Commerce products, tackling onboarding friction, checkout drop-offs, and multi-platform consistency.
       </p>
       <p>
         Later, as Senior Product Designer at Edfora Infotech, I led end-to-end design across web and mobile platforms for FIITJEE educational products, designing student learning hubs, institutional dashboards, and component design systems that unified multi-disciplinary engineering and academic teams.
@@ -1189,7 +1377,7 @@ def build_about():
             <span class="comp-role">Graphic &amp; UI Designer</span>
           </div>
           <div class="timeline-details">
-            <p>Crafted digital brand identities, marketing assets, and early web interfaces across consumer lifestyle products.</p>
+            <p>Crafted digital brand identities, marketing assets, and consumer interfaces across multi-channel digital touchpoints.</p>
           </div>
           <div class="timeline-period">2015 &mdash; 2021</div>
         </div>
@@ -1248,8 +1436,8 @@ def build_about():
       <h2>Read My Resume</h2>
       <p>Explore my detailed professional timeline, credentials, key accomplishments, and download a printable PDF copy.</p>
       <div class="cta-btns">
-        <a href="resume.html" class="btn btn-primary">Resume Page</a>
-        <a href="assets/Sumit_Rai_Resume.pdf" download class="btn btn-secondary">Download PDF</a>
+        <a href="resume.html" class="btn btn-primary">Resume Page <span class="btn-key">[R]</span></a>
+        <a href="assets/Sumit_Rai_Resume.pdf" download class="btn btn-secondary">Download PDF &darr;</a>
       </div>
     </section>
 
@@ -1287,7 +1475,7 @@ def build_about():
     return get_head("About — Sumit Rai", "about") + get_nav("about") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
 
 # -------------------------------------------------------------
-# PAGE 4: RESUME.HTML (DEDICATED, STRUCTURED & PRINTABLE)
+# PAGE 4: RESUME.HTML (STRUCTURED & PRINTABLE)
 # -------------------------------------------------------------
 def build_resume():
     content = f"""
@@ -1298,7 +1486,7 @@ def build_resume():
       
       <!-- Top Actions Bar -->
       <div class="resume-top-bar">
-        <a href="index.html" class="back-link">Back to Portfolio</a>
+        <a href="index.html" class="back-link">&larr; Back to Portfolio <span class="nav-key">[Esc]</span></a>
         <div class="resume-actions-group">
           <button class="btn btn-secondary btn-sm" onclick="window.print()" title="Print or save as PDF">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
@@ -1333,7 +1521,7 @@ def build_resume():
         <section class="resume-section">
           <h3 class="section-heading">Professional Summary</h3>
           <p class="resume-summary-text">
-            Product Designer with 7+ years of product design experience since 2019 and 10+ years of overall design experience. Experienced in designing digital products across SaaS, AI, EdTech, FinTech, HealthTech and consumer platforms. Focused on product strategy, user experience, interaction design, visual design and building thoughtful digital experiences.
+            Product Designer with 8+ years of product design experience and 12+ years of overall design craft. Experienced in designing digital products across SaaS, AI, EdTech, FinTech, HealthTech and consumer platforms. Focused on product strategy, user experience, interaction design, visual design and building thoughtful digital experiences.
           </p>
         </section>
 
@@ -1382,98 +1570,80 @@ def build_resume():
 
           <div class="resume-item">
             <div class="resume-item-head">
-              <span class="resume-item-role">Graphic &amp; Interface Designer</span>
+              <span class="resume-item-role">Graphic &amp; UI Designer</span>
               <span class="resume-item-date">2015 &mdash; 2021</span>
             </div>
-            <div class="resume-item-org">Kitaro Trading &middot; New Delhi, India</div>
+            <div class="resume-item-org">Kitaro Trading &middot; Consumer Goods &middot; New Delhi, India</div>
             <ul>
-              <li>Designed digital brand identities, marketing assets, and responsive web interfaces across diverse consumer product portfolios.</li>
-              <li>Created foundational brand guidelines, design tokens, and multi-channel creative visual communication assets.</li>
+              <li>Designed multi-channel brand identities, packaging, and digital interfaces for consumer product lines.</li>
+              <li>Produced marketing collateral, retail packaging systems, and digital promotional touchpoints.</li>
+              <li>Standardized visual brand guidelines and cross-medium design asset libraries.</li>
             </ul>
           </div>
-
         </section>
 
-        <!-- 3. Selected Projects & Achievements -->
+        <!-- 3. Core Competencies -->
         <section class="resume-section">
-          <h3 class="section-heading">Selected Projects &amp; Achievements</h3>
-          <div class="resume-item">
-            <div class="resume-item-head">
-              <span class="resume-item-role">EduManage</span>
-              <span class="resume-item-date">SaaS Dashboard &middot; CMS</span>
-            </div>
-            <p style="font-size:13px; color:var(--ink-soft); margin-top:2px;">
-              Smart educational management dashboard unifying academic operations, multi-tenant CMS, and staff workflows into a high-clarity workspace.
-            </p>
-          </div>
-          <div class="resume-item">
-            <div class="resume-item-head">
-              <span class="resume-item-role">Quayo Basket</span>
-              <span class="resume-item-date">Mobile App &middot; Brand Identity</span>
-            </div>
-            <p style="font-size:13px; color:var(--ink-soft); margin-top:2px;">
-              Grocery shopping mobile application and complete retail brand identity system engineered for effortless product discovery and streamlined checkout.
-            </p>
-          </div>
-          <div class="resume-item">
-            <div class="resume-item-head">
-              <span class="resume-item-role">Musafir</span>
-              <span class="resume-item-date">Web Design &middot; Marketplace</span>
-            </div>
-            <p style="font-size:13px; color:var(--ink-soft); margin-top:2px;">
-              Travel marketplace landing page redesigned for stronger conversion paths, destination framing, and confident trip planning.
-            </p>
-          </div>
-          <div class="resume-item">
-            <div class="resume-item-head">
-              <span class="resume-item-role">Community</span>
-              <span class="resume-item-date">EdTech Platform &middot; Learning Hub</span>
-            </div>
-            <p style="font-size:13px; color:var(--ink-soft); margin-top:2px;">
-              Collaborative study hub connecting students through structured peer question channels, mentor discussions, and subject study repositories.
-            </p>
-          </div>
-        </section>
-
-        <!-- 4. Skills & Competencies -->
-        <section class="resume-section">
-          <h3 class="section-heading">Skills &amp; Competencies</h3>
-          
+          <h3 class="section-heading">Core Competencies</h3>
           <div class="resume-skills-block">
             <span class="resume-skills-label">Product Design:</span>
-            <span class="resume-skills-val">Product Strategy, UX Research, Interaction Design, Design Systems, Information Architecture, Wireframing, Rapid Prototyping</span>
+            <span class="resume-skills-val">UI/UX Design, Wireframing, Rapid Prototyping, Design Systems, Mobile Apps (iOS/Android), Web Applications, SaaS Dashboards</span>
           </div>
-
           <div class="resume-skills-block">
-            <span class="resume-skills-label">Tools &amp; Stack:</span>
-            <span class="resume-skills-val">Figma, Framer, Webflow, VS Code, Cursor, HTML/CSS/JavaScript, AI Workflows (Midjourney, LLMs), Adobe Illustrator, Photoshop, Jira</span>
+            <span class="resume-skills-label">User Experience:</span>
+            <span class="resume-skills-val">User Research, Usability Testing, Information Architecture, User Flow Mapping, Interaction Design, Heuristic Evaluation</span>
           </div>
-
           <div class="resume-skills-block">
-            <span class="resume-skills-label">Domain Breadth:</span>
-            <span class="resume-skills-val">SaaS, Enterprise Dashboards, EdTech, FinTech, HealthTech, E-Commerce &amp; Consumer Platforms</span>
+            <span class="resume-skills-label">Product Strategy:</span>
+            <span class="resume-skills-val">Discovery &amp; Framing, Cross-Functional Collaboration, Roadmapping, Agile Workflows, Conversion Rate Optimization (CRO)</span>
+          </div>
+          <div class="resume-skills-block">
+            <span class="resume-skills-label">Brand &amp; Visual:</span>
+            <span class="resume-skills-val">Brand Identity Systems, Visual Hierarchy, Design Tokens, Typography, Graphic Design, Iconography</span>
+          </div>
+          <div class="resume-skills-block">
+            <span class="resume-skills-label">AI &amp; Emerging Tech:</span>
+            <span class="resume-skills-val">AI-Native Workflows, Interactive Code Prototyping (HTML/CSS/JS), Prompt Engineering, Generative Interface Explorations</span>
+          </div>
+        </section>
+
+        <!-- 4. Tools & Technologies -->
+        <section class="resume-section">
+          <h3 class="section-heading">Tools &amp; Technologies</h3>
+          <div class="resume-skills-block">
+            <span class="resume-skills-label">Design &amp; Prototyping:</span>
+            <span class="resume-skills-val">Figma, Framer, FigJam, Adobe Creative Suite (Illustrator, Photoshop, InDesign), Spline 3D</span>
+          </div>
+          <div class="resume-skills-block">
+            <span class="resume-skills-label">Dev &amp; AI Tools:</span>
+            <span class="resume-skills-val">VS Code, Cursor, GitHub, Webflow, Bolt.new, ChatGPT, Midjourney, Claude, HTML5, CSS3, JavaScript</span>
+          </div>
+          <div class="resume-skills-block">
+            <span class="resume-skills-label">Management:</span>
+            <span class="resume-skills-val">Jira, Linear, Notion, Slack, Google Workspace</span>
           </div>
         </section>
 
         <!-- 5. Education -->
-        <section class="resume-section" style="margin-bottom:0;">
+        <section class="resume-section">
           <h3 class="section-heading">Education &amp; Credentials</h3>
           <div class="resume-item">
             <div class="resume-item-head">
-              <span class="resume-item-role">Bachelor's Degree &middot; Foundations in Design &amp; Technology</span>
-              <span class="resume-item-date">Graduated</span>
+              <span class="resume-item-role">Bachelor of Science (B.Sc.)</span>
+              <span class="resume-item-date">2012 &mdash; 2015</span>
             </div>
-            <div class="resume-item-org">India</div>
+            <div class="resume-item-org">University of Delhi &middot; Delhi, India</div>
+          </div>
+          <div class="resume-item">
+            <div class="resume-item-head">
+              <span class="resume-item-role">Diploma in Web &amp; Graphic Design</span>
+              <span class="resume-item-date">2014 &mdash; 2015</span>
+            </div>
+            <div class="resume-item-org">Arena Animation &middot; Delhi, India</div>
           </div>
         </section>
 
       </article>
-
-      <div style="display:flex; justify-content:center; margin-top:32px;">
-        <a href="./assets/Sumit_Rai_Resume.pdf" download="Sumit_Rai_Resume.pdf" class="btn btn-primary">
-          Download Resume PDF
-        </a>
-      </div>
 
     </div>
 
@@ -1483,7 +1653,106 @@ def build_resume():
     return get_head("Resume — Sumit Rai", "resume") + get_nav("resume") + content + footer_html + f"<script>\n{global_js}\n</script>\n</body>\n</html>"
 
 # -------------------------------------------------------------
-# PAGE 5: PLAYGROUND.HTML (RAIMAGE STUDIO LAB REFERENCE STYLE)
+# PAGE 5: RESOURCES.HTML (CURATED BOOKS & SYSTEMS REFERENCES)
+# -------------------------------------------------------------
+def build_resources():
+    cards_html = ""
+    for r in RESOURCES:
+        cards_html += f"""
+      <article class="resource-card" data-category="{r['category']}">
+        <div class="resource-card-header">
+          <span class="resource-cat-tag">{r['category']}</span>
+          <span class="resource-format-tag">{r['format']}</span>
+        </div>
+        <h3 class="resource-title">{r['title']}</h3>
+        <div class="resource-author">{r['author']}</div>
+        <p class="resource-desc">{r['desc']}</p>
+        <div class="resource-takeaway">
+          <strong>Key insight:</strong> {r['takeaway']}
+        </div>
+        <div class="resource-action-row">
+          <!-- Update with your Amazon affiliate link anytime -->
+          <a href="{r['link']}" target="_blank" rel="noopener" class="resource-amazon-btn" title="View {r['title']} on Amazon">
+            <span>Get on Amazon</span>
+            <span class="arrow">&nearr;</span>
+          </a>
+          <span class="resource-format-tag">Curated Read</span>
+        </div>
+      </article>
+"""
+
+    content = f"""
+<main class="page-body">
+  <div class="wrap-wide">
+    
+    <!-- HERO -->
+    <section class="resources-hero-block">
+      <span class="eyebrow"><span class="dot"></span> Knowledge &amp; Reference</span>
+      <h1>Curated Resources</h1>
+      <p class="lead">
+        A personal selection of foundational books, architectural frameworks, and design readings that continuously inform how I think, structure products, and build systems.
+      </p>
+      <div class="resources-note-pill">
+        <span class="dot"></span>
+        <span>Tap any book to view on Amazon &middot; Updated quarterly</span>
+      </div>
+    </section>
+
+    <!-- CATEGORY FILTER TABS -->
+    <div class="resources-filter-row" id="resFilterRow">
+      <button class="res-filter-btn active" data-filter="all">All Reads (12)</button>
+      <button class="res-filter-btn" data-filter="Design Craft">Design Craft</button>
+      <button class="res-filter-btn" data-filter="Product Strategy">Product Strategy</button>
+      <button class="res-filter-btn" data-filter="Systems &amp; Tech">Systems &amp; Tech</button>
+      <button class="res-filter-btn" data-filter="Mindset &amp; Craft">Mindset &amp; Craft</button>
+    </div>
+
+    <!-- CARDS GRID -->
+    <div class="resources-grid" id="resGrid">
+      {cards_html}
+    </div>
+
+    <!-- RECOMMENDATION CTA -->
+    <section class="contact-cta-section" style="margin-top:20px;">
+      <span class="eyebrow"><span class="dot"></span> Have a Recommendation?</span>
+      <h2>Read something exceptional recently?</h2>
+      <p>I'm always expanding my reading list across AI, systems architecture, cognitive ergonomics, and design history.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary">Share a Recommendation <span class="btn-key">[C]</span> &rarr;</a>
+        <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Sumit</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+"""
+
+    res_js = """
+  // Filter Tabs logic for Resources Page
+  const filterBtns = document.querySelectorAll('#resFilterRow .res-filter-btn');
+  const cards = document.querySelectorAll('#resGrid .resource-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.filter;
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+"""
+
+    return get_head("Curated Resources — Sumit Rai", "resources") + get_nav("resources") + content + footer_html + f"<script>\n{global_js}\n{res_js}\n</script>\n</body>\n</html>"
+
+# -------------------------------------------------------------
+# PAGE 6: PLAYGROUND.HTML (RAIMAGE DESIGN LAB)
 # -------------------------------------------------------------
 def build_playground():
     items = [
@@ -1538,49 +1807,28 @@ def build_playground():
             "category": "Fine Art & Prints",
             "tag": "Editorial · Architecture",
             "year": "2024",
-            "desc": "Monochromatic architectural photography coupled with brutalist typographic hierarchy. Available on Raimage Studio Lab.",
+            "desc": "Architectural proportions applied to editorial typography and structural layout systems.",
             "img": "./assets/img_03.jpg"
-        },
-        {
-            "id": "pg-7",
-            "title": "Tactile Color Calibration",
-            "category": "Tools & UI Concepts",
-            "tag": "Design Tokens · Palette",
-            "year": "2025",
-            "desc": "Experimental design token generator and CMYK print calibration grid designed for studio pipelines.",
-            "img": "./assets/img_04.jpg"
-        },
-        {
-            "id": "pg-8",
-            "title": "Generative Waveform Study",
-            "category": "Tools & UI Concepts",
-            "tag": "Generative · Visual",
-            "year": "2025",
-            "desc": "Procedural noise patterns and audio wave visualizers explored for emerging AI sound interfaces.",
-            "img": "./assets/img_07.jpg"
         }
     ]
 
     cards_html = ""
-    for item in items:
-        safe_title = html.escape(item['title'], quote=True)
-        safe_desc = html.escape(item['desc'], quote=True)
-        safe_tag = html.escape(item['tag'], quote=True)
+    for it in items:
         cards_html += f"""
-      <article class="pg-card-rich" data-category="{item['category'].lower()}" data-title="{safe_title}" data-desc="{safe_desc}" data-img="{item['img']}" data-tag="{safe_tag}" role="button" tabindex="0">
+      <article class="pg-card-rich" data-category="{it['category']}">
         <div class="pg-preview">
-          <img src="{item['img']}" alt="{safe_title}" loading="lazy" />
+          <img src="{it['img']}" alt="{it['title']}" loading="lazy" />
         </div>
         <div class="pg-meta-body">
           <div class="pg-cat-row">
-            <span class="pg-tag">{safe_tag}</span>
-            <span class="pg-year">{item['year']}</span>
+            <span class="pg-tag">{it['tag']}</span>
+            <span class="pg-year">{it['year']}</span>
           </div>
-          <h3>{safe_title}</h3>
-          <p>{safe_desc}</p>
+          <h3>{it['title']}</h3>
+          <p>{it['desc']}</p>
           <div class="pg-foot">
-            <span>Inspect</span>
-            <span style="font-size:11px; opacity:0.7;">Raimage Lab</span>
+            <span>Raimage Studio Lab</span>
+            <span>&nearr;</span>
           </div>
         </div>
       </article>
@@ -1591,206 +1839,152 @@ def build_playground():
   <div class="wrap-wide">
     
     <div class="pg-hero-block">
-      <span class="eyebrow"><span class="dot"></span> Raimage Design Studio Lab</span>
-      <h1>Playground &amp; Creative Lab</h1>
+      <span class="eyebrow"><span class="dot"></span> Raimage Design Lab</span>
+      <h1>Playground &amp; Explorations</h1>
       <p>
-        Visual explorations, experimental tools, fine art prints, and creative side concepts shaped outside client briefs. Inspired by the active studio pipelines at <a href="https://www.raimagedesign.com" target="_blank" rel="noopener" style="text-decoration:underline; font-weight:600;">Raimage Design</a>.
+        Uncommissioned ideas, industrial design concepts, fine art prints, and AI interface experiments from Raimage Design Studio.
       </p>
     </div>
 
-    <!-- Filter Tabs -->
+    <!-- Filter Buttons -->
     <div class="pg-filter-row" id="pgFilterRow">
-      <button class="filter-btn active" data-filter="all">All Experiments (8)</button>
-      <button class="filter-btn" data-filter="tools & ui concepts">Tools &amp; UI Concepts</button>
-      <button class="filter-btn" data-filter="fine art & prints">Fine Art &amp; Prints</button>
-      <button class="filter-btn" data-filter="industrial & 3d">Industrial &amp; 3D</button>
-      <button class="filter-btn" data-filter="brand & packaging">Brand &amp; Packaging</button>
+      <button class="filter-btn active" data-filter="all">All Experiments (6)</button>
+      <button class="filter-btn" data-filter="Tools &amp; UI Concepts">Tools &amp; UI Concepts</button>
+      <button class="filter-btn" data-filter="Industrial &amp; 3D">Industrial &amp; 3D</button>
+      <button class="filter-btn" data-filter="Brand &amp; Packaging">Brand &amp; Packaging</button>
+      <button class="filter-btn" data-filter="Fine Art &amp; Prints">Fine Art &amp; Prints</button>
     </div>
 
     <div class="pg-grid-rich" id="pgGrid">
       {cards_html}
     </div>
 
+    <section class="contact-cta-section" style="margin-top:64px;">
+      <span class="eyebrow"><span class="dot"></span> Custom Collaborations</span>
+      <h2>Interested in bespoke visual or product explorations?</h2>
+      <p>Let's collaborate on creative technology, experimental prototypes, or industrial product design.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-primary">Start a Collaboration <span class="btn-key">[C]</span> &rarr;</a>
+        <a href="mailto:sumitraiworks@gmail.com" class="btn btn-secondary">Email Sumit</a>
+      </div>
+    </section>
+
   </div>
 </main>
-
-<!-- Lightbox Modal for Playground Artifacts -->
-<div class="cmd-modal" id="pgModal" role="dialog" aria-modal="true" aria-label="Exploration Preview">
-  <div class="cmd-box" style="max-width:720px; padding:0; overflow:hidden;">
-    <div style="aspect-ratio:16/10; width:100%; background:var(--surface-subtle); overflow:hidden;">
-      <img id="pgModalImg" src="" alt="" style="width:100%; height:100%; object-fit:cover;" />
-    </div>
-    <div style="padding:24px 28px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-        <span class="tag-chip" id="pgModalTag" style="color:var(--accent);">Tag</span>
-        <button onclick="document.getElementById('pgModal').classList.remove('active')" style="font-size:12px; font-weight:600; color:var(--ink-soft);">&times; Close</button>
-      </div>
-      <h2 id="pgModalTitle" style="font-size:1.45rem; margin-bottom:8px;">Title</h2>
-      <p id="pgModalDesc" style="font-size:14px; line-height:1.6; color:var(--ink-soft);">Description</p>
-    </div>
-  </div>
-</div>
 """
 
     pg_js = """
-  // Filter Playground Items
-  const filterBtns = document.querySelectorAll('#pgFilterRow .filter-btn');
-  const cards = document.querySelectorAll('.pg-card-rich');
+  const pgFilterBtns = document.querySelectorAll('#pgFilterRow .filter-btn');
+  const pgCards = document.querySelectorAll('#pgGrid .pg-card-rich');
 
-  filterBtns.forEach(btn => {
+  pgFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      pgFilterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const target = btn.dataset.filter.toLowerCase();
-      cards.forEach(card => {
-        const cat = card.dataset.category;
-        card.style.display = (target === 'all' || cat.includes(target)) ? 'flex' : 'none';
+      const cat = btn.dataset.filter;
+
+      pgCards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
       });
     });
   });
-
-  // Modal inspection
-  window.openPgModal = function(title, desc, img, tag){
-    const modal = document.getElementById('pgModal');
-    if (!modal) return;
-    document.getElementById('pgModalTitle').textContent = title;
-    document.getElementById('pgModalDesc').textContent = desc;
-    document.getElementById('pgModalImg').src = img;
-    document.getElementById('pgModalTag').textContent = tag;
-    modal.classList.add('active');
-  };
-
-  cards.forEach(card => {
-    function triggerOpen(){
-      openPgModal(card.dataset.title, card.dataset.desc, card.dataset.img, card.dataset.tag);
-    }
-    card.addEventListener('click', triggerOpen);
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        triggerOpen();
-      }
-    });
-  });
-
-  const modal = document.getElementById('pgModal');
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.remove('active');
-    });
-  }
 """
 
-    return get_head("Playground & Studio Lab — Sumit Rai", "playground") + get_nav("playground") + content + footer_html + f"<script>\n{global_js}\n{pg_js}\n</script>\n</body>\n</html>"
+    return get_head("Playground (Lab) — Sumit Rai", "playground") + get_nav("playground") + content + footer_html + f"<script>\n{global_js}\n{pg_js}\n</script>\n</body>\n</html>"
 
 # -------------------------------------------------------------
-# PAGE 6: CONTACT.HTML (DEDICATED CONTACT PAGE + SURPRISE FEATURES)
+# PAGE 7: CONTACT.HTML (INTERACTIVE TAILORED FORM & SIDEBAR)
 # -------------------------------------------------------------
 def build_contact():
     content = f"""
 <main class="page-body">
   <div class="wrap-wide">
     
-    <!-- Hero -->
     <div class="contact-hero-wrap">
-      <div class="status-pill">
-        <span class="dot"></span>
-        <span>Available for Q1/Q2 2026 Collaborations</span>
-      </div>
-      <h1>Let's start a conversation.</h1>
+      <span class="eyebrow"><span class="dot"></span> Start a Conversation</span>
+      <h1>Get in Touch</h1>
       <p class="lead">
-        Have an early-stage product in mind, a founding design role, or want to explore AI-native workflows? I'm always open to discussing new opportunities.
+        Whether you have an upcoming product launch, early-stage design advisory, or want to discuss emerging AI workflows, I'd love to hear from you.
       </p>
     </div>
 
-    <!-- Layout: Left Interactive Form, Right Live Delhi Clock & Direct Channels -->
     <div class="contact-grid-layout">
       
-      <!-- Interactive Form Card -->
+      <!-- Left Column: Interactive Form -->
       <div class="contact-form-card">
-        <span class="eyebrow"><span class="dot"></span> Quick Inquiries</span>
-        <h2 style="font-size:1.45rem; margin-bottom:12px;">What are you looking to build?</h2>
-        <p style="font-size:13.5px; color:var(--ink-soft); margin-bottom:18px;">
-          Select a project focus below to auto-tailor the message starter:
-        </p>
-
-        <!-- Topic Selector Pills -->
+        <label style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; display:block; margin-bottom:10px; color:var(--ink);">
+          What would you like to discuss?
+        </label>
+        
         <div class="contact-intent-pills" id="intentPills">
-          <button class="intent-pill active" data-topic="0-to-1 Product Design" data-lead="Hi Sumit, I'm working on a zero-to-one product and would love your product design expertise on...">🚀 0-to-1 Product</button>
-          <button class="intent-pill" data-topic="Founding / Senior Role" data-lead="Hi Sumit, we have an exciting founding/senior product design role on our team and would love to chat...">💼 Founding / Senior Role</button>
-          <button class="intent-pill" data-topic="Design System Audit" data-lead="Hi Sumit, we are looking to overhaul or scale our design system across web and mobile...">📐 Design System</button>
-          <button class="intent-pill" data-topic="AI Interface Exploration" data-lead="Hi Sumit, we're building an AI-native product and want to explore modern user interaction patterns...">🤖 AI Interface</button>
-          <button class="intent-pill" data-topic="Just Saying Hi" data-lead="Hi Sumit, love your portfolio! Just reaching out to connect and say hello...">👋 Just Saying Hi</button>
+          <button type="button" class="intent-pill active" data-topic="0-to-1 Product Design" data-lead="Hi Sumit, we are planning a zero-to-one product and need senior design leadership...">0-to-1 Product Design</button>
+          <button type="button" class="intent-pill" data-topic="Design System Architecture" data-lead="Hi Sumit, we want to scale our UI component system and need your architecture expertise...">Design System</button>
+          <button type="button" class="intent-pill" data-topic="AI Interface Exploration" data-lead="Hi Sumit, we are building an AI-native workflow and would love your guidance on the interface...">AI Interface / Prototype</button>
+          <button type="button" class="intent-pill" data-topic="Advisory &amp; Mentorship" data-lead="Hi Sumit, I\\'d love to explore design advisory or mentorship for our team...">Design Advisory</button>
+          <button type="button" class="intent-pill" data-topic="General Inquiry" data-lead="Hi Sumit, I came across your portfolio and wanted to reach out...">General Hello</button>
         </div>
 
         <form id="contactForm">
           <div class="contact-form-group">
             <label for="contactName">Your Name</label>
-            <input type="text" id="contactName" class="contact-input" placeholder="e.g. Elena Rostova" required />
+            <input type="text" id="contactName" class="contact-input" placeholder="e.g. Alex Chen" required />
           </div>
 
           <div class="contact-form-group">
             <label for="contactEmail">Your Email</label>
-            <input type="email" id="contactEmail" class="contact-input" placeholder="name@company.com" required />
+            <input type="email" id="contactEmail" class="contact-input" placeholder="e.g. alex@company.com" required />
           </div>
 
           <div class="contact-form-group">
             <label for="contactMsg">Message</label>
-            <textarea id="contactMsg" class="contact-textarea" placeholder="Tell me a bit about your product, timeline, or idea...">Hi Sumit, I'm working on a zero-to-one product and would love your product design expertise on...</textarea>
+            <textarea id="contactMsg" class="contact-textarea" rows="4" required>Hi Sumit, we are planning a zero-to-one product and need senior design leadership...</textarea>
           </div>
 
-          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
-            <button type="submit" class="btn btn-primary" id="sendBtn">
-              <span>Send Message</span>
-            </button>
-            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sumitraiworks@gmail.com&amp;su=Product%20Collaboration%20with%20Sumit" target="_blank" rel="noopener" class="btn btn-secondary" title="Open Gmail in web browser">
-              <span>Open in Gmail ↗</span>
-            </a>
-          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; padding:14px; margin-top:8px;">
+            <span>Send Message &rarr;</span>
+          </button>
         </form>
       </div>
 
-      <!-- Sidebar: Live Delhi Time, Turnaround, Direct Info -->
+      <!-- Right Column: Direct Info & Delhi Time -->
       <div class="contact-sidebar-card">
         
-        <!-- Live Time Box -->
         <div class="sidebar-box">
-          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Local Time Widget</div>
-          <h3>📍 New Delhi, India</h3>
-          <p style="font-size:13px; color:var(--ink-soft);">
-            Standard Time (IST &middot; UTC +5:30). Synchronized with active studio hours:
-          </p>
-          <div class="live-time-display">
-            <span class="live-time-val" id="delhiLiveClockVal">--:-- -- IST</span>
-          </div>
-          <p style="font-size:12px; color:var(--ink-faint); margin-top:4px;">
-            Average response time: <strong>&lt; 24 hours</strong> on weekdays.
-          </p>
-        </div>
-
-        <!-- Direct Email Card -->
-        <div class="sidebar-box">
-          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Direct Contact</div>
-          <h3>Direct Email</h3>
-          <p style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:8px;">
+          <h3>Direct Contact</h3>
+          <p style="margin-bottom:12px; color:var(--ink-soft);">Prefer direct email over forms? Reach out anytime:</p>
+          <a href="mailto:sumitraiworks@gmail.com" style="font-family:var(--font-heading); font-size:1.15rem; font-weight:700; color:var(--accent); text-decoration:underline; text-underline-offset:3px;">
             sumitraiworks@gmail.com
-          </p>
-          <button class="btn btn-secondary btn-sm" id="sidebarCopyEmail" style="width:100%; justify-content:center;">
-            <span>📋 Copy Email Address</span>
-          </button>
+          </a>
+          <div style="margin-top:14px;">
+            <button class="btn btn-secondary btn-sm" id="sidebarCopyEmail">
+              <span>📋 Copy Email Address</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Professional Profiles -->
         <div class="sidebar-box">
-          <div class="eyebrow" style="margin-bottom:4px;"><span class="dot"></span> Digital Presence</div>
-          <h3>Connect &amp; Follow</h3>
-          <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px; font-size:13.5px; font-weight:600;">
+          <h3>Current Location &amp; Time</h3>
+          <p style="color:var(--ink-soft); margin-bottom:6px;">Based in New Delhi, India &middot; Available worldwide across overlapping timezones.</p>
+          <div class="live-time-display">
+            <span class="live-time-val" id="delhiLiveClockVal">--:-- --</span>
+            <span class="live-time-zone">IST (UTC +5:30)</span>
+          </div>
+          <span style="font-size:11.5px; color:var(--ink-faint);">Standard response time: within 24 hours.</span>
+        </div>
+
+        <div class="sidebar-box">
+          <h3>Connect Online</h3>
+          <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px; font-size:13.5px;">
             <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
               <span>LinkedIn</span>
               <span style="color:var(--accent);">&nearr;</span>
             </a>
             <a href="https://x.com/isumitrai" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
-              <span>X (formerly Twitter)</span>
+              <span>X (Twitter)</span>
               <span style="color:var(--accent);">&nearr;</span>
             </a>
             <a href="https://www.instagram.com/isumitrai/" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; color:var(--ink);">
@@ -1838,7 +2032,7 @@ def build_contact():
       const msg = document.getElementById('contactMsg').value.trim();
 
       const subject = encodeURIComponent(`[${currentTopic}] From ${name}`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${currentTopic}\n\nMessage:\n${msg}`);
+      const body = encodeURIComponent(`Name: ${name}\\nEmail: ${email}\\nTopic: ${currentTopic}\\n\\nMessage:\\n${msg}`);
       window.location.href = `mailto:sumitraiworks@gmail.com?subject=${subject}&body=${body}`;
     });
   }
@@ -1860,9 +2054,8 @@ def build_contact():
 
     return get_head("Contact — Sumit Rai", "contact") + get_nav("contact") + content + footer_html + f"<script>\n{global_js}\n{contact_js}\n</script>\n</body>\n</html>"
 
-
 # -------------------------------------------------------------
-# Generate All Pages
+# Generate All Pages (7 Pages with 100% Shared Nav & Footer)
 # -------------------------------------------------------------
 def main():
     pages = {
@@ -1870,14 +2063,15 @@ def main():
         "projects.html": build_projects(),
         "about.html": build_about(),
         "resume.html": build_resume(),
+        "resources.html": build_resources(),
         "playground.html": build_playground(),
         "contact.html": build_contact()
     }
 
-    for filename, html in pages.items():
+    for filename, html_code in pages.items():
         with open(filename, "w", encoding="utf-8") as f:
-            f.write(html)
-        print(f"Generated {filename} successfully ({len(html)} bytes)")
+            f.write(html_code)
+        print(f"Generated {filename} successfully ({len(html_code)} bytes)")
 
 if __name__ == "__main__":
     main()
