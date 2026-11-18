@@ -1,0 +1,48 @@
+{
+  "projects": [
+    {
+      "id": "edumanage",
+      "title": "EduManage",
+      "category": "SaaS Product • CMS",
+      "year": 2026,
+      "image": "./assets/proj_edumanage.png",
+      "description": "A modern institution dashboard shaped around academic operations, content management, and day-to-day school workflows.",
+      "tags": ["CMS", "Dashboard"],
+      "url": "projects.html#edumanage",
+      "featured": true
+    },
+    {
+      "id": "quayo",
+      "title": "Quayo Basket",
+      "category": "Grocery App • Branding",
+      "year": 2026,
+      "image": "./assets/proj_quayo.png",
+      "description": "A grocery mobile app paired with a brand identity system for a clearer, friendlier shopping and rapid checkout experience.",
+      "tags": ["Mobile App", "UI/UX"],
+      "url": "projects.html#quayo",
+      "featured": true
+    },
+    {
+      "id": "musafir",
+      "title": "Musafir",
+      "category": "Travel • Marketplace",
+      "year": 2026,
+      "image": "./assets/proj_musafir.png",
+      "description": "A travel marketplace landing page redesigned for stronger conversion paths, destination storytelling, and clearer decision‑making.",
+      "tags": ["Travel", "Web Design"],
+      "url": "projects.html#musafir",
+      "featured": false
+    },
+    {
+      "id": "community",
+      "title": "Community",
+      "category": "Community Platform • EdTech",
+      "year": 2026,
+      "image": "./assets/proj_community.png",
+      "description": "A student learning hub built around peer growth, shared course resources, and platform‑led learner engagement.",
+      "tags": ["EdTech", "Platform"],
+      "url": "projects.html#community",
+      "featured": false
+    }
+  ]
+}

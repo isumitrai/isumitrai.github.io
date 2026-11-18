@@ -1,0 +1,44 @@
+[
+  {
+    "id": "work-product-design",
+    "title": "Product Design",
+    "description": "End-to-end UX/UI design for SaaS platforms, mobile apps, and digital products. From discovery and research through production-ready Figma handoff.",
+    "tags": ["UX Research", "Wireframing", "Prototyping", "Figma"],
+    "featured": true
+  },
+  {
+    "id": "work-design-systems",
+    "title": "Design Systems",
+    "description": "Component libraries, tokens, documentation, and governance frameworks that keep teams building consistently at scale.",
+    "tags": ["Tokens", "Components", "Documentation"],
+    "featured": true
+  },
+  {
+    "id": "work-ai-experiences",
+    "title": "AI-Powered Experiences",
+    "description": "Designing interfaces and interaction patterns for AI-native products — from intelligent dashboards to conversational UI flows.",
+    "tags": ["AI/ML UI", "Conversational UX", "LLM Interfaces"],
+    "featured": true
+  },
+  {
+    "id": "work-branding",
+    "title": "Branding & Identity",
+    "description": "Brand strategy, visual identity, logo systems, and brand guidelines for startups and growing businesses.",
+    "tags": ["Logo Design", "Brand Strategy", "Style Guides"],
+    "featured": false
+  },
+  {
+    "id": "work-packaging",
+    "title": "Packaging Design",
+    "description": "Retail and product packaging that communicates clearly on shelf — from dielines and structural design to print-ready artwork.",
+    "tags": ["Retail Packaging", "Print Design", "Dielines"],
+    "featured": false
+  },
+  {
+    "id": "work-consultation",
+    "title": "Design Consultation",
+    "description": "Strategic design reviews, design process audits, and collaboration on difficult product and experience problems.",
+    "tags": ["Design Audit", "Strategy", "Advisory"],
+    "featured": false
+  }
+]

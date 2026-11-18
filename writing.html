@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Writing — Sumit Rai</title>
+  <meta name="description" content="Articles, essays, and design perspectives by Sumit Rai — Senior Product Designer." />
+  <meta name="author" content="Sumit Rai" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    /* ── Writing page styles ─────────────────────────────────────────────── */
+    .writing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 48px;
+    }
+    .writing-article-card {
+      background: var(--surface);
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+    .writing-article-card:last-child { border-bottom: none; }
+    .writing-article-card:hover { background: var(--surface-subtle); }
+    .writing-article-card:hover .writing-article-title { color: var(--accent); }
+
+    .writing-article-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .writing-article-cat {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-subtle, rgba(0,0,0,0.05));
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .writing-article-date {
+      font-size: 12px;
+      color: var(--ink-muted, var(--ink-soft));
+    }
+    .writing-article-read-time {
+      font-size: 12px;
+      color: var(--ink-muted, var(--ink-soft));
+      margin-left: auto;
+    }
+    .writing-article-title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0 0 8px;
+      line-height: 1.3;
+      transition: color 0.15s ease;
+    }
+    .writing-article-intro {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+      margin: 0 0 16px;
+      max-width: 680px;
+    }
+    .writing-article-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .writing-article-cta:hover { color: var(--accent); }
+
+    /* ── Filter row ──────────────────────────────────────────────────────── */
+    .writing-filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    /* ── Empty state ─────────────────────────────────────────────────────── */
+    .writing-empty {
+      padding: 64px 32px;
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body data-page="writing">
+
+<header class="inner-page-header">
+  <div class="wrap-wide inner-header-row">
+    <a href="index.html" class="inner-back-btn" title="Back to Home [Esc]">
+      <span class="back-arrow">&larr;</span>
+      <span class="back-text">Back</span>
+      <span class="nav-key">[Esc]</span>
+    </a>
+
+    <div class="inner-right-actions">
+      <button class="nav-action-pill" id="soundToggleBtn" aria-label="Toggle haptic sounds" title="Toggle audio feedback">
+        <span id="soundIcon">🔊</span>
+      </button>
+      <button class="nav-action-pill" id="cmdPaletteTrigger" aria-label="Quick navigation (Cmd+K)" title="Quick Command Palette (Cmd+K)">
+        <kbd>⌘K</kbd>
+      </button>
+      <button class="theme-toggle-inline" id="themeToggle" aria-label="Toggle dark mode" title="Toggle Dark / Light Mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="page-body">
+  <div class="wrap-wide">
+
+    <!-- Hero -->
+    <div style="margin-bottom:40px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+        <span style="font-family:var(--font-mono); font-size:12px; font-weight:600; color:var(--accent);">[W]</span>
+        <h1 style="font-size:32px; font-weight:700; letter-spacing:-0.03em; margin:0; color:var(--ink);">Writing</h1>
+      </div>
+      <p style="font-size:15px; color:var(--ink-soft); max-width:650px; line-height:1.6; margin:0;">
+        Articles, essays, and design perspectives on product thinking, AI, and the craft of building thoughtful experiences.
+      </p>
+    </div>
+
+    <!-- Category filters -->
+    <div class="writing-filter-row" id="writingFilterRow">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Product Craft">Product Craft</button>
+      <button class="filter-btn" data-filter="AI &amp; Design">AI &amp; Design</button>
+      <button class="filter-btn" data-filter="Design Perspective">Design Perspective</button>
+    </div>
+
+    <!-- Article grid — injected by scripts/update_writing.js -->
+    <div class="writing-grid" id="writingGrid">
+            <a href="#" class="writing-article-card" data-category="Product Craft" data-id="w-1">
+        <div class="writing-article-top">
+          <span class="writing-article-cat">Product Craft</span>
+          <span class="writing-article-date">12 Oct 2025</span>
+          <span class="writing-article-read-time">8 min read</span>
+        </div>
+        <h2 class="writing-article-title">Stop adding confetti to your product</h2>
+        <p class="writing-article-intro">We talk about delight a lot in product meetings, but most of the time it means cosmetic polish layered over broken fundamentals.</p>
+        <span class="writing-article-cta">
+            Read Article <span class="shahi-arrow">&rarr;</span>
+          </span>
+      </a>
+
+      <a href="#" class="writing-article-card" data-category="AI & Design" data-id="w-2">
+        <div class="writing-article-top">
+          <span class="writing-article-cat">AI & Design</span>
+          <span class="writing-article-date">01 Apr 2026</span>
+          <span class="writing-article-read-time">6 min read</span>
+        </div>
+        <h2 class="writing-article-title">AI-augmented design is a mindset shift, not a tool swap</h2>
+        <p class="writing-article-intro">Using AI tools in design is easy. Rethinking your entire design process around AI capabilities is the actual challenge.</p>
+        <span class="writing-article-cta">
+            Read Article <span class="shahi-arrow">&rarr;</span>
+          </span>
+      </a>
+
+      <a href="#" class="writing-article-card" data-category="Design Perspective" data-id="w-3">
+        <div class="writing-article-top">
+          <span class="writing-article-cat">Design Perspective</span>
+          <span class="writing-article-date">14 Feb 2026</span>
+          <span class="writing-article-read-time">10 min read</span>
+        </div>
+        <h2 class="writing-article-title">What eight years of product design actually taught me</h2>
+        <p class="writing-article-intro">A honest look at the lessons that never make it into design talks — the uncomfortable ones that change how you work.</p>
+        <span class="writing-article-cta">
+            Read Article <span class="shahi-arrow">&rarr;</span>
+          </span>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer" id="siteFooter">
+  <div class="wrap-wide">
+    <div class="footer-four-cols">
+      <div class="footer-col-item">
+        <span class="f-col-header">LINKEDIN</span>
+        <a href="https://www.linkedin.com/in/isumitrai/" target="_blank" rel="noopener" class="f-col-link">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">SUBSTACK</span>
+        <a href="https://isumitrai.substack.com/" target="_blank" rel="noopener" class="f-col-link">isumitrai <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">RAIMAGE DESIGN</span>
+        <a href="https://www.raimagedesign.com/" target="_blank" rel="noopener" class="f-col-link">raimagedesign.com <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+      <div class="footer-col-item">
+        <span class="f-col-header">CONTACT</span>
+        <a href="mailto:sumitraiworks@gmail.com" class="f-col-link">sumitraiworks@gmail.com <span class="shahi-arrow">&nearr;</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom-row">
+      <span>&copy; 2026 Sumit Rai. All rights reserved.</span>
+      <a href="index.html" class="footer-home-link">Back to Home</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Theme toggle ────────────────────────────────────────────────────────────
+  const themeToggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  const saved = localStorage.getItem('theme') || 'light';
+  root.setAttribute('data-theme', saved);
+  themeToggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
+  // ── Sound toggle ────────────────────────────────────────────────────────────
+  const soundToggleBtn = document.getElementById('soundToggleBtn');
+  const soundIcon = document.getElementById('soundIcon');
+  let soundEnabled = localStorage.getItem('sound') !== 'off';
+  soundIcon.textContent = soundEnabled ? '🔊' : '🔇';
+  soundToggleBtn.addEventListener('click', () => {
+    soundEnabled = !soundEnabled;
+    soundIcon.textContent = soundEnabled ? '🔊' : '🔇';
+    localStorage.setItem('sound', soundEnabled ? 'on' : 'off');
+  });
+
+  // ── Category filter ─────────────────────────────────────────────────────────
+  const filterRow = document.getElementById('writingFilterRow');
+  const grid      = document.getElementById('writingGrid');
+
+  filterRow.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    filterRow.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    grid.querySelectorAll('.writing-article-card').forEach(card => {
+      const match = filter === 'all' || card.dataset.category === filter;
+      card.style.display = match ? '' : 'none';
+    });
+  });
+
+  // ── Keyboard: Esc → back ────────────────────────────────────────────────────
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') window.location.href = 'index.html';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+{
+  "books": [
+    {
+      "id": "refactoring-ui",
+      "title": "Refactoring UI",
+      "author": "Adam Wathan & Steve Schoger",
+      "category": "Design Craft",
+      "format": "Digital & Hardcover",
+      "description": "The most pragmatic guide to designing clean, high-conversion interfaces from a developer and designer perspective.",
+      "insight": "Design with visual hierarchy and intentional spacing before decorative chrome.",
+      "link": "https://www.amazon.com/dp/B08M3S6W8R"
+    },
+    {
+      "id": "design-everyday-things",
+      "title": "The Design of Everyday Things",
+      "author": "Don Norman",
+      "category": "Product Strategy",
+      "format": "Classic Hardcover",
+      "description": "The definitive bible on cognitive ergonomics, affordances, signifiers, and designing products that humans intuitively understand.",
+      "insight": "When users fail, it is not user error — it is faulty interface design.",
+      "link": "https://www.amazon.com/dp/0465050654"
+    },
+    {
+      "id": "elements-typographic-style",
+      "title": "The Elements of Typographic Style",
+      "author": "Robert Bringhurst",
+      "category": "Design Craft",
+      "format": "Reference Book",
+      "description": "Widely revered as the definitive text on typographic craft, rhythm, proportional scales, and the architecture of the printed page.",
+      "insight": "Typography exists to honor content and guide human comprehension.",
+      "link": "https://www.amazon.com/dp/0881792128"
+    },
+    {
+      "id": "philosophy-software-design",
+      "title": "A Philosophy of Software Design",
+      "author": "John Ousterhout",
+      "category": "Systems & Tech",
+      "format": "Technical Book",
+      "description": "A masterclass on managing system complexity, modular interfaces, and why shallow modules ruin large systems.",
+      "insight": "Modules should be deep: simple interfaces hiding profound internal power.",
+      "link": "https://www.amazon.com/dp/1732102201"
+    },
+    {
+      "id": "universal-principles-design",
+      "title": "Universal Principles of Design",
+      "author": "William Lidwell et al.",
+      "category": "Design Craft",
+      "format": "Visual Reference",
+      "description": "An authoritative encyclopedia of 125 cognitive, perceptual, and structural laws governing human interaction.",
+      "insight": "Master Fitts' Law, Hick's Law, and progressive disclosure to reduce cognitive load.",
+      "link": "https://www.amazon.com/dp/1592535879"
+    },
+    {
+      "id": "shape-up",
+      "title": "Shape Up",
+      "author": "Ryan Singer (Basecamp)",
+      "category": "Product Strategy",
+      "format": "Product Methodology",
+      "description": "A revolutionary framework for product teams: fixed time, variable scope, 6-week cycles, and building with shaped appetites.",
+      "insight": "Never start building until problems are shaped with clear boundaries.",
+      "link": "https://www.amazon.com/dp/B081N4R3G9"
+    },
+    {
+      "id": "inspired",
+      "title": "Inspired: How to Create Tech Products",
+      "author": "Marty Cagan",
+      "category": "Product Strategy",
+      "format": "Management Guide",
+      "description": "The gold standard for product discovery, continuous customer validation, and building empowered product teams.",
+      "insight": "Validate value, usability, feasibility, and viability before writing code.",
+      "link": "https://www.amazon.com/dp/1119387507"
+    },
+    {
+      "id": "designing-data-intensive",
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "category": "Systems & Tech",
+      "format": "Engineering Architecture",
+      "description": "The definitive exploration of storage engines, distributed consensus, data models, and scalable systems reliability.",
+      "insight": "A designer who understands backend latency and data models designs 10x better products.",
+      "link": "https://www.amazon.com/dp/1449373321"
+    },
+    {
+      "id": "grid-systems",
+      "title": "Grid Systems in Graphic Design",
+      "author": "Josef Müller-Brockmann",
+      "category": "Design Craft",
+      "format": "Classic Monograph",
+      "description": "The Swiss design masterwork outlining mathematical grid systems for layout, typography, and architectural coherence.",
+      "insight": "The grid is a structural aid, not a straightjacket — it creates rhythm and order.",
+      "link": "https://www.amazon.com/dp/3721201450"
+    },
+    {
+      "id": "show-your-work",
+      "title": "Show Your Work!",
+      "author": "Austin Kleon",
+      "category": "Mindset & Craft",
+      "format": "Illustrated Essay",
+      "description": "A punchy guide to working in public, building a digital garden, and sharing your creative process openly.",
+      "insight": "Become a documentarian of what you do every day; generosity builds lasting influence.",
+      "link": "https://www.amazon.com/dp/076117897X"
+    },
+    {
+      "id": "pattern-language",
+      "title": "A Pattern Language",
+      "author": "Christopher Alexander",
+      "category": "Systems & Tech",
+      "format": "Architectural Classic",
+      "description": "The seminal architectural philosophy that directly inspired object-oriented programming, design systems, and modular components.",
+      "insight": "Reusable patterns solve recurring spatial and informational tensions.",
+      "link": "https://www.amazon.com/dp/0195019199"
+    },
+    {
+      "id": "creativity-inc",
+      "title": "Creativity, Inc.",
+      "author": "Ed Catmull & Amy Wallace",
+      "category": "Mindset & Craft",
+      "format": "Hardcover Memoir",
+      "description": "The Pixar co-founder's masterclass on creative culture, candid feedback (Braintrust), and protecting early fragile ideas.",
+      "insight": "Early drafts are never great; psychological safety allows teams to turn raw ideas into masterpieces.",
+      "link": "https://www.amazon.com/dp/0812993015"
+    }
+  ],
+  "setup": [
+    {
+      "id": "aeron-chair",
+      "title": "Aeron Chair",
+      "brand": "Herman Miller",
+      "category": "Ergonomics",
+      "image": "https://images.unsplash.com/photo-1580481077148-52b34a66d035?auto=format&fit=crop&w=500&q=80",
+      "link": "https://www.hermanmiller.com/products/seating/office-chairs/aeron-chairs/"
+    },
+    {
+      "id": "studio-display",
+      "title": "Studio Display",
+      "brand": "Apple",
+      "category": "Monitor",
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80",
+      "link": "https://www.apple.com/studio-display/"
+    },
+    {
+      "id": "macbook-pro",
+      "title": "MacBook Pro 14\"",
+      "brand": "Apple",
+      "category": "Laptop",
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80",
+      "link": "https://www.apple.com/macbook-pro/"
+    },
+    {
+      "id": "ipad-pro",
+      "title": "iPad Pro + Apple Pencil",
+      "brand": "Apple",
+      "category": "Tablet",
+      "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=500&q=80",
+      "link": "https://www.apple.com/ipad-pro/"
+    },
+    {
+      "id": "keychron-k3",
+      "title": "Keychron K3 Keyboard",
+      "brand": "Keychron",
+      "category": "Keyboard",
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=500&q=80",
+      "link": "https://www.keychron.com/products/keychron-k3-wireless-mechanical-keyboard"
+    },
+    {
+      "id": "op1-field",
+      "title": "OP-1 Field Synthesizer",
+      "brand": "Teenage Engineering",
+      "category": "Audio & Industrial Design",
+      "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=500&q=80",
+      "link": "https://teenage.engineering/products/op-1"
+    }
+  ]
+}

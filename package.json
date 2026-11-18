@@ -1,0 +1,15 @@
+{
+  "name": "sumitrai-portfolio",
+  "version": "1.0.0",
+  "description": "Sumit Rai — Personal Portfolio",
+  "private": true,
+  "scripts": {
+    "update": "node scripts/update_all.js",
+    "update:home": "node scripts/update_home.js",
+    "update:resources": "node scripts/update_resources.js",
+    "update:writing": "node scripts/update_writing.js",
+    "update:playground": "node scripts/update_playground.js",
+    "update:garden": "node scripts/update_garden.js",
+    "update:resume": "node scripts/update_resume.js"
+  }
+}

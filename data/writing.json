@@ -1,0 +1,32 @@
+[
+  {
+    "id": "w-1",
+    "title": "Stop adding confetti to your product",
+    "intro": "We talk about delight a lot in product meetings, but most of the time it means cosmetic polish layered over broken fundamentals.",
+    "date": "2025-10-12",
+    "readTime": "8 min read",
+    "category": "Product Craft",
+    "image": "",
+    "externalUrl": ""
+  },
+  {
+    "id": "w-2",
+    "title": "AI-augmented design is a mindset shift, not a tool swap",
+    "intro": "Using AI tools in design is easy. Rethinking your entire design process around AI capabilities is the actual challenge.",
+    "date": "2026-04-01",
+    "readTime": "6 min read",
+    "category": "AI & Design",
+    "image": "",
+    "externalUrl": ""
+  },
+  {
+    "id": "w-3",
+    "title": "What eight years of product design actually taught me",
+    "intro": "A honest look at the lessons that never make it into design talks — the uncomfortable ones that change how you work.",
+    "date": "2026-02-14",
+    "readTime": "10 min read",
+    "category": "Design Perspective",
+    "image": "",
+    "externalUrl": ""
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "g-1",
+    "title": "Is the design we practice worth saving?",
+    "topic": "Design Philosophy",
+    "date": "26.05.26",
+    "read": "6 min read",
+    "hook": "Every think piece about restructuring design teams for AI starts with a false premise.",
+    "content": "<p>Every think piece about restructuring design teams for AI starts with a false premise: that the value of a designer was in generating production variants. In reality, the craft of product design has always been about reduction, taste, and resolving human friction before a line of code is written.</p><p>As generative models make code and UI assets infinitely cheap, the scarcity shifts to judgment: knowing what <em>not</em> to build. The design we practice is worth saving only if we elevate from component assemblers to systems architects with a moral compass for human attention.</p>"
+  },
+  {
+    "id": "g-2",
+    "title": "Stop adding confetti to your product",
+    "topic": "Product Craft",
+    "date": "12.10.25",
+    "read": "8 min read",
+    "hook": "We talk about 'delight' a lot in product meetings, but most of the time, it means adding confetti, sounds, or cosmetic polish over broken fundamentals.",
+    "content": "<p>We talk about 'delight' a lot in product meetings, but most of the time, it means adding confetti animations, synthetic sounds, or celebratory illustrations over broken fundamentals.</p><p>Real delight in software is not a celebratory illustration after jumping through six confusing hurdles. Real delight is an application that loads instantaneously, remembers my context, anticipates my next move, and lets me finish my job in 15 seconds without making me think.</p><p><strong>Principle:</strong> Solve reliability, speed, and cognitive clarity first. Never use confetti to compensate for friction.</p>"
+  },
+  {
+    "id": "g-3",
+    "title": "The Illusion of Productivity",
+    "topic": "Product Strategy",
+    "date": "19.04.26",
+    "read": "5 min read",
+    "hook": "I've been thinking about the tech industry lately. And why all of a sudden everyone is building.",
+    "content": "<p>In high-growth tech teams, busyness is routinely conflated with progress. Velocity charts tick upward, PRs merge daily, and design files fill up with dozens of polished flows. Yet, month after month, customer churn remains stagnant.</p><p>True product velocity is measured in the cycle time between an unvalidated assumption and a verified customer outcome. When teams optimize for output rather than outcome, they build complex software that solves imaginary problems at extraordinary speed.</p>"
+  },
+  {
+    "id": "g-4",
+    "title": "The Engagement Paradox",
+    "topic": "UX Ethics",
+    "date": "22.10.25",
+    "read": "4 min read",
+    "hook": "Separating efficiency from effectiveness in user interaction models.",
+    "content": "<p>When a product team measures health exclusively through session duration and daily opens, the user experience invariably deteriorates. Notifications become urgent, red badges proliferate, and algorithmic feeds hijack attention.</p><p>Great software respects human attention. It enables users to accomplish their core intent in minimal steps, then gracefully gets out of the way so they can return to their real lives.</p>"
+  },
+  {
+    "id": "g-5",
+    "title": "Dogfooding: You Can't Outsource Empathy",
+    "topic": "Design Craft",
+    "date": "15.06.25",
+    "read": "3 min read",
+    "hook": "User research shows what users say; using your own software shows where it actually hurts.",
+    "content": "<p>To understand software at an instinctual level, designers must live inside their own systems under genuine pressure. Experience the exact latency, broken edge states, and clunky form fields that real users endure every day.</p>"
+  },
+  {
+    "id": "g-6",
+    "title": "Interface Clarity Is Subtracted Decisions",
+    "topic": "Systems",
+    "date": "12.04.25",
+    "read": "4 min read",
+    "hook": "Great software is not made of features added, but cognitive friction removed before the user notices.",
+    "content": "<p>Every redundant configuration dropdown and modal toggle is an outsourced decision. Make the interface feel intuitive by solving complexity internally rather than offloading it to the user.</p>"
+  }
+]

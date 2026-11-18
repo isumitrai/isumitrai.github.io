@@ -1,0 +1,72 @@
+{
+  "name": "Sumit Rai",
+  "title": "Senior Product Designer",
+  "subtitle": "8+ years product design • 12+ years design craft • New Delhi, India",
+  "email": "sumitraiworks@gmail.com",
+  "location": "New Delhi, India",
+  "summary": "Senior Product Designer with 8+ years of product design experience and 12+ years of overall design craft across SaaS, AI, EdTech, and consumer platforms. Focused on product strategy, user experience, interaction design, visual design systems, and building thoughtful digital experiences.",
+  "pdfPath": "assets/Sumit_Rai_Resume.pdf",
+  "selectedProjects": [
+    {
+      "name": "EduManage",
+      "category": "SaaS Educational CMS",
+      "summary": "Unified student, staff & institutional dashboard workflows.",
+      "url": "projects.html#edumanage"
+    },
+    {
+      "name": "Quayo Basket",
+      "category": "Grocery App & Brand Identity",
+      "summary": "Streamlined mobile grocery catalog, rapid cart & checkout UX.",
+      "url": "projects.html#quayo"
+    },
+    {
+      "name": "Musafir",
+      "category": "Travel Marketplace",
+      "summary": "High-converting destination booking & itinerary discovery platform.",
+      "url": "projects.html#musafir"
+    },
+    {
+      "name": "Community",
+      "category": "Student Learning Hub",
+      "summary": "Peer learning workflows, engagement channels & resource sharing.",
+      "url": "projects.html#community"
+    }
+  ],
+  "skills": [
+    {
+      "group": "Product Design",
+      "items": "User Experience Strategy, Interaction Design, User Research, Journey Mapping, Information Architecture, Usability Testing"
+    },
+    {
+      "group": "Design Systems",
+      "items": "Design Tokens, Component Libraries, Multi-Brand Theming, WCAG AAA Accessibility, Figma Variants, Developer Handoff"
+    },
+    {
+      "group": "Technical & AI Craft",
+      "items": "AI-Augmented Workflows, Prompt Engineering, Rapid Prototyping, HTML5/CSS3, JavaScript, Tailwind, Git / GitHub"
+    },
+    {
+      "group": "Tools & Software",
+      "items": "Figma, FigJam, Framer, Webflow, Cursor, Adobe Illustrator, Adobe Photoshop, Midjourney"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Fine Arts (Applied Art / Design)",
+      "institution": "University / College of Art",
+      "period": "Foundational Design Degree"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Interaction Design & Human-Computer Interaction",
+      "issuer": "Specialized Training & Professional Practice",
+      "year": "Professional"
+    },
+    {
+      "title": "AI-Augmented Design Systems & Computational UX",
+      "issuer": "Independent Research & Studio Practice",
+      "year": "Recent"
+    }
+  ]
+}
