@@ -1,7 +1,7 @@
 /**
  * update_home.js
  * Reads data/projects.json and injects project cards into index.html
- * at the <!-- PROJECTS_PLACEHOLDER --> comment.
+ * between <!-- PROJECTS_PLACEHOLDER_START --> and <!-- PROJECTS_PLACEHOLDER_END -->.
  *
  * Run: node scripts/update_home.js
  */
@@ -14,35 +14,37 @@ const htmlPath = path.join(__dirname, '..', 'index.html');
 
 const { projects } = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
-// ── Build project cards ───────────────────────────────────────────────────────
-const cards = projects.map(p => `        <a href="${p.url}" class="proj-card" data-id="${p.id}">
-          <div class="proj-img-wrap">
-            <img src="${p.image}" alt="${p.title}" loading="lazy" />
+// ── Build project cards matching Sumit Rai's design language ──────────────────
+const cards = projects.map(p => `      <article class="proj-card" onclick="window.location.href='${p.url}'" role="button" tabindex="0" aria-label="View case study for ${p.title}">
+        <div class="proj-image">
+          <img src="${p.image}" alt="${p.title}" loading="lazy" />
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-category">${p.category}</span>
+            <span class="proj-year">${p.year}</span>
           </div>
-          <div class="proj-card-body">
-            <div class="proj-card-meta">
-              <span class="proj-cat">${p.category}</span>
-              <span class="proj-year">${p.year}</span>
-            </div>
-            <h3 class="proj-title">${p.title}</h3>
-            <p class="proj-desc">${p.description}</p>
-            <div class="proj-tags">
+          <h3 class="proj-title">${p.title}</h3>
+          <p class="proj-desc">${p.description}</p>
+          <div class="proj-link-row">
+            <span class="proj-view-link">View Case Study <span class="shahi-arrow">&nearr;</span></span>
+            <div class="proj-tech-tags">
               ${p.tags.map(t => `<span class="proj-tag">${t}</span>`).join('')}
             </div>
           </div>
-        </a>`).join('\n\n');
-
-const grid = `<div class="proj-grid">\n${cards}\n      </div>`;
+        </div>
+      </article>`).join('\n\n');
 
 // ── Inject into HTML ──────────────────────────────────────────────────────────
 let html = fs.readFileSync(htmlPath, 'utf8');
 
-if (!html.includes('<!-- PROJECTS_PLACEHOLDER -->')) {
-  console.error('❌  <!-- PROJECTS_PLACEHOLDER --> not found in index.html');
+const markerRegex = /<!-- PROJECTS_PLACEHOLDER_START -->[\s\S]*?<!-- PROJECTS_PLACEHOLDER_END -->/;
+
+if (markerRegex.test(html)) {
+  html = html.replace(markerRegex, `<!-- PROJECTS_PLACEHOLDER_START -->\n${cards}\n      <!-- PROJECTS_PLACEHOLDER_END -->`);
+  fs.writeFileSync(htmlPath, html, 'utf8');
+  console.log(`✅  Injected ${projects.length} project cards into index.html`);
+} else {
+  console.error('❌  <!-- PROJECTS_PLACEHOLDER_START --> ... <!-- PROJECTS_PLACEHOLDER_END --> not found in index.html');
   process.exit(1);
 }
-
-html = html.replace('<!-- PROJECTS_PLACEHOLDER -->', grid);
-fs.writeFileSync(htmlPath, html, 'utf8');
-
-console.log(`✅  Injected ${projects.length} project cards into index.html`);
