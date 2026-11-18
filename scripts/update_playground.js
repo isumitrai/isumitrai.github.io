@@ -1,7 +1,7 @@
 /**
  * update_playground.js
  * Reads data/playground.json and injects pg-card-rich cards into playground.html
- * at the <!-- PLAYGROUND_PLACEHOLDER --> comment.
+ * between <!-- PLAYGROUND_PLACEHOLDER_START --> and <!-- PLAYGROUND_PLACEHOLDER_END -->.
  *
  * Run: node scripts/update_playground.js
  */
@@ -48,12 +48,13 @@ const cards = items.map(item => {
 // ── Inject into HTML ──────────────────────────────────────────────────────────
 let html = fs.readFileSync(htmlPath, 'utf8');
 
-if (!html.includes('<!-- PLAYGROUND_PLACEHOLDER -->')) {
-  console.error('❌  <!-- PLAYGROUND_PLACEHOLDER --> not found in playground.html');
+const markerRegex = /<!-- PLAYGROUND_PLACEHOLDER_START -->[\s\S]*?<!-- PLAYGROUND_PLACEHOLDER_END -->/;
+
+if (markerRegex.test(html)) {
+  html = html.replace(markerRegex, `<!-- PLAYGROUND_PLACEHOLDER_START -->\n${cards}\n      <!-- PLAYGROUND_PLACEHOLDER_END -->`);
+  fs.writeFileSync(htmlPath, html, 'utf8');
+  console.log(`✅  Injected ${items.length} playground cards into playground.html`);
+} else {
+  console.error('❌  <!-- PLAYGROUND_PLACEHOLDER_START --> ... <!-- PLAYGROUND_PLACEHOLDER_END --> not found in playground.html');
   process.exit(1);
 }
-
-html = html.replace('<!-- PLAYGROUND_PLACEHOLDER -->', cards);
-fs.writeFileSync(htmlPath, html, 'utf8');
-
-console.log(`✅  Injected ${items.length} playground cards into playground.html`);

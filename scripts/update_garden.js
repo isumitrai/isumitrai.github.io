@@ -1,10 +1,9 @@
 /**
  * update_garden.js
  * Reads data/garden.json and injects:
- *   1. A compact preview card at <!-- GARDEN_PLACEHOLDER --> in index.html (bento section)
- *   2. Full garden-item rows at <!-- GARDEN_LIST_PLACEHOLDER --> in resources.html
- *   3. window.GARDEN_DATA script at <!-- GARDEN_DATA_PLACEHOLDER --> in resources.html
- *      (falls back to replacing the existing inline window.GARDEN_DATA = [...] block)
+ *   1. A compact preview card between <!-- GARDEN_BENTO_START --> and <!-- GARDEN_BENTO_END --> in index.html
+ *   2. Full garden-item rows between <!-- GARDEN_LIST_PLACEHOLDER_START --> and <!-- GARDEN_LIST_PLACEHOLDER_END --> in resources.html
+ *   3. window.GARDEN_DATA script block in resources.html
  *
  * Run: node scripts/update_garden.js
  */
@@ -35,12 +34,13 @@ const bentoCard = `        <a href="resources.html#garden" class="shahi-card" ar
         </a>`;
 
 let indexHtml = fs.readFileSync(indexPath, 'utf8');
-if (indexHtml.includes('<!-- GARDEN_PLACEHOLDER -->')) {
-  indexHtml = indexHtml.replace('<!-- GARDEN_PLACEHOLDER -->', bentoCard);
+const bentoRegex = /<!-- GARDEN_BENTO_START -->[\s\S]*?<!-- GARDEN_BENTO_END -->/;
+if (bentoRegex.test(indexHtml)) {
+  indexHtml = indexHtml.replace(bentoRegex, `<!-- GARDEN_BENTO_START -->\n${bentoCard}\n        <!-- GARDEN_BENTO_END -->`);
   fs.writeFileSync(indexPath, indexHtml, 'utf8');
   console.log('✅  Injected garden bento card into index.html');
 } else {
-  console.warn('⚠️   <!-- GARDEN_PLACEHOLDER --> not found in index.html — skipping');
+  console.warn('⚠️   GARDEN_BENTO markers not found in index.html');
 }
 
 // ── 2. resources.html: full garden-item list ──────────────────────────────────
@@ -61,25 +61,19 @@ const rows = notes.map(n => `        <div class="garden-item" onclick="openGarde
 
 let resHtml = fs.readFileSync(resourcesPath, 'utf8');
 
-if (resHtml.includes('<!-- GARDEN_LIST_PLACEHOLDER -->')) {
-  resHtml = resHtml.replace('<!-- GARDEN_LIST_PLACEHOLDER -->', rows);
+const listRegex = /<!-- GARDEN_LIST_PLACEHOLDER_START -->[\s\S]*?<!-- GARDEN_LIST_PLACEHOLDER_END -->/;
+if (listRegex.test(resHtml)) {
+  resHtml = resHtml.replace(listRegex, `<!-- GARDEN_LIST_PLACEHOLDER_START -->\n${rows}\n        <!-- GARDEN_LIST_PLACEHOLDER_END -->`);
   console.log(`✅  Injected ${notes.length} garden notes into resources.html`);
 } else {
-  console.warn('⚠️   <!-- GARDEN_LIST_PLACEHOLDER --> not found — skipping list injection');
+  console.warn('⚠️   GARDEN_LIST markers not found in resources.html');
 }
 
-// ── 3. resources.html: replace inline window.GARDEN_DATA ─────────────────────
+// ── 3. resources.html: update window.GARDEN_DATA ─────────────────────────────
 const newDataBlock = `window.GARDEN_DATA = ${JSON.stringify(notes)};`;
-
-// Replace existing window.GARDEN_DATA = [...]; block (single line)
 if (resHtml.includes('window.GARDEN_DATA =')) {
   resHtml = resHtml.replace(/window\.GARDEN_DATA\s*=\s*\[[\s\S]*?\];/, newDataBlock);
   console.log('✅  Updated window.GARDEN_DATA in resources.html');
-} else if (resHtml.includes('<!-- GARDEN_DATA_PLACEHOLDER -->')) {
-  resHtml = resHtml.replace('<!-- GARDEN_DATA_PLACEHOLDER -->', `<script>\n  ${newDataBlock}\n  </script>`);
-  console.log('✅  Injected window.GARDEN_DATA script block');
-} else {
-  console.warn('⚠️   No GARDEN_DATA target found — skipping data injection');
 }
 
 fs.writeFileSync(resourcesPath, resHtml, 'utf8');

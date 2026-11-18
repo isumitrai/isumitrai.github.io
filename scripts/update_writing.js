@@ -1,7 +1,7 @@
 /**
  * update_writing.js
  * Reads data/writing.json and injects article cards into writing.html
- * at the <!-- WRITING_PLACEHOLDER --> comment.
+ * between <!-- WRITING_PLACEHOLDER_START --> and <!-- WRITING_PLACEHOLDER_END -->.
  *
  * Run: node scripts/update_writing.js
  */
@@ -47,12 +47,13 @@ const cards = articles.map(a => {
 // ── Inject into HTML ──────────────────────────────────────────────────────────
 let html = fs.readFileSync(htmlPath, 'utf8');
 
-if (!html.includes('<!-- WRITING_PLACEHOLDER -->')) {
-  console.error('❌  <!-- WRITING_PLACEHOLDER --> not found in writing.html');
+const markerRegex = /<!-- WRITING_PLACEHOLDER_START -->[\s\S]*?<!-- WRITING_PLACEHOLDER_END -->/;
+
+if (markerRegex.test(html)) {
+  html = html.replace(markerRegex, `<!-- WRITING_PLACEHOLDER_START -->\n${cards}\n      <!-- WRITING_PLACEHOLDER_END -->`);
+  fs.writeFileSync(htmlPath, html, 'utf8');
+  console.log(`✅  Injected ${articles.length} articles into writing.html`);
+} else {
+  console.error('❌  <!-- WRITING_PLACEHOLDER_START --> ... <!-- WRITING_PLACEHOLDER_END --> not found in writing.html');
   process.exit(1);
 }
-
-html = html.replace('<!-- WRITING_PLACEHOLDER -->', cards);
-fs.writeFileSync(htmlPath, html, 'utf8');
-
-console.log(`✅  Injected ${articles.length} articles into writing.html`);
