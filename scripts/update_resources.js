@@ -1,7 +1,7 @@
 /**
  * update_resources.js
  * Reads data/resources.json and injects book cards into resources.html
- * at the <!-- RESOURCES_PLACEHOLDER --> comment.
+ * between <!-- RESOURCES_PLACEHOLDER_START --> and <!-- RESOURCES_PLACEHOLDER_END -->.
  *
  * Run: node scripts/update_resources.js
  */
@@ -38,12 +38,13 @@ const bookCards = data.books.map(b => `      <article class="resource-card" data
 // ── Inject into HTML ──────────────────────────────────────────────────────────
 let html = fs.readFileSync(htmlPath, 'utf8');
 
-if (!html.includes('<!-- RESOURCES_PLACEHOLDER -->')) {
-  console.error('❌  <!-- RESOURCES_PLACEHOLDER --> not found in resources.html');
+const markerRegex = /<!-- RESOURCES_PLACEHOLDER_START -->[\s\S]*?<!-- RESOURCES_PLACEHOLDER_END -->/;
+
+if (markerRegex.test(html)) {
+  html = html.replace(markerRegex, `<!-- RESOURCES_PLACEHOLDER_START -->\n${bookCards}\n      <!-- RESOURCES_PLACEHOLDER_END -->`);
+  fs.writeFileSync(htmlPath, html, 'utf8');
+  console.log(`✅  Injected ${data.books.length} book cards into resources.html`);
+} else {
+  console.error('❌  <!-- RESOURCES_PLACEHOLDER_START --> ... <!-- RESOURCES_PLACEHOLDER_END --> not found in resources.html');
   process.exit(1);
 }
-
-html = html.replace('<!-- RESOURCES_PLACEHOLDER -->', bookCards);
-fs.writeFileSync(htmlPath, html, 'utf8');
-
-console.log(`✅  Injected ${data.books.length} book cards into resources.html`);
